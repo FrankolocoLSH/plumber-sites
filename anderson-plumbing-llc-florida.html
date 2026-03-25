@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anderson Plumbing LLC | Trusted Plumbers in Florida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;700&family=Outfit:wght@100;200;300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff9900;
+            --secondary-color: #00698f;
+            --background-color: #f7f7f7;
+            --text-color: #333;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            overflow-x: hidden;
+        }
+        header {
+            background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .hero h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        .hero img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px 0;
+        }
+        .service {
+            margin: 20px;
+            width: calc(33.33% - 20px);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+        .service:hover {
+            transform: scale(1.05);
+        }
+        .service h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .service p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .about {
+            padding: 40px 0;
+            background-image: linear-gradient(to bottom, var(--background-color), var(--primary-color));
+            background-size: 100% 200px;
+            background-position: 0% 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            color: #fff;
+        }
+        .about-content h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .about-content p {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        .about-content img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .gallery {
+            padding: 40px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery-item {
+            margin: 20px;
+            width: calc(33.33% - 20px);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        .testimonials {
+            padding: 40px 0;
+            background-image: linear-gradient(to bottom, var(--background-color), var(--secondary-color));
+            background-size: 100% 200px;
+            background-position: 0% 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .testimonial {
+            margin: 20px;
+            width: calc(50% - 20px);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .testimonial p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .testimonial img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .contact {
+            padding: 40px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .contact-content h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .contact-content p {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        .contact-content a {
+            font-size: 18px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .footer a {
+            font-size: 16px;
+            color: #fff;
+            text-decoration: none;
+        }
+        @keyframes animate {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .animate {
+            animation: animate 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <h1>Anderson Plumbing LLC</h1>
+            <p>Trusted Plumbers in Florida</p>
+            <img src="https://picsum.photos/seed/handerson/1920/1080" alt="Hero Image">
+        </div>
+    </header>
+    <section class="services">
+        <div class="service animate">
+            <h2>Plumbing Installation</h2>
+            <p>Expert installation of plumbing fixtures and appliances</p>
+            <img src="https://picsum.photos/seed/s1anders/800/600" alt="Service Image">
+        </div>
+        <div class="service animate">
+            <h2>Plumbing Repair</h2>
+            <p>Fast and reliable repair of leaks, clogs, and other plumbing issues</p>
+            <img src="https://picsum.photos/seed/s2anders/800/600" alt="Service Image">
+        </div>
+        <div class="service animate">
+            <h2>Plumbing Maintenance</h2>
+            <p>Regular maintenance to prevent plumbing problems and extend the life of your system</p>
+            <img src="https://picsum.photos/seed/s3anders/800/600" alt="Service Image">
+        </div>
+    </section>
+    <section class="about">
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>We are a team of experienced plumbers dedicated to providing top-notch service to our customers</p>
+            <img src="https://picsum.photos/seed/abanders/1200/800" alt="About Image">
+        </div>
+    </section>
+    <section class="gallery">
+        <div class="gallery-item">
+            <img src="https://picsum.photos/seed/g1anders/800/800" alt="Gallery Image">
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/seed/g2anders/800/800" alt="Gallery Image">
+        </div>
+    </section>
+    <section class="testimonials">
+        <div class="testimonial animate">
+            <h2>Testimonial 1</h2>
+            <p>Anderson Plumbing LLC provided excellent service and solved our plumbing problem quickly and efficiently</p>
+            <img src="https://picsum.photos/seed/tbanders/1920/1080" alt="Testimonial Background">
+        </div>
+        <div class="testimonial animate">
+            <h2>Testimonial 2</h2>
+            <p>The plumbers at Anderson Plumbing LLC were professional, courteous, and did a great job</p>
+            <img src="https://picsum.photos/seed/tbanders/1920/1080" alt="Testimonial Background">
+        </div>
+    </section>
+    <section class="contact">
+        <div class="contact-content">
+            <h2>Get in Touch</h2>
+            <p>Contact us today to schedule your plumbing service</p>
+            <p>Phone: (850) 383-0166 | Email: info@andersonplumbingllc.com | Address: 4003 Crawfordville Rd, Tallahassee, FL 32305, USA</p>
+            <a href="https://www.instagram.com/https://instagram.com/andersonplumbing">Follow us on Instagram</a>
+            <a href="https://www.facebook.com/https://facebook.com/andersonplumbingllc">Follow us on Facebook</a>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2023 Anderson Plumbing LLC | All rights reserved</p>
+        <p>Rated 4.6 (44 reviews) | Industry: plumbers | City: Florida | Phone: (850) 383-0166 | Address: 4003 Crawfordville Rd, Tallahassee, FL 32305, USA</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const elements = document.querySelectorAll(".animate");
+            elements.forEach(function(element) {
+                element.classList.add("animate");
+            });
+        });
+    </script>
+</body>
+</html>

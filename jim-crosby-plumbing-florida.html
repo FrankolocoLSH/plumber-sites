@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jim Crosby Plumbing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500;600;700&family=Outfit:wght@100;200;300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700&family=Satoshi:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff9900;
+            --secondary-color: #0099cc;
+            --background-color: #f7f7f7;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .hero {
+            background-image: url('https://picsum.photos/seed/hjim-cros/1920/1080');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .hero h2 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .service {
+            background-color: #fff;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .service h3 {
+            font-family: 'Satoshi', sans-serif;
+            font-weight: 500;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .about {
+            background-color: #fff;
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .about img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .about h2 {
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .testimonials {
+            background-image: url('https://picsum.photos/seed/tbjim-cr/1920/1080');
+            background-size: cover;
+            background-position: center;
+            padding: 2rem;
+            color: #fff;
+        }
+
+        .testimonials h2 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .testimonial {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .testimonial p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .contact {
+            background-color: #fff;
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact h2 {
+            font-family: 'Fraunces', serif;
+            font-weight: 700;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .contact p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .contact a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            clear: both;
+        }
+
+        .footer p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .hero, .about, .gallery, .testimonials, .contact {
+            animation: fade-in 2s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jim Crosby Plumbing</h1>
+    </header>
+    <section class="hero">
+        <h2>Trusted Plumbers in Florida</h2>
+    </section>
+    <section class="services">
+        <div class="service">
+            <img src="https://picsum.photos/seed/s1jim-cr/800/600" alt="Service 1">
+            <h3>Emergency Plumbing Services</h3>
+            <p>We provide emergency plumbing services to help you with any unexpected issues.</p>
+        </div>
+        <div class="service">
+            <img src="https://picsum.photos/seed/s2jim-cr/800/600" alt="Service 2">
+            <h3>Drain Cleaning and Repair</h3>
+            <p>Our experienced plumbers can clean and repair your drains to ensure they are flowing properly.</p>
+        </div>
+        <div class="service">
+            <img src="https://picsum.photos/seed/s3jim-cr/800/600" alt="Service 3">
+            <h3>Water Heater Installation and Repair</h3>
+            <p>We install and repair water heaters to provide you with hot water whenever you need it.</p>
+        </div>
+    </section>
+    <section class="about">
+        <img src="https://picsum.photos/seed/abjim-cr/1200/800" alt="About Us">
+        <h2>About Us</h2>
+        <p>At Jim Crosby Plumbing, we are dedicated to providing our customers with the best plumbing services in Florida. With years of experience and a team of skilled plumbers, we are confident in our ability to meet all of your plumbing needs.</p>
+    </section>
+    <section class="gallery">
+        <img src="https://picsum.photos/seed/g1jim-cr/800/800" alt="Gallery Image 1">
+        <img src="https://picsum.photos/seed/g2jim-cr/800/800" alt="Gallery Image 2">
+    </section>
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <p>Jim Crosby Plumbing provided excellent service and fixed my leaky faucet quickly and efficiently. I highly recommend them!</p>
+        </div>
+        <div class="testimonial">
+            <p>I was impressed with the professionalism and courtesy of the plumbers from Jim Crosby Plumbing. They did a great job installing my new water heater.</p>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <p>Contact us today to schedule a service or to learn more about our plumbing services.</p>
+        <p>Phone: (850) 219-1266</p>
+        <p>Email: <a href="mailto:jimcrosbyplumbing@comcast.net">jimcrosbyplumbing@comcast.net</a></p>
+        <p>Address: 2704 Power Mill Ct #1, Tallahassee, FL 32301, USA</p>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2023 Jim Crosby Plumbing. All rights reserved.</p>
+        <p>Rated 4.5 (33 reviews)</p>
+    </footer>
+</body>
+</html>

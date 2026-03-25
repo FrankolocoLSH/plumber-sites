@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White's Plumbing Inc</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&family=Outfit:wght@400;700&family=Fraunces:wght@400;700&family=Satoshi:wght@400;700&family=Space+Mono:wght@400;700&display=swap">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #f1c40f;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Syne', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            overflow-x: hidden;
+        }
+        header {
+            background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            padding: 2rem;
+            text-align: center;
+            color: #fff;
+        }
+        header h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .hero {
+            background-image: url('https://picsum.photos/seed/hwhite-s-/1920/1080');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h2 {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 4rem;
+        }
+        .service {
+            background-color: #fff;
+            padding: 2rem;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .service h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .about {
+            background-image: linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+            padding: 4rem;
+            color: #fff;
+            text-align: center;
+        }
+        .about h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .about img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 2rem;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .testimonials {
+            background-image: url('https://picsum.photos/seed/tbwhite-/1920/1080');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem;
+            color: #fff;
+        }
+        .testimonials h2 {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .testimonial {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .testimonial h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .contact {
+            padding: 4rem;
+            text-align: center;
+        }
+        .contact h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .contact p {
+            margin-bottom: 2rem;
+        }
+        .footer {
+            background-color: var(--primary-color);
+            padding: 2rem;
+            text-align: center;
+            color: #fff;
+        }
+        .footer p {
+            margin-bottom: 1rem;
+        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @media (max-width: 768px) {
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>White's Plumbing Inc</h1>
+        <p>Plumbers in Florida</p>
+    </header>
+    <section class="hero">
+        <h2>Expert Plumbing Services in Florida</h2>
+    </section>
+    <section class="services">
+        <div class="service">
+            <h3>Residential Plumbing</h3>
+            <img src="https://picsum.photos/seed/s1white-/800/600" alt="Residential Plumbing">
+            <p>Our team provides top-notch residential plumbing services, from leaky faucets to toilet installations.</p>
+        </div>
+        <div class="service">
+            <h3>Commercial Plumbing</h3>
+            <img src="https://picsum.photos/seed/s2white-/800/600" alt="Commercial Plumbing">
+            <p>We offer a wide range of commercial plumbing services, including drain cleaning and pipe repairs.</p>
+        </div>
+        <div class="service">
+            <h3>Emergency Plumbing</h3>
+            <img src="https://picsum.photos/seed/s3white-/800/600" alt="Emergency Plumbing">
+            <p>Our emergency plumbing services are available 24/7 to help you with any unexpected plumbing issues.</p>
+        </div>
+    </section>
+    <section class="about">
+        <h2>About Us</h2>
+        <p>We are a family-owned and operated plumbing company, dedicated to providing our customers with exceptional service and quality workmanship.</p>
+        <img src="https://picsum.photos/seed/abwhite-/1200/800" alt="About Us">
+    </section>
+    <section class="gallery">
+        <img src="https://picsum.photos/seed/g1white-/800/800" alt="Gallery Image 1">
+        <img src="https://picsum.photos/seed/g2white-/800/800" alt="Gallery Image 2">
+    </section>
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <h3>5-Star Service</h3>
+            <p>White's Plumbing Inc provided us with exceptional service and quality workmanship. We highly recommend them!</p>
+        </div>
+        <div class="testimonial">
+            <h3>Fast and Reliable</h3>
+            <p>We were impressed with the speed and efficiency of their emergency plumbing services. Thank you, White's Plumbing Inc!</p>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <p>Address: 3647 Peddie Dr, Tallahassee, FL 32303, USA</p>
+        <p>Phone: (850) 576-3510</p>
+        <p>Email: admin@whitesplumbing.net</p>
+    </section>
+    <footer class="footer">
+        <p>Copyright 2023 White's Plumbing Inc. All rights reserved.</p>
+        <p>Rating: 4.6 (409 reviews)</p>
+        <p>Follow us on social media: <a href="">Instagram</a> | <a href="">Facebook</a></p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const fadeInElements = document.querySelectorAll(".hero, .services, .about, .gallery, .testimonials, .contact, .footer");
+            fadeInElements.forEach(function(element) {
+                element.style.opacity = 0;
+                element.style.animation = "fade-in 1s forwards";
+            });
+        });
+    </script>
+</body>
+</html>

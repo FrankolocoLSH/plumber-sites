@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terry West Plumbing LLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500;600;700;800;900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Syne:wght@400;700&family=Satoshi:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FFC107;
+            --secondary-color: #2F343A;
+            --background-color: #F7F7F7;
+            --text-color: #1A1D23;
+            --hover-color: #FF9900;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        .hero {
+            background-image: url('https://picsum.photos/seed/hterry-we/1920/1080');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 48px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .services {
+            padding: 100px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .service {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .service h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .about {
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .about img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        .about p {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 16px;
+            text-align: center;
+        }
+        .gallery {
+            padding: 100px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .testimonials {
+            padding: 100px 20px;
+            background-image: url('https://picsum.photos/seed/tbterry-/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+        }
+        .testimonial {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border: 1px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .testimonial p {
+            font-family: 'Space Mono', monospace;
+            font-size: 16px;
+            text-align: center;
+        }
+        .contact {
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            text-align: center;
+        }
+        .footer {
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            text-align: center;
+        }
+        .footer p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .footer a:hover {
+            color: var(--hover-color);
+        }
+        @keyframes animate {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .animate {
+            animation: animate 1s;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero animate">
+        <h1>Welcome to Terry West Plumbing LLC</h1>
+    </header>
+    <section class="services animate">
+        <div class="service">
+            <img src="https://picsum.photos/seed/s1terry-/800/600" alt="service 1">
+            <h2>Drain Cleaning</h2>
+            <p>Our expert plumbers will clean your drains and keep them flowing freely.</p>
+        </div>
+        <div class="service">
+            <img src="https://picsum.photos/seed/s2terry-/800/600" alt="service 2">
+            <h2>Water Heater Installation</h2>
+            <p>We'll install a new water heater that meets your needs and budget.</p>
+        </div>
+        <div class="service">
+            <img src="https://picsum.photos/seed/s3terry-/800/600" alt="service 3">
+            <h2>Leak Detection</h2>
+            <p>Our state-of-the-art equipment will detect even the smallest leaks.</p>
+        </div>
+    </section>
+    <section class="about animate">
+        <img src="https://picsum.photos/seed/abterry-/1200/800" alt="about image">
+        <p>We're a family-owned business dedicated to providing top-notch plumbing services to the Florida community.</p>
+    </section>
+    <section class="gallery animate">
+        <img src="https://picsum.photos/seed/g1terry-/800/800" alt="gallery image 1">
+        <img src="https://picsum.photos/seed/g2terry-/800/800" alt="gallery image 2">
+    </section>
+    <section class="testimonials animate">
+        <div class="testimonial">
+            <p>Terry West Plumbing LLC is the best plumbing company I've ever worked with. They're prompt, professional, and affordable.</p>
+        </div>
+        <div class="testimonial">
+            <p>I had a leaky faucet and they fixed it in no time. Their prices are very reasonable and their work is top-notch.</p>
+        </div>
+    </section>
+    <section class="contact animate">
+        <p>Get in touch with us today to schedule your plumbing service.</p>
+        <p>Phone: (850) 756-9407</p>
+        <p>Email: astigma@astigmatic.com</p>
+        <p>Address: 2351 Christopher Pl, Tallahassee, FL 32308, USA</p>
+    </section>
+    <footer class="footer animate">
+        <p>&copy; 2023 Terry West Plumbing LLC</p>
+        <p>Rating: 4.8 (38 reviews)</p>
+        <p>Follow us on social media:</p>
+        <p><a href="https://www.instagram.com/">Instagram</a> | <a href="https://www.facebook.com/https://facebook.com/profile.php">Facebook</a></p>
+    </footer>
+</body>
+</html>

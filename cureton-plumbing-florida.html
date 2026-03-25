@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cureton Plumbing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Satoshi:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FFC107;
+            --secondary-color: #2196F3;
+            --background-color: #F7F7F7;
+            --text-color: #333;
+            --font-family: 'Syne', sans-serif;
+        }
+        body {
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero {
+            background-image: url('https://picsum.photos/seed/hcureton-/1920/1080');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            text-align: center;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .service {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .service h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .about {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+        .about img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .about h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .testimonial {
+            background-image: url('https://picsum.photos/seed/tbcureto/1920/1080');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            color: #fff;
+        }
+        .testimonial h2 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .contact {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+        .contact h2 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        @media only screen and (max-width: 768px) {
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .services {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>Cureton Plumbing</h1>
+        </div>
+        <div class="services">
+            <div class="service">
+                <img src="https://picsum.photos/seed/s1cureto/800/600" alt="">
+                <h2>Plumbing Installation</h2>
+                <p>Expert plumbing installation services for your home or business.</p>
+            </div>
+            <div class="service">
+                <img src="https://picsum.photos/seed/s2cureto/800/600" alt="">
+                <h2>Plumbing Repair</h2>
+                <p>Fast and reliable plumbing repair services to get your system up and running.</p>
+            </div>
+            <div class="service">
+                <img src="https://picsum.photos/seed/s3cureto/800/600" alt="">
+                <h2>Drain Cleaning</h2>
+                <p>Professional drain cleaning services to clear clogs and keep your system flowing.</p>
+            </div>
+        </div>
+        <div class="about">
+            <img src="https://picsum.photos/seed/abcureto/1200/800" alt="">
+            <h2>About Us</h2>
+            <p>We are a team of experienced plumbers dedicated to providing top-notch services to our customers in Florida.</p>
+        </div>
+        <div class="gallery">
+            <img src="https://picsum.photos/seed/g1cureto/800/800" alt="">
+            <img src="https://picsum.photos/seed/g2cureto/800/800" alt="">
+        </div>
+        <div class="testimonial">
+            <h2>What Our Customers Say</h2>
+            <p>"Cureton Plumbing provided excellent service and solved our plumbing issues quickly and efficiently." - John D.</p>
+            <p>"I was impressed with the professionalism and expertise of the plumbers from Cureton Plumbing." - Jane S.</p>
+        </div>
+        <div class="contact">
+            <h2>Get in Touch</h2>
+            <p>Address: 2717 W Tharpe St, Tallahassee, FL 32303, USA</p>
+            <p>Phone: (850) 222-4412</p>
+            <p>Email: <a href="mailto:info@curetonplumbing.com">info@curetonplumbing.com</a></p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2023 Cureton Plumbing. All rights reserved.</p>
+            <p>Rating: 4.3 (78 reviews)</p>
+            <p>Follow us on social media: <a href="https://www.instagram.com/">Instagram</a> | <a href="https://www.facebook.com/">Facebook</a></p>
+        </div>
+    </div>
+</body>
+</html>

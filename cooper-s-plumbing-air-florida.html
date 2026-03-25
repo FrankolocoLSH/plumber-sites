@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooper's Plumbing & Air</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FF9900;
+            --secondary-color: #1e3f58;
+            --background-color: #f7f7f7;
+            --text-color: #333;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .hero {
+            background-image: url('https://picsum.photos/seed/hcooper-s/1920/1080');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-family: 'Fraunces', serif;
+        }
+        .hero-text {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service {
+            background-color: #fff;
+            padding: 2rem;
+            margin: 1rem;
+            width: calc(33.33% - 2rem);
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .about {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .about img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 1rem;
+        }
+        .about-text {
+            font-size: 1.2rem;
+            margin: 1rem;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(33.33% - 2rem);
+            height: 200px;
+            object-fit: cover;
+            margin: 1rem;
+            border: 1px solid #ddd;
+        }
+        .testimonials {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .testimonial {
+            background-color: #fff;
+            padding: 1rem;
+            margin: 1rem;
+            width: calc(50% - 2rem);
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial-text {
+            font-size: 1.2rem;
+            margin: 1rem;
+        }
+        .contact {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .contact-text {
+            font-size: 1.2rem;
+            margin: 1rem;
+        }
+        .footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        @keyframes load {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes hover {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+        .service:hover {
+            animation: hover 0.3s;
+            transform: scale(1.1);
+        }
+        .hero, .about, .testimonials, .contact {
+            animation: load 1s;
+        }
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Cooper's Plumbing & Air</h1>
+    </div>
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Trusted Plumbers in Florida</h1>
+            <p>Serving Tallahassee and surrounding areas</p>
+        </div>
+    </div>
+    <div class="services">
+        <div class="service">
+            <img src="https://picsum.photos/seed/s1cooper/800/600" alt="Service 1">
+            <h2>Drain Cleaning</h2>
+            <p>Expert drain cleaning services for residential and commercial properties</p>
+        </div>
+        <div class="service">
+            <img src="https://picsum.photos/seed/s2cooper/800/600" alt="Service 2">
+            <h2>Water Heater Installation</h2>
+            <p>Professional water heater installation and repair services</p>
+        </div>
+        <div class="service">
+            <img src="https://picsum.photos/seed/s3cooper/800/600" alt="Service 3">
+            <h2>Plumbing Repairs</h2>
+            <p>Fast and reliable plumbing repair services for leaks, clogs, and more</p>
+        </div>
+    </div>
+    <div class="about">
+        <img src="https://picsum.photos/seed/abcooper/1200/800" alt="About Image">
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>Cooper's Plumbing & Air is a family-owned and operated business dedicated to providing top-notch plumbing services to the Florida community.</p>
+        </div>
+    </div>
+    <div class="gallery">
+        <img src="https://picsum.photos/seed/g1cooper/800/800" alt="Gallery Image 1">
+        <img src="https://picsum.photos/seed/g2cooper/800/800" alt="Gallery Image 2">
+        <img src="https://picsum.photos/seed/g2cooper/800/800" alt="Gallery Image 3">
+    </div>
+    <div class="testimonials">
+        <div class="testimonial">
+            <h2>Testimonial 1</h2>
+            <p>Cooper's Plumbing & Air provided excellent service and saved me from a huge mess! Highly recommend!</p>
+        </div>
+        <div class="testimonial">
+            <h2>Testimonial 2</h2>
+            <p>The team at Cooper's Plumbing & Air is knowledgeable, friendly, and efficient. I will definitely use them again!</p>
+        </div>
+        <div class="testimonial">
+            <h2>Testimonial 3</h2>
+            <p>Cooper's Plumbing & Air exceeded my expectations with their professionalism and expertise. Five stars!</p>
+        </div>
+    </div>
+    <div class="contact">
+        <div class="contact-text">
+            <h2>Get in Touch</h2>
+            <p>Phone: (850) 616-7969</p>
+            <p>Email: [info@coopersplumbing.com](mailto:info@coopersplumbing.com)</p>
+            <p>Address: 3632 Shamrock St W Unit #2, Tallahassee, FL 32309, USA</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2023 Cooper's Plumbing & Air</p>
+        <p>Rating: 4.8/5 (3137 reviews)</p>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/></svg>
+    </div>
+</body>
+</html>

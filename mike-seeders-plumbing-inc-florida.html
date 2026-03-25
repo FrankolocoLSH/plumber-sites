@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mike Seeders Plumbing Inc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,700&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Satoshi:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #f1c40f;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .hero h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 48px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .section {
+            padding: 50px 0;
+        }
+        .section h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .service {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+        .service:hover {
+            transform: scale(1.05);
+        }
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .about {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .about img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .testimonials {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .testimonial {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .testimonial img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+        .footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .services {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <img src="https://picsum.photos/seed/hmike-see/1920/1080" alt="Hero Image">
+        <h1>Mike Seeders Plumbing Inc</h1>
+    </header>
+    <main>
+        <section class="section services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="services">
+                    <div class="service">
+                        <img src="https://picsum.photos/seed/s1mike-s/800/600" alt="Service 1">
+                        <h3>Plumbing Repairs</h3>
+                        <p>We offer a wide range of plumbing repair services, from leaky faucets to clogged drains.</p>
+                    </div>
+                    <div class="service">
+                        <img src="https://picsum.photos/seed/s2mike-s/800/600" alt="Service 2">
+                        <h3>Drain Cleaning</h3>
+                        <p>Our team uses the latest technology to clean and clear your drains, ensuring they flow smoothly and efficiently.</p>
+                    </div>
+                    <div class="service">
+                        <img src="https://picsum.photos/seed/s3mike-s/800/600" alt="Service 3">
+                        <h3>Water Heater Installation</h3>
+                        <p>We install and repair water heaters, ensuring you have a steady supply of hot water whenever you need it.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section about">
+            <div class="container">
+                <h2>About Us</h2>
+                <img src="https://picsum.photos/seed/abmike-s/1200/800" alt="About Us">
+                <p>We are a team of experienced plumbers dedicated to providing top-notch service to our customers in Florida.</p>
+            </div>
+        </section>
+        <section class="section gallery">
+            <div class="container">
+                <h2>Our Work</h2>
+                <div class="gallery">
+                    <img src="https://picsum.photos/seed/g1mike-s/800/800" alt="Gallery 1">
+                    <img src="https://picsum.photos/seed/g2mike-s/800/800" alt="Gallery 2">
+                </div>
+            </div>
+        </section>
+        <section class="section testimonials">
+            <div class="container">
+                <h2>What Our Customers Say</h2>
+                <div class="testimonial">
+                    <img src="https://picsum.photos/seed/tbmike-s/1920/1080" alt="Testimonial 1">
+                    <p>Mike Seeders Plumbing Inc is the best plumbing company I've ever worked with. They are professional, reliable, and affordable.</p>
+                </div>
+                <div class="testimonial">
+                    <img src="https://picsum.photos/seed/tbmike-s/1920/1080" alt="Testimonial 2">
+                    <p>I was impressed with the level of service I received from Mike Seeders Plumbing Inc. They were prompt, courteous, and did an excellent job.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section contact">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <form>
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <textarea placeholder="Message"></textarea>
+                    <button>Send</button>
+                </form>
+                <p>Phone: (850) 562-2555</p>
+                <p>Email: <a href="mailto:seedersp@yahoo.com">seedersp@yahoo.com</a></p>
+                <p>Address: 4874 6 Oaks Dr, Tallahassee, FL 32303, USA</p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Mike Seeders Plumbing Inc</p>
+            <p>Rating: 4.4 (71 reviews)</p>
+            <p>Industry: plumbers</p>
+            <p>Follow us on <a href="https://www.instagram.com/">Instagram</a> and <a href="https://www.facebook.com/">Facebook</a></p>
+        </div>
+    </footer>
+</body>
+</html>

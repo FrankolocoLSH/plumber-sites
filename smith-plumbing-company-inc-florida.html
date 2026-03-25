@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smith Plumbing Company Inc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&family=Satoshi:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FFC107;
+            --secondary-color: #8BC34A;
+            --dark-color: #212121;
+            --light-color: #F7F7F7;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Fraunces', serif;
+            margin-bottom: 1em;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--light-color);
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .hero .container {
+            z-index: 1;
+        }
+        .services {
+            padding: 80px 0;
+        }
+        .service {
+            background-color: var(--light-color);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .service img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px 10px 0 0;
+        }
+        .about {
+            padding: 80px 0;
+            background-color: var(--dark-color);
+            color: var(--light-color);
+        }
+        .about img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+        }
+        .gallery {
+            padding: 80px 0;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .testimonial {
+            background-image: url('https://picsum.photos/seed/tbsmith-/1920/1080');
+            background-size: cover;
+            background-position: center;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .testimonial p {
+            font-family: 'Space Mono', monospace;
+        }
+        .contact {
+            padding: 80px 0;
+            background-color: var(--dark-color);
+            color: var(--light-color);
+        }
+        .contact form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: var(--light-color);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            padding: 20px 0;
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            text-align: center;
+        }
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        @media only screen and (max-width: 768px) {
+            .hero {
+                height: 50vh;
+            }
+            .services {
+                padding: 40px 0;
+            }
+            .about {
+                padding: 40px 0;
+            }
+            .gallery {
+                padding: 40px 0;
+            }
+            .contact {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero" id="home">
+        <div class="container">
+            <img src="https://picsum.photos/seed/hsmith-pl/1920/1080" alt="Hero Image">
+            <h1>Welcome to Smith Plumbing Company Inc</h1>
+            <p>Plumbing Services in Florida</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+    </header>
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service">
+                <img src="https://picsum.photos/seed/s1smith-/800/600" alt="Service Image">
+                <h3>Drain Cleaning</h3>
+                <p>We provide professional drain cleaning services to ensure your pipes are flowing freely.</p>
+            </div>
+            <div class="service">
+                <img src="https://picsum.photos/seed/s2smith-/800/600" alt="Service Image">
+                <h3>Water Heater Installation</h3>
+                <p>We install and repair water heaters to ensure you have hot water when you need it.</p>
+            </div>
+            <div class="service">
+                <img src="https://picsum.photos/seed/s3smith-/800/600" alt="Service Image">
+                <h3>Leak Detection</h3>
+                <p>We use state-of-the-art technology to detect and repair leaks quickly and efficiently.</p>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="container">
+            <img src="https://picsum.photos/seed/absmith-/1200/800" alt="About Image">
+            <h2>About Us</h2>
+            <p>At Smith Plumbing Company Inc, we pride ourselves on providing exceptional plumbing services to the Florida area. With years of experience and a team of skilled technicians, we are dedicated to ensuring your plumbing needs are met with professionalism and courtesy.</p>
+        </div>
+    </section>
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2>Our Work</h2>
+            <img src="https://picsum.photos/seed/g1smith-/800/800" alt="Gallery Image">
+            <img src="https://picsum.photos/seed/g2smith-/800/800" alt="Gallery Image">
+        </div>
+    </section>
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial">
+                <p>"I was very impressed with the service I received from Smith Plumbing Company Inc. They were prompt, professional, and did an excellent job." </p>
+            </div>
+            <div class="testimonial">
+                <p>"I highly recommend Smith Plumbing Company Inc for all your plumbing needs. They are reliable, efficient, and affordable." </p>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p>Phone: (850) 681-7473 | Email: service@smithplumbingco.com | Address: 4817 Corlett St, Tallahassee, FL 32303, USA</p>
+            <p>Rating: 4.8 (35 reviews)</p>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Smith Plumbing Company Inc. All rights reserved.</p>
+            <p>Designed by <a href="#" target="_blank">Your Company</a></p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jim Bennett's Plumbing Inc</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;800&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Fraunces:wght@400;500;600;700;800;900&family=Satoshi:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+    <style>
+        :root {
+            --primary-color: #0097E6;
+            --secondary-color: #FFC107;
+            --background-color: #F7F7F7;
+            --font-color: #333;
+            --header-color: #444;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+        }
+        .header {
+            background-color: var(--header-color);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 2rem;
+        }
+        .service {
+            background-color: #fff;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+        .service:hover {
+            transform: scale(1.1);
+        }
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .about {
+            background-color: var(--background-color);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .about img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 2rem;
+        }
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.2s ease-in-out;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .testimonials {
+            background-color: var(--background-color);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .testimonial {
+            background-color: #fff;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+        .testimonial img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .contact {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact button {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .footer {
+            background-color: var(--header-color);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        @media only screen and (max-width: 768px) {
+            .services {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Jim Bennett's Plumbing Inc</h1>
+    </div>
+    <div class="hero">
+        <img src="https://picsum.photos/seed/hjim-benn/1920/1080" alt="Hero Image">
+        <h1>Welcome to Jim Bennett's Plumbing Inc</h1>
+    </div>
+    <div class="services">
+        <div class="service">
+            <img src="https://picsum.photos/seed/s1jim-be/800/600" alt="Service Image 1">
+            <h2>Plumbing Repairs</h2>
+            <p>We offer a wide range of plumbing repair services to fix any issue you may have.</p>
+        </div>
+        <div class="service">
+            <img src="https://picsum.photos/seed/s2jim-be/800/600" alt="Service Image 2">
+            <h2>Drain Cleaning</h2>
+            <p>Our team is equipped to handle any drain cleaning job, big or small.</p>
+        </div>
+        <div class="service">
+            <img src="https://picsum.photos/seed/s3jim-be/800/600" alt="Service Image 3">
+            <h2>Water Heater Installation</h2>
+            <p>We can install a new water heater in your home or business, ensuring you have hot water when you need it.</p>
+        </div>
+    </div>
+    <div class="about">
+        <img src="https://picsum.photos/seed/abjim-be/1200/800" alt="About Image">
+        <h2>About Us</h2>
+        <p>We are a team of experienced plumbers dedicated to providing the best service possible to our customers.</p>
+    </div>
+    <div class="gallery">
+        <img src="https://picsum.photos/seed/g1jim-be/800/800" alt="Gallery Image 1">
+        <img src="https://picsum.photos/seed/g2jim-be/800/800" alt="Gallery Image 2">
+    </div>
+    <div class="testimonials">
+        <div class="testimonial">
+            <img src="https://picsum.photos/seed/tbjim-be/1920/1080" alt="Testimonial Background">
+            <h2>Rating: 3.6 (86 reviews)</h2>
+            <p>We are proud of our reputation for providing excellent service and look forward to serving you.</p>
+        </div>
+    </div>
+    <div class="contact">
+        <h2>Get in Touch</h2>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <input type="phone" placeholder="Phone">
+            <textarea placeholder="Message"></textarea>
+            <button>Send</button>
+        </form>
+        <p>Address: 3407 Quick Dr, Tallahassee, FL 32311, USA</p>
+        <p>Phone: (850) 878-3178</p>
+        <p>Email: michelle.johnson@jimbennetts.com</p>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Jim Bennett's Plumbing Inc</p>
+    </div>
+</body>
+</html>

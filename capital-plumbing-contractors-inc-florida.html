@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capital Plumbing Contractors, Inc.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500;700&family=Outfit:wght@100;200;300;400;500;600;700&family=Satoshi:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-color: #3498db;
+            --secondary-color: #f1c40f;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+            --header-color: #2c3e50;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            background-color: var(--header-color);
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/seed/hcapital-/1920/1080');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            font-family: 'Fraunces', serif;
+            text-transform: uppercase;
+        }
+        .services {
+            padding: 2em;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .service {
+            background-color: #fff;
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .service:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .service h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .about {
+            padding: 2em;
+            background-color: var(--header-color);
+            color: #fff;
+        }
+        .about img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            float: left;
+            margin: 0 10px 10px 0;
+        }
+        .gallery {
+            padding: 2em;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .testimonials {
+            padding: 2em;
+            background-image: url('https://picsum.photos/seed/tbcapita/1920/1080');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        .testimonial {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1em;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .testimonial h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .contact {
+            padding: 2em;
+            background-color: var(--header-color);
+            color: #fff;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact input[type="submit"] {
+            background-color: var(--main-color);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: var(--header-color);
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+        @media only screen and (max-width: 768px) {
+            .services {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Capital Plumbing Contractors, Inc.</h1>
+        <p>Florida's Trusted Plumbing Experts</p>
+    </header>
+    <section class="hero">
+        <h1>Welcome to Capital Plumbing Contractors, Inc.</h1>
+    </section>
+    <section class="services">
+        <div class="service">
+            <img src="https://picsum.photos/seed/s1capita/800/600" alt="Service 1">
+            <h2>Residential Plumbing</h2>
+            <p>We provide top-notch plumbing services for your home</p>
+        </div>
+        <div class="service">
+            <img src="https://picsum.photos/seed/s2capita/800/600" alt="Service 2">
+            <h2>Commercial Plumbing</h2>
+            <p>We cater to the plumbing needs of businesses and institutions</p>
+        </div>
+        <div class="service">
+            <img src="https://picsum.photos/seed/s3capita/800/600" alt="Service 3">
+            <h2>Emergency Plumbing</h2>
+            <p>We offer 24/7 emergency plumbing services for your peace of mind</p>
+        </div>
+    </section>
+    <section class="about">
+        <img src="https://picsum.photos/seed/abcapita/1200/800" alt="About Us">
+        <h2>About Us</h2>
+        <p>We are a team of experienced plumbers dedicated to providing excellent service to our customers</p>
+    </section>
+    <section class="gallery">
+        <img src="https://picsum.photos/seed/g1capita/800/800" alt="Gallery 1">
+        <img src="https://picsum.photos/seed/g2capita/800/800" alt="Gallery 2">
+    </section>
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <h2>5/5 Stars</h2>
+            <p>Capital Plumbing Contractors, Inc. provided excellent service and were very professional</p>
+        </div>
+        <div class="testimonial">
+            <h2>5/5 Stars</h2>
+            <p>I highly recommend Capital Plumbing Contractors, Inc. for all your plumbing needs</p>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 Capital Plumbing Contractors, Inc. All rights reserved</p>
+        <p>Phone: (850) 576-8420 | Email: <a href="mailto:"></a> | Address: 706 Flagg St, Tallahassee, FL 32305, USA</p>
+        <p>Rating: 4.8 (575 reviews)</p>
+    </footer>
+</body>
+</html>

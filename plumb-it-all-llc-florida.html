@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumb-it-all LLC - Expert Plumbers in Florida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&family=Outfit:wght@400;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FFC107;
+            --secondary-color: #8B9467;
+            --background-color: #F7F7F7;
+            --text-color: #333;
+            --accent-color: #4CAF50;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .hero {
+            background-image: url(https://picsum.photos/seed/hplumb-it/1920/1080);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 48px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            width: calc(33.33% - 20px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .service h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .about {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .about img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(25% - 20px);
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        .testimonials {
+            background-image: url(https://picsum.photos/seed/tbplumb-/1920/1080);
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            color: #fff;
+        }
+        .testimonials blockquote {
+            font-family: 'Space Mono', monospace;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .contact {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .contact h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        @keyframes animate {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .animate {
+            animation: animate 1s;
+        }
+        @media only screen and (max-width: 768px) {
+            .service {
+                width: calc(50% - 20px);
+            }
+            .gallery img {
+                width: calc(50% - 20px);
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .service {
+                width: 100%;
+            }
+            .gallery img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Plumb-it-all LLC</h1>
+        <p>Expert Plumbers in Florida</p>
+    </header>
+    <div class="hero animate">
+        <h1>Welcome to Plumb-it-all LLC</h1>
+    </div>
+    <div class="container">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service">
+                <img src="https://picsum.photos/seed/s1plumb-/800/600" alt="Service 1">
+                <h2>Emergency Plumbing</h2>
+                <p>We provide 24/7 emergency plumbing services to ensure your safety and convenience.</p>
+            </div>
+            <div class="service">
+                <img src="https://picsum.photos/seed/s2plumb-/800/600" alt="Service 2">
+                <h2>Drain Cleaning</h2>
+                <p>Our experienced plumbers use the latest technology to clean and clear your drains effectively.</p>
+            </div>
+            <div class="service">
+                <img src="https://picsum.photos/seed/s3plumb-/800/600" alt="Service 3">
+                <h2>Water Heater Installation</h2>
+                <p>We install and repair water heaters to provide you with hot water whenever you need it.</p>
+            </div>
+        </div>
+    </div>
+    <div class="about animate">
+        <img src="https://picsum.photos/seed/abplumb-/1200/800" alt="About Us">
+        <h2>About Us</h2>
+        <p>We are a team of experienced plumbers dedicated to providing top-notch services to our customers in Florida.</p>
+    </div>
+    <div class="container">
+        <h2>Our Gallery</h2>
+        <div class="gallery">
+            <img src="https://picsum.photos/seed/g1plumb-/800/800" alt="Gallery Image 1">
+            <img src="https://picsum.photos/seed/g2plumb-/800/800" alt="Gallery Image 2">
+            <img src="https://picsum.photos/seed/g1plumb-/800/800" alt="Gallery Image 3">
+            <img src="https://picsum.photos/seed/g2plumb-/800/800" alt="Gallery Image 4">
+        </div>
+    </div>
+    <div class="testimonials animate">
+        <blockquote>
+            Plumb-it-all LLC provided excellent service and professionalism. Their plumbers were knowledgeable and friendly.
+        </blockquote>
+        <blockquote>
+            I was impressed with the prompt response and efficient work of the plumbers from Plumb-it-all LLC.
+        </blockquote>
+    </div>
+    <div class="contact animate">
+        <h2>Get in Touch</h2>
+        <p>Contact us at (850) 300-0059 or <a href="mailto:"></a> to schedule an appointment.</p>
+        <p>Address: 1618 Sharkey St, Tallahassee, FL 32304, USA</p>
+    </div>
+    <footer>
+        <p>&copy; 2023 Plumb-it-all LLC. All rights reserved.</p>
+        <p>Rating: 5 (18 reviews)</p>
+        <p>Follow us on <a href="">Instagram</a> and <a href="">Facebook</a>.</p>
+    </footer>
+</body>
+</html>

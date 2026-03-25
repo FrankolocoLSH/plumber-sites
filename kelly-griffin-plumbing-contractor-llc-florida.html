@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelly Griffin Plumbing Contractor LLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces&family=Outfit&family=Space+Mono&family=Syne&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FFC107;
+            --secondary-color: #8B9467;
+            --background-color: #F7F7F7;
+            --text-color: #333;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        header {
+            background-color: var(--primary-color);
+            padding: 1em;
+            text-align: center;
+        }
+        header h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 2em;
+            margin: 0;
+            color: #fff;
+        }
+        .hero {
+            background-image: url('https://picsum.photos/seed/hkelly-gr/1920/1080');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h2 {
+            font-size: 2.5em;
+            font-family: 'Syne', sans-serif;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 2em;
+        }
+        .service {
+            background-color: #fff;
+            padding: 1em;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .service h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2em;
+        }
+        .about img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        .about p {
+            width: 300px;
+            margin: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 2em;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .testimonials {
+            background-image: url('https://picsum.photos/seed/tbkelly-/1920/1080');
+            background-size: cover;
+            background-position: center;
+            padding: 2em;
+            color: #fff;
+        }
+        .testimonial {
+            background-color: rgba(0,0,0,0.5);
+            padding: 1em;
+            border-radius: 10px;
+        }
+        .testimonial p {
+            font-family: 'Space Mono', monospace;
+            font-size: 1em;
+        }
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2em;
+        }
+        .contact form {
+            width: 300px;
+            margin: 20px;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 1em;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .contact button {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 1em 2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: var(--primary-color);
+            padding: 1em;
+            text-align: center;
+            color: #fff;
+        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .animate {
+            animation: fade-in 2s;
+        }
+        @media only screen and (max-width: 768px) {
+            .hero {
+                height: 50vh;
+            }
+            .services {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            .about {
+                flex-direction: column;
+            }
+            .about img {
+                width: 100%;
+                height: 150px;
+                margin: 10px 0;
+            }
+            .about p {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kelly Griffin Plumbing Contractor LLC</h1>
+    </header>
+    <section class="hero animate">
+        <h2>Trusted Plumbing Services in Florida</h2>
+    </section>
+    <section class="services animate">
+        <div class="service">
+            <img src="https://picsum.photos/seed/s1kelly-/800/600" alt="Plumbing Service 1">
+            <h3>Residential Plumbing</h3>
+            <p>We offer a wide range of residential plumbing services, from leaky faucet repair to full bathroom remodels.</p>
+        </div>
+        <div class="service">
+            <img src="https://picsum.photos/seed/s2kelly-/800/600" alt="Plumbing Service 2">
+            <h3>Commercial Plumbing</h3>
+            <p>Our team of experienced plumbers provides top-notch commercial plumbing services, including pipe installation and repair.</p>
+        </div>
+        <div class="service">
+            <img src="https://picsum.photos/seed/s3kelly-/800/600" alt="Plumbing Service 3">
+            <h3>Emergency Plumbing</h3>
+            <p>We offer 24/7 emergency plumbing services to help you with any unexpected plumbing issues.</p>
+        </div>
+    </section>
+    <section class="about animate">
+        <img src="https://picsum.photos/seed/abkelly-/1200/800" alt="About Us">
+        <p>We are a family-owned and operated plumbing contractor serving the Florida area. Our team of experienced plumbers is dedicated to providing high-quality plumbing services at affordable prices.</p>
+    </section>
+    <section class="gallery animate">
+        <img src="https://picsum.photos/seed/g1kelly-/800/800" alt="Gallery Image 1">
+        <img src="https://picsum.photos/seed/g2kelly-/800/800" alt="Gallery Image 2">
+    </section>
+    <section class="testimonials animate">
+        <div class="testimonial">
+            <p>Kelly Griffin Plumbing Contractor LLC is the best plumbing service I've ever used. They are prompt, professional, and affordable.</p>
+        </div>
+        <div class="testimonial">
+            <p>I had a great experience with Kelly Griffin Plumbing Contractor LLC. They fixed my leaky faucet quickly and efficiently.</p>
+        </div>
+    </section>
+    <section class="contact animate">
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button>Send</button>
+        </form>
+        <p>Address: 1500 Capital Cir SE Unit 6, Tallahassee, FL 32301, USA</p>
+        <p>Phone: (850) 933-6660</p>
+        <p>Rating: 4.8/5 (34 reviews)</p>
+    </section>
+    <footer>
+        <p>&copy; 2023 Kelly Griffin Plumbing Contractor LLC</p>
+    </footer>
+</body>
+</html>

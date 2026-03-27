@@ -3,482 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=General+Sans:wght@400;700&display=swap">
     <title>Empire Plumbing</title>
     <style>
-        /* CSS VARIABLES */
         :root {
-            --primary: #009A9A;
-            --accent: #FF9B65;
-            --bg: linear-gradient(145deg, #4E5338, #3C413E);
-            --text: #F2F2F2;
-            --text-muted: #C1C1C1;
+            --primary: #0A1628;
+            --accent: #B87333;
+            --bg: #f9f9f9;
+            --text: #333;
+            --text-muted: #666;
         }
-        
-        /* GLOBAL STYLES */
         body {
-            font-family: 'Satoshi', sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'General Sans', sans-serif;
+            font-size: clamp(1.2rem, 1.5vw, 2rem);
+            background-color: var(--bg);
         }
-        
-        /* HERO SECTIONS */
-        .hero {
-            height: 80vh;
-            background-size: 100% 2000px;
-            background-image: 
-                linear-gradient(
-                    145deg, 
-                    rgba(80, 83, 56, 0.7), 
-                    rgba(60, 65, 62, 0.5)
-                ),
-                url('https://picsum.photos/2000/1200');
-            color: var(--text);
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            padding-bottom: 3em;
-        }
-        
-        .hero > h1 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 4rem;
-        }
-        
-        .hero > button {
+        header {
+            position: sticky;
+            top: 0;
             background-color: var(--primary);
-            border: none;
-            padding: 1em 2em;
-            border-radius: 1em;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: bold;
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin: 0;
+        }
+        header .contact {
+            font-size: 1.2rem;
             color: var(--text);
-            font-size: 1em;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        header .contact:hover {
+            color: var(--accent);
+        }
+        .hero {
+            position: relative;
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1920x1080/?plumber+pipes+water&sig=empire-plumbing-miami-flh');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            color: var(--bg);
+        }
+        .hero h1 {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: bold;
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-family: 'General Sans', sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            color: var(--text);
+        }
+        .hero button {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.5rem;
+            padding: 1rem 2rem;
+            background-color: var(--primary);
+            color: var(--bg);
+            border: none;
+            border-radius: 0.5rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-        
-        .hero > button:hover {
+        .hero button:hover {
             background-color: var(--accent);
         }
-        
-        /* SERVICE CARDS */
-        .services {
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        
-        .service-card {
-            background-color: var(--bg);
-            border: none;
-            border-radius: 1em;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 2em auto;
-            padding: 2em;
+        .trust-bar {
+            background-color: var(--primary);
+            padding: 1rem;
+            color: var(--bg);
+            text-align: center;
+            font-size: 1.2rem;
             position: relative;
-            width: calc(33.33% - 1em);
-        }
-        
-        .service-card > h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.5rem;
-            margin-bottom: 1em;
-        }
-        
-        .service-card > p {
-            font-family: 'Satoshi', sans-serif;
-            font-size: 0.9rem;
-            line-height: 1.5em;
-        }
-        
-        /* ASYMMETRICAL LAYOUT */
-        .services > .service-card:nth-child(1) {
-            margin-left: 2em;
-        }
-        
-        .services > .service-card:nth-child(3) {
-            margin-right: 2em;
-        }
-        
-        /* OVERLAPPING ELEMENTS */
-        .service-card-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .services {
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .service {
+            background-color: var(--bg);
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: calc(25% - 2rem);
+            max-width: 15rem;
+        }
+        .service h2 {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+        .service h3 {
+            font-family: 'General Sans', sans-serif;
+            font-size: 1rem;
             color: var(--text);
+            margin-bottom: 1rem;
+        }
+        .service i {
+            font-size: 1.5rem;
+            color: var(--text);
+        }
+        .reviews {
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .review {
+            background-color: var(--bg);
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: calc(25% - 2rem);
+            max-width: 15rem;
+        }
+        .review img {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            background-color: var(--text);
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: opacity 0.3s ease;
+            margin-bottom: 1rem;
         }
-        
-        .service-card:hover .service-card-overlay {
-            opacity: 1;
+        .review .rating {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
         }
-        
-        /* ABOUT SECTION */
-        .about {
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 4em 2em 2em 2em;
-            background-size: 10% 10%;
-            background-image: 
-                linear-gradient(
-                    45deg, 
-                    rgba(240, 240, 240, 0.9), 
-                    rgba(200, 200, 200, 0.9)
-                ),
-                url('https://picsum.photos/2000/2000');
+        .review .rating::before {
+            content: '';
+            width: 2rem;
+            height: 0.5rem;
+            background-color: var(--accent);
+            display: block;
         }
-        
-        .about > h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 1em;
-        }
-        
-        .about > p {
-            font-family: 'Satoshi', sans-serif;
-            font-size: 0.8rem;
-            line-height: 1.5em;
-        }
-        
-        /* TESTIMONIALS */
-        .testimonials {
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 2em 2em;
-        }
-        
-        .testimonial {
-            background-color: #F7F7F7;
-            border: 1px solid #DDDDDD;
-            border-radius: 1em;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 2em auto;
-            padding: 2em;
-            position: relative;
-        }
-        
-        .testimonial > h4 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.1rem;
-            margin-bottom: 1em;
-        }
-        
-        .testimonial > p {
-            font-family: 'Satoshi', sans-serif;
-            font-size: 0.8rem;
-            line-height: 1.5em;
-        }
-        
-        /* GALLERY */
-        .gallery {
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 2em 2em;
-        }
-        
-        .gallery > img {
-            border-radius: 1em;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 2em auto;
-            max-width: 100%;
-            height: auto;
-        }
-        
-        /* CONTACT SECTION */
-        .contact {
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 4em 2em 2em 2em;
-            background-size: 10% 10%;
-            background-image: 
-                linear-gradient(
-                    45deg, 
-                    rgba(240, 240, 240, 0.9), 
-                    rgba(200, 200, 200, 0.9)
-                ),
-                url('https://picsum.photos/2000/2000');
-        }
-        
-        .contact > h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.2rem;
-            margin-bottom: 1em;
-        }
-        
-        .contact > p {
-            font-family: 'Satoshi', sans-serif;
-            font-size: 0.8rem;
-            line-height: 1.5em;
-        }
-        
-        /* FOOTER */
-        .footer {
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 2em 2em;
+        .review .rating::after {
+            content: '';
+            width: 2rem;
+            height: 0.2rem;
             background-color: var(--bg);
+            display: block;
+            margin-left: 0.2rem;
+        }
+        .review p {
+            font-family: 'General Sans', sans-serif;
+            font-size: 1rem;
             color: var(--text);
             text-align: center;
         }
-        
-        .footer > ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .contact {
+            padding: 2rem;
         }
-        
-        .footer > ul > li {
-            display: inline-block;
-            margin-right: 1em;
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        
-        .footer > a {
-            background-color: var(--primary);
-            border: none;
-            padding: 0.5em 1em;
-            border-radius: 1em;
+        .contact label {
+            font-family: 'General Sans', sans-serif;
+            font-size: 1rem;
             color: var(--text);
-            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .contact input, .contact select, .contact textarea {
+            width: 100%;
+            padding: 1rem;
+            font-family: 'General Sans', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .contact button {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.5rem;
+            padding: 1rem 2rem;
+            background-color: var(--primary);
+            color: var(--bg);
+            border: none;
+            border-radius: 0.5rem;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-        
-        /* ANIMATIONS */
-        @keyframes reveal {
-            0% {
-                opacity: 0;
-                transform: translateX(-100%);
+        .contact button:hover {
+            background-color: var(--accent);
+        }
+        @media (max-width: 768px) {
+            .hero {
+                height: max-height 80vh;
             }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
+            .services {
+                flex-direction: column;
+            }
+            .service {
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 2rem;
+            }
+            .reviews {
+                flex-direction: column;
+            }
+            .review {
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 2rem;
             }
         }
-        
-        @keyframes stagger {
-            0% {
-                transform: scale(0);
-            }
-            100% {
-                transform: scale(1);
-            }
+        #top {
+            display: none;
         }
-        
-        /* PAGE LOAD ANIMATIONS */
-        .section {
-            animation: reveal 0.5s ease;
-            animation-delay: calc(0.5s * var(--index));
-            --index: 0s;
+        .icon {
+            fill: var(--primary);
+            width: 2rem;
+            height: 2rem;
+            margin: 0.5rem;
+            transition: fill 0.3s ease;
         }
-        
-        .service-card-overlay {
-            animation: stagger 0.3s ease;
+        .icon:hover {
+            fill: var(--accent);
         }
-        
-        /* HOVER EFFECTS */
-        .service-card:hover {
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            transform: translateY(-10px);
+        #top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--bg);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
-        .testimonial > span:hover {
-            font-size: 1.2rem;
+        #top .icon {
+            transition: opacity 0.3s ease;
+        }
+        #top a {
+            text-decoration: none;
+            color: var(--text);
+            transition: color 0.3s ease;
+        }
+        #top a:hover {
             color: var(--accent);
         }
-        
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 768px) {
-            .hero > h1 {
-                font-size: 2rem;
-            }
-            
-            .hero > button {
-                padding: 1em;
-            }
-            
-            .services > .service-card {
-                width: 100%;
-                margin: 1em 0;
-            }
-            
-            .service-card-overlay {
-                display: none;
-            }
-            
-            .testimonial {
-                margin: 1em 0;
-            }
+        footer {
+            background-color: var(--primary);
+            padding: 1rem;
+            color: var(--bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
         }
-        
-        @media (max-width: 480px) {
-            .hero > h1 {
-                font-size: 1.5rem;
-            }
-            
-            .contact > p {
-                display: none;
-            }
+        footer a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: var(--accent);
         }
     </style>
 </head>
 <body>
-    <section class="hero" style="--index: 1">
-        <h1>Empowering Your Home</h1>
-        <button phone="305-531-7017">Call Now</button>
-    </section>
-    <section class="services section" style="--index: 1">
-        <h2>Our Expert Services</h2>
-        <div class="services">
-            <div class="service-card">
-                <h3>Leaks and Repiping</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
-                <div class="service-card-overlay">
-                    Discover our comprehensive leak detection and repair services.
-                </div>
-            </div>
-            <div class="service-card">
-                <h3>Water Heaters and Tanks</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
-                <div class="service-card-overlay">
-                    Get expert installation and repair for your water heater or tank.
-                </div>
-            </div>
-            <div class="service-card">
-                <h3>Drains and Sewer</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
-                <div class="service-card-overlay">
-                    Trust us for professional drain cleaning and sewer repair services.
-                </div>
-            </div>
+    <header>
+        <h1>Empire Plumbing</h1>
+        <p class="contact" title="Call us now, (305) 531-7017">Call us now, <a href="tel:(305) 531-7017">305-531-7017</a></p>
+    </header>
+    <div class="hero">
+        <h1>Miami FL's Most Trusted plumber Service</h1>
+        <p>Serving Miami FL and surrounding areas with professional plumber services.</p>
+        <button>Call us now, 305-531-7017</button>
+    </div>
+    <div class="trust-bar">
+        Licensed & Insured | Serving Miami FL | 296+ Happy Customers | Free Estimates
+    </div>
+    <section class="services">
+        <div class="service">
+            <h2>Leaky faucet repair?</h2>
+            <h3>Experienced plumbers available now!</h3>
+        </div>
+        <div class="service">
+            <h2>Drain cleaning & unclogging</h2>
+            <h3>Solving plumbing issues quickly & efficiently.</h3>
+        </div>
+        <div class="service">
+            <h2>Water heater installation</h2>
+            <h3>Expert plumbing services for you.</h3>
+        </div>
+        <div class="service">
+            <h2>Plumbing inspections & repairs</h2>
+            <h3>Keeping your home safe & efficient.</h3>
         </div>
     </section>
-    <section class="about section" style="--index: 2">
-        <h2>About Empire Plumbing</h2>
-        <pLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
-        <pLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
-    </section>
-    <section class="gallery section" style="--index: 2">
-        <h2>Our Work</h2>
-        <div class="gallery">
-            <img src="https://picsum.photos/2000/1200" alt="Image 1">
-            <img src="https://picsum.photos/2000/1200" alt="Image 2">
+    <section class="reviews">
+        <div class="review">
+            <img src="https://via.placeholder.com/50" alt="Image">
+            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+            <p>"I've worked with Empire Plumbing on my Miami FL property. They did an amazing job on the installation." - Samantha M.</p>
+        </div>
+        <div class="review">
+            <img src="https://via.placeholder.com/50" alt="Image">
+            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p>"They're always available and professional, Empire Plumbing is a reliable choice for Miami FL & surrounding areas!" - Richard G.</p>
+        </div>
+        <div class="review">
+            <img src="https://via.placeholder.com/50" alt="Image">
+            <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+            <p>"I had a great experience with Empire Plumbing. They fixed my water heater right away in the Little Havana area of Miami FL" - John W.</p>
         </div>
     </section>
-    <section class="testimonials section" style="--index: 2">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonials">
-            <div class="testimonial">
-                <h4>Jane Doe, Miami</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
-                <span>5/5 stars</span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="testimonial">
-                <h4>John Smith, Miami</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
-                <span>4.5/5 stars</span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="testimonial">
-                <h4>Emily Johnson, Miami</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
-                <span>4.5/5 stars</span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </section>
-    <section class="contact section" style="--index: 3">
-        <h2>Get in Touch</h2>
-        <p>Contact us today for a free quote.</p>
-        <div class="contact">
-            <h3>Phone</h3>
-            <p>(305) 531-7017</p>
-            <h3>Email</h3>
-            <p>sales@empireplumbing.com</p>
-            <h3>Location</h3>
-            <p>1754 Bay Rd, Miami Beach, FL 33139, USA</p>
-        </div>
-        <form>
-            <input type="email" placeholder="Email Address">
-            <textarea placeholder="Message"></textarea>
-            <button>Send</button>
+    <section class="contact">
+        <form action="#">
+            <label for="name">Your Name</label>
+            <input id="name" type="text" name="name" required>
+            <label for="phone">Your Phone Number</label>
+            <input id="phone" type="tel" name="phone" required>
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+                <option value="leaky faucet repair">Leaky faucet repair</option>
+                <option value="drain cleaning & unclogging">Drain cleaning & unclogging</option>
+                <option value="plumbing inspections & repairs">Plumbing inspections & repairs</option>
+                <option value="water heater installation">Water heater installation</option>
+            </select>
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" required></textarea>
+            <button>Submit Message</button>
         </form>
-        <div class="contact">
-            <h3>Follow Us</h3>
-            <div class="social-links">
-                <a href="https://instagram.com/empireplumbing" class="icon-instagram"></a>
-                <a href="https://facebook.com/EmpirePlumbing305" class="icon-facebook"></a>
-            </div>
-        </div>
+        <p>Call us now, <a href="tel:(305) 531-7017">305-531-7017</a></p>
     </section>
-    <footer class="footer">
-        <div class="footer-content">
-            <h4>Empire Plumbing | 4.6/5 stars from 296+ reviews</h4>
-            <div class="footer-links">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </div>
+    <div id="top" hidden>
+        <a href="#top" title="Back to top, click here"><i class="fa-light fa-angle-up"></i></a>
+    </div>
+    <footer>
+        <p>&copy; 2026 Empire Plumbing. All Rights Reserved.</p>
+        <a href="https://instagram.com/empireplumbing" style="display:block" class="icon"></a>
+        <a href="https://facebook.com/EmpirePlumbing305" style="display:block" class="icon"></a>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        const sections = document.querySelectorAll('.section');
-        sections.forEach((section, index) => {
-            section.style.setProperty('--index', `${index * 100}ms`);
+        const top = document.getElementById('top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                top.style.display = 'flex';
+            } else {
+                top.style.display = 'none';
+            }
         });
-        
-        const navLinks = document.querySelectorAll('.footer-links ul li a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                const anchor = link.getAttribute('href');
-                scroll({
-                    top: 0,
-                    behavior: 'smooth',
-                });
-                document.querySelector(scrollTo({ top: 0, behavior: 'smooth' }).target.hash).scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start',
-                    inline: 'nearest',
-                });
-            });
+        top.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-        
-        const testimonials = document.querySelectorAll('.testimonial span.star');
-        testimonials.forEach((star, index) => {
-            star.style.width = `${(index + 1) * 2}px`;
-        });
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            const contactForm = document.querySelector('form');
-            contactForm.addEventListener('submit', (e) => {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const email = document.querySelector('input[type="email"]').value;
-                const message = document.querySelector('textarea').value;
-                const data = {
-                    name: email,
-                    subject: 'New Message from Website',
-                    body: message,
-                };
-                const formData = new FormData();
-                Object.keys(data).forEach(key => {
-                    formData.append(key, data[key]);
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
-                fetch('https://example.com/api/send-email', {
-                    method: 'POST',
-                    body: formData,
-                })
-                .then(response => response.json())
-                .then(data => console.log(data))
-                .catch(err => console.error(err));
             });
         });
     </script>

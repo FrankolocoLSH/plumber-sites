@@ -4,343 +4,419 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miami 305 Plumbing</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;700&family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #3498db;
-            --accent: #f1c40f;
-            --bg: #f9f9f9;
+            --primary: #0A1628;
+            --accent: #B87333;
+            --bg: #F7F7F7;
             --text: #333;
             --text-muted: #666;
         }
+        
         body {
             font-family: 'Satoshi', sans-serif;
+            font-size: clamp(16px, 1.25vw, 22px);
             margin: 0;
             padding: 0;
             background-color: var(--bg);
+            box-sizing: border-box;
+        }
+        
+        header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 1rem;
+            background-color: var(--primary);
             color: var(--text);
-            line-height: 1.6;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
-        h1, h2, h3 {
-            font-family: 'Cabinet Grotesk', sans-serif;
-            margin-bottom: 0.5em;
+        
+        header .business {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 1rem;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        
+        header .phone {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-left: auto;
+            padding: 0.5rem;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
         }
+        
+        header .phone:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        header .phone::-moz-focus-inner {
+            border: none;
+        }
+        
         .hero {
-            background-image: linear-gradient(to bottom, #87ceeb, #6495ed);
-            background-size: 100% 300px;
-            background-position: 0% 100%;
-            height: 100vh;
+            height: 80vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #fff;
+            background-color: #333;
+            color: #ccc;
         }
+        
         .hero h1 {
-            font-size: 48px;
-            text-align: center;
+            font-family: 'Fraunces', serif;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
         }
-        .hero p {
-            font-size: 24px;
-            text-align: center;
-        }
-        .hero .btn {
-            background-color: var(--primary);
-            color: #fff;
+        
+        .hero button {
             border: none;
-            padding: 10px 20px;
-            font-size: 18px;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
             cursor: pointer;
-        }
-        .hero .btn:hover {
             background-color: var(--accent);
+            color: var(--text);
+            border-radius: 0.5rem;
+            transition: background-color 0.2s ease;
         }
+        
+        .hero button:hover {
+            background-color: var(--primary);
+        }
+        
+        .trust-bar {
+            background-color: var(--primary);
+            color: var(--text);
+            padding: 1rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .trust-bar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .trust-bar li {
+            display: inline-block;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+        
         .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            padding: 2rem;
         }
+        
         .service {
-            background-color: #fff;
-            margin: 20px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            width: calc(33.33% - 20px);
+            background-color: var(--bg);
+            padding: 1rem;
+            border: 1px solid var(--text-muted);
+            border-radius: 0.5rem;
+            margin: 2rem 0;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        
         .service h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
+        
         .service p {
-            font-size: 18px;
+            margin-bottom: 1rem;
         }
+        
+        .service .rating {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
         .about {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            padding: 2rem;
         }
-        .about-text {
-            width: calc(66.66% - 20px);
-            padding: 20px;
-        }
-        .about-img {
-            width: calc(33.33% - 20px);
-            padding: 20px;
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .gallery-img {
-            width: calc(50% - 20px);
-            margin: 20px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .gallery-img img {
+        
+        .about img {
+            height: 50vh;
             width: 100%;
-            height: 200px;
+            object-fit: cover;
+            margin-bottom: 2rem;
+        }
+        
+        .community {
+            background-color: var(--primary);
+            color: var(--text);
+            padding: 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .community ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .community li {
+            display: inline-block;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+        
+        .gallery {
+            padding: 2rem;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 30vh;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 1px solid var(--text-muted);
+            border-radius: 0.5rem;
+        }
+        
+        .gallery .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            transition: opacity 0.2s ease;
+        }
+        
+        .gallery .overlay:hover {
+            opacity: 0.5;
+        }
+        
+        .testimonial {
+            padding: 2rem;
+        }
+        
+        .testimonial p {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonial .rating {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonial .avatar {
+            width: 30%;
+            height: 30%;
+            margin: 1rem;
+            border-radius: 50%;
             object-fit: cover;
         }
-        .testimonials {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        
+        .contact {
+            padding: 2rem;
         }
-        .testimonial {
-            background-color: #fff;
-            margin: 20px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            width: calc(50% - 20px);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+        .contact form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
         }
-        .testimonial p {
-            font-size: 18px;
+        
+        .contact input, .contact select {
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            width: 100%;
         }
-        .rating {
-            font-size: 24px;
+        
+        .contact select {
+            padding-right: 3.5rem;
+        }
+        
+        .contact button {
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: var(--accent);
+            color: var(--text);
+            border-radius: 0.5rem;
+            transition: background-color 0.2s ease;
+        }
+        
+        .contact button:hover {
+            background-color: var(--primary);
+        }
+        
+        .contact .phone {
+            padding: 1rem 1.5rem;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .contact .phone:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact .phone::-moz-focus-inner {
+            border: none;
+        }
+        
+        .socials {
+            padding: 2rem;
+            background-color: var(--primary);
+            color: var(--text);
+        }
+        
+        .socials a {
+            margin-right: 1rem;
+            font-size: 2rem;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .socials a:hover {
             color: var(--primary);
         }
-        .contact {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .contact-form {
-            width: calc(50% - 20px);
-            padding: 20px;
-        }
-        .contact-info {
-            width: calc(50% - 20px);
-            padding: 20px;
-        }
-        .footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
+        
+        footer {
+            padding: 2rem;
+            background-color: var(--primary);
+            color: var(--text);
             text-align: center;
         }
-        .footer nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        
+        footer a {
+            margin: 0 1rem;
         }
-        .footer nav a {
-            color: #fff;
-            margin: 10px;
-        }
+        
         @media (max-width: 768px) {
+            .hero {
+                height: 100vh;
+            }
+            
             .services {
-                flex-direction: column;
+                padding: 1rem;
             }
-            .service {
-                width: 100%;
-                margin: 10px;
-            }
+            
             .about {
-                flex-direction: column;
+                padding: 1rem;
             }
-            .about-text {
-                width: 100%;
-            }
-            .about-img {
-                width: 100%;
-            }
+            
             .gallery {
-                flex-direction: column;
+                padding: 1rem;
             }
-            .gallery-img {
-                width: 100%;
-                margin: 10px;
-            }
-            .testimonials {
-                flex-direction: column;
-            }
+            
             .testimonial {
-                width: 100%;
-                margin: 10px;
-            }
-            .contact {
-                flex-direction: column;
-            }
-            .contact-form {
-                width: 100%;
-            }
-            .contact-info {
-                width: 100%;
+                padding: 1rem;
             }
         }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
+        
+        @media (min-width: 769px) and (max-width: 1023px) {
+            .hero {
+                height: 60vh;
             }
-            to {
-                opacity: 1;
-            }
-        }
-        .hero, .services, .about, .gallery, .testimonials, .contact {
-            animation: fadeIn;
-            animation-duration: 1s;
-            animation-fill-mode: both;
-        }
-        .hero {
-            animation-delay: 0ms;
-        }
-        .services {
-            animation-delay: 100ms;
-        }
-        .about {
-            animation-delay: 200ms;
-        }
-        .gallery {
-            animation-delay: 300ms;
-        }
-        .testimonials {
-            animation-delay: 400ms;
-        }
-        .contact {
-            animation-delay: 500ms;
         }
     </style>
 </head>
 <body>
-    <section class="hero">
-        <div class="container">
-            <h1>Miami 305 Plumbing</h1>
-            <p>Reliable plumbing services in Miami, FL</p>
-            <a href="tel:(305) 833-3404" class="btn">Call Us Now!</a>
-        </div>
-    </section>
+    <header>
+        <div class="business">Miami 305 Plumbing</div>
+        <button class="phone" tel="+(305) 833-3404">Call</button>
+    </header>
+    <div class="hero" style="background-image: url('https://source.unsplash.com/1600x900/?plumber,pipes,water');">
+        <h1>Miami FL's Most Trusted plumbers Service</h1>
+        <button>Get a Quote</button>
+    </div>
+    <div class="trust-bar">Licensed & Insured | Serving Miami FL | 136+ Happy Customers | Free Estimates</div>
     <section class="services">
-        <div class="container">
-            <div class="service">
-                <h2>Plumbing Repairs</h2>
-                <p>Fixing leaks, unclogging drains, and more</p>
-                <img src="https://picsum.photos/seed/s1miami-305-plumbing-miami-fl/800/600" alt="Plumbing Repairs">
-            </div>
-            <div class="service">
-                <h2>Water Heater Installation</h2>
-                <p>Installing and repairing water heaters</p>
-                <img src="https://picsum.photos/seed/s2miami-305-plumbing-miami-fl/800/600" alt="Water Heater Installation">
-            </div>
-            <div class="service">
-                <h2>Drain Cleaning</h2>
-                <p>Cleaning and unclogging drains</p>
-                <img src="https://picsum.photos/seed/s3miami-305-plumbing-miami-fl/800/600" alt="Drain Cleaning">
-            </div>
+        <div class="service">
+            <h2>Emergency Plumbing Service</h2>
+            <p>We are available 24/7 to fix your emergency plumbing issues.</p>
+        </div>
+        <div class="service">
+            <h2>Water Heater Installation</h2>
+            <p>We offer a wide range of water heaters from leading brands.</p>
+        </div>
+        <div class="service">
+            <h2>Plumbing Maintenance</h2>
+            <p>We provide regular plumbing maintenance to keep your system running smoothly.</p>
+        </div>
+        <div class="service">
+            <h2>Drain Cleaning</h2>
+            <p>We use state-of-the-art technology to clear your clogged drains.</p>
         </div>
     </section>
     <section class="about">
-        <div class="container">
-            <div class="about-text">
-                <h2>About Us</h2>
-                <p>We are a team of reliable plumbers in Miami, FL, dedicated to providing top-notch plumbing services to our community.</p>
-                <p>We serve the entire Miami area, including Miami FL and surrounding neighborhoods.</p>
-            </div>
-            <div class="about-img">
-                <img src="https://picsum.photos/seed/abmiami-305-plumbing-miami-fl/1200/800" alt="About Us">
-            </div>
-        </div>
+        <img src="https://picsum.photos/seed/abmiami-305-plumbing-miami-fl/1200/800" alt="...">
+        <div class="community">Serving Miami FL and surrounding areas.</div>
     </section>
     <section class="gallery">
-        <div class="container">
-            <div class="gallery-img">
-                <img src="https://picsum.photos/seed/g1miami-305-plumbing-miami-fl/800/800" alt="Gallery Image 1">
-            </div>
-            <div class="gallery-img">
-                <img src="https://picsum.photos/seed/g2miami-305-plumbing-miami-fl/800/800" alt="Gallery Image 2">
-            </div>
-        </div>
+        <img src="https://picsum.photos/seed/g1miami-305-plumbing-miami-fl/800/800" alt="...">
+        <div class="overlay">Check Out Our Work</div>
+        <img src="https://picsum.photos/seed/g2miami-305-plumbing-miami-fl/800/800" alt="...">
+        <div class="overlay">Our Recent Projects</div>
     </section>
-    <section class="testimonials">
-        <div class="container">
-            <div class="testimonial">
-                <p>Great service! The plumbers were on time and fixed the issue quickly.</p>
-                <div class="rating">5/5</div>
-            </div>
-            <div class="testimonial">
-                <p>Very professional and friendly. I would definitely recommend Miami 305 Plumbing.</p>
-                <div class="rating">5/5</div>
-            </div>
-            <div class="testimonial">
-                <p>The plumber was knowledgeable and helped me with all my plumbing needs.</p>
-                <div class="rating">5/5</div>
-            </div>
+    <section class="testimonial">
+        <div class="testimonial-item">
+            <p>I was having a major plumbing issue in my Miami beach townhouse and Miami 305 Plumbing sent someone right away. They fixed the issue in no time and the price was very reasonable.</p>
+            <div class="rating">5 ⭐️</div>
+            <div class="avatar" style="background-image: url('https://source.unsplash.com/150x150/?person,man');"></div>
+            <div class="name">Juan D.</div>
+        </div>
+        <div class="testimonial-item">
+            <p>I had a blocked drain in my Coconut Grove house and these guys came and fixed it super fast. I love how they explain everything they're doing so I can understand the work.</p>
+            <div class="rating">5 ⭐️</div>
+            <div class="avatar" style="background-image: url('https://source.unsplash.com/150x150/?person,woman');"></div>
+            <div class="name">Maria G.</div>
+        </div>
+        <div class="testimonial-item">
+            <p>The plumbers at Miami 305 came to my home in downtown Miami and fixed my toilet the same day. They were friendly and professional and didn't try to upsell me on anything.</p>
+            <div class="rating">5 ⭐️</div>
+            <div class="avatar" style="background-image: url('https://source.unsplash.com/150x150/?person,man');"></div>
+            <div class="name">Daniel R.</div>
         </div>
     </section>
     <section class="contact">
-        <div class="container">
-            <div class="contact-info">
-                <h2>Contact Us</h2>
-                <p>Address: 11025 SW 56th St, Miami, FL 33165, USA</p>
-                <p>Phone: <a href="tel:(305) 833-3404">(305) 833-3404</a></p>
-                <p>Email: <a href="mailto:miami305plumbing@gmail.com">miami305plumbing@gmail.com</a></p>
-                <div>
-                    <a href="https://instagram.com/mia305plumbing" style="display:https://instagram.com/mia305plumbing?'block':'none'">Instagram</a>
-                    <a href="https://facebook.com/miami305plumbing" style="display:https://facebook.com/miami305plumbing?'block':'none'">Facebook</a>
-                    <a href="" style="display:?'block':'none'">TikTok</a>
-                    <a href="" style="display:?'block':'none'">LinkedIn</a>
-                </div>
-            </div>
-            <div class="contact-form">
-                <h2>Get in Touch</h2>
-                <form>
-                    <input type="text" placeholder="Name">
-                    <input type="email" placeholder="Email">
-                    <textarea placeholder="Message"></textarea>
-                    <button>Send</button>
-                </form>
-            </div>
-        </div>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+            <label for="service">Service Needed:</label>
+            <select id="service" name="service">
+                <option value="emergencypiping">Emergency Plumbing Service</option>
+                <option value="waterheaterinstallation">Water Heater Installation</option>
+                <option value="plumbingmaintenace">Plumbing Maintenance</option>
+                <option value="draincleaning">Drain Cleaning</option>
+            </select>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="phone">+(305) 833-3404</div>
     </section>
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2023 Miami 305 Plumbing</p>
-            <nav>
-                <a href="#hero">Home</a>
-                <a href="#services">Services</a>
-                <a href="#about">About</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#contact">Contact</a>
-            </nav>
-            <div>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a6 6 0 0 1 6-6z"></path></svg>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tiktok"><path d="M16.88 5.67a2.25 2.25 0 0 1 0 4.24A2.25 2.25 0 0 1 14.22 12H12v8h3v2H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1v4h6v-4h.81l.01.01a2 2 0 0 1 2.22 2.22l-.01.01a2 2 0 0 1-2.22 2.22z"></path><path d="M13.5 13.5l-3-3 3-3 3 3-3 3z"></path></svg>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><path d="M12 2C8.13 2 5 5.13 5 9.5 5 14.88 12 22 12 22s7-7.12 7-14.5C19 5.13 14.88 2 12 2z"></path></svg>
-            </div>
-        </div>
+    <div class="socials">
+        <a href="https://instagram.com/mia305plumbing" style="display:https://instagram.com/mia305plumbing?'block':'none'">Instagram</a>
+        <a href="https://facebook.com/miami305plumbing" style="display:https://facebook.com/miami305plumbing?'block':'none'">Facebook</a>
+        <a href="{{twitter}}" style="display:{{twitter}}?'block':'none'">Twitter</a>
+        <a href="{{youtube}}" style="display:{{youtube}}?'block':'none'">YouTube</a>
+    </div>
+    <footer>
+        <span>&copy; 2026 Miami 305 Plumbing. All Rights Reserved.</span>
     </footer>
 </body>
 </html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Air Conditioning & Heating Specialist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;700&family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2E865F;
+            --accent: #FFC107;
+            --bg: #F7F7F7;
+            --text: #333;
+            --text-muted: #666;
+        }
+        body {
+            font-family: 'Satoshi', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            color: var(--primary);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, #2E865F, #3E9A74);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 48px;
+        }
+        .hero p {
+            font-size: 24px;
+        }
+        .hero .btn {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .hero .btn:hover {
+            background-color: #FF9900;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin: 20px;
+            width: calc(33.33% - 20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .service h2 {
+            font-size: 24px;
+        }
+        .service p {
+            font-size: 18px;
+        }
+        .about {
+            background-image: linear-gradient(to bottom, #F7F7F7, #fff);
+            padding: 20px;
+        }
+        .about h2 {
+            font-size: 36px;
+        }
+        .about p {
+            font-size: 24px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(50% - 20px);
+            margin: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonials {
+            background-color: #F7F7F7;
+            padding: 20px;
+        }
+        .testimonial {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial p {
+            font-size: 18px;
+        }
+        .testimonial .rating {
+            font-size: 24px;
+            color: var(--accent);
+        }
+        .contact {
+            background-image: linear-gradient(to bottom, #2E865F, #3E9A74);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            padding: 20px;
+            color: #fff;
+        }
+        .contact h2 {
+            font-size: 36px;
+        }
+        .contact p {
+            font-size: 24px;
+        }
+        .contact .btn {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .contact .btn:hover {
+            background-color: #FF9900;
+        }
+        .footer {
+            background-color: #2E865F;
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+        }
+        .footer p {
+            font-size: 18px;
+        }
+        .footer a {
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;
+                background-size: 100% 200px;
+            }
+            .services {
+                flex-direction: column;
+            }
+            .service {
+                width: 100%;
+                margin: 20px 0;
+            }
+            .gallery {
+                flex-direction: column;
+            }
+            .gallery img {
+                width: 100%;
+                margin: 20px 0;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .animate {
+            animation: fadeIn 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero animate" style="animation-delay: 0ms;">
+        <div class="container">
+            <h1>ABC Air Conditioning & Heating Specialist</h1>
+            <p>Trusted HVAC Services in Orlando, FL</p>
+            <a href="tel:(407) 783-8081" class="btn">Call Us Now</a>
+        </div>
+    </div>
+    <div class="services animate" style="animation-delay: 100ms;">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service">
+                <h2>Air Conditioning Installation</h2>
+                <p>Professional installation of new air conditioning systems</p>
+                <img src="https://picsum.photos/seed/s1abc-air-conditioning-heating-specialist-orlando-fl/800/600" alt="Air Conditioning Installation">
+            </div>
+            <div class="service">
+                <h2>Heating Repair</h2>
+                <p>Expert repair services for heating systems</p>
+                <img src="https://picsum.photos/seed/s2abc-air-conditioning-heating-specialist-orlando-fl/800/600" alt="Heating Repair">
+            </div>
+            <div class="service">
+                <h2>AC Maintenance</h2>
+                <p>Regular maintenance to keep your air conditioning system running efficiently</p>
+                <img src="https://picsum.photos/seed/s3abc-air-conditioning-heating-specialist-orlando-fl/800/600" alt="AC Maintenance">
+            </div>
+        </div>
+    </div>
+    <div class="about animate" style="animation-delay: 200ms;">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We are a locally owned and operated HVAC company serving Orlando, FL. Our team of experts is dedicated to providing top-notch services to our customers.</p>
+            <img src="https://picsum.photos/seed/ababc-air-conditioning-heating-specialist-orlando-fl/1200/800" alt="About Us">
+            <p>We have a 4.9-star rating with over 1223 reviews, making us one of the most trusted HVAC companies in the area.</p>
+        </div>
+    </div>
+    <div class="gallery animate" style="animation-delay: 300ms;">
+        <div class="container">
+            <h2>Our Work</h2>
+            <img src="https://picsum.photos/seed/g1abc-air-conditioning-heating-specialist-orlando-fl/800/800" alt="Gallery Image 1">
+            <img src="https://picsum.photos/seed/g2abc-air-conditioning-heating-specialist-orlando-fl/800/800" alt="Gallery Image 2">
+        </div>
+    </div>
+    <div class="testimonials animate" style="animation-delay: 400ms;">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial">
+                <p>ABC Air Conditioning & Heating Specialist is the best HVAC company I have ever worked with. Their technicians are knowledgeable and friendly, and their prices are very competitive.</p>
+                <p class="rating">4.9/5</p>
+            </div>
+            <div class="testimonial">
+                <p>I was very impressed with the service I received from ABC Air Conditioning & Heating Specialist. They arrived on time, were very professional, and did an excellent job.</p>
+                <p class="rating">4.9/5</p>
+            </div>
+        </div>
+    </div>
+    <div class="contact animate" style="animation-delay: 500ms;">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>1005 N Pine Hills Rd SUITE B, Orlando, FL 32808, USA</p>
+            <p><a href="tel:(407) 783-8081">(407) 783-8081</a></p>
+            <p><a href="mailto:"></a></p>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <button class="btn">Send</button>
+            </form>
+            <p>Follow us on social media:</p>
+            <a href="https://instagram.com/abcairandheat" style="display:https://instagram.com/abcairandheat?'block':'none'">Instagram</a>
+            <a href="https://facebook.com/abcAirandHeat" style="display:https://facebook.com/abcAirandHeat?'block':'none'">Facebook</a>
+            <a href="{{twitter}}" style="display:{{twitter}}?'block':'none'">Twitter</a>
+            <a href="{{youtube}}" style="display:{{youtube}}?'block':'none'">YouTube</a>
+        </div>
+    </div>
+    <div class="footer animate" style="animation-delay: 600ms;">
+        <div class="container">
+            <p>&copy; 2023 ABC Air Conditioning & Heating Specialist. All rights reserved.</p>
+            <p><a href="#">Home</a> | <a href="#">About</a> | <a href="#">Services</a> | <a href="#">Contact</a></p>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="instagram"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M10 10V17H17V10M17 7H7V10M7 13H17V16"></path></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="facebook"><path d="M18 2H6a5 5 0 0 0-5 5v12a4 4 0 0 0 4 4v1h4v-1a4 4 0 0 0 4-4V7a3.5 3.5 0 1 0-7 0"></path></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="youtube"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2c-.89 0-1.81.4-2.4 1P12 4.53S9.38 5 8.5 6.08c-.34-.94-.65-1.88-.65-2.88 0-.56.14-1.12.42-1.64C7.74 1.34 9.25 0 11 0c1.75 0 3.25.99 4.17 2.52.92.52 1.5 1.28 1.5 2.08 0 .46-.14 1-1.12 1.64-.28.2-.56.42-.9.42-.85 0-1.46-.5-2.1-1.14L12 15V20h-3v-4c0-1.66-.16-3.12-1-4H8l5 5v2z"></path></svg>
+        </div>
+    </div>
+    <script>
+        // Smooth scroll navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        // IntersectionObserver
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.animate').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>

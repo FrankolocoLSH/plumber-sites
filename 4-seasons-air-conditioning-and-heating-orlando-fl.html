@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Seasons Air Conditioning and Heating</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;700&display=swap">
+    <style>
+        :root {
+            --primary: #3498db;
+            --accent: #f7d2c4;
+            --bg: #f2f2f2;
+            --text: #333;
+            --text-muted: #787878;
+        }
+        
+        body {
+            font-family: 'Satoshi', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-image: linear-gradient(to bottom, #7ec4e5, #4cc4f7);
+            background-size: 400% 500%;
+            background-position: 0% 100%;
+            animation: gradient 2s ease forwards;
+            animation-delay: 0ms;
+        }
+        
+        @keyframes gradient {
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+        
+        .hero {
+            background-image: url("https://picsum.photos/seed/hero4-seasons-air-conditioning-and-heating-orlando-fl/1920/1080");
+            background-size: cover;
+            background-position: center;
+            max-height: 80vh;
+        }
+        
+        .hero .overlay {
+            background-color: #000;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            mix-blend-mode: saturation;
+            opacity: 0.2;
+        }
+        
+        .hero .overlay .content {
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            max-width: 80%;
+            padding: 20px;
+        }
+        
+        .hero h1 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            max-width: 600px;
+            color: var(--accent);
+        }
+        
+        .hero h2 {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .hero .cta {
+            background-color: #7ec4e5;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .hero .cta:hover {
+            background-color: #4cc4f7;
+        }
+        
+        .services {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        
+        .services .card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .services .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 200%;
+            height: 100%;
+            background-color: #fff;
+            transform: skewY(-15deg);
+            z-index: -1;
+        }
+        
+        .services .card h3 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .services .card p {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .services .icon {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 15px;
+            border-radius: 50%;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+        }
+        
+        .services .icon svg {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+        
+        .about {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        
+        .about .content {
+            margin-bottom: 40px;
+        }
+        
+        .about ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .about ul li {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .about .rating {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .about .rating svg {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+        
+        .gallery {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        
+        .gallery .image {
+            background-image: url("https://picsum.photos/seed/g14-seasons-air-conditioning-and-heating-orlando-fl/800/800");
+            background-size: cover;
+            background-position: center;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .gallery .image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 40%;
+            height: 100%;
+            background-color: #fff;
+            transform: skewY(-15deg);
+            z-index: -1;
+        }
+        
+        .gallery .overlay {
+            background-color: rgba(0, 0, 0, 0.3);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            mix-blend-mode: saturation;
+            cursor: pointer;
+        }
+        
+        .gallery .overlay .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        
+        .testimonials {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        
+        .testimonials .testimonial {
+            background-color: #f2f2f2;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .testimonials .testimonial .avatar {
+            position: relative;
+            display: inline-block;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .testimonials .testimonial .avatar svg {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+        
+        .testimonials .testimonial .content {
+            padding-left: 60px;
+        }
+        
+        .testimonials .testimonial .rating {
+            position: absolute;
+            top: 0;
+            left: -30px;
+        }
+        
+        .testimonials .testimonial .rating svg {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            fill: var(--primary);
+        }
+        
+        .contact {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        
+        .contact .info {
+            margin-bottom: 40px;
+        }
+        
+        .contact .info ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .contact .info ul li {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .contact .info ul li::before {
+            content: '\2022';
+            font-size: 1rem;
+            font-family: 'Satoshi', sans-serif;
+            color: var(--text);
+            margin-right: 10px;
+        }
+        
+        .contact .form {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .contact .form input, .contact .form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .contact .form .submit {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .contact .social {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .contact .social a {
+            display: inline-block;
+            margin: 10px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        .footer .nav {
+            margin-bottom: 10px;
+        }
+        
+        .footer .nav a {
+            color: #fff;
+            margin-right: 10px;
+        }
+        
+        .footer .social {
+            margin-bottom: 20px;
+        }
+        
+        .footer .social a {
+            display: inline-block;
+            margin: 10px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <div class="overlay">
+                <div class="content">
+                    <h1>Air Conditioning and Heating Solutions for Every Season</h1>
+                    <h2>Contact us today to schedule your appointment</h2>
+                    <a href="tel:4073052950" class="cta">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="services">
+            <h1>Our Services</h1>
+            <div class="cards">
+                <div class="card">
+                    <h3>Air Conditioning Installation</h3>
+                    <p>Our team of experts can install a new air conditioning system in your home or business.</p>
+                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V8l-6-6z"/></svg></div>
+                </div>
+                <div class="card">
+                    <h3>Heating System Repair</h3>
+                    <p>Our technicians are trained to repair and maintain any type of heating system.</p>
+                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V4l-6-6z"/></svg></div>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <h1>About Us</h1>
+            <div class="content">
+                <p>We are a locally owned and operated HVAC company serving the Orlando area.</p>
+                <p>We pride ourselves on providing top-notch service and exceptional customer satisfaction.</p>
+                <ul>
+                    <li>Locally owned and operated</li>
+                    <li>Top-notch service and customer satisfaction</li>
+                    <li>Expert technicians</li>
+                </ul>
+                <p>With our expertise and commitment to excellence, you can trust us to keep your home or business comfortable all year round.</p>
+            </div>
+            <div class="rating">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 12L12 22"/></svg>
+                <span>4.8</span> of 5 stars - based on 702 reviews
+            </div>
+        </section>
+        <section class="gallery">
+            <h1>Our Work</h1>
+            <div class="images">
+                <div class="image">
+                    <div class="overlay">
+                        <div class="text">
+                            <h2>Recent Installation</h2>
+                            <p>Our team of experts installed a brand new air conditioning system in this residential home.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image">
+                    <div class="overlay">
+                        <div class="text">
+                            <h2>Awards and Recognition</h2>
+                            <p>We are proud to have received numerous awards for our outstanding customer service and exceptional workmanship.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="testimonials">
+            <h1>What Our Customers Say</h1>
+            <div class="testimonials-list">
+                <div class="testimonial">
+                    <div class="avatar">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H4a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2h-4l-2 2z"/></svg>
+                    </div>
+                    <div class="content">
+                        <p>4 Seasons Air Conditioning and Heating did a great job installing our new air conditioner. The technician was friendly and knowledgeable.</p>
+                    </div>
+                    <div class="rating">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V8l-6-6z"/></svg>
+                        <span>5</span> of 5 stars
+                    </div>
+                    <p>- Emily R.</p>
+                </div>
+                <div class="testimonial">
+                    <div class="avatar">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H4a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2h-4l-2 2z"/></svg>
+                    </div>
+                    <div class="content">
+                        <p>The technician from 4 Seasons was very professional and courteous. He did a great job repairing our heating system.</p>
+                    </div>
+                    <div class="rating">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V4l-6-6z"/></svg>
+                        <span>4</span> of 5 stars
+                    </div>
+                    <p>- John D.</p>
+                </div>
+            </div>
+        </section>
+        <section class="contact">
+            <h1>Get in Touch</h1>
+            <div class="info">
+                <p>6648 N Orange Blossom Trl, Orlando, FL 32810</p>
+                <ul>
+                    <li><a href="tel:4073052950">407-305-2950</a></li>
+                    <li><a href="mailto:info@4seasonsair.net">info@4seasonsair.net</a></li>
+                </ul>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <button class="submit">Submit</button>
+            </div>
+            <div class="social">
+                <a href="https://instagram.com/4seasonsair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21l-2-2m0 0l-4-4m4 4H7m6 4v1a1 1 0 001 1h4a1 1 0 001-1V14a1 1 0 112 0v3.586l-.757.758-3.586-3.586A1 1 0 016 14V7a1 1 0 111 2v3.586l-.757.758-3.586-3.586a1 1 0 016 0v1A1 1 0 0111 8v3.657l-.758-.758-3.657 3.657A1 1 0 012 12v-3.657a1 1 0 002 0v3.657l.758-.758 3.657 3.657a1 1 0 012 0v-3.657a1 1 0 002 0v3.657l.758-.758 3.657 3.657a1 1 0 012 0v-3.657</svg></a>
+                <a href="https://facebook.com/4SeasonsAir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V4a2 2 0 00-2-2z"/><path d="M0 0h24"></path><path d="M14 14H3a1 1 0 01-1-1v-4h4v4"></path></svg></a>
+            </div>
+        </section>
+        <footer>
+            <div class="footer">
+                <div class="nav">
+                    <a href="#hero">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#about">About</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#testimonials">Testimonials</a>
+                </div>
+                <div class="social">
+                    <a href="https://instagram.com/4seasonsair" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21l-2-2m0 0l-4-4m4 4H7m6 4v1a1 1 0 001 1h4a1 1 0 001-1V14a1 1 0 112 0v3.586l-.757.758-3.586-3.586A1 1 0 016 14V7a1 1 0 111 2v3.586l-.757.758-3.586-3.586a1 1 0 016 0v1A1 1 0 0111 8v3.657l-.758-.758-3.657 3.657A1 1 0 012 12v-3.657a1 1 0 002 0v3.657l.758-.758 3.657 3.657a1 1 0 012 0v-3.657a1 1 0 002 0v3.657l.758-.758 3.657 3.657a1 1 0 012 0v-3.657"/></svg></a>
+                    <a href="https://facebook.com/4SeasonsAir" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V4a2 2 0 00-2-2z"/><path d="M0 0h24"></path><path d="M14 14H3a1 1 0 01-1-1v-4h4v4"></path></svg></a>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>

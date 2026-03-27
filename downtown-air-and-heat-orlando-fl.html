@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Downtown Air and Heat - HVAC in Orlando, FL</title>
+<meta name="description" content="Downtown Air and Heat - providing top-notch HVAC services in Orlando, FL.">
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;700&family=Satoshi:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    /* CSS Variables */
+    :root {
+        --primary: #3b5c6b;
+        --accent: #ff6d4d;
+        --bg: #f8f8f2;
+        --text: #333;
+        --text-muted: #9b9b9b;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Satoshi', sans-serif;
+        line-height: 1.6;
+        color: var(--text);
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--accent);
+    }
+
+    a:hover {
+        color: var(--text);
+    }
+
+    .hero {
+        height: clamp(60vh, 80vh, 120vh);
+        background: linear-gradient(45deg, var(--accent), var(--primary));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(var(--primary), var(--accent));
+        z-index: -1;
+    }
+
+    .hero .heading {
+        font-family: 'Clash Display', sans-serif;
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .hero .subheading {
+        font-size: 1.4rem;
+    }
+
+    .hero .cta {
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 1rem 3rem;
+        border-radius: 0.5rem;
+        background: var(--primary);
+        color: #fff;
+        display: inline-block;
+        text-decoration: none;
+        transition: background 0.3s ease;
+    }
+
+    .hero .cta:hover {
+        background: var(--accent);
+    }
+
+    .hero .cta::after {
+        content: url('data:image/svg+xml,%3Csvg width%3D%2220px%22 height%3D%2220px%22 viewBox%3D%2200 0 20 20%22 fill%3D%22%23fff%22%3E%3Cpath d%3D%22M0 18h20v2H0V18zm10.828-3h-1.171V7.5h1.171V5.172L16.5 3h-2.5l-3.172 2.5l-3.172-2.5h-2.5l9.354-6z%22%2F%3E%3Cpath d%3D%22M16 16.5v-10H10v10h10z%22%2F%3E%3Cpath d%3D%22M5.5 3h9.354v10h-9.354z%22%2F%3E%3C%2Fsvg%3E');
+        position: relative;
+        top: 0.25rem;
+        left: 0.25rem;
+        transform: scale(0);
+        transition: transform 0.3s ease;
+    }
+
+    .hero .cta:hover::after {
+        transform: scale(1);
+    }
+
+    .services {
+        padding: 4rem 3rem;
+        background: #f8f8f2;
+    }
+
+    .services .card {
+        background: var(--bg);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 2rem;
+        width: calc(50% - 2rem);
+        float: left;
+    }
+
+    .services .card .heading {
+        font-size: 2rem;
+        font-family: 'Clash Display', sans-serif;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .services .card .text {
+        font-size: 1.4rem;
+    }
+
+    .about {
+        padding: 4rem 3rem;
+        background: #f8f8f2;
+    }
+
+    .about .heading {
+        font-size: 3rem;
+        font-family: 'Clash Display', sans-serif;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .about .text {
+        font-size: 1.6rem;
+    }
+
+    .about .location {
+        font-size: 1.4rem;
+        font-family: 'Noto Sans', sans-serif;
+        color: var(--text-muted);
+    }
+
+    .about .trust-indicators {
+        font-size: 1.4rem;
+        font-family: 'Noto Sans', sans-serif;
+        color: var(--text-muted);
+    }
+
+    .gallery {
+        padding: 4rem 3rem;
+        background: #f8f8f2;
+    }
+
+    .gallery .image {
+        margin: 2rem;
+        display: block;
+        width: calc(50% - 2rem);
+        float: left;
+    }
+
+    .gallery .image::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        background: linear-gradient(45deg, var(--accent), var(--primary));
+        z-index: -1;
+        border: 1rem solid var(--bg);
+        border-radius: 50%;
+        width: 10rem;
+        height: 10rem;
+        clip-path: circle();
+    }
+
+    .testimonial .heading {
+        font-size: 2.4rem;
+        font-family: 'Clash Display', sans-serif;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .testimonial .text {
+        font-size: 1.6rem;
+    }
+
+    .testimonial .rating {
+        font-size: 1.4rem;
+    }
+
+    .testimonial .image {
+        width: 20%;
+        display: inline-block;
+        border-radius: 50%;
+        margin: 0 10%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial .image::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(var(--primary), var(--accent));
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    .testimonial .text-muted {
+        font-size: 1.2rem;
+        font-family: 'Noto Sans', sans-serif;
+        color: var(--text-muted);
+    }
+
+    .contact {
+        padding: 4rem 3rem;
+        background: #f8f8f2;
+    }
+
+    .contact .heading {
+        font-size: 2.4rem;
+        font-family: 'Clash Display', sans-serif;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    .contact .text {
+        font-size: 1.6rem;
+    }
+
+    .contact .location {
+        font-size: 1.4rem;
+        font-family: 'Noto Sans', sans-serif;
+        color: var(--text-muted);
+    }
+
+    .contact .social {
+        font-size: 1.4rem;
+    }
+
+    .contact form {
+        display: inline-block;
+        padding: 1rem;
+        border: 1px solid var(--text-muted);
+        border-radius: 0.5rem;
+        margin: 1rem;
+    }
+
+    .contact form label {
+        display: block;
+        font-size: 1.2rem;
+    }
+
+    .contact form input {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact form input[type='tel'] {
+        position: relative;
+        right: -1.5rem;
+    }
+
+    .footer {
+        background: #333;
+        color: #fff;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .footer .nav-link {
+        color: #555;
+        margin: 0 10px;
+        font-size: 1.2rem;
+    }
+
+    .footer .nav-link:hover {
+        color: #fff;
+    }
+
+    .footer .social-icon {
+        font-size: 1.4rem;
+        color: #fff;
+    }
+
+    @media (max-width: 768px) {
+        .hero {
+            height: clamp(60vh, 80vh, 100vh);
+        }
+
+        .hero::before {
+            top: 40%;
+        }
+
+        .services .card {
+            float: none;
+            width: 100%;
+            margin: 0 0 2rem 0;
+        }
+
+        .about .trust-indicators {
+            font-size: 1rem;
+        }
+
+        .gallery .image {
+            width: 100%;
+            float: none;
+            margin: 0;
+        }
+
+        .testimonial .image {
+            width: 20%;
+            display: inline-block;
+            border-radius: 50%;
+            margin: 0 10%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    @media (min-width: 769px) {
+        .services .card {
+            margin: 0;
+        }
+
+        .gallery .image {
+            float: left;
+        }
+    }
+
+    @keyframes load {
+        0% {
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .loader {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 10rem;
+        font-family: 'Clash Display', sans-serif;
+        animation: load 2s linear;
+    }
+
+    [data-scroll="revealed"] {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    [data-scroll="hidden"] {
+        opacity: 0;
+        transform: translateY(30px);
+        pointer-events: none;
+    }
+
+    .anchor-container {
+        position: fixed;
+        bottom: 2rem;
+        left: 2rem;
+        z-index: 100;
+    }
+
+    .anchor-link {
+        position: relative;
+        margin: 0 0.5rem;
+        color: var(--text);
+        transition: color 0.25s ease;
+    }
+
+    .anchor-link:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 0.5rem solid transparent;
+        border-right: 0.5rem solid transparent;
+        border-bottom: 0.5rem solid var(--text);
+        bottom: -2rem;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .anchor-link:hover {
+        color: var(--accent);
+        transition: color 0.25s ease;
+    }
+</style>
+</head>
+<body>
+    <div class="loader" data-scroll="hidden">Loading</div>
+    <header>
+        <nav>
+            <div class="header-container">
+                <h1> Downtown Air and Heat </h1>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="hero" class="hero" style="background-image: url('https://picsum.photos/seed/herodowntown-air-and-heat-orlando-fl/1920/1080'), linear-gradient(135deg, var(--bg) 50%, #3b5c6b 50%);"></div>
+        <div class="hero-text">
+            <h2 class="heading">Expert HVAC Services in Orlando, FL</h2>
+            <p class="subheading">We provide top-notch HVAC services for residential and commercial properties.</p>
+            <a href="tel:(407) 408-7105" class="cta">Call Now</a>
+        </div>
+    </header>
+    <div id="services" class="services">
+        <div class="card">
+            <h3 class="heading">Heating Services</h3>
+            <p class="text">Our heating services include installation, repair, and maintenance of heating systems. We use top-quality equipment and provide timely service.</p>
+        </div>
+        <div class="card">
+            <h3 class="heading">Air Conditioning Services</h3>
+            <p class="text">Our air conditioning services include installation, repair, and maintenance of AC systems. We use top-quality equipment and provide timely service.</p>
+        </div>
+        <div class="card">
+            <h3 class="heading">Ductwork Services</h3>
+            <p class="text">Our ductwork services include installation, repair, and maintenance of duct systems. We use top-quality equipment and provide timely service.</p>
+        </div>
+    </div>
+    <div id="about" class="about">
+        <h2 class="heading">About Downtown Air and Heat</h2>
+        <p class="text">We're a family-owned and operated business located in Orlando, FL. We provide top-notch HVAC services for residential and commercial properties. Our team is dedicated to providing excellent customer service and ensuring that our customers receive the best possible service.</p>
+        <p class="location">Location: 311 E Jersey St, Orlando, FL 32806</p>
+        <p class="trust-indicators">Rating: 4.9/5 ⭐ | 273+ Reviews | 10+ Years of Experience</p>
+    </div>
+    <div id="gallery" class="gallery">
+        <div class="image" style="background-image: url('https://picsum.photos/seed/g1downtown-air-and-heat-orlando-fl/800/800');"></div>
+        <div class="image" style="background-image: url('https://picsum.photos/seed/g2downtown-air-and-heat-orlando-fl/800/800');"></div>
+    </div>
+    <div id="testimonials" class="testimonial">
+        <h2 class="heading">What Our Customers Say</h2>
+        <div class="image">
+            <img src="https://picsum.photos/seed/abdowntown-air-and-heat-orlando-fl/1200/800" alt="customer photo">
+        </div>
+        <p class="text">
+            "Downtown Air and Heat is a top-notch HVAC company! They installed a new air conditioning unit for me and the service was prompt, professional, and courteous. The new unit has been running smoothly and efficiently." - Emily W. (Google Review)
+        </p>
+        <p class="rating">4.5/5 ⭐</p>
+        <p class="text-muted">Posted: March 2023</p>
+    </div>
+    <div id="contact" class="contact">
+        <h2 class="heading">Get in Touch</h2>
+        <p class="text">Our office hours are Monday - Friday, 8am - 5pm. Feel free to reach out to us with any questions or to schedule an appointment.</p>
+        <p class="location">Location: 311 E Jersey St, Orlando, FL 32806</p>
+        <p class="social">
+            Follow us on social media:
+            <a href="https://instagram.com/downtown_air_and_heat"> <i class="icon-instagram"></i></a>
+            <a href="https://facebook.com/pages"> <i class="icon-facebook"></i></a>
+            <a href="https://linkedin.com/downtown-air-and-heat"> <i class="icon-linkedin"></i></a>
+            <a href="{{twitter}}"> <i class="icon-twitter"></i></a>
+            <a href="{{youtube}}"> <i class="icon-youtube"></i></a>
+        </p>
+        <form>
+            <label>Phone:</label>
+            <input type="tel" name="phone" value="(407) 408-7105" readonly>
+            <label>Email:</label>
+            <input type="email" name="email" value="" readonly>
+            <label>Message:</label>
+            <textarea name="message"></textarea>
+            <button>Send Message</button>
+        </form>
+    </div>
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-inner">
+                <h2>Downtown Air and Heat</h2>
+                <p>Providing top-notch HVAC services in Orlando, FL.</p>
+            </div>
+            <div class="footer-inner">
+                <h2>Get in Touch</h2>
+                <p>Address: 311 E Jersey St, Orlando, FL 32806</p>
+                <p>Phone: <a href="tel:(407) 408-7105">(407) 408-7105</a></p>
+                <p>Email: <a href="mailto:"></a></p>
+            </div>
+            <div class="footer-inner">
+                <h2>Find Us on Social Media</h2>
+                <a href="https://instagram.com/downtown_air_and_heat">Instagram</a>
+                <a href="https://facebook.com/pages">Facebook</a>
+                <a href="https://linkedin.com/downtown-air-and-heat">LinkedIn</a>
+                <a href="{{twitter}}">Twitter</a>
+                <a href="{{youtube}}">YouTube</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        window.addEventListener('load', function() {
+            document.querySelector('.loader').classList.remove('hidden');
+
+            // IntersectionObserver
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 1.0
+            };
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('hidden');
+                        observer.unobserve(entry.target);
+                    } else {
+                        entry.target.classList.remove('revealed');
+                    }
+                });
+            }, options);
+
+            // Animate reveal with IntersectionObserver
+            document.querySelectorAll('.animate-reveal').forEach(function(element) {
+                observer.observe(element);
+            });
+        });
+
+        // Page load animation
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animate reveal of hero
+            document.querySelector('.hero').classList.add('animate-load');
+
+            // Animate reveal of sections
+            document.querySelectorAll('.animate-reveal').forEach(function(element) {
+                element.classList.add('animate-reveal');
+            });
+
+            document.querySelectorAll('.smooth-scroll').forEach(function(anchor) {
+                anchor.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const scrollTarget = document.getElementById(anchor.getAttribute('href').replace(/^#/, ''));
+                    scrollTarget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            });
+        });
+    </script>
+    <div class="anchor-container">
+        <a class="anchor-link" href="#hero">Home</a>
+        <a class="anchor-link" href="#services">Services</a>
+        <a class="anchor-link" href="#about">About</a>
+        <a class="anchor-link" href="#gallery">Gallery</a>
+        <a class="anchor-link" href="#testimonials">Testimonials</a>
+        <a class="anchor-link" href="#contact">Contact</a>
+    </div>
+</body>
+</html>

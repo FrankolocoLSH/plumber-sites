@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mills Air Inc - Orlando's Trusted HVAC Experts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display&family=General+Sans&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3498db;
+            --accent: #f1c40f;
+            --bg: #f9f9f9;
+            --text: #333;
+            --text-muted: #666;
+        }
+        body {
+            font-family: 'General Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Clash Display', sans-serif;
+            color: var(--primary);
+        }
+        .hero {
+            background-image: linear-gradient(45deg, #87ceeb, #add8e6);
+            background-size: 400px 400px;
+            height: 100vh;
+            max-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: clamp(1rem, 3vw, 2rem);
+            margin-bottom: 2rem;
+        }
+        .hero a {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+        .hero a:hover {
+            transform: scale(1.1);
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service {
+            background-color: #fff;
+            padding: 2rem;
+            margin: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 2rem);
+        }
+        .service h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 1rem;
+        }
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .about img {
+            width: calc(50% - 2rem);
+            margin: 1rem;
+            border-radius: 0.5rem;
+        }
+        .about p {
+            width: calc(50% - 2rem);
+            margin: 1rem;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(50% - 2rem);
+            margin: 1rem;
+            border-radius: 0.5rem;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .testimonial {
+            background-color: #fff;
+            padding: 2rem;
+            margin: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 2rem);
+        }
+        .testimonial p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            margin-bottom: 1rem;
+        }
+        .testimonial .rating {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .contact form {
+            width: calc(50% - 2rem);
+            margin: 1rem;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact button {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+        .footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer svg {
+            fill: #fff;
+            width: 20px;
+            height: 20px;
+            margin: 0 0.5rem;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                max-height: 80vh;
+            }
+            .services {
+                flex-direction: column;
+            }
+            .service {
+                width: 100%;
+                margin: 1rem 0;
+            }
+            .about {
+                flex-direction: column;
+            }
+            .about img {
+                width: 100%;
+                margin: 1rem 0;
+            }
+            .about p {
+                width: 100%;
+                margin: 1rem 0;
+            }
+            .gallery {
+                flex-direction: column;
+            }
+            .gallery img {
+                width: 100%;
+                margin: 1rem 0;
+            }
+            .testimonials {
+                flex-direction: column;
+            }
+            .testimonial {
+                width: 100%;
+                margin: 1rem 0;
+            }
+            .contact {
+                flex-direction: column;
+            }
+            .contact form {
+                width: 100%;
+                margin: 1rem 0;
+            }
+        }
+        @keyframes reveals {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes reveal-delay-1 {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes reveal-delay-2 {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero" style="background-image: url(https://picsum.photos/seed/heromills-air-inc-orlando-fl/1920/1080);">
+        <h1>Mills Air Inc - Orlando's Trusted HVAC Experts</h1>
+        <p>Providing top-notch heating, ventilation, and air conditioning services to the Orlando community.</p>
+        <a href="tel:(407) 277-1159">Call Now: (407) 277-1159</a>
+    </section>
+    <section class="services" id="services">
+        <div class="service" style="animation: reveals 0.5s ease-out 0ms forwards;">
+            <h2>AC Repair</h2>
+            <p>Our expert technicians will have your air conditioning unit up and running in no time.</p>
+        </div>
+        <div class="service" style="animation: reveal-delay-1 0.5s ease-out 100ms forwards;">
+            <h2>Heating Installation</h2>
+            <p>We offer a wide range of heating solutions to keep your home warm and cozy.</p>
+        </div>
+        <div class="service" style="animation: reveal-delay-2 0.5s ease-out 200ms forwards;">
+            <h2>Ventilation Services</h2>
+            <p>Improve indoor air quality with our ventilation services, designed to keep your home healthy and comfortable.</p>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <img src="https://picsum.photos/seed/abmills-air-inc-orlando-fl/1200/800" alt="About Image">
+        <p>We're proud to be a part of the Orlando community, providing top-notch HVAC services to our neighbors and friends. With years of experience and a commitment to excellence, you can trust Mills Air Inc to get the job done right.</p>
+    </section>
+    <section class="gallery" id="gallery">
+        <img src="https://picsum.photos/seed/g1mills-air-inc-orlando-fl/800/800" alt="Gallery Image 1">
+        <img src="https://picsum.photos/seed/g2mills-air-inc-orlando-fl/800/800" alt="Gallery Image 2">
+    </section>
+    <section class="testimonials" id="testimonials">
+        <div class="testimonial">
+            <p>"Mills Air Inc did an excellent job installing my new air conditioning unit. The technicians were professional and courteous, and the price was very reasonable. I highly recommend them!"</p>
+            <div class="rating">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                </svg>
+            </div>
+        </div>
+        <div class="testimonial">
+            <p>"I was impressed with the level of service I received from Mills Air Inc. The technicians were knowledgeable and friendly, and the work was done quickly and efficiently. I would definitely recommend them to anyone in need of HVAC services."</p>
+            <div class="rating">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button>Send Message</button>
+        </form>
+        <p>Address: 6502 Forest City Rd, Orlando, FL 32810, USA</p>
+        <p>Phone: (407) 277-1159</p>
+        <p>Email: </p>
+        <div>
+            <a href="https://facebook.com/MillsAir" style="display:https://facebook.com/MillsAir?'block':'none'">Facebook</a>
+            <a href="{{twitter}}" style="display:{{twitter}}?'block':'none'">Twitter</a>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2023 Mills Air Inc. All rights reserved.</p>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div>
+            <a href="https://facebook.com/MillsAir" style="display:https://facebook.com/MillsAir?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 10c0-2.21-1.79-4-4-4S8 7.79 8 10c0 2.21 1.79 4 4 4s4-1.79 4-4z"/></svg></a>
+            <a href="{{twitter}}" style="display:{{twitter}}?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.29 18.25a1 1 0 0 0 1.4.14 2 2 0 0 0 2.09-.25l.71-.71c.2-.2.2-.5 0-.7l-2.19-2.19a1 1 0 0 0 0-1.41c.18-.18.4-.29.63-.31 1-.52 2.45-.51 3.45.03.55.19.85.54.85 1.13v1.13a5.01 5.01 0 0 1-1.51.26c-.55 0-1.05-.16-1.45-.3zM13 8.3a2 2 0 0 0-1.73 1 5.005 5.005 0 0 1 4.38-4.38 6.006 6.006 0 0 0-3.55 3.55 3.998 3.998 0 0 0 1.74 1.74z"/></svg></a>
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

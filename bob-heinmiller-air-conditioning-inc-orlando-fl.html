@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bob Heinmiller Air Conditioning Inc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display&family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3498db;
+            --accent: #f1c40f;
+            --bg: #f9f9f9;
+            --text: #333;
+            --text-muted: #666;
+        }
+        body {
+            font-family: 'Satoshi', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Clash Display', sans-serif;
+            margin-bottom: 0.5em;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, #87ceeb, #6495ed);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 48px;
+        }
+        .hero p {
+            font-size: 24px;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .service {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+        .service:hover {
+            transform: scale(1.05);
+        }
+        .service h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .about {
+            background-image: linear-gradient(to bottom, #f7f7f7, #fff);
+            background-size: 100% 200px;
+            background-position: 0% 100%;
+            padding: 40px 0;
+        }
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .testimonials {
+            background-color: #f9f9f9;
+            padding: 40px 0;
+        }
+        .testimonial {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+        .testimonial h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .contact {
+            background-color: #f9f9f9;
+            padding: 40px 0;
+        }
+        .contact form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slide-in {
+            from {
+                transform: translateX(100px);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        .animate {
+            animation: fade-in 0.5s ease-in-out;
+        }
+        .animate-delay-1 {
+            animation: fade-in 0.5s ease-in-out;
+            animation-delay: 0.5s;
+        }
+        .animate-delay-2 {
+            animation: fade-in 0.5s ease-in-out;
+            animation-delay: 1s;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero" style="background-image: url(https://picsum.photos/seed/herobob-heinmiller-air-conditioning-inc-orlando-fl/1920/1080);">
+        <div class="container">
+            <h1 class="animate">Stay Cool with Bob Heinmiller Air Conditioning Inc</h1>
+            <p class="animate-delay-1">Your trusted HVAC partner in Orlando, FL</p>
+            <a href="tel:(407) 374-0779" class="animate-delay-2">Call us now: (407) 374-0779</a>
+        </div>
+    </header>
+    <section class="services">
+        <div class="service">
+            <h2>AC Installation</h2>
+            <p>Get a new air conditioning system installed by our experts</p>
+            <img src="https://picsum.photos/seed/s1bob-heinmiller-air-conditioning-inc-orlando-fl/800/600" alt="AC Installation">
+        </div>
+        <div class="service">
+            <h2>Heating Repair</h2>
+            <p>Get your heating system repaired by our experienced technicians</p>
+            <img src="https://picsum.photos/seed/s2bob-heinmiller-air-conditioning-inc-orlando-fl/800/600" alt="Heating Repair">
+        </div>
+        <div class="service">
+            <h2>Indoor Air Quality</h2>
+            <p>Improve the air quality in your home with our expert solutions</p>
+            <img src="https://picsum.photos/seed/s3bob-heinmiller-air-conditioning-inc-orlando-fl/800/600" alt="Indoor Air Quality">
+        </div>
+    </section>
+    <section class="about">
+        <div class="container">
+            <h2 class="animate">About Us</h2>
+            <p class="animate-delay-1">At Bob Heinmiller Air Conditioning Inc, we pride ourselves on being a trusted and reliable HVAC partner in Orlando, FL. With years of experience and a team of expert technicians, we provide top-notch services to our clients.</p>
+            <img src="https://picsum.photos/seed/abbob-heinmiller-air-conditioning-inc-orlando-fl/1200/800" alt="About Us" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+            <p class="animate-delay-2">We are committed to providing the best possible service to our clients, and we strive to build long-lasting relationships with them.</p>
+        </div>
+    </section>
+    <section class="gallery">
+        <div class="container">
+            <h2 class="animate">Our Work</h2>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/seed/g1bob-heinmiller-air-conditioning-inc-orlando-fl/800/800" alt="Gallery Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/seed/g2bob-heinmiller-air-conditioning-inc-orlando-fl/800/800" alt="Gallery Image 2">
+            </div>
+        </div>
+    </section>
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="animate">What Our Clients Say</h2>
+            <div class="testimonial">
+                <h2>John Doe</h2>
+                <p>Bob Heinmiller Air Conditioning Inc did an amazing job installing my new air conditioning system. Their technicians were professional and efficient, and the price was very competitive.</p>
+                <div class="rating">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="10 10" stroke-dashoffset="10">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="testimonial">
+                <h2>Jane Smith</h2>
+                <p>I had a great experience with Bob Heinmiller Air Conditioning Inc. Their technicians were very knowledgeable and helped me choose the perfect air conditioning system for my home.</p>
+                <div class="rating">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="10 10" stroke-dashoffset="10">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="container">
+            <h2 class="animate">Get in Touch</h2>
+            <form>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p>Address: 1537 W Smith St, Orlando, FL 32804, USA</p>
+            <p>Phone: <a href="tel:(407) 374-0779">(407) 374-0779</a></p>
+            <p>Email: <a href="mailto:service@bobheinmiller.com">service@bobheinmiller.com</a></p>
+            <div class="social-links">
+                <a href="https://instagram.com/bobheinmillerac" style="display:https://instagram.com/bobheinmillerac?'block':'none'">Instagram</a>
+                <a href="https://facebook.com/tr" style="display:https://facebook.com/tr?'block':'none'">Facebook</a>
+                <a href="https://linkedin.com/bob-heinmiller-air-conditioning-inc" style="display:https://linkedin.com/bob-heinmiller-air-conditioning-inc?'block':'none'">LinkedIn</a>
+                <a href="{{twitter}}" style="display:{{twitter}}?'block':'none'">Twitter</a>
+                <a href="{{youtube}}" style="display:{{youtube}}?'block':'none'">YouTube</a>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Bob Heinmiller Air Conditioning Inc</p>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Services</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="social-links">
+                <a href="https://instagram.com/bobheinmillerac" style="display:https://instagram.com/bobheinmillerac?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="4" height="4" rx="1" />
+                    <rect x="11" y="3" width="4" height="4" rx="1" />
+                    <rect x="3" y="11" width="4" height="4" rx="1" />
+                    <rect x="11" y="11" width="4" height="4" rx="1" />
+                </svg></a>
+                <a href="https://facebook.com/tr" style="display:https://facebook.com/tr?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 10c0-3.87-4.12-7-9-7s-9 3.13-9 7c0 2.21 1.17 4.24 3 5.4v-1.4H6V10h3V7.4c0-2.44 1.55-4.44 4-4.44 2.44 0 4 1.95 4 4.44v1.4H13v3h3z" />
+                </svg></a>
+                <a href="https://linkedin.com/bob-heinmiller-air-conditioning-inc" style="display:https://linkedin.com/bob-heinmiller-air-conditioning-inc?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 8a6 6 0 0 1-6 6v7h-4v-7a6 6 0 0 1-6-6 6 6 0 0 1 6-6h4v7h4v-7a6 6 0 0 1 6 6z" />
+                </svg></a>
+                <a href="{{twitter}}" style="display:{{twitter}}?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                </svg></a>
+                <a href="{{youtube}}" style="display:{{youtube}}?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="14" height="14" rx="2" />
+                    <path d="M10 9l3 3m-3-3l3-3" />
+                </svg></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

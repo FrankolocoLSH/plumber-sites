@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro-Tech Air Conditioning & Plumbing Service, Inc</title>
+    <style>
+        /* Google Fonts Import */
+        @import url("https://fonts.googleapis.com/css2?family=Fraunces&family=Instrument+Serif&display=swap");
+
+        /* Colors and Variables */
+        :root {
+            --primary: #3e8f41;  /* Deep Forest Green */
+            --accent: #ff9900;   /* Electric Yellow */
+            --bg: #f5f5f5;       /* Light Gray-Beige */
+            --text: #333;        /* Dark charcoal */
+            --text-muted: #999;  /* Light gray */
+        }
+
+        /* Global Styles */
+        body {
+            font-family: 'Instrument Serif', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-family: 'Fraunces', sans-serif;
+            font-size: 4.5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            background-image: linear-gradient(to bottom, #f9f5f2, #ede5e5);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://picsum.photos/seed/heropro-tech-air-conditioning-plumbing-service-inc-orlando-fl/1920/1080");
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .service {
+            background-color: var(--bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: calc(33.33% - 2rem);
+        }
+
+        .service:hover {
+            box-shadow: 0 0 20px var(--accent);
+            transform: translateY(-10px);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .about {
+            padding: 4rem;
+        }
+
+        .about img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial {
+            background-color: var(--bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: calc(50% - 4rem);
+            margin: 2rem auto;
+        }
+
+        .testimonial:hover {
+            box-shadow: 0 0 20px var(--accent);
+            transform: translateY(-10px);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .testimonial p {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial span {
+            font-size: 2.5rem;
+            color: var(--accent);
+        }
+
+        .testimonial .rating {
+            display: flex;
+            align-items: center;
+            color: var(--primary);
+        }
+
+        .testimonial .rating svg {
+            margin-right: 0.5rem;
+        }
+
+        .testimonial .rating svg:hover {
+            fill: var(--accent);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .gallery img {
+            width: calc(50% - 2rem);
+            height: 150px;
+            object-fit: cover;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery img:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .contact {
+            padding: 4rem;
+        }
+
+        .contact form {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact form input {
+            padding: 1rem;
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+        }
+
+        .contact form textarea {
+            padding: 1rem;
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            height: 150px;
+        }
+
+        .contact form input:hover, .contact form textarea:hover {
+            box-shadow: 0 0 20px var(--accent);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .social {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .social svg {
+            margin-right: 1rem;
+        }
+
+        .social svg:hover {
+            fill: var(--accent);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Animation */
+        .animate {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+
+        .animate.fade-in {
+            animation: fadeIn 1s 1 forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* IntersectionObserver */
+        .reveal {
+            opacity: 0;
+        }
+
+        .reveal.show {
+            opacity: 1;
+        }
+
+        .reveal.show.animated {
+            animation: reveal 1s 1 forwards;
+        }
+
+        @keyframes reveal {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>Welcome to Pro-Tech Air Conditioning & Plumbing Service, Inc</h1>
+        <p>Orlando's trusted HVAC expert for over 1129+ reviews</p>
+        <a href="tel:(877) 416-4727" class="animate fade-in">Call us: (877) 416-4727</a>
+    </header>
+    <main>
+        <section class="services">
+            <div class="service animate fade-in" style="animation-delay: 0ms">
+                <h2 class="text-center">Air Conditioning Services</h2>
+                <p class="text-center">Our team of experts provide top-notch air conditioning maintenance, installation, and repair services in Orlando and surrounding areas.</p>
+            </div>
+            <div class="service animate fade-in" style="animation-delay: 100ms">
+                <h2 class="text-center">Plumbing Services</h2>
+                <p class="text-center">Our plumbers are licensed, bonded, and insured to provide fast and reliable plumbing services for all your needs in the Orlando area.</p>
+            </div>
+            <div class="service animate fade-in" style="animation-delay: 200ms">
+                <h2 class="text-center">HVAC Maintenance</h2>
+                <p class="text-center">Regular maintenance of your HVAC system can help extend its lifespan, improve its efficiency, and reduce energy bills.</p>
+            </div>
+        </section>
+        <section class="about animate fade-in" style="animation-delay: 300ms">
+            <h2>About Us</h2>
+            <p>Since its inception in Orlando, Pro-Tech Air Conditioning & Plumbing Service, Inc has been dedicated to providing the highest quality heating and cooling solutions for residential and commercial customers.</p>
+            <img src="https://via.placeholder.com/300x150" alt="About us image" style="animation-delay: 600ms">
+        </section>
+        <section class="testimonial animate fade-in" style="animation-delay: 400ms">
+            <p>"I was blown away by the level of customer service I received from Pro-Tech Air Conditioning & Plumbing Service, Inc. They installed a new AC unit for my home and it's been working flawlessly ever since." <span>— Emily R.</span></p>
+            <div class="rating animate fade-in" style="animation-delay: 700ms">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L17 7M4 17L9 22"></path>
+                    <path d="M12 2L7 7M17 14L12 19"></path>
+                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L7 7M17 14L12 19"></path>
+                    <path d="M12 2L17 7M4 17L9 22"></path>
+                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L7 7M17 14L12 19"></path>
+                    <path d="M12 2L17 7M4 17L9 22"></path>
+                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L7 7M17 14L12 19"></path>
+                    <path d="M12 2L17 7M4 17L9 22"></path>
+                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L7 7M17 14L12 19"></path>
+                    <path d="M12 2L17 7M4 17L9 22"></path>
+                </svg>
+            </div>
+            <p style="animation-delay: 800ms">Rating: 4.8/5</p>
+        </section>
+        <section class="gallery animate fade-in" style="animation-delay: 500ms">
+            <div class="gallery-image animate fade-in" style="animation-delay: 1200ms">
+                <img src="https://via.placeholder.com/300x150" alt="Gallery image 1" style="animation-delay: 1500ms">
+                <div class="overlay animate fade-in" style="animation-delay: 1800ms"></div>
+            </div>
+            <div class="gallery-image animate fade-in" style="animation-delay: 1600ms">
+                <img src="https://via.placeholder.com/300x150" alt="Gallery image 2" style="animation-delay: 1900ms">
+                <div class="overlay animate fade-in" style="animation-delay: 2200ms"></div>
+            </div>
+        </section>
+        <section class="contact animate fade-in" style="animation-delay: 600ms">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email Address">
+                <textarea placeholder="Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+        <footer>
+            <div class="social">
+                <a href="https://facebook.com/ProTechAC"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 10c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v3.5l4-4L16 6.5V20l6-6z"></path>
+                    <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                    <line x1="10" y1="13" x2="10.01" y2="13"></line>
+                    <line x1="9" y1="15" x2="9.01" y2="15"></line>
+                </svg></a>
+                <a href=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16"></path>
+                    <path d="M4 20h16"></path>
+                    <path d="M13 18a1.5 1.5 0 0 1-1.5-1.5l-7-6a1.5 1.5 0 0 1 1.5-1.5h7a1.5 1.5 0 0 1 1.5 1.5l7-6a1.5 1.5 0 0 1 1.5 1.5"></path>
+                    <path d="M6.4 17l2-2m2 2l-2-2"></path>
+                    <line x1="5.65" y1="7.35" x2="7.25" y2="5.75"></line>
+                </svg></a>
+            </div>
+            <p>&copy; 2024 Pro-Tech Air Conditioning & Plumbing Service, Inc</p>
+        </footer>
+    </main>
+    <script>
+        // IntersectionObserver
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, {
+            rootMargin: "0px 0px 500px 0px",
+        });
+
+        const sections = document.querySelectorAll(".animate");
+
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+
+        // Animation
+        const animateElement = document.querySelectorAll(".animate");
+
+        animateElement.forEach((element) => {
+            element.style.opacity = 0;
+            element.style.transform = "scale(0.5)";
+        });
+
+        setTimeout(() => {
+            animateElement.forEach((element) => {
+                element.style.opacity = 1;
+                element.style.transform = "scale(1)";
+            });
+        }, 2000);
+    </script>
+</body>
+</html>

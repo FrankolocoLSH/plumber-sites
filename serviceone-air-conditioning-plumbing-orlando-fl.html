@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceOne Air Conditioning & Plumbing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;700&family=Instrument+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2F4F4F; /* Navy blue */
+            --accent: #FFC499; /* Coral */
+            --bg: #F7F7F7;
+            --text: #333;
+            --text-muted: #666;
+        }
+        
+        body {
+            font-family: 'Instrument Serif', serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            color: var(--primary);
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+        }
+        
+        a:hover {
+            color: var(--accent);
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/seed/heroserviceone-air-conditioning-plumbing-orlando-fl/1920/1080');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+        }
+        
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 2rem);
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .hero .cta {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+        }
+        
+        .hero .cta:hover {
+            background-color: #FF9900;
+        }
+        
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 5rem 0;
+        }
+        
+        .service {
+            background-color: #fff;
+            padding: 2rem;
+            border: 1px solid var(--text-muted);
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 2rem);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 1rem 1rem 0 0;
+        }
+        
+        .service h2 {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            margin-bottom: 0.5rem;
+        }
+        
+        .about {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('https://picsum.photos/seed/abserviceone-air-conditioning-plumbing-orlando-fl/1200/800');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .about h2 {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+        
+        .about p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            padding: 5rem 0;
+        }
+        
+        .gallery img {
+            width: calc(50% - 1rem);
+            height: 200px;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        .testimonials {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 5rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .testimonial {
+            background-color: #fff;
+            padding: 2rem;
+            border: 1px solid var(--text-muted);
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .testimonial p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            text-align: center;
+        }
+        
+        .testimonial .rating {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            margin-top: 0.5rem;
+            display: flex;
+            gap: 0.2rem;
+        }
+        
+        .testimonial .rating svg {
+            fill: #FFD700;
+        }
+        
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5rem 0;
+        }
+        
+        .contact h2 {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+        
+        .contact p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .contact input, .contact textarea {
+            padding: 1rem;
+            border: 1px solid var(--text-muted);
+            border-radius: 0.5rem;
+            width: 100%;
+        }
+        
+        .contact button {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+        }
+        
+        .contact button:hover {
+            background-color: #FF9900;
+        }
+        
+        .footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer p {
+            font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+            margin-bottom: 1rem;
+        }
+        
+        .footer nav {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .footer nav a {
+            font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+        }
+        
+        .footer nav a:hover {
+            color: var(--accent);
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;
+            }
+            
+            .hero h1 {
+                font-size: clamp(1.5rem, 5vw, 3rem);
+            }
+            
+            .hero p {
+                font-size: clamp(1rem, 2.5vw, 1.5rem);
+            }
+            
+            .services {
+                flex-direction: column;
+            }
+            
+            .service {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+            
+            .gallery {
+                flex-direction: column;
+            }
+            
+            .gallery img {
+                width: 100%;
+            }
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .fadeIn {
+            animation: fadeIn 1s;
+        }
+        
+        .service, .testimonial, .contact form {
+            animation: fadeIn 1s;
+            animation-delay: 0.2s;
+        }
+        
+        .service:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        
+        .testimonial:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        
+        .contact form {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero fadeIn">
+        <h1>Orlando's Trusted HVAC & Plumbing Experts</h1>
+        <p>ServiceOne Air Conditioning & Plumbing provides top-notch services to keep your home comfortable and safe. Get a quote today!</p>
+        <button class="cta" onclick="location.href='tel:(407) 499-8333'">Call Now: (407) 499-8333</button>
+    </section>
+    <section class="services">
+        <div class="service fadeIn">
+            <img src="https://picsum.photos/seed/s1serviceone-air-conditioning-plumbing-orlando-fl/800/600" alt="Air Conditioning Service">
+            <h2>Air Conditioning Repair & Installation</h2>
+            <p>Expert technicians for all your AC needs</p>
+        </div>
+        <div class="service fadeIn">
+            <img src="https://picsum.photos/seed/s2serviceone-air-conditioning-plumbing-orlando-fl/800/600" alt="Plumbing Service">
+            <h2>Plumbing Repair & Installation</h2>
+            <p>Trusted plumbers for all your plumbing needs</p>
+        </div>
+        <div class="service fadeIn">
+            <img src="https://picsum.photos/seed/s3serviceone-air-conditioning-plumbing-orlando-fl/800/600" alt="Heating Service">
+            <h2>Heating Repair & Installation</h2>
+            <p>Reliable heating solutions for a warm and cozy home</p>
+        </div>
+    </section>
+    <section class="about fadeIn">
+        <h2>About Us</h2>
+        <p>ServiceOne Air Conditioning & Plumbing is a locally owned and operated business in Orlando, FL. We pride ourselves on providing top-notch services and building long-term relationships with our customers.</p>
+        <p>Our team of expert technicians is dedicated to providing you with the best possible experience, from initial consultation to final installation. We're committed to delivering exceptional quality, reliability, and customer satisfaction.</p>
+    </section>
+    <section class="gallery">
+        <img src="https://picsum.photos/seed/g1serviceone-air-conditioning-plumbing-orlando-fl/800/800" alt="Gallery Image 1">
+        <img src="https://picsum.photos/seed/g2serviceone-air-conditioning-plumbing-orlando-fl/800/800" alt="Gallery Image 2">
+    </section>
+    <section class="testimonials">
+        <div class="testimonial fadeIn">
+            <p>ServiceOne Air Conditioning & Plumbing is the best! Their technicians are knowledgeable, friendly, and efficient. I highly recommend them for all your HVAC and plumbing needs.</p>
+            <div class="rating">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.921-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.539.588-1.81h4.915a1 1 0 00.95-.69l1.519-4.674z"></path></svg>
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.921-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.539.588-1.81h4.915a1 1 0 00.95-.69l1.519-4.674z"></path></svg>
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.921-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.539.588-1.81h4.915a1 1 0 00.95-.69l1.519-4.674z"></path></svg>
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.921-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.539.588-1.81h4.915a1 1 0 00.95-.69l1.519-4.674z"></path></svg>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <p>Contact us today to schedule your appointment or to get a quote for your HVAC and plumbing needs.</p>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button>Send Message</button>
+        </form>
+        <p>Call us: <a href="tel:(407) 499-8333">(407) 499-8333</a> | Email us: <a href="mailto:example@domain.com">example@domain.com</a></p>
+        <p>Address: 4556 36th St, Orlando, FL 32811, USA</p>
+        <p>Follow us on social media: 
+            <a href="https://facebook.com/ServiceOneAirConditioningPlumbing" style="display:https://facebook.com/ServiceOneAirConditioningPlumbing?'block':'none'">Facebook</a>
+        </p>
+    </section>
+    <footer class="footer">
+        <p>&copy; ServiceOne Air Conditioning & Plumbing. All rights reserved.</p>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fadeIn');
+                    }
+                });
+            }, { threshold: 0.5 });
+            const elements = document.querySelectorAll('.service, .testimonial, .contact form');
+            elements.forEach((element) => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

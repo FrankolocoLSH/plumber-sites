@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orlando HVAC Air Conditioning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display&family=Satoshi&family=Instrument+Serif&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00833F;
+            --accent: #F7DC6F;
+            --bg: #F2F2F2;
+            --text: #333;
+            --text-muted: #666;
+        }
+        body {
+            font-family: 'Satoshi', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Clash Display', sans-serif;
+            color: var(--primary);
+            margin-bottom: 0.5em;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, #87CEEB, #ADD8E6);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .hero p {
+            font-size: 24px;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .hero .btn {
+            background-color: var(--accent);
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .hero .btn:hover {
+            background-color: #FFD700;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+        }
+        .service h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .service p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .about {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .about h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .about p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(50% - 20px);
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .testimonial {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .testimonial p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .rating {
+            font-size: 18px;
+            color: #FFD700;
+        }
+        .contact {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact input, .contact textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+        .contact input[type="submit"] {
+            background-color: var(--accent);
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .contact input[type="submit"]:hover {
+            background-color: #FFD700;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;
+            }
+            .services {
+                flex-direction: column;
+            }
+            .service {
+                width: 100%;
+                margin: 20px 0;
+            }
+            .gallery {
+                flex-direction: column;
+            }
+            .gallery img {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .animate {
+            animation: fadeIn 1s;
+        }
+        .delay-1 {
+            animation-delay: 100ms;
+        }
+        .delay-2 {
+            animation-delay: 200ms;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero animate">
+        <div class="container">
+            <h1>Orlando HVAC Air Conditioning</h1>
+            <p>Expert Heating and Cooling Solutions for Your Home or Business</p>
+            <a href="tel:(689) 698-5010" class="btn">Call Now: (689) 698-5010</a>
+        </div>
+    </div>
+    <div class="services">
+        <div class="service animate delay-1">
+            <h2>Air Conditioning Installation</h2>
+            <p>Get a new air conditioning system installed by our expert technicians.</p>
+            <img src="https://picsum.photos/seed/s1orlando-hvac-air-conditioning-orlando-fl/800/600" alt="Air Conditioning Installation">
+        </div>
+        <div class="service animate delay-2">
+            <h2>Heating System Repair</h2>
+            <p>Is your heating system not working properly? Let us fix it for you.</p>
+            <img src="https://picsum.photos/seed/s2orlando-hvac-air-conditioning-orlando-fl/800/600" alt="Heating System Repair">
+        </div>
+        <div class="service animate">
+            <h2>Indoor Air Quality Solutions</h2>
+            <p>Breathe easy with our indoor air quality solutions.</p>
+            <img src="https://picsum.photos/seed/s3orlando-hvac-air-conditioning-orlando-fl/800/600" alt="Indoor Air Quality Solutions">
+        </div>
+    </div>
+    <div class="about animate">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We are a locally owned and operated HVAC company serving the Orlando area.</p>
+            <p>We are committed to providing exceptional service and ensuring your complete satisfaction.</p>
+            <img src="https://picsum.photos/seed/aborlando-hvac-air-conditioning-orlando-fl/1200/800" alt="About Us">
+        </div>
+    </div>
+    <div class="gallery animate">
+        <img src="https://picsum.photos/seed/g1orlando-hvac-air-conditioning-orlando-fl/800/800" alt="Gallery Image 1">
+        <img src="https://picsum.photos/seed/g2orlando-hvac-air-conditioning-orlando-fl/800/800" alt="Gallery Image 2">
+    </div>
+    <div class="testimonial animate">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <p>"Orlando HVAC Air Conditioning is the best! They installed a new air conditioning system in my home and it's been working great ever since."</p>
+            <p>— John D.</p>
+            <p class="rating">4.9/5 stars (239 reviews)</p>
+            <img src="https://picsum.photos/seed/tborlando-hvac-air-conditioning-orlando-fl/1920/1080" alt="Testimonial Background">
+        </div>
+    </div>
+    <div class="contact animate">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>Contact us today to schedule a service appointment or to learn more about our HVAC services.</p>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <input type="submit" value="Send Message">
+            </form>
+            <p>Address: 6000 N Orange Blossom Trl, Orlando, FL 32808, USA</p>
+            <p>Phone: (689) 698-5010</p>
+            <p>Email: </p>
+        </div>
+    </div>
+    <div class="footer animate">
+        <div class="container">
+            <p>&copy; 2023 Orlando HVAC Air Conditioning</p>
+            <p>Designed by <a href="#">Your Company</a></p>
+            <p>Follow us on social media:</p>
+            <a href="" style="display:?'block':'none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+            <a href="" style="display:?'block':'none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a6 6 0 0 1 6-6z"></path></svg></a>
+            <a href="" style="display:?'block':'none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tiktok"><path d="M19 17.69h-5.62c-.22-.71-.69-1.3-1.39-1.69C11.4 15.18 10 13.56 10 11.5a4.5 4.5 0 0 1 4.51-4.36 4.19 4.19 0 0 1 3.67.59v2H14v3.19l2-2V11z"></path><path d="M15.88 4.12h-.19A7.86 7.86 0 0 0 10 11.5a7 7 0 0 0 6.88 5.48"></path><circle cx="12" cy="12" r="2"></circle></svg></a>
+            <a href="" style="display:?'block':'none'"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><path d="M12 2L2 7l10 5 10-5z"></path></svg></a>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Air Heating and Cooling | Orlando's Premier HVAC Services</title>
+    <style>
+        /***************************
+        ** Global Styles          **
+        ***************************/
+        :root {
+            --primary: #3E8E41; /* Deep forest green */
+            --accent: #FFC107; /* Coral */
+            --bg: linear-gradient(90deg, #333, #444);
+            --text: #fff;
+            --text-muted: #ccc;
+        }
+        
+        body {
+            font-family: 'Satoshi', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--bg);
+        }
+        h1, h2, h3, h4, h5, h6, p {
+            color: var(--text);
+        }
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        a:hover {
+            color: var(--primary);
+        }
+        .touch-target {
+            min-height: 44px;
+            min-width: 44px;
+        }
+        
+        /***************************
+        ** Header                  **
+        ***************************/
+        header {
+            background-image: linear-gradient(to right, var(--primary), var(--accent));
+            background-size: 200% 100%;
+            background-position: 0% 50%;
+            transition: background-position 0.5s ease-in-out;
+        }
+        header.scrolled {
+            background-position: 100% 50%;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px;
+            color: var(--text);
+        }
+        
+        /***************************
+        ** Hero                     **
+        ***************************/
+        .hero {
+            background-image: linear-gradient(to bottom, #232323, #333);
+            background-size: cover;
+            background-position: center;
+            color: var(--text);
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .hero .heading {
+            font-size: 48px;
+            margin-bottom: 10px;
+            font-family: 'Fraunces', serif;
+        }
+        .hero .subheading {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .hero .cta {
+            background-color: var(--primary);
+            color: var(--text);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .hero .cta:hover {
+            background-color: var(--accent);
+        }
+        
+        /***************************
+        ** Services                 **
+        ***************************/
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        .service {
+            background-image: linear-gradient(to bottom, #fff, #eee);
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            flex-basis: calc(25% - 20px);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .service .heading {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-family: 'Fraunces', serif;
+        }
+        .service .description {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        /***************************
+        ** About                    **
+        ***************************/
+        .about {
+            padding: 20px;
+        }
+        .about .heading {
+            font-size: 36px;
+            margin-bottom: 10px;
+            font-family: 'Fraunces', serif;
+        }
+        .about .subheading {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .about .trust-indicators {
+            display: flex;
+            gap: 10px;
+        }
+        .about .trust-indicator {
+            background-color: var(--primary);
+            color: var(--text);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .about .trust-indicator:hover {
+            background-color: var(--accent);
+        }
+        .about img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        /***************************
+        ** Gallery                  **
+        ***************************/
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            width: calc(25% - 20px);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .gallery-item .overlay img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        /***************************
+        ** Testimonials             **
+        ***************************/
+        .testimonials {
+            padding: 20px;
+        }
+        .testimonial {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial .rating {
+            display: flex;
+            gap: 5px;
+        }
+        .testimonial .rating span {
+            color: var(--primary);
+        }
+        .testimonial .rating svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        /***************************
+        ** Contact                  **
+        ***************************/
+        .contact {
+            padding: 20px;
+        }
+        .contact .heading {
+            font-size: 36px;
+            margin-bottom: 10px;
+            font-family: 'Fraunces', serif;
+        }
+        .contact .info {
+            display: flex;
+            gap: 20px;
+        }
+        .contact .info .item {
+            background-color: var(--primary);
+            color: var(--text);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact .info .item:hover {
+            background-color: var(--accent);
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .contact form input, .contact form textarea {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .contact form input[type="submit"] {
+            background-color: var(--primary);
+            color: var(--text);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact form input[type="submit"]:hover {
+            background-color: var(--accent);
+        }
+        
+        /***************************
+        ** Footer                   **
+        ***************************/
+        footer {
+            background-color: var(--bg);
+            padding: 20px;
+            text-align: center;
+        }
+        footer .copyright {
+            font-size: 18px;
+            color: var(--text-muted);
+        }
+        footer .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        footer a {
+            color: var(--text);
+            text-decoration: none;
+        }
+        footer svg {
+            width: 20px;
+            height: 20px;
+            margin-bottom: 10px;
+        }
+        
+        /***************************
+        ** Animations                **
+        ***************************/
+        @keyframes scroll-reveal {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+            }
+            .service {
+                flex-basis: 100%;
+            }
+            .gallery {
+                flex-direction: column;
+            }
+            .gallery-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="touch-target">
+    <header class="scrolled touch-target">
+        <nav>
+            <div class="logo">Blue Air Heating and Cooling</div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="hero" id="hero">
+        <svg id="animation" width="0" height="0">
+            <circle cx="50%" cy="50%" r="50%" stroke-width="5" fill="none" stroke="var(--primary)" />
+        </svg>
+        <div class="hero__background">
+            <img src="https://picsum.photos/seed/heroblue-air-heating-and-cooling-orlando-fl/1920/1080" alt="Hero Image" />
+        </div>
+        <div class="hero__content">
+            <h1 class="heading">Orlando's Premier HVAC Services</h1>
+            <h2 class="subheading">Expert Heating and Cooling Solutions for Your Home or Business</h2>
+            <button class="cta" onclick="window.location.href='tel:(407) 300-4185'">Get a Quote Today!</button>
+        </div>
+    </div>
+    <div class="services" id="services">
+        <div class="service">
+            <h2 class="heading">Residential Air Conditioning</h2>
+            <p class="description">Our HVAC specialists will install, maintain, and repair your air conditioner with a smile.</p>
+        </div>
+        <div class="service">
+            <h2 class="heading">Commercial Heating</h2>
+            <p class="description">Our team will install, maintain, and repair your commercial heating system with a smile.</p>
+        </div>
+        <div class="service">
+            <h2 class="heading">Indoor Air Quality</h2>
+            <p class="description">We'll ensure your indoor air quality is top-notch with our expert duct cleaning and ventilation services.</p>
+        </div>
+        <div class="service">
+            <h2 class="heading">Heat Pump Repair</h2>
+            <p class="description">Our expert technicians will diagnose and repair any issues with your heat pump system.</p>
+        </div>
+    </div>
+    <div class="about" id="about">
+        <h2 class="heading">About Us</h2>
+        <h3 class="subheading">Our Story</h3>
+        <p>At Blue Air Heating and Cooling, we're dedicated to providing top-notch HVAC services to Orlando and its surrounding areas. Our team of experts has years of experience in heating and cooling solutions, and we're committed to treating every customer like a friend.</p>
+        <img src="https://picsum.photos/seed/abblue-air-heating-and-cooling-orlando-fl/1200/800" alt="Our Team" />
+        <div class="trust-indicators">
+            <div class="trust-indicator">BBB Accredited</div>
+            <div class="trust-indicator">NATE Certified Technicians</div>
+            <div class="trust-indicator"> Angie's List Super Service Award</div>
+        </div>
+    </div>
+    <div class="gallery" id="gallery">
+        <div class="gallery-item">
+            <img src="https://picsum.photos/seed/g1blue-air-heating-and-cooling-orlando-fl/800/800" alt="Gallery Image 1" />
+            <div class="overlay">
+                <img src="./assets/images/overlay-icon-1.png" alt="Overlay Icon 1" />
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/seed/g2blue-air-heating-and-cooling-orlando-fl/800/800" alt="Gallery Image 2" />
+            <div class="overlay">
+                <img src="./assets/images/overlay-icon-2.png" alt="Overlay Icon 2" />
+            </div>
+        </div>
+    </div>
+    <div class="testimonials" id="testimonials">
+        <div class="testimonial">
+            <svg class="rating">
+                <circle cx="10" cy="10" r="10" fill="var(--primary)" />
+                <circle cx="10" cy="10" r="10" fill="var(--primary)" />
+                <circle cx="10" cy="10" r="10" fill="var(--primary)" />
+                <circle cx="10" cy="10" r="10" fill="var(--primary)" />
+                <circle cx="10" cy="10" r="10" fill="var(--primary)" />
+            </svg>
+            <p>They're the best in town for HVAC services. I highly recommend Blue Air!</p>
+            <h3>John Doe</h3>
+        </div>
+        <div class="testimonial">
+            <svg class="rating">
+                <circle cx="10" cy="10" r="10" fill="var(--primary)" />
+                <circle cx="10" cy="10" r="10" fill="var(--primary)" />
+                <circle cx="10" cy="10" r="10" fill="var(--primary)" />
+                <circle cx="10" cy="10" r="10" fill="var(--primary)" />
+                <circle cx="10" cy="10" r="10" fill="var(--primary)" />
+            </svg>
+            <p>The customer service was incredible. They were on time and did a fantastic job!</p>
+            <h3>Jane Doe</h3>
+        </div>
+    </div>
+    <div class="contact" id="contact">
+        <h2 class="heading">Contact Us</h2>
+        <div class="info">
+            <div class="item" onclick="window.location.href='mailto:blueairhc@gmail.com'">Email Us</div>
+            <div class="item" onclick="window.location.href='tel:(407) 300-4185'">Call Us</div>
+            <div class="item" onclick="window.location.href='https://facebook.com/https://facebook.com/people'">Follow Us On Facebook</div>
+            <div class="item" onclick="window.location.href='https://instagram.com/'">Follow Us On Instagram</div>
+        </div>
+        <form>
+            <input type="text" placeholder="Name" autocomplete="name" />
+            <input type="email" placeholder="Email" autocomplete="email" />
+            <textarea placeholder="Message" autocorrect="off" autocapitalize="off"></textarea>
+            <input type="submit" value="Send Message" />
+        </form>
+    </div>
+    <footer>
+        <div class="copyright">Blue Air Heating and Cooling &copy 2023</div>
+        <div class="nav-links">
+            <a href="#hero">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About Us</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="social-links">
+            <a href="https://facebook.com/https://facebook.com/people" target="_blank">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2H6a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V8a2 2 0 00-2-2zm2 6h3a1 1 0 011 1v3H15a1 1 0 01-1-1v-3z"></path>
+                    <path d="M12 15h2a4 4 0 014 4v3a4 4 0 01-4 4h-4a4 4 0 01-4-4v-3a4 4 0 018-4h2a1 1 0 011 1z"></path>
+                </svg>
+            </a>
+            <a href="https://instagram.com/" target="_blank">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="1" />
+                    <rect x="2" y="18" width="20" height="2" />
+                    <rect x="18" y="18" width="2" height="2" />
+                </svg>
+            </a>
+            <a href="https://tiktok.com/" target="_blank">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 10h18M3 6h18M3 12h18M3 18h18" />
+                </svg>
+            </a>
+            <a href="https://linkedin.com/in/" target="_blank">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 16c1 0 2-1 2-1s1 1 1 1 1-1 1-1 2 0 2 0-1 1-1 1 1 1 1 1 1-1 1-1" />
+                    <rect x="2" y="6" width="20" height="14" rx="4" />
+                    <rect x="16" y="6" width="6" height="6" rx="2" />
+                </svg>
+            </a>
+        </div>
+    </footer>
+    <script>
+        let scrollReveal = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                }
+            });
+        });
+        document.querySelectorAll('.reveal').forEach(element => {
+            scrollReveal.observe(element);
+        });
+    </script>
+</body>
+</html>

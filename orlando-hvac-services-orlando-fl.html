@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orlando HVAC Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;700&family=General+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3498db;
+            --accent: #f1c40f;
+            --bg: #f9f9f9;
+            --text: #333;
+            --text-muted: #666;
+        }
+        body {
+            font-family: 'General Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            margin-bottom: 0.5em;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, #3498db, #2980b9);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            height: 80vh;
+            max-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 0.2em;
+        }
+        .hero p {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            margin-bottom: 1em;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+        .service {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .service h2 {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 0.5em;
+        }
+        .service p {
+            font-size: clamp(0.8rem, 2vw, 1rem);
+            margin-bottom: 1em;
+        }
+        .about {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .about h2 {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 0.5em;
+        }
+        .about p {
+            font-size: clamp(0.8rem, 2vw, 1rem);
+            margin-bottom: 1em;
+            text-align: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .testimonials {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .testimonial {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .testimonial p {
+            font-size: clamp(0.8rem, 2vw, 1rem);
+            margin-bottom: 1em;
+        }
+        .testimonial .rating {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: #f1c40f;
+            margin-bottom: 0.5em;
+        }
+        .contact {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact h2 {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 0.5em;
+        }
+        .contact p {
+            font-size: clamp(0.8rem, 2vw, 1rem);
+            margin-bottom: 1em;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .contact button {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .contact button:hover {
+            background-color: var(--accent);
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer p {
+            font-size: clamp(0.8rem, 2vw, 1rem);
+            margin-bottom: 1em;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: var(--primary);
+        }
+        @media (max-width: 768px) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>Orlando HVAC Services</h1>
+        <p>Trustworthy heating and cooling solutions for your home or business</p>
+        <a href="tel:(321) 326-9050" class="cta">Get a quote: (321) 326-9050</a>
+        <img src="https://picsum.photos/seed/heroorlando-hvac-services-orlando-fl/1920/1080" alt="Orlando HVAC Services" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5;">
+    </header>
+    <section class="services">
+        <div class="service">
+            <h2>Heating Installation</h2>
+            <p>Our team of experts will help you choose the perfect heating system for your home or business</p>
+            <img src="https://picsum.photos/seed/s1orlando-hvac-services-orlando-fl/800/600" alt="Heating Installation" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px;">
+        </div>
+        <div class="service">
+            <h2>Cooling Repair</h2>
+            <p>Get your air conditioning unit fixed quickly and efficiently with our professional technicians</p>
+            <img src="https://picsum.photos/seed/s2orlando-hvac-services-orlando-fl/800/600" alt="Cooling Repair" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px;">
+        </div>
+        <div class="service">
+            <h2>Indoor Air Quality</h2>
+            <p>Improve the air quality in your home or business with our expert solutions</p>
+            <img src="https://picsum.photos/seed/s3orlando-hvac-services-orlando-fl/800/600" alt="Indoor Air Quality" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px;">
+        </div>
+    </section>
+    <section class="about">
+        <h2>About Us</h2>
+        <p>We are a local, family-owned business based in Orlando, FL, dedicated to providing top-notch HVAC services to our community</p>
+        <img src="https://picsum.photos/seed/aborlando-hvac-services-orlando-fl/1200/800" alt="About Us" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+        <p>We pride ourselves on our excellent customer service, prompt response times, and affordable prices</p>
+    </section>
+    <section class="gallery">
+        <img src="https://picsum.photos/seed/g1orlando-hvac-services-orlando-fl/800/800" alt="Gallery Image 1" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px;">
+        <img src="https://picsum.photos/seed/g2orlando-hvac-services-orlando-fl/800/800" alt="Gallery Image 2" style="width: 100%; height: 150px; object-fit: cover; border-radius: 10px;">
+    </section>
+    <section class="testimonials">
+        <div class="testimonial">
+            <p>Orlando HVAC Services did an amazing job installing my new air conditioning unit! Their technicians were professional, courteous, and efficient</p>
+            <div class="rating">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-1.3-1.3L10 10l3.7 3.7-1.3 1.3-4-4z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-1.3-1.3L10 10l3.7 3.7-1.3 1.3-4-4z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-1.3-1.3L10 10l3.7 3.7-1.3 1.3-4-4z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-1.3-1.3L10 10l3.7 3.7-1.3 1.3-4-4z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-1.3-1.3L10 10l3.7 3.7-1.3 1.3-4-4z"/>
+                </svg>
+            </div>
+        </div>
+        <div class="testimonial">
+            <p>I was impressed by the prompt service and affordable prices of Orlando HVAC Services. They truly care about their customers</p>
+            <div class="rating">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-1.3-1.3L10 10l3.7 3.7-1.3 1.3-4-4z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-1.3-1.3L10 10l3.7 3.7-1.3 1.3-4-4z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-1.3-1.3L10 10l3.7 3.7-1.3 1.3-4-4z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-1.3-1.3L10 10l3.7 3.7-1.3 1.3-4-4z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-1.3-1.3L10 10l3.7 3.7-1.3 1.3-4-4z"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <p>Contact us today to schedule a service or to learn more about our HVAC solutions</p>
+        <form>
+            <input type="text" name="name" placeholder="Name">
+            <input type="email" name="email" placeholder="Email">
+            <textarea name="message" placeholder="Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p>Address: 1307 Edgewater Dr, Orlando, FL 32804, USA</p>
+        <p>Phone: <a href="tel:(321) 326-9050">(321) 326-9050</a></p>
+        <p>Email: <a href="mailto:"></a></p>
+        <div style="display:flex;">
+            <a href="" style="display:?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="10" y="3" width="7" height="7"/><rect x="3" y="10" width="7" height="7"/><rect x="10" y="10" width="7" height="7"/></svg></a>
+            <a href="" style="display:?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 10c0-3.87-3.13-7-7-7s-7 3.13-7 7c0 2.76 1.79 5.19 4.5 6.71v-2.2h-2.5v2.2H8.27V12h2.5V9.38c0-2.24 1.55-3.45 3.55-3.45L13 6.66v2.72H16v2.27z"/></svg></a>
+            <a href="" style="display:?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2c6 0 10 4 10 10s-4 10-10 10-10-4-10-10 4-10 10-10z"/><path d="M10 0c-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10-4.5-10-10-10z"/></svg></a>
+            <a href="" style="display:?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="14" height="14" rx="2" ry="2"/><line x1="8" y1="8" x2="12" y2="12"/><line x1="12" y1="8" x2="8" y2="12"/></svg></a>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; Orlando HVAC Services. All rights reserved.</p>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                    }
+                });
+            }, {
+                threshold: 0.5,
+            });
+            const elements = document.querySelectorAll(".service, .testimonial, .contact form");
+            elements.forEach((element) => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

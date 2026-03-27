@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Comfort AC & Heating Repair | Orlando FL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;700&family=Instrument+Serif&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3498db;
+            --accent: #f1c40f;
+            --bg: #f9f9f9;
+            --text: #333;
+            --text-muted: #666;
+        }
+        body {
+            font-family: 'Instrument Serif', serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            color: var(--primary);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, #87ceeb, #4682b4);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            margin-bottom: 2rem;
+        }
+        .hero a {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            cursor: pointer;
+        }
+        .hero a:hover {
+            background-color: #ffc107;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service {
+            background-color: #fff;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .service h2 {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            margin-bottom: 1rem;
+        }
+        .service p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 2rem;
+        }
+        .about {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .about h2 {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            margin-bottom: 1rem;
+        }
+        .about p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 2rem;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(50% - 20px);
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .testimonials {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .testimonial {
+            background-color: #fff;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .testimonial p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 2rem;
+        }
+        .testimonial svg {
+            fill: #ffc107;
+        }
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .contact h2 {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            margin-bottom: 1rem;
+        }
+        .contact p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 2rem;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input, .contact textarea {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 100%;
+        }
+        .contact input[type="submit"] {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            cursor: pointer;
+        }
+        .contact input[type="submit"]:hover {
+            background-color: #ffc107;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+            }
+            .service {
+                width: 100%;
+            }
+            .gallery {
+                flex-direction: column;
+            }
+            .gallery img {
+                width: 100%;
+            }
+        }
+        @keyframes reveal {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .hero, .services, .about, .gallery, .testimonials, .contact, .footer {
+            animation: reveal 1s;
+            animation-delay: 0.2s;
+        }
+        .services {
+            animation-delay: 0.4s;
+        }
+        .about {
+            animation-delay: 0.6s;
+        }
+        .gallery {
+            animation-delay: 0.8s;
+        }
+        .testimonials {
+            animation-delay: 1s;
+        }
+        .contact {
+            animation-delay: 1.2s;
+        }
+        .footer {
+            animation-delay: 1.4s;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero" style="background-image: url(https://picsum.photos/seed/herogolden-comfort-ac-heating-repair-orlando-fl/1920/1080);">
+        <div class="container">
+            <h1>Golden Comfort AC & Heating Repair</h1>
+            <p>Trusted HVAC Services in Orlando, FL</p>
+            <a href="tel:(407) 358-0391">Call Now: (407) 358-0391</a>
+        </div>
+    </div>
+    <div class="services">
+        <div class="service">
+            <h2>AC Repair</h2>
+            <p>Expert technicians for all your air conditioning needs</p>
+            <img src="https://picsum.photos/seed/s1golden-comfort-ac-heating-repair-orlando-fl/800/600" alt="AC Repair">
+        </div>
+        <div class="service">
+            <h2>Heating Repair</h2>
+            <p>Reliable heating solutions for a warm and cozy home</p>
+            <img src="https://picsum.photos/seed/s2golden-comfort-ac-heating-repair-orlando-fl/800/600" alt="Heating Repair">
+        </div>
+        <div class="service">
+            <h2>Installation</h2>
+            <p>Professional installation of new HVAC systems</p>
+            <img src="https://picsum.photos/seed/s3golden-comfort-ac-heating-repair-orlando-fl/800/600" alt="Installation">
+        </div>
+    </div>
+    <div class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We're a local, family-owned business dedicated to providing top-notch HVAC services to the Orlando community.</p>
+            <p>We're proud to have served Orlando FL for over 5 years, with a 5-star rating and 167+ reviews.</p>
+            <img src="https://picsum.photos/seed/abgolden-comfort-ac-heating-repair-orlando-fl/1200/800" alt="About Us">
+        </div>
+    </div>
+    <div class="gallery">
+        <img src="https://picsum.photos/seed/g1golden-comfort-ac-heating-repair-orlando-fl/800/800" alt="Gallery Image 1">
+        <img src="https://picsum.photos/seed/g2golden-comfort-ac-heating-repair-orlando-fl/800/800" alt="Gallery Image 2">
+    </div>
+    <div class="testimonials">
+        <div class="testimonial">
+            <p>"Golden Comfort AC & Heating Repair saved the day when my AC broke down in the middle of summer. Their technicians were prompt, professional, and got the job done quickly and efficiently." - John D.</p>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.27 17.77 15.67 14.45 17.97 12 11.46 9.54 17.97 6.23 15.67 4 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.27 17.77 15.67 14.45 17.97 12 11.46 9.54 17.97 6.23 15.67 4 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.27 17.77 15.67 14.45 17.97 12 11.46 9.54 17.97 6.23 15.67 4 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.27 17.77 15.67 14.45 17.97 12 11.46 9.54 17.97 6.23 15.67 4 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.27 17.77 15.67 14.45 17.97 12 11.46 9.54 17.97 6.23 15.67 4 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="testimonial">
+            <p>"I was blown away by the professionalism and expertise of Golden Comfort AC & Heating Repair. They installed a new HVAC system in my home and it's been a game-changer." - Emily W.</p>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.27 17.77 15.67 14.45 17.97 12 11.46 9.54 17.97 6.23 15.67 4 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.27 17.77 15.67 14.45 17.97 12 11.46 9.54 17.97 6.23 15.67 4 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.27 17.77 15.67 14.45 17.97 12 11.46 9.54 17.97 6.23 15.67 4 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.27 17.77 15.67 14.45 17.97 12 11.46 9.54 17.97 6.23 15.67 4 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.27 17.77 15.67 14.45 17.97 12 11.46 9.54 17.97 6.23 15.67 4 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+    </div>
+    <div class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>480 N Orange Ave Suite 5, Orlando, FL 32801, USA</p>
+            <p><a href="tel:(407) 358-0391">Call: (407) 358-0391</a> | <a href="mailto:info@goldencomfortairhvac.com\">Email: info@goldencomfortairhvac.com\</a></p>
+            <form>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <input type="submit" value="Send">
+            </form>
+            <p>Follow us on social media:</p>
+            <a href="https://facebook.com/goldencomfortheatingandcooling" style="display:https://facebook.com/goldencomfortheatingandcooling?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="3"></rect><path d="M15 8h-4V5c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v3h-4v14h14v-14z"></path></svg></a>
+            <a href="https://linkedin.com/golden-comfort-ac-repair-heating" style="display:https://linkedin.com/golden-comfort-ac-repair-heating?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1-6 6v7h-4v-7a2 2 0 0 1 2-2 2 2 0 0 1 2 2v7h4v-7a6 6 0 0 1 6-6z"></path><path d="M12 2L14 4h4v14H4v-14z"></path></svg></a>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2023 Golden Comfort AC & Heating Repair</p>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const anchorLinks = document.querySelectorAll("a[href^='#']");
+            anchorLinks.forEach(function(link) {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(link.getAttribute("href"));
+                    target.scrollIntoView({ behavior: "smooth" });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

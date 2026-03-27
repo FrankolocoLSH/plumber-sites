@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Douglas Orr Plumbing, Inc.</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Clash+Display:800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Switzer&display=swap">
+  <style>
+    /* Primary Color Scheme */
+    :root {
+      --primary: hsl(158, 64%, 45%); /* Deep Forest Green */
+      --accent: hsl(34, 100%, 65%); /* Coral */
+      --bg: hsl(0, 0%, 95%); /* Cream */
+      --text: hsl(0, 0%, 5%); /* Charcoal */
+      --text-muted: hsla(0, 0%, 50%, 0.5); /* Dark Gray */
+    }
+
+    body {
+      font-family: 'Switzer', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .hero {
+      background-image: linear-gradient(to bottom, hsl(158, 40%, 90%), hsl(158, 40%, 95%));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 85vh;
+    }
+
+    .hero-text {
+      font-family: 'Clash Display', sans-serif;
+      font-size: 48px;
+      color: var(--text);
+    }
+
+    .hero-cta {
+      font-size: 18px;
+      background: var(--accent);
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      color: var(--bg);
+      transition: color 0.2s ease-in-out;
+    }
+
+    .hero-cta:hover {
+      color: var(--primary);
+    }
+
+    .services {
+      padding: 50px 0;
+    }
+
+    .service-card {
+      margin: 20px;
+      width: 250px;
+      display: inline-block;
+      background: var(--bg);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card .name {
+      font-family: 'Clash Display', sans-serif;
+      font-size: 24px;
+      color: var(--text);
+    }
+
+    .service-card .description {
+      font-size: 16px;
+      color: var(--text-muted);
+    }
+
+    .about {
+      padding: 50px 0;
+    }
+
+    .about .city {
+      font-size: 24px;
+      color: var(--text);
+    }
+
+    .about .rating {
+      font-size: 24px;
+      color: var(--primary);
+    }
+
+    .about .reviews {
+      font-size: 16px;
+      color: var(--text-muted);
+    }
+
+    .gallery {
+      padding: 50px 0;
+    }
+
+    .gallery .image {
+      width: 30%;
+      height: 200px;
+      background: var(--bg);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+    }
+
+    .gallery .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+    }
+
+    .gallery .overlay .text {
+      font-size: 16px;
+      color: var(--text);
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .gallery .overlay .text:hover {
+      background-color: var(--primary);
+    }
+
+    .testimonials {
+      padding: 50px 0;
+    }
+
+    .testimonial {
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial .name {
+      font-size: 16px;
+      color: var(--text);
+    }
+
+    .testimonial .rating {
+      font-size: 24px;
+      color: var(--primary);
+    }
+
+    .testimonial .reviews {
+      font-size: 16px;
+      color: var(--text-muted);
+    }
+
+    .testimonials .star {
+      font-size: 24px;
+      color: var(--primary);
+    }
+
+    .contact {
+      padding: 50px 0;
+    }
+
+    .contact-form {
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form .input {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .contact-form .input:hover {
+      border-color: var(--accent);
+    }
+
+    .contact-form .submit {
+      background: var(--accent);
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      color: var(--bg);
+      transition: color 0.2s ease-in-out;
+    }
+
+    .contact-form .submit:hover {
+      color: var(--primary);
+    }
+
+    .social {
+      padding: 20px 0;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .social-icon .icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text {
+        font-size: 32px;
+      }
+      .hero-cta {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+      .services {
+        flex-direction: column;
+      }
+      .service-card {
+        width: 100%;
+        margin: 20px 0;
+      }
+      .gallery {
+        flex-direction: column;
+      }
+      .gallery .image {
+        width: 100%;
+        height: 150px;
+        margin: 10px;
+      }
+      .gallery .overlay {
+        padding: 10px;
+      }
+      .testimonials {
+        flex-direction: column;
+      }
+      .testimonial {
+        width: 100%;
+      }
+      .footer {
+        flex-direction: column;
+      }
+    }
+
+    @keyframes enter {
+      0% {
+        opacity: 0;
+        transform: translateX(-10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes reveal {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes scroll {
+      0% {
+        transform: translateY(-20%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero" id="hero">
+    <svg class="phone-icon" viewBox="0 0 24 24">
+      <path d="M0 0h24v24H0V0z" fill="none" />
+      <path d="M23.97 14H2.03a7.98 7.98 0 0 0-7.97-2.06L2 6V2a7.993 7.993 0 0 1 15.994 0v4l6.05 10a7.99 7.99 0 0 1-7.97 2.06z" />
+    </svg>
+    <h2 class="hero-text">Expert Plumbing Services in Miami</h2>
+    <h3 class="subheading">Get fast, reliable, and honest plumbing services from our experienced team.</h3>
+    <a class="hero-cta" href="tel:3052406731">Call Now for a Service!</a>
+  </div>
+  <div class="services" id="services">
+    <h2 class="services-headline">Our Services</h2>
+    <div class="service-card">
+      <h3 class="name">Emergency Plumbing</h3>
+      <p class="description">24/7 emergency plumbing services for all your needs.</p>
+    </div>
+    <div class="service-card">
+      <h3 class="name">Leak Detection</h3>
+      <p class="description">Precise leak detection and repair services.</p>
+    </div>
+    <div class="service-card">
+      <h3 class="name">Drain Cleaning</h3>
+      <p class="description">Professional drain cleaning and unclogging services.</p>
+    </div>
+    <div class="service-card">
+      <h3 class="name">Water Heater Installation</h3>
+      <p class="description">Expert water heater installation and maintenance services.</p>
+    </div>
+  </div>
+  <div class="about" id="about">
+    <h2 class="about-headline">About Us</h2>
+    <p class="city">Miami Springs, FL</p>
+    <p class="rating">Rated 4.6/5 based on 743+ reviews</p>
+    <p class="reviews">Locally owned and operated, serving Miami Springs since 2000.</p>
+  </div>
+  <div class="gallery" id="gallery">
+    <h2 class="gallery-headline">Our Work</h2>
+    <div class="gallery-image">
+      <img src="https://picsum.photos/seed/g1douglas-orr-plumbing-inc-miami-fl/800/800">
+      <div class="overlay">
+        <p class="text">Residential plumbing repair and maintenance</p>
+      </div>
+    </div>
+    <div class="gallery-image">
+      <img src="https://picsum.photos/seed/g2douglas-orr-plumbing-inc-miami-fl/800/800">
+      <div class="overlay">
+        <p class="text">Commercial plumbing installation and maintenance</p>
+      </div>
+    </div>
+  </div>
+  <div class="testimonials" id="testimonials">
+    <h2 class="testimonials-headline">What Our Customers Say</h2>
+    <div class="testimonial">
+      <h3 class="name">John D.</h3>
+      <div class="rating">
+        <svg class="star-icon" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z" />
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z" />
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z" />
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z" />
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z" />
+        </svg>
+        <p class="reviews">Douglas Orr Plumbing, Inc. did a great job with my plumbing repair! They were punctual, professional and honest.</p>
+      </div>
+    </div>
+    <div class="testimonial">
+      <h3 class="name">Jane S.</h3>
+      <div class="rating">
+        <svg class="star-icon" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z" />
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z" />
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z" />
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z" />
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z" />
+        </svg>
+        <p class="reviews">I was impressed with the professionalism and attention to detail shown by Douglas Orr Plumbing, Inc. during my plumbing repair.</p>
+      </div>
+    </div>
+  </div>
+  <div class="contact" id="contact">
+    <h2 class="contact-headline">Get in Touch</h2>
+    <div class="contact-form">
+      <input class="input" type="text" placeholder="Name">
+      <input class="input" type="email" placeholder="Email">
+      <input class="input" type="tel" placeholder="Phone">
+      <textarea class="input" placeholder="Message"></textarea>
+      <button class="submit">Send</button>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="contact-info">
+      <p>301 Flagler Dr, Miami Springs, FL 33166, USA</p>
+      <p><a href="tel:3052406731" class="phone-link">305-240-6731</a></p>
+      <p><a href="mailto:info@orrplumbing.com" class="email-link">info@orrplumbing.com</a></p>
+    </div>
+    <div class="social-media-links">
+      <a href="https://linkedin.com/orr-plumbing-inc" style="display: block;"><svg class="linkedin-icon" viewBox="0 0 24 24"></svg></a>
+      <a href="https://facebook.com/OrrPlumbingInc" style="display: block;"><svg class="facebook-icon" viewBox="0 0 24 24"></svg></a>
+      <a href="https://instagram.com/orrplumbing" style="display: block"><svg class="instagram-icon" viewBox="0 0 24 24"></svg></a>
+    </div>
+  </footer>
+  <script>
+    // animate hero section on scroll
+    const hero = document.getElementById('hero');
+    const about = document.getElementById('about');
+    const contact = document.getElementById('contact');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+          hero.classList.add('animate');
+        } else {
+          hero.classList.remove('animate');
+        }
+      });
+    }, {});
+
+    observer.observe(hero);
+
+    // animate services, galleries, and testimonials sections on scroll
+    const services = document.getElementById('services');
+    const gallery = document.getElementById('gallery');
+    const testimonials = document.getElementById('testimonials');
+
+    const servicesObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+          services.classList.add('animate');
+          gallery.classList.add('animate');
+          testimonials.classList.add('animate');
+        } else {
+          services.classList.remove('animate');
+          gallery.classList.remove('animate');
+          testimonials.classList.remove('animate');
+        }
+      });
+    }, {});
+
+    servicesObserver.observe(services);
+
+    // animate contact section on scroll
+    const contactObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+          contact.classList.add('animate');
+        } else {
+          contact.classList.remove('animate');
+        }
+      });
+    }, {});
+
+    contactObserver.observe(contact);
+
+    // animate footers
+    const footer = document.querySelector('.footer');
+    const footerObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+          footer.classList.add('animate');
+        } else {
+          footer.classList.remove('animate');
+        }
+      });
+    }, {});
+
+    footerObserver.observe(footer);
+  </script>
+  <style>
+    /* hero animation */
+    .animate {
+      animation: enter 1s ease-in-out;
+    }
+
+    @keyframes enter {
+      0% {
+        opacity: 0;
+        transform: translateY(20%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* services, galleries, and testimonials animation */
+    .animate-services {
+      animation: reveal 1s ease-in-out;
+    }
+
+    @keyframes reveal {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* contact animation */
+    .animate-contact {
+      animation: scroll 1s ease-in-out;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateY(-20%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    /* footer animation */
+    .animate-footer {
+      animation: reveal 1s ease-in-out;
+    }
+  </style>
+</body>
+</html>

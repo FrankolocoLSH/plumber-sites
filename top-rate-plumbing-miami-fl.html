@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Rate Plumbing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display&family=Satoshi&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3498db;
+            --accent: #f1c40f;
+            --bg: #f9f9f9;
+            --text: #333;
+            --text-muted: #666;
+        }
+        body {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+            background-color: var(--bg);
+        }
+        h1, h2, h3 {
+            font-family: 'Clash Display', sans-serif;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, #87ceeb, #4682b4);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            height: 100vh;
+            max-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            animation: fade-in 1s 0ms both;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            animation: fade-in 1s 100ms both;
+        }
+        .hero a {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            animation: fade-in 1s 200ms both;
+        }
+        .hero a:hover {
+            transform: scale(1.1);
+        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service {
+            margin: 2rem;
+            padding: 2rem;
+            border: 1px solid var(--text-muted);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 2rem);
+        }
+        .service h2 {
+            font-size: 2rem;
+        }
+        .service p {
+            font-size: 1rem;
+        }
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .about img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 2rem;
+        }
+        .about p {
+            font-size: 1rem;
+            width: calc(100% - 200px);
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(50% - 2rem);
+            margin: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .testimonial {
+            margin: 2rem;
+            padding: 2rem;
+            border: 1px solid var(--text-muted);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 2rem);
+        }
+        .testimonial p {
+            font-size: 1rem;
+        }
+        .rating {
+            font-size: 1rem;
+            color: var(--accent);
+        }
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .contact form {
+            margin: 2rem;
+            padding: 2rem;
+            border: 1px solid var(--text-muted);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 2rem);
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact input:focus, .contact textarea:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .contact button {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .contact button:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+        footer a {
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                height: 100vh;
+                max-height: none;
+            }
+            .services {
+                flex-direction: column;
+            }
+            .service {
+                width: 100%;
+                margin: 1rem;
+            }
+            .about {
+                flex-direction: column;
+            }
+            .about img {
+                margin: 1rem auto;
+            }
+            .about p {
+                width: 100%;
+            }
+            .gallery {
+                flex-direction: column;
+            }
+            .gallery img {
+                width: 100%;
+                margin: 1rem;
+            }
+            .testimonials {
+                flex-direction: column;
+            }
+            .testimonial {
+                width: 100%;
+                margin: 1rem;
+            }
+            .contact {
+                flex-direction: column;
+            }
+            .contact form {
+                width: 100%;
+                margin: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Top Rate Plumbing</h1>
+        <p>Reliable and efficient plumbing services in Miami, FL</p>
+        <a href="tel:(305) 939-7499">Call us now: (305) 939-7499</a>
+    </div>
+    <div class="services">
+        <div class="service">
+            <h2>Emergency Plumbing</h2>
+            <p>Our team is available 24/7 to handle any plumbing emergency</p>
+            <img src="https://picsum.photos/seed/s1top-rate-plumbing-miami-fl/800/600" alt="Emergency Plumbing">
+        </div>
+        <div class="service">
+            <h2>Drain Cleaning</h2>
+            <p>We use the latest technology to clean and unclog your drains</p>
+            <img src="https://picsum.photos/seed/s2top-rate-plumbing-miami-fl/800/600" alt="Drain Cleaning">
+        </div>
+        <div class="service">
+            <h2>Water Heater Installation</h2>
+            <p>We install and repair water heaters to ensure you have hot water when you need it</p>
+            <img src="https://picsum.photos/seed/s3top-rate-plumbing-miami-fl/800/600" alt="Water Heater Installation">
+        </div>
+    </div>
+    <div class="about">
+        <img src="https://picsum.photos/seed/abtop-rate-plumbing-miami-fl/1200/800" alt="About Us">
+        <p>We are a locally owned and operated plumbing company in Miami, FL. Our team is dedicated to providing the best possible service to our customers. We pride ourselves on our reliability, efficiency, and professionalism.</p>
+    </div>
+    <div class="gallery">
+        <img src="https://picsum.photos/seed/g1top-rate-plumbing-miami-fl/800/800" alt="Gallery Image 1">
+        <img src="https://picsum.photos/seed/g2top-rate-plumbing-miami-fl/800/800" alt="Gallery Image 2">
+    </div>
+    <div class="testimonials">
+        <div class="testimonial">
+            <p>Top Rate Plumbing is the best plumbing company I have ever used. They are reliable, efficient, and professional.</p>
+            <div class="rating">
+                <svg width="20" height="20">
+                    <polygon points="10,0 16,10 10,20 4,10" fill="var(--accent)"/>
+                </svg>
+                <svg width="20" height="20">
+                    <polygon points="10,0 16,10 10,20 4,10" fill="var(--accent)"/>
+                </svg>
+                <svg width="20" height="20">
+                    <polygon points="10,0 16,10 10,20 4,10" fill="var(--accent)"/>
+                </svg>
+                <svg width="20" height="20">
+                    <polygon points="10,0 16,10 10,20 4,10" fill="var(--accent)"/>
+                </svg>
+                <svg width="20" height="20">
+                    <polygon points="10,0 16,10 10,20 4,10" fill="var(--accent)"/>
+                </svg>
+            </div>
+        </div>
+        <div class="testimonial">
+            <p>I was very impressed with the service I received from Top Rate Plumbing. They were on time, professional, and did a great job.</p>
+            <div class="rating">
+                <svg width="20" height="20">
+                    <polygon points="10,0 16,10 10,20 4,10" fill="var(--accent)"/>
+                </svg>
+                <svg width="20" height="20">
+                    <polygon points="10,0 16,10 10,20 4,10" fill="var(--accent)"/>
+                </svg>
+                <svg width="20" height="20">
+                    <polygon points="10,0 16,10 10,20 4,10" fill="var(--accent)"/>
+                </svg>
+                <svg width="20" height="20">
+                    <polygon points="10,0 16,10 10,20 4,10" fill="var(--accent)"/>
+                </svg>
+                <svg width="20" height="20">
+                    <polygon points="10,0 16,10 10,20 4,10" fill="var(--accent)"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="contact">
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button>Send</button>
+        </form>
+        <p>Address: 10705 SW 216th St #209, Miami, FL 33170, USA</p>
+        <p>Phone: <a href="tel:(305) 939-7499">(305) 939-7499</a></p>
+        <p>Email: <a href="mailto:sfl@toprateplumbing.com">sfl@toprateplumbing.com</a></p>
+    </div>
+    <footer>
+        <p>&copy; 2023 Top Rate Plumbing</p>
+        <p><a href="#">Home</a> | <a href="#">Services</a> | <a href="#">About</a> | <a href="#">Contact</a></p>
+    </footer>
+</body>
+</html>

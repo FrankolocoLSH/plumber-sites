@@ -3,50 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plumb-it-all LLC - Expert Plumbers in Florida</title>
+    <title>Plumb-it-all LLC</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&family=Outfit:wght@400;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #FFC107;
-            --secondary-color: #8B9467;
-            --background-color: #F7F7F7;
-            --text-color: #333;
-            --accent-color: #4CAF50;
+            --primary: #0097A7;
+            --accent: #FFC400;
+            --bg: #F7F7F7;
+            --text: #333;
+            --text-muted: #666;
         }
         body {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            line-height: 1.5;
             margin: 0;
             padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
+            background-color: var(--bg);
+            color: var(--text);
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            font-family: 'Fraunces', serif;
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        header p {
-            font-size: 18px;
-            margin-bottom: 20px;
+        h1, h2, h3 {
+            font-family: 'Clash Display', sans-serif;
         }
         .hero {
-            background-image: url(https://picsum.photos/seed/hplumb-it/1920/1080);
-            background-size: cover;
-            background-position: center;
+            background-image: linear-gradient(to bottom, #87CEEB, #4682B4);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -54,10 +38,21 @@
             color: #fff;
         }
         .hero h1 {
-            font-family: 'Fraunces', serif;
-            font-size: 48px;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .hero a {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            text-decoration: none;
         }
         .services {
             display: flex;
@@ -66,36 +61,30 @@
         }
         .service {
             background-color: #fff;
-            padding: 20px;
-            margin: 20px;
-            width: calc(33.33% - 20px);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .service img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            padding: 2rem;
+            margin: 1rem;
+            border: 1px solid var(--text-muted);
+            border-radius: 0.5rem;
+            width: calc(33.33% - 2rem);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .service h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 10px;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
         .about {
-            background-color: var(--secondary-color);
-            color: #fff;
-            padding: 20px;
-            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-        .about img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 20px;
+        .about-text {
+            width: calc(50% - 2rem);
+            margin: 1rem;
+            padding: 2rem;
+            background-color: #fff;
+            border: 1px solid var(--text-muted);
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .gallery {
             display: flex;
@@ -103,132 +92,247 @@
             justify-content: center;
         }
         .gallery img {
-            width: calc(25% - 20px);
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin: 20px;
+            width: calc(50% - 2rem);
+            margin: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .testimonials {
-            background-image: url(https://picsum.photos/seed/tbplumb-/1920/1080);
-            background-size: cover;
-            background-position: center;
-            padding: 20px;
-            color: #fff;
+        .testimonial {
+            background-color: #fff;
+            padding: 2rem;
+            margin: 1rem;
+            border: 1px solid var(--text-muted);
+            border-radius: 0.5rem;
+            width: calc(50% - 2rem);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .testimonials blockquote {
-            font-family: 'Space Mono', monospace;
-            font-size: 18px;
-            margin-bottom: 20px;
+        .testimonial p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
         }
         .contact {
-            background-color: var(--primary-color);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .contact-form {
+            width: calc(50% - 2rem);
+            margin: 1rem;
+            padding: 2rem;
+            background-color: #fff;
+            border: 1px solid var(--text-muted);
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--text-muted);
+            border-radius: 0.5rem;
+        }
+        .contact-form input[type="submit"] {
+            background-color: var(--accent);
             color: #fff;
-            padding: 20px;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+        .footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
             text-align: center;
         }
-        .contact h2 {
-            font-family: 'Fraunces', serif;
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        footer {
-            background-color: var(--secondary-color);
+        .footer a {
             color: #fff;
-            padding: 20px;
-            text-align: center;
+            text-decoration: none;
         }
-        @keyframes animate {
-            0% {
-                transform: scale(0.5);
+        @keyframes fadeIn {
+            from {
                 opacity: 0;
             }
-            100% {
-                transform: scale(1);
+            to {
                 opacity: 1;
             }
         }
         .animate {
-            animation: animate 1s;
+            animation: fadeIn 1s;
         }
-        @media only screen and (max-width: 768px) {
-            .service {
-                width: calc(50% - 20px);
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;
             }
-            .gallery img {
-                width: calc(50% - 20px);
+            .services {
+                flex-direction: column;
             }
-        }
-        @media only screen and (max-width: 480px) {
             .service {
                 width: 100%;
             }
+            .about {
+                flex-direction: column;
+            }
+            .about-text {
+                width: 100%;
+            }
+            .gallery {
+                flex-direction: column;
+            }
             .gallery img {
+                width: 100%;
+            }
+            .testimonial {
+                width: 100%;
+            }
+            .contact {
+                flex-direction: column;
+            }
+            .contact-form {
                 width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <header>
+    <header class="hero animate" style="animation-delay: 0ms;">
         <h1>Plumb-it-all LLC</h1>
         <p>Expert Plumbers in Florida</p>
+        <a href="tel:(850) 300-0059">Call Us Now: (850) 300-0059</a>
     </header>
-    <div class="hero animate">
-        <h1>Welcome to Plumb-it-all LLC</h1>
-    </div>
-    <div class="container">
-        <h2>Our Services</h2>
-        <div class="services">
+    <main>
+        <section class="services animate" style="animation-delay: 100ms;">
             <div class="service">
-                <img src="https://picsum.photos/seed/s1plumb-/800/600" alt="Service 1">
                 <h2>Emergency Plumbing</h2>
-                <p>We provide 24/7 emergency plumbing services to ensure your safety and convenience.</p>
+                <p>Get help with plumbing emergencies, 24/7.</p>
             </div>
             <div class="service">
-                <img src="https://picsum.photos/seed/s2plumb-/800/600" alt="Service 2">
                 <h2>Drain Cleaning</h2>
-                <p>Our experienced plumbers use the latest technology to clean and clear your drains effectively.</p>
+                <p>Clear clogged drains with our expert technicians.</p>
             </div>
             <div class="service">
-                <img src="https://picsum.photos/seed/s3plumb-/800/600" alt="Service 3">
                 <h2>Water Heater Installation</h2>
-                <p>We install and repair water heaters to provide you with hot water whenever you need it.</p>
+                <p>Get a new water heater installed by our professionals.</p>
             </div>
+        </section>
+        <section class="about animate" style="animation-delay: 200ms;">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>We are a team of expert plumbers based in Florida. With years of experience, we provide top-notch plumbing services to our customers.</p>
+                <p>We are committed to providing excellent service and ensuring our customers are satisfied with our work.</p>
+            </div>
+            <img src="https://picsum.photos/seed/abplumb-it-all-llc-florida/1200/800" alt="About Us">
+        </section>
+        <section class="gallery animate" style="animation-delay: 300ms;">
+            <img src="https://picsum.photos/seed/g1plumb-it-all-llc-florida/800/800" alt="Gallery Image 1">
+            <img src="https://picsum.photos/seed/g2plumb-it-all-llc-florida/800/800" alt="Gallery Image 2">
+        </section>
+        <section class="testimonials animate" style="animation-delay: 400ms;">
+            <div class="testimonial">
+                <p>Plumb-it-all LLC did an amazing job fixing my leaky faucet. They were prompt, professional, and affordable.</p>
+                <div class="rating">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="gold" stroke-width="2">
+                        <path d="M10 0L11.2929 7.29292L19.2929 9.29292L12.7071 16.2929L16.4142 20L10 16.5858L3.58579 20L7.29292 16.2929L0.707107 9.29292L8.70711 7.29292L10 0Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="gold" stroke-width="2">
+                        <path d="M10 0L11.2929 7.29292L19.2929 9.29292L12.7071 16.2929L16.4142 20L10 16.5858L3.58579 20L7.29292 16.2929L0.707107 9.29292L8.70711 7.29292L10 0Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="gold" stroke-width="2">
+                        <path d="M10 0L11.2929 7.29292L19.2929 9.29292L12.7071 16.2929L16.4142 20L10 16.5858L3.58579 20L7.29292 16.2929L0.707107 9.29292L8.70711 7.29292L10 0Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="gold" stroke-width="2">
+                        <path d="M10 0L11.2929 7.29292L19.2929 9.29292L12.7071 16.2929L16.4142 20L10 16.5858L3.58579 20L7.29292 16.2929L0.707107 9.29292L8.70711 7.29292L10 0Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="gold" stroke-width="2">
+                        <path d="M10 0L11.2929 7.29292L19.2929 9.29292L12.7071 16.2929L16.4142 20L10 16.5858L3.58579 20L7.29292 16.2929L0.707107 9.29292L8.70711 7.29292L10 0Z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="testimonial">
+                <p>Plumb-it-all LLC provided excellent service when I needed a new water heater installed. They were prompt, professional, and affordable.</p>
+                <div class="rating">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="gold" stroke-width="2">
+                        <path d="M10 0L11.2929 7.29292L19.2929 9.29292L12.7071 16.2929L16.4142 20L10 16.5858L3.58579 20L7.29292 16.2929L0.707107 9.29292L8.70711 7.29292L10 0Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="gold" stroke-width="2">
+                        <path d="M10 0L11.2929 7.29292L19.2929 9.29292L12.7071 16.2929L16.4142 20L10 16.5858L3.58579 20L7.29292 16.2929L0.707107 9.29292L8.70711 7.29292L10 0Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="gold" stroke-width="2">
+                        <path d="M10 0L11.2929 7.29292L19.2929 9.29292L12.7071 16.2929L16.4142 20L10 16.5858L3.58579 20L7.29292 16.2929L0.707107 9.29292L8.70711 7.29292L10 0Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="gold" stroke-width="2">
+                        <path d="M10 0L11.2929 7.29292L19.2929 9.29292L12.7071 16.2929L16.4142 20L10 16.5858L3.58579 20L7.29292 16.2929L0.707107 9.29292L8.70711 7.29292L10 0Z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="gold" stroke-width="2">
+                        <path d="M10 0L11.2929 7.29292L19.2929 9.29292L12.7071 16.2929L16.4142 20L10 16.5858L3.58579 20L7.29292 16.2929L0.707107 9.29292L8.70711 7.29292L10 0Z"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+        <section class="contact animate" style="animation-delay: 500ms;">
+            <div class="contact-form">
+                <h2>Get in Touch</h2>
+                <form>
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Message" required></textarea>
+                    <input type="submit" value="Send Message">
+                </form>
+            </div>
+            <div>
+                <h2>Contact Information</h2>
+                <p>Address: 1618 Sharkey St, Tallahassee, FL 32304, USA</p>
+                <p>Phone: <a href="tel:(850) 300-0059">(850) 300-0059</a></p>
+                <p>Email: <a href="mailto:"></a></p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 Plumb-it-all LLC</p>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div>
+            <a href="" style="display:?'block':'none'">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2">
+                    <path d="M10 0L11.2929 7.29292L19.2929 9.29292L12.7071 16.2929L16.4142 20L10 16.5858L3.58579 20L7.29292 16.2929L0.707107 9.29292L8.70711 7.29292L10 0Z"/>
+                </svg>
+            </a>
+            <a href="" style="display:?'block':'none'">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2">
+                    <path d="M10 0L11.2929 7.29292L19.2929 9.29292L12.7071 16.2929L16.4142 20L10 16.5858L3.58579 20L7.29292 16.2929L0.707107 9.29292L8.70711 7.29292L10 0Z"/>
+                </svg>
+            </a>
+            <a href="" style="display:?'block':'none'">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2">
+                    <path d="M10 0L11.2929 7.29292L19.2929 9.29292L12.7071 16.2929L16.4142 20L10 16.5858L3.58579 20L7.29292 16.2929L0.707107 9.29292L8.70711 7.29292L10 0Z"/>
+                </svg>
+            </a>
+            <a href="" style="display:?'block':'none'">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2">
+                    <path d="M10 0L11.2929 7.29292L19.2929 9.29292L12.7071 16.2929L16.4142 20L10 16.5858L3.58579 20L7.29292 16.2929L0.707107 9.29292L8.70711 7.29292L10 0Z"/>
+                </svg>
+            </a>
         </div>
-    </div>
-    <div class="about animate">
-        <img src="https://picsum.photos/seed/abplumb-/1200/800" alt="About Us">
-        <h2>About Us</h2>
-        <p>We are a team of experienced plumbers dedicated to providing top-notch services to our customers in Florida.</p>
-    </div>
-    <div class="container">
-        <h2>Our Gallery</h2>
-        <div class="gallery">
-            <img src="https://picsum.photos/seed/g1plumb-/800/800" alt="Gallery Image 1">
-            <img src="https://picsum.photos/seed/g2plumb-/800/800" alt="Gallery Image 2">
-            <img src="https://picsum.photos/seed/g1plumb-/800/800" alt="Gallery Image 3">
-            <img src="https://picsum.photos/seed/g2plumb-/800/800" alt="Gallery Image 4">
-        </div>
-    </div>
-    <div class="testimonials animate">
-        <blockquote>
-            Plumb-it-all LLC provided excellent service and professionalism. Their plumbers were knowledgeable and friendly.
-        </blockquote>
-        <blockquote>
-            I was impressed with the prompt response and efficient work of the plumbers from Plumb-it-all LLC.
-        </blockquote>
-    </div>
-    <div class="contact animate">
-        <h2>Get in Touch</h2>
-        <p>Contact us at (850) 300-0059 or <a href="mailto:"></a> to schedule an appointment.</p>
-        <p>Address: 1618 Sharkey St, Tallahassee, FL 32304, USA</p>
-    </div>
-    <footer>
-        <p>&copy; 2023 Plumb-it-all LLC. All rights reserved.</p>
-        <p>Rating: 5 (18 reviews)</p>
-        <p>Follow us on <a href="">Instagram</a> and <a href="">Facebook</a>.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('main section');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const sectionId = link.getAttribute('href');
+                    const section = document.querySelector(sectionId);
+                    section.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

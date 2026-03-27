@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miami 305 Plumbing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;700&family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3498db;
+            --accent: #f1c40f;
+            --bg: #f9f9f9;
+            --text: #333;
+            --text-muted: #666;
+        }
+        body {
+            font-family: 'Satoshi', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            margin-bottom: 0.5em;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, #87ceeb, #6495ed);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 48px;
+            text-align: center;
+        }
+        .hero p {
+            font-size: 24px;
+            text-align: center;
+        }
+        .hero .btn {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .hero .btn:hover {
+            background-color: var(--accent);
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service {
+            background-color: #fff;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            width: calc(33.33% - 20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .service h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .service p {
+            font-size: 18px;
+        }
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .about-text {
+            width: calc(66.66% - 20px);
+            padding: 20px;
+        }
+        .about-img {
+            width: calc(33.33% - 20px);
+            padding: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery-img {
+            width: calc(50% - 20px);
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-img img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .testimonial {
+            background-color: #fff;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            width: calc(50% - 20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial p {
+            font-size: 18px;
+        }
+        .rating {
+            font-size: 24px;
+            color: var(--primary);
+        }
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .contact-form {
+            width: calc(50% - 20px);
+            padding: 20px;
+        }
+        .contact-info {
+            width: calc(50% - 20px);
+            padding: 20px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .footer nav a {
+            color: #fff;
+            margin: 10px;
+        }
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+            }
+            .service {
+                width: 100%;
+                margin: 10px;
+            }
+            .about {
+                flex-direction: column;
+            }
+            .about-text {
+                width: 100%;
+            }
+            .about-img {
+                width: 100%;
+            }
+            .gallery {
+                flex-direction: column;
+            }
+            .gallery-img {
+                width: 100%;
+                margin: 10px;
+            }
+            .testimonials {
+                flex-direction: column;
+            }
+            .testimonial {
+                width: 100%;
+                margin: 10px;
+            }
+            .contact {
+                flex-direction: column;
+            }
+            .contact-form {
+                width: 100%;
+            }
+            .contact-info {
+                width: 100%;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .hero, .services, .about, .gallery, .testimonials, .contact {
+            animation: fadeIn;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        .hero {
+            animation-delay: 0ms;
+        }
+        .services {
+            animation-delay: 100ms;
+        }
+        .about {
+            animation-delay: 200ms;
+        }
+        .gallery {
+            animation-delay: 300ms;
+        }
+        .testimonials {
+            animation-delay: 400ms;
+        }
+        .contact {
+            animation-delay: 500ms;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <h1>Miami 305 Plumbing</h1>
+            <p>Reliable plumbing services in Miami, FL</p>
+            <a href="tel:(305) 833-3404" class="btn">Call Us Now!</a>
+        </div>
+    </section>
+    <section class="services">
+        <div class="container">
+            <div class="service">
+                <h2>Plumbing Repairs</h2>
+                <p>Fixing leaks, unclogging drains, and more</p>
+                <img src="https://picsum.photos/seed/s1miami-305-plumbing-miami-fl/800/600" alt="Plumbing Repairs">
+            </div>
+            <div class="service">
+                <h2>Water Heater Installation</h2>
+                <p>Installing and repairing water heaters</p>
+                <img src="https://picsum.photos/seed/s2miami-305-plumbing-miami-fl/800/600" alt="Water Heater Installation">
+            </div>
+            <div class="service">
+                <h2>Drain Cleaning</h2>
+                <p>Cleaning and unclogging drains</p>
+                <img src="https://picsum.photos/seed/s3miami-305-plumbing-miami-fl/800/600" alt="Drain Cleaning">
+            </div>
+        </div>
+    </section>
+    <section class="about">
+        <div class="container">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>We are a team of reliable plumbers in Miami, FL, dedicated to providing top-notch plumbing services to our community.</p>
+                <p>We serve the entire Miami area, including Miami FL and surrounding neighborhoods.</p>
+            </div>
+            <div class="about-img">
+                <img src="https://picsum.photos/seed/abmiami-305-plumbing-miami-fl/1200/800" alt="About Us">
+            </div>
+        </div>
+    </section>
+    <section class="gallery">
+        <div class="container">
+            <div class="gallery-img">
+                <img src="https://picsum.photos/seed/g1miami-305-plumbing-miami-fl/800/800" alt="Gallery Image 1">
+            </div>
+            <div class="gallery-img">
+                <img src="https://picsum.photos/seed/g2miami-305-plumbing-miami-fl/800/800" alt="Gallery Image 2">
+            </div>
+        </div>
+    </section>
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonial">
+                <p>Great service! The plumbers were on time and fixed the issue quickly.</p>
+                <div class="rating">5/5</div>
+            </div>
+            <div class="testimonial">
+                <p>Very professional and friendly. I would definitely recommend Miami 305 Plumbing.</p>
+                <div class="rating">5/5</div>
+            </div>
+            <div class="testimonial">
+                <p>The plumber was knowledgeable and helped me with all my plumbing needs.</p>
+                <div class="rating">5/5</div>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="container">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p>Address: 11025 SW 56th St, Miami, FL 33165, USA</p>
+                <p>Phone: <a href="tel:(305) 833-3404">(305) 833-3404</a></p>
+                <p>Email: <a href="mailto:miami305plumbing@gmail.com">miami305plumbing@gmail.com</a></p>
+                <div>
+                    <a href="https://instagram.com/mia305plumbing" style="display:https://instagram.com/mia305plumbing?'block':'none'">Instagram</a>
+                    <a href="https://facebook.com/miami305plumbing" style="display:https://facebook.com/miami305plumbing?'block':'none'">Facebook</a>
+                    <a href="" style="display:?'block':'none'">TikTok</a>
+                    <a href="" style="display:?'block':'none'">LinkedIn</a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h2>Get in Touch</h2>
+                <form>
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <textarea placeholder="Message"></textarea>
+                    <button>Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Miami 305 Plumbing</p>
+            <nav>
+                <a href="#hero">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a6 6 0 0 1 6-6z"></path></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tiktok"><path d="M16.88 5.67a2.25 2.25 0 0 1 0 4.24A2.25 2.25 0 0 1 14.22 12H12v8h3v2H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1v4h6v-4h.81l.01.01a2 2 0 0 1 2.22 2.22l-.01.01a2 2 0 0 1-2.22 2.22z"></path><path d="M13.5 13.5l-3-3 3-3 3 3-3 3z"></path></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><path d="M12 2C8.13 2 5 5.13 5 9.5 5 14.88 12 22 12 22s7-7.12 7-14.5C19 5.13 14.88 2 12 2z"></path></svg>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

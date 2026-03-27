@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empire Plumbing</title>
+    <style>
+        /* CSS VARIABLES */
+        :root {
+            --primary: #009A9A;
+            --accent: #FF9B65;
+            --bg: linear-gradient(145deg, #4E5338, #3C413E);
+            --text: #F2F2F2;
+            --text-muted: #C1C1C1;
+        }
+        
+        /* GLOBAL STYLES */
+        body {
+            font-family: 'Satoshi', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* HERO SECTIONS */
+        .hero {
+            height: 80vh;
+            background-size: 100% 2000px;
+            background-image: 
+                linear-gradient(
+                    145deg, 
+                    rgba(80, 83, 56, 0.7), 
+                    rgba(60, 65, 62, 0.5)
+                ),
+                url('https://picsum.photos/2000/1200');
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 3em;
+        }
+        
+        .hero > h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 4rem;
+        }
+        
+        .hero > button {
+            background-color: var(--primary);
+            border: none;
+            padding: 1em 2em;
+            border-radius: 1em;
+            color: var(--text);
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .hero > button:hover {
+            background-color: var(--accent);
+        }
+        
+        /* SERVICE CARDS */
+        .services {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background-color: var(--bg);
+            border: none;
+            border-radius: 1em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 2em auto;
+            padding: 2em;
+            position: relative;
+            width: calc(33.33% - 1em);
+        }
+        
+        .service-card > h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1em;
+        }
+        
+        .service-card > p {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.5em;
+        }
+        
+        /* ASYMMETRICAL LAYOUT */
+        .services > .service-card:nth-child(1) {
+            margin-left: 2em;
+        }
+        
+        .services > .service-card:nth-child(3) {
+            margin-right: 2em;
+        }
+        
+        /* OVERLAPPING ELEMENTS */
+        .service-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s ease;
+        }
+        
+        .service-card:hover .service-card-overlay {
+            opacity: 1;
+        }
+        
+        /* ABOUT SECTION */
+        .about {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 4em 2em 2em 2em;
+            background-size: 10% 10%;
+            background-image: 
+                linear-gradient(
+                    45deg, 
+                    rgba(240, 240, 240, 0.9), 
+                    rgba(200, 200, 200, 0.9)
+                ),
+                url('https://picsum.photos/2000/2000');
+        }
+        
+        .about > h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 1em;
+        }
+        
+        .about > p {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 0.8rem;
+            line-height: 1.5em;
+        }
+        
+        /* TESTIMONIALS */
+        .testimonials {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 2em 2em;
+        }
+        
+        .testimonial {
+            background-color: #F7F7F7;
+            border: 1px solid #DDDDDD;
+            border-radius: 1em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 2em auto;
+            padding: 2em;
+            position: relative;
+        }
+        
+        .testimonial > h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 1em;
+        }
+        
+        .testimonial > p {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 0.8rem;
+            line-height: 1.5em;
+        }
+        
+        /* GALLERY */
+        .gallery {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 2em 2em;
+        }
+        
+        .gallery > img {
+            border-radius: 1em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 2em auto;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* CONTACT SECTION */
+        .contact {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 4em 2em 2em 2em;
+            background-size: 10% 10%;
+            background-image: 
+                linear-gradient(
+                    45deg, 
+                    rgba(240, 240, 240, 0.9), 
+                    rgba(200, 200, 200, 0.9)
+                ),
+                url('https://picsum.photos/2000/2000');
+        }
+        
+        .contact > h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 1em;
+        }
+        
+        .contact > p {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 0.8rem;
+            line-height: 1.5em;
+        }
+        
+        /* FOOTER */
+        .footer {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 2em 2em;
+            background-color: var(--bg);
+            color: var(--text);
+            text-align: center;
+        }
+        
+        .footer > ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer > ul > li {
+            display: inline-block;
+            margin-right: 1em;
+        }
+        
+        .footer > a {
+            background-color: var(--primary);
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 1em;
+            color: var(--text);
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+        
+        /* ANIMATIONS */
+        @keyframes reveal {
+            0% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes stagger {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        /* PAGE LOAD ANIMATIONS */
+        .section {
+            animation: reveal 0.5s ease;
+            animation-delay: calc(0.5s * var(--index));
+            --index: 0s;
+        }
+        
+        .service-card-overlay {
+            animation: stagger 0.3s ease;
+        }
+        
+        /* HOVER EFFECTS */
+        .service-card:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-10px);
+        }
+        
+        .testimonial > span:hover {
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+        
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .hero > h1 {
+                font-size: 2rem;
+            }
+            
+            .hero > button {
+                padding: 1em;
+            }
+            
+            .services > .service-card {
+                width: 100%;
+                margin: 1em 0;
+            }
+            
+            .service-card-overlay {
+                display: none;
+            }
+            
+            .testimonial {
+                margin: 1em 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero > h1 {
+                font-size: 1.5rem;
+            }
+            
+            .contact > p {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero" style="--index: 1">
+        <h1>Empowering Your Home</h1>
+        <button phone="305-531-7017">Call Now</button>
+    </section>
+    <section class="services section" style="--index: 1">
+        <h2>Our Expert Services</h2>
+        <div class="services">
+            <div class="service-card">
+                <h3>Leaks and Repiping</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <div class="service-card-overlay">
+                    Discover our comprehensive leak detection and repair services.
+                </div>
+            </div>
+            <div class="service-card">
+                <h3>Water Heaters and Tanks</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <div class="service-card-overlay">
+                    Get expert installation and repair for your water heater or tank.
+                </div>
+            </div>
+            <div class="service-card">
+                <h3>Drains and Sewer</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <div class="service-card-overlay">
+                    Trust us for professional drain cleaning and sewer repair services.
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about section" style="--index: 2">
+        <h2>About Empire Plumbing</h2>
+        <pLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        <pLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+    </section>
+    <section class="gallery section" style="--index: 2">
+        <h2>Our Work</h2>
+        <div class="gallery">
+            <img src="https://picsum.photos/2000/1200" alt="Image 1">
+            <img src="https://picsum.photos/2000/1200" alt="Image 2">
+        </div>
+    </section>
+    <section class="testimonials section" style="--index: 2">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <h4>Jane Doe, Miami</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <span>5/5 stars</span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="testimonial">
+                <h4>John Smith, Miami</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <span>4.5/5 stars</span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="testimonial">
+                <h4>Emily Johnson, Miami</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <span>4.5/5 stars</span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+    <section class="contact section" style="--index: 3">
+        <h2>Get in Touch</h2>
+        <p>Contact us today for a free quote.</p>
+        <div class="contact">
+            <h3>Phone</h3>
+            <p>(305) 531-7017</p>
+            <h3>Email</h3>
+            <p>sales@empireplumbing.com</p>
+            <h3>Location</h3>
+            <p>1754 Bay Rd, Miami Beach, FL 33139, USA</p>
+        </div>
+        <form>
+            <input type="email" placeholder="Email Address">
+            <textarea placeholder="Message"></textarea>
+            <button>Send</button>
+        </form>
+        <div class="contact">
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="https://instagram.com/empireplumbing" class="icon-instagram"></a>
+                <a href="https://facebook.com/EmpirePlumbing305" class="icon-facebook"></a>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <h4>Empire Plumbing | 4.6/5 stars from 296+ reviews</h4>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const sections = document.querySelectorAll('.section');
+        sections.forEach((section, index) => {
+            section.style.setProperty('--index', `${index * 100}ms`);
+        });
+        
+        const navLinks = document.querySelectorAll('.footer-links ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const anchor = link.getAttribute('href');
+                scroll({
+                    top: 0,
+                    behavior: 'smooth',
+                });
+                document.querySelector(scrollTo({ top: 0, behavior: 'smooth' }).target.hash).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                    inline: 'nearest',
+                });
+            });
+        });
+        
+        const testimonials = document.querySelectorAll('.testimonial span.star');
+        testimonials.forEach((star, index) => {
+            star.style.width = `${(index + 1) * 2}px`;
+        });
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.querySelector('form');
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.querySelector('input[type="email"]').value;
+                const message = document.querySelector('textarea').value;
+                const data = {
+                    name: email,
+                    subject: 'New Message from Website',
+                    body: message,
+                };
+                const formData = new FormData();
+                Object.keys(data).forEach(key => {
+                    formData.append(key, data[key]);
+                });
+                fetch('https://example.com/api/send-email', {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(err => console.error(err));
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miami Dade Plumbing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display&family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2E865F;
+            --accent: #F7DC6F;
+            --bg: #F5F5F5;
+            --text: #333;
+            --text-muted: #666;
+        }
+        body {
+            font-family: 'Satoshi', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Clash Display', sans-serif;
+            color: var(--primary);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, #C9E4CA, #F5F5F5);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 2rem);
+            margin-bottom: 20px;
+        }
+        .hero a {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
+        .hero a:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service {
+            background-color: #fff;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            width: calc(33.33% - 20px);
+        }
+        .service h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .service p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .about-text {
+            width: calc(50% - 20px);
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        .about img {
+            width: calc(50% - 20px);
+            margin: 20px;
+            border-radius: 10px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(50% - 20px);
+            margin: 20px;
+            border-radius: 10px;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+        }
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .testimonial {
+            background-color: #fff;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            width: calc(50% - 20px);
+        }
+        .testimonial h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .testimonial p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        .rating {
+            color: #FFD700;
+            font-size: 1rem;
+        }
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .contact-form {
+            background-color: #fff;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            width: calc(50% - 20px);
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact-form input[type="submit"] {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
+        .contact-form input[type="submit"]:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
+        }
+        .footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer svg {
+            fill: #fff;
+            margin: 0 10px;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;
+            }
+            .services {
+                flex-direction: column;
+            }
+            .service {
+                width: 100%;
+                margin: 20px 0;
+            }
+            .about {
+                flex-direction: column;
+            }
+            .about-text {
+                width: 100%;
+                margin: 20px 0;
+            }
+            .about img {
+                width: 100%;
+                margin: 20px 0;
+            }
+            .gallery {
+                flex-direction: column;
+            }
+            .gallery img {
+                width: 100%;
+                margin: 20px 0;
+            }
+            .testimonials {
+                flex-direction: column;
+            }
+            .testimonial {
+                width: 100%;
+                margin: 20px 0;
+            }
+            .contact {
+                flex-direction: column;
+            }
+            .contact-form {
+                width: 100%;
+                margin: 20px 0;
+            }
+        }
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .animate {
+            animation: fade-in 1s;
+        }
+        .animate-1 {
+            animation-delay: 100ms;
+        }
+        .animate-2 {
+            animation-delay: 200ms;
+        }
+        .animate-3 {
+            animation-delay: 300ms;
+        }
+        .animate-4 {
+            animation-delay: 400ms;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero animate">
+        <h1>Miami Dade Plumbing</h1>
+        <p>Trustworthy and reliable plumbing services in Miami, FL</p>
+        <a href="tel:7867563185">Call us now: (786) 756-3185</a>
+        <img src="https://picsum.photos/seed/heromiami-dade-plumbing-miami-fl/1920/1080" alt="Miami Dade Plumbing">
+    </div>
+    <div class="container">
+        <div class="services animate-1">
+            <div class="service">
+                <h2>Residential Plumbing</h2>
+                <p>We provide a wide range of residential plumbing services, from leaky faucets to toilet installations.</p>
+                <img src="https://picsum.photos/seed/s1miami-dade-plumbing-miami-fl/800/600" alt="Residential Plumbing">
+            </div>
+            <div class="service">
+                <h2>Commercial Plumbing</h2>
+                <p>Our commercial plumbing services include drain cleaning, pipe repairs, and water heater installations.</p>
+                <img src="https://picsum.photos/seed/s2miami-dade-plumbing-miami-fl/800/600" alt="Commercial Plumbing">
+            </div>
+            <div class="service">
+                <h2>Emergency Plumbing</h2>
+                <p>We offer 24/7 emergency plumbing services for those unexpected plumbing issues.</p>
+                <img src="https://picsum.photos/seed/s3miami-dade-plumbing-miami-fl/800/600" alt="Emergency Plumbing">
+            </div>
+        </div>
+        <div class="about animate-2">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>We are a locally owned and operated plumbing company in Miami, FL, dedicated to providing top-notch plumbing services to our customers.</p>
+                <p>Our team of experienced plumbers are licensed, insured, and bonded, and we pride ourselves on our excellent customer service and workmanship.</p>
+            </div>
+            <img src="https://picsum.photos/seed/abmiami-dade-plumbing-miami-fl/1200/800" alt="About Us">
+        </div>
+        <div class="gallery animate-3">
+            <img src="https://picsum.photos/seed/g1miami-dade-plumbing-miami-fl/800/800" alt="Gallery Image 1">
+            <img src="https://picsum.photos/seed/g2miami-dade-plumbing-miami-fl/800/800" alt="Gallery Image 2">
+        </div>
+        <div class="testimonials animate-4">
+            <div class="testimonial">
+                <h2>John Doe</h2>
+                <p>Miami Dade Plumbing did an excellent job fixing my leaky faucet. They were prompt, professional, and affordable.</p>
+                <div class="rating">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="testimonial">
+                <h2>Jane Doe</h2>
+                <p>I was impressed with the professionalism and expertise of Miami Dade Plumbing. They fixed my toilet and sink quickly and efficiently.</p>
+                <div class="rating">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="contact animate-4">
+            <div class="contact-form">
+                <h2>Get in Touch</h2>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message"></textarea>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+            <div>
+                <h2>Contact Information</h2>
+                <p>Address: 9417 SW 77th Ct, Miami, FL 33156, USA</p>
+                <p>Phone: (786) 756-3185</p>
+                <p>Email: <a href="mailto:abe@miami-dade-plumbing.com">abe@miami-dade-plumbing.com</a></p>
+                <p>Follow us on social media:</p>
+                <a href="https://instagram.com/miamidadeplumbing" style="display:https://instagram.com/miamidadeplumbing?'block':'none'">Instagram</a>
+                <a href="https://facebook.com/MiamiDadePlumbing" style="display:https://facebook.com/MiamiDadePlumbing?'block':'none'">Facebook</a>
+                <a href="https://linkedin.com/miami-dade-plumbing" style="display:https://linkedin.com/miami-dade-plumbing?'block':'none'">LinkedIn</a>
+                <a href="{{twitter}}" style="display:{{twitter}}?'block':'none'">Twitter</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Miami Dade Plumbing</p>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 2l4 4-4 4-4-4 4-4z" />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 2l4 4-4 4-4-4 4-4z" />
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 2l4 4-4 4-4-4 4-4z" />
+            </svg>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                    }
+                });
+            }, { threshold: 0.5 });
+            document.querySelectorAll(".animate").forEach((element) => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

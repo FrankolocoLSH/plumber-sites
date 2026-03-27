@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oasis Plumbing</title>
+  <style>
+    :root {
+      --primary: #2F4F4F; /* Charcoal */
+      --accent: #FF9900; /* Electric yellow */
+      --bg: linear-gradient(-45deg, #66CCCC, #33CC33); /* Soft pastel teal + green */
+      --text: #2C2C2C; /* Deep charcoal */
+      --text-muted: #666666; /* Soft gray */
+    }
+    body {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: clamp(1.6rem, 1vw + 1rem, 3rem);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: var(--bg);
+      transition: 0.5s ease-in-out;
+    }
+    header {
+      max-height: 60vh;
+      padding-top: 5vh;
+      background-image: linear-gradient(0deg, #2F4F4F, #2F4F4F),
+        url('https://picsum.photos/seed/herooasis-plumbing-miami-fl/1920/1080');
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    h1 {
+      font-family: 'Clash Display', sans-serif;
+      font-size: clamp(2.8rem, 3vw + 2rem, 5rem);
+      color: var(--text);
+      text-align: center;
+      letter-spacing: 0.15rem;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    nav li {
+      margin: 0 2rem;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: var(--accent);
+      transition: 0.3s ease-in-out;
+    }
+    #services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5rem;
+    }
+    .service-card {
+      background-color: var(--text);
+      color: var(--primary);
+      padding: 2rem 1rem 4rem;
+      text-align: center;
+      width: 40%;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      transition: 0.3s ease-in-out;
+    }
+    #gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .gallery-image {
+      margin-bottom: 1rem;
+      width: 80%;
+    }
+    .gallery-image img {
+      width: 100%;
+      height: 15rem;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+    ::-webkit-scrollbar {
+      width: 1rem;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: var(--primary);
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--accent);
+    }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: clamp(1.8rem, 2vw + 1.8rem, 3.5rem);
+      }
+      #services {
+        flex-direction: column;
+      }
+      .service-card {
+        width: 80%;
+      }
+      #gallery {
+        flex-direction: column;
+      }
+      .gallery-image {
+        width: 80%;
+        margin-bottom: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <h1>Oasis Plumbing</h1>
+    <a href="tel:(305) 900-8224" style="background-color: var(--accent); padding: 1rem 2rem; border-radius: 1rem; color: var(--text); text-decoration: none; transition: 0.3s ease-in-out;">Get Plumbing Solutions Today!</a>
+  </header>
+  <main>
+    <div id="services">
+      <div class="service-card">
+        <h2>Plumbing Repairs</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+      </div>
+      <div class="service-card">
+        <h2>Plumbing Installations</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+      </div>
+      <div class="service-card">
+        <h2>Water Heater Services</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+      </div>
+    </div>
+    <div id="gallery">
+      <div class="gallery-image">
+        <img src="https://picsum.photos/seed/g1oasis-plumbing-miami-fl/800/800" alt="Oasis Plumbing Gallery">
+      </div>
+      <div class="gallery-image">
+        <img src="https://picsum.photos/seed/g2oasis-plumbing-miami-fl/800/800" alt="Oasis Plumbing Gallery">
+      </div>
+    </div>
+    <div id="portfolio">
+      <h2>Portfolio</h2>
+      <div class="portfolio-grid">
+        <div>
+          <img src="https://picsum.photos/seed/s1oasis-plumbing-miami-fl/800/600" alt="Oasis Plumbing Project Image">
+          <h3>Project 1</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div>
+          <img src="https://picsum.photos/seed/s2oasis-plumbing-miami-fl/800/600" alt="Oasis Plumbing Project Image">
+          <h3>Project 2</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+    </div>
+    <div id="testimonials">
+      <h2>Testimonials</h2>
+      <div class="testimonial-grid">
+        <div>
+          <img src="https://picsum.photos/seed/tboasis-plumbing-miami-fl/1920/1080" alt="Oasis Plumbing Testimonial Background">
+          <h3>Customer 1</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+            <path class="star" d="M12,2C5.1,2,2,5.1,2,12h12c0-5-7-6.7-7-6.7V7h1v2H6v6h4v2h5V12h1V7h4V2z M12,10.9L12,20c0-0.6-0.5-1-1-1s-1-0.4-1-0.4C11,18,9.5,17.6,8.5,17.1c0-0.3-0.4-0.5-0.8-0.5c-0.3-0.2-0.7-0.3-1.1-0.3c-0.4-0.1-0.7-0.3-0.9-0.6c-0.1-0.2-0.4-0.6-0.8-0.6c-0.3-0.2-0.5-0.7-0.8-0.7c-0.4-0.1-0.8-0.7-1.1-0.8c0.3,0.3,0.6,0.7,0.9,0.9C13.6,15.6,14,16.8,12,17.9C11,18,10.4,17.6,9.4,17.1c0-0.3-0.5-0.5-1-0.5c-0.3-0.1-0.7-0.3-1.1-0.3c-0.4-0.1-0.8-0.3-1.1-0.6c-0.1-0.2-0.4-0.6-0.8-0.6c-0.3-0.2-0.5-0.7-0.8-0.7c-0.4-0.1-0.8-0.7-1.1-0.8c-0.2,0.2-0.5,0.7-0.8,0.8c0.3,0.3,0.8,0.7,1.1,0.9">
+              <animateTransform attributeName='transform' type='rotate' from='0 12 10.9' to='-360 12 10.9' dur='2.5s' repeatCount='indefinite'/>
+            </path>
+            <path class="star" d="M10.9,12l1.4-1.4c0.5-0.5,1-2.1,1-4C17,4.3,11.9,4.2,10.9,4c-0.5,0-1-0.4-1-0.9V3.5C6.6,2.1,4.6,2,3.5,2C2.4,2,2.1,2.6,2.1,4S2.4,4,4,6.3C4,8.6,6,10.1,6.5,12C7.7,4,11.5,4,11.5,16c0,1.5,0.5,2.1,1,2.4Z">
+              <animateTransform attributeName='transform' type='rotate' from='0 10.9 12' to='-360 10.9 12' dur='2.5s' repeatCount='indefinite'/>
+            </path>
+            <path class="star" d="M10.9,12c-2.4,0-3.9-2.3-3.9-3.7C6.9,3.9,7.2,2.7,6.9,1.6c-0.3-0.9-1-1.4-.9-4S7.7,5.3,10.9,12Z">
+            </path>
+            <path class="star" d="M14.2,4.5c0.5,0,1,0.4,1,1s0.3,1,1,1.3C15.7,8.2,10,8.3,6.4,12c-2.1,2.1-3.7,3.8-3.7,5V18C5.1,20.2,7.4,21.6,10,22.7c0,0,2.1,1.2,4.2,1.2s3.9-1,6.9-2C16.6,19.3,19,18,19,15C19,4.2,15,3,15,2.1C12.9-0.9,8.7-0.9,5.3,4.4C3.1,1.3,1.8-1,1.1-3.9s1.9-4.1,7.6-5.7">
+              <animateTransform attributeName='transform' type='skewX' from='0 14.2 4.5' to='-360 14.2 4.5' dur='2s' repeatCount='indefinite'/>
+            </path>
+            <path class="star" d="M10,18c0-0.3,0.3-1,1-0.9c1.5,1.1,4.4-13.3,2-4C8.7,6.5,8.5,10.6,9.6,13c0,0.8,1.4,0.5,1.3-0.7C9.6,12.6,9.6,10,10.7,11.9s0.5-1.1,3.1,6Z">
+              <animateTransform attributeName='transform' type='rotate' from='0 10 18' to='-360 10 18' dur='1.4s' repeatCount='indefinite'/>
+            </path>
+          </svg>
+        </div>
+        <div>
+          <img src="https://picsum.photos/seed/tboasis-plumbing-miami-fl/1920/1080" alt="Oasis Plumbing Testimonial Background">
+          <h3>Customer 2</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+            <path class="star" d="M12,2C5.1,2,2,5.1,2,12h12c0-5-7-6.7-7-6.7V7h1v2H6v6h4v2h5V12h1V7h4V2z M12,10.9L12,20c0-0.6-0.5-1-1-1s-1-0.4-1-0.4C11,18,9.5,17.6,8.5,17.1c0-0.3-0.4-0.5-0.8-0.5c-0.3-0.2-0.7-0.3-1.1-0.3c-0.4-0.1-0.7-0.3-0.9-0.6c-0.1-0.2-0.4-0.6-0.8-0.6c-0.3-0.2-0.5-0.7-0.8-0.7c-0.4-0.1-0.8-0.7-1.1-0.8c0.3,0.3,0.6,0.7,0.9,0.9C13.6,15.6,14,16.8,12,17.9C11,18,10.4,17.6,9.4,17.1c0-0.3-0.5-0.5-1-0.5c-0.3-0.1-0.7-0.3-1.1-0.3c-0.4-0.1-0.8-0.3-1.1-0.6c-0.1-0.2-0.4-0.6-0.8-0.6c-0.3-0.2-0.5-0.7-0.8-0.7c-0.4-0.1-0.8-0.7-1.1-0.8c-0.2,0.2-0.5,0.7-0.8,0.8c0.3,0.3,0.8,0.7,1.1,0.9">
+              <animateTransform attributeName='transform' transform='rotate(0 12 10.9)'>
+                <animateTransform attributeName='transform' type='rotate' from='0 12 10.9' to='-360 12 10.9' dur='2.5s' repeatCount='indefinite'/>
+              </animateTransform>
+            </path>
+            <path class="star" d="M10.9,12l1.4-1.4c0.5-0.5,1-2.1,1-4C17,4.3,11.9,4.2,10.9,4c-0.5,0-1-0.4-1-0.9V3.5C6.6,2.1,4.6,2,3.5,2C2.4,2,2.1,2.6,2.1,4S2.4,4,4,6.3C4,8.6,6,10.1,6.5,12C7.7,4,11.5,4,11.5,16c0,1.5,0.5,2.1,1,2.4Z">
+              <animateTransform attributeName='transform' type='rotate' from='0 10.9 12' to='-360 10.9 12' dur='2.5s' repeatCount='indefinite'/>
+            </path>
+            <path class="star" d="M10.9,12c-2.4,0-3.9-2.3-3.9-3.7C6.9,3.9,7.2,2.7,6.9,1.6c-0.3-0.9-1-1.4-.9-4S7.7,5.3,10.9,12Z">
+            </path>
+            <path class="star" d="M14.2,4.5c0.5,0,1,0.4,1,1s0.3,1,1,1.3C15.7,8.2,10,8.3,6.4,12c-2.1,2.1-3.7,3.8-3.7,5V18C5.1,20.2,7.4,21.6,10,22.7c0,0,2.1,1.2,4.2,1.2s3.9-1,6.9-2C16.6,19.3,19,18,19,15C19,4.2,15,3,15,2.1C12.9-0.9,8.7-0.9,5.3,4.4C3.1,1.3,1.8-1,1.1-3.9s1.9-4.1,7.6-5.7">
+              <animateTransform attributeName='transform' type='skewX' from='0 14.2 4.5' to='-360 14.2 4.5' dur='2s' repeatCount='indefinite'/>
+            </path>
+            <path class="star" d="M10,18c0-0.3,0.3-1,1-0.9c1.5,1.1,4.4-13.3,2-4C8.7,6.5,8.5,10.6,9.6,13c0,0.8,1.4,0.5,1.3-0.7C9.6,12.6,9.6,10,10.7,11.9s0.5-1.1,3.1,6Z">
+              <animateTransform attributeName='transform' type='rotate' from='0 10 18' to='-360 10 18' dur='1.4s' repeatCount='indefinite'/>
+            </path>
+          </svg>
+        </div>
+        <div>
+          <img src="https://picsum.photos/seed/tboasis-plumbing-miami-fl/1920/1080" alt="Oasis Plumbing Testimonial Background">
+          <h3>Customer 3</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+            <path class="star" d="M12,2C5.1,2,2,5.1,2,12h12c0-5-7-6.7-7-6.7V7h1v2H6v6h4v2h5V12h1V7h4V2z M12,10.9L12,20c0-0.6-0.5-1-1-1s-1-0.4-1-0.4C11,18,9.5,17.6,8.5,17.1c0-0.3-0.4-0.5-0.8-0.5c-0.3-0.2-0.7-0.3-1.1-0.3c-0.4-0.1-0.7-0.3-0.9-0.6c-0.1-0.2-0.4-0.6-0.8-0.6c-0.3-0.2-0.5-0.7-0.8-0.7c-0.4-0.1-0.8-0.7-1.1-0.8c0.3,0.3,0.6,0.7,0.9,0.9C13.6,15.6,14,16.8,12,17.9C11,18,10.4,17.6,9.4,17.1c0-0.3-0.5-0.5-1-0.5c-0.3-0.1-0.7-0.3-1.1-0.3c-0.4-0.1-0.8-0.3-1.1-0.6c-0.1-0.2-0.4-0.6-0.8-0.6c-0.3-0.2-0.5-0.7-0.8-0.7c-0.4-0.1-0.8-0.7-1.1-0.8c-0.2,0.2-0.5,0.7-0.8,0.8c0.3,0.3,0.8,0.7,1.1,0.9">
+              <animateTransform attributeName='transform' transform='rotate(0 12 10.9)'>
+                <animateTransform attributeName='transform' type='rotate' from='0 12 10.9' to='-360 12 10.9' dur='2.5s' repeatCount='indefinite'/>
+              </animateTransform>
+            </path>
+            <path class="star" d="M10.9,12l1.4-1.4c0.5-0.5,1-2.1,1-4C17,4.3,11.9,4.2,10.9,4c-0.5,0-1-0.4-1-0.9V3.5C6.6,2.1,4.6,2,3.5,2C2.4,2,2.1,2.6,2.1,4S2.4,4,4,6.3C4,8.6,6,10.1,6.5,12C7.7,4,11.5,4,11.5,16c0,1.5,0.5,2.1,1,2.4Z">
+              <animateTransform attributeName='transform' type='rotate' from='0 10.9 12' to='-360 10.9 12' dur='2.5s' repeatCount='indefinite'/>
+            </path>
+            <path class="star" d="M10.9,12c-2.4,0-3.9-2.3-3.9-3.7C6.9,3.9,7.2,2.7,6.9,1.6c-0.3-0.9-1-1.4-.9-4S7.7,5.3,10.9,12Z">
+            </path>
+            <path class="star" d="M14.2,4.5c0.5,0,1,0.4,1,1s0.3,1,1,1.3C15.7,8.2,10,8.3,6.4,12c-2.1,2.1-3.7,3.8-3.7,5V18C5.1,20.2,7.4,21.6,10,22.7c0,0,2.1,1.2,4.2,1.2s3.9-1,6.9-2C16.6,19.3,19,18,19,15C19,4.2,15,3,15,2.1C12.9-0.9,8.7-0.9,5.3,4.4C3.1,1.3,1.8-1,1.1-3.9s1.9-4.1,7.6-5.7">
+              <animateTransform attributeName='transform' type='skewX' from='0 14.2 4.5' to='-360 14.2 4.5' dur='2s' repeatCount='indefinite'/>
+            </path>
+            <path class="star" d="M10,18c0-0.3,0.3-1,1-0.9c1.5,1.1,4.4-13.3,2-4C8.7,6.5,8.5,10.6,9.6,13c0,0.8,1.4,0.5,1.3-0.7C9.6,12.6,9.6,10,10.7,11.9s0.5-1.1,3.1,6Z">
+              <animateTransform attributeName='transform' type='rotate' from='0 10 18' to='-360 10 18' dur='1.4s' repeatCount='indefinite'/>
+            </path>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div id="about">
+      <h2>About Us</h2>
+      <p>We are a locally-owned and operated plumbing company serving Miami, FL and surrounding areas. We pride ourselves on providing fast, reliable, and professional service to our customers.</p>
+      <p>We have been in business for 10+ years and have a proven track record of quality workmanship and customer satisfaction. Our team of licensed, insured, and background-checked plumbers are dedicated to providing top-notch service that exceeds your expectations.</p>
+      <p>We are committed to delivering exceptional service and ensuring that our customers receive the highest level of service every time they interact with us. Contact us today to schedule a service appointment or get a quote for your plumbing needs.</p>
+      <div class="testimonials">
+        <div>
+          <h3>5/5 stars</h3>
+          <h4>114 reviews</h4>
+          <h4>Miami FL, {{state}}</h4>
+        </div>
+      </div>
+    </div>
+    <div id="contact">
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <address>7805 NE Bayshore Ct Unit 4, Miami, FL 33138, USA</address>
+        <span>Email: info@calloasis.com</span>
+        <span>Phone: <a href="tel:(305) 900-8224">(305) 900-8224</a></span>
+      </div>
+      <form id="contact-form">
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <input type="tel" placeholder="Phone">
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <div class="social-links">
+        <a href="https://instagram.com/Oasisplumbingmiami" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0V0z" fill="none"/>
+            <path d="M17 7h4v2h-4v5h4v-5h4v2h-4v-5h-4v2H7v-5h2zM12 11v-1H8v-3h4v-1H9v1h4v2z"/>
+          </svg>
+        </a>
+        <a href="https://facebook.com/calloasis" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0V0z" fill="none"/>
+            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/>
+          </svg>
+        </a>
+        <a href="" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0V0z" fill="none"/>
+            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.42 0-6.59-3.46-6.59-7.71S7.58 5.71 12 5.71s6.59 3.21 6.59 7.71S18.42 18 12 18z"/>
+          </svg>
+        </a>
+        <a href="" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0V0z" fill="none"/>
+            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.42 0-6.59-3.46-6.59-7.71s2.17-7.71 6.59-7.71S18.42 4.29 18.42 9S15.25 14.29 12 14.29z"/>
+          </svg>
+        </a>
+        <a href="mailto:info@calloasis.com" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0V0z" fill="none"/>
+            <path d="M0 9v7h5v-7h4v14h7v-14h4v-7h-5v-7h-4V9H0zm18 14H5v-2h15v2zm0-6H5V5h14v2zm0 6h-5v2h5v-2z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="copyright">
+      <p>&copy; 2024 Oasis Plumbing. All rights reserved.</p>
+    </div>
+    <div class="nav-links">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="social-links">
+      <a href="https://instagram.com/Oasisplumbingmiami" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24">
+          <path d="M0 0h24v24H0V0z" fill="none"/>
+          <path d="M17 7h4v2h-4v5h4v-5h4v2h-4v-5h-4v2z"/>
+        </svg>
+      </a>
+      <a href="https://facebook.com/calloasis" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24">
+          <path d="M0 0h24v24H0V0z" fill="none"/>
+          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.42 0-6.59-3.46-6.59-7.71S7.58 5.71 12 5.71s6.59 3.21 6.59 7.71S18.42 18 12 18z"/>
+        </svg>
+      </a>
+      <a href="" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24">
+          <path d="M0 0h24v24H0V0z" fill="none"/>
+          <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.42 0-6.59-3.46-6.59-7.71S7.58 5.71 12 5.71s6.59 3.21 6.59 7.71S18.42 18 12 18z"/>
+        </svg>
+      </a>
+      <a href="" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24">
+          <path d="M0 0h24v24H0V0z" fill="none"/>
+          <path d="M12 2C6.5 2 2 6.5 2 12s4.5

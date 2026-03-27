@@ -6,45 +6,62 @@
     <title>Cooper's Plumbing & Air</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display&family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #FF9900;
-            --secondary-color: #1e3f58;
-            --background-color: #f7f7f7;
-            --text-color: #333;
+            --primary: #228B22;
+            --accent: #FFC107;
+            --bg: #F7F7F7;
+            --text: #333;
+            --text-muted: #666;
         }
         body {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Satoshi', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
+            background-color: var(--bg);
+            color: var(--text);
             line-height: 1.6;
         }
-        .header {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
+        h1, h2, h3 {
+            font-family: 'Clash Display', sans-serif;
+            margin-bottom: 0.5em;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         .hero {
-            background-image: url('https://picsum.photos/seed/hcooper-s/1920/1080');
-            background-size: cover;
-            background-position: center;
+            background-image: linear-gradient(to bottom, #87CEEB, #6495ED);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #fff;
-            font-family: 'Fraunces', serif;
         }
-        .hero-text {
-            font-size: 2rem;
-            font-weight: 600;
-            text-align: center;
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 0.2em;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 1em;
+        }
+        .hero a {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .hero a:hover {
+            background-color: var(--accent);
         }
         .services {
             display: flex;
@@ -53,22 +70,22 @@
         }
         .service {
             background-color: #fff;
-            padding: 2rem;
-            margin: 1rem;
-            width: calc(33.33% - 2rem);
+            margin: 20px;
+            padding: 20px;
             border: 1px solid #ddd;
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
         }
-        .service img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px 10px 0 0;
+        .service h2 {
+            font-size: 24px;
+            margin-bottom: 0.5em;
+        }
+        .service p {
+            font-size: 16px;
+            margin-bottom: 1em;
         }
         .about {
-            background-color: var(--secondary-color);
-            color: #fff;
-            padding: 2rem;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -76,13 +93,16 @@
         .about img {
             width: 100px;
             height: 100px;
-            object-fit: cover;
             border-radius: 50%;
-            margin: 1rem;
+            margin: 20px;
         }
-        .about-text {
-            font-size: 1.2rem;
-            margin: 1rem;
+        .about h2 {
+            font-size: 24px;
+            margin-bottom: 0.5em;
+        }
+        .about p {
+            font-size: 16px;
+            margin-bottom: 1em;
         }
         .gallery {
             display: flex;
@@ -90,145 +110,267 @@
             justify-content: center;
         }
         .gallery img {
-            width: calc(33.33% - 2rem);
-            height: 200px;
-            object-fit: cover;
-            margin: 1rem;
-            border: 1px solid #ddd;
+            width: calc(50% - 20px);
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .testimonials {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 2rem;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
         }
         .testimonial {
             background-color: #fff;
-            padding: 1rem;
-            margin: 1rem;
-            width: calc(50% - 2rem);
+            margin: 20px;
+            padding: 20px;
             border: 1px solid #ddd;
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 20px);
         }
-        .testimonial-text {
-            font-size: 1.2rem;
-            margin: 1rem;
+        .testimonial h2 {
+            font-size: 24px;
+            margin-bottom: 0.5em;
+        }
+        .testimonial p {
+            font-size: 16px;
+            margin-bottom: 1em;
+        }
+        .testimonial .rating {
+            font-size: 18px;
+            color: #FFD700;
         }
         .contact {
-            background-color: var(--secondary-color);
-            color: #fff;
-            padding: 2rem;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
         }
-        .contact-text {
-            font-size: 1.2rem;
-            margin: 1rem;
+        .contact form {
+            width: calc(50% - 20px);
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact input[type="submit"] {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .contact input[type="submit"]:hover {
+            background-color: var(--accent);
         }
         .footer {
-            background-color: var(--primary-color);
+            background-color: #333;
             color: #fff;
-            padding: 1rem;
+            padding: 20px;
             text-align: center;
         }
-        @keyframes load {
-            0% {
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: var(--accent);
+        }
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;
+            }
+            .services {
+                flex-direction: column;
+            }
+            .service {
+                width: 100%;
+                margin: 20px 0;
+            }
+            .about {
+                flex-direction: column;
+            }
+            .gallery {
+                flex-direction: column;
+            }
+            .testimonials {
+                flex-direction: column;
+            }
+            .testimonial {
+                width: 100%;
+                margin: 20px 0;
+            }
+            .contact {
+                flex-direction: column;
+            }
+            .contact form {
+                width: 100%;
+                margin: 20px 0;
+            }
+        }
+        @keyframes fadeIn {
+            from {
                 opacity: 0;
             }
-            100% {
+            to {
                 opacity: 1;
             }
         }
-        @keyframes hover {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.1);
-            }
-        }
-        .service:hover {
-            animation: hover 0.3s;
-            transform: scale(1.1);
-        }
-        .hero, .about, .testimonials, .contact {
-            animation: load 1s;
-        }
-        svg {
-            width: 20px;
-            height: 20px;
-            fill: #fff;
+        .animated {
+            animation: fadeIn 1s;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Cooper's Plumbing & Air</h1>
-    </div>
-    <div class="hero">
-        <div class="hero-text">
-            <h1>Trusted Plumbers in Florida</h1>
-            <p>Serving Tallahassee and surrounding areas</p>
+    <header class="hero" style="background-image: url(https://picsum.photos/seed/herocooper-s-plumbing-air-florida/1920/1080);">
+        <div class="container">
+            <h1>Cooper's Plumbing & Air</h1>
+            <p>Trusted plumbers in Florida, providing top-notch service and repair</p>
+            <a href="tel:(850) 616-7969">Call us now: (850) 616-7969</a>
         </div>
-    </div>
-    <div class="services">
-        <div class="service">
-            <img src="https://picsum.photos/seed/s1cooper/800/600" alt="Service 1">
-            <h2>Drain Cleaning</h2>
-            <p>Expert drain cleaning services for residential and commercial properties</p>
+    </header>
+    <section class="services">
+        <div class="container">
+            <div class="service">
+                <h2>Plumbing Installation</h2>
+                <p>Our team of experts will install your plumbing system with care and precision</p>
+                <img src="https://picsum.photos/seed/s1cooper-s-plumbing-air-florida/800/600" alt="Plumbing Installation">
+            </div>
+            <div class="service">
+                <h2>Drain Cleaning</h2>
+                <p>We'll clear your clogged drains and get your water flowing again</p>
+                <img src="https://picsum.photos/seed/s2cooper-s-plumbing-air-florida/800/600" alt="Drain Cleaning">
+            </div>
+            <div class="service">
+                <h2>Water Heater Repair</h2>
+                <p>Our technicians will fix your water heater and get you back to warm showers</p>
+                <img src="https://picsum.photos/seed/s3cooper-s-plumbing-air-florida/800/600" alt="Water Heater Repair">
+            </div>
         </div>
-        <div class="service">
-            <img src="https://picsum.photos/seed/s2cooper/800/600" alt="Service 2">
-            <h2>Water Heater Installation</h2>
-            <p>Professional water heater installation and repair services</p>
+    </section>
+    <section class="about">
+        <div class="container">
+            <img src="https://picsum.photos/seed/abcooper-s-plumbing-air-florida/1200/800" alt="About Us">
+            <h2>About Cooper's Plumbing & Air</h2>
+            <p>We're a local, family-owned business dedicated to providing exceptional service to our community in Florida</p>
+            <p>Rating: 4.8 stars (3137+ reviews)</p>
         </div>
-        <div class="service">
-            <img src="https://picsum.photos/seed/s3cooper/800/600" alt="Service 3">
-            <h2>Plumbing Repairs</h2>
-            <p>Fast and reliable plumbing repair services for leaks, clogs, and more</p>
+    </section>
+    <section class="gallery">
+        <div class="container">
+            <img src="https://picsum.photos/seed/g1cooper-s-plumbing-air-florida/800/800" alt="Gallery Image 1">
+            <img src="https://picsum.photos/seed/g2cooper-s-plumbing-air-florida/800/800" alt="Gallery Image 2">
         </div>
-    </div>
-    <div class="about">
-        <img src="https://picsum.photos/seed/abcooper/1200/800" alt="About Image">
-        <div class="about-text">
-            <h2>About Us</h2>
-            <p>Cooper's Plumbing & Air is a family-owned and operated business dedicated to providing top-notch plumbing services to the Florida community.</p>
+    </section>
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonial">
+                <h2>John Doe</h2>
+                <p>Cooper's Plumbing & Air did an excellent job fixing my leaky faucet. I highly recommend them!</p>
+                <div class="rating">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="10,0 12,5 17,10 12,15 10,20 8,15 3,10 8,5"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="10,0 12,5 17,10 12,15 10,20 8,15 3,10 8,5"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="10,0 12,5 17,10 12,15 10,20 8,15 3,10 8,5"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="10,0 12,5 17,10 12,15 10,20 8,15 3,10 8,5"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="10,0 12,5 17,10 12,15 10,20 8,15 3,10 8,5"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="testimonial">
+                <h2>Jane Smith</h2>
+                <p>Cooper's Plumbing & Air responded quickly to my emergency and fixed my burst pipe. I'm so grateful!</p>
+                <div class="rating">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="10,0 12,5 17,10 12,15 10,20 8,15 3,10 8,5"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="10,0 12,5 17,10 12,15 10,20 8,15 3,10 8,5"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="10,0 12,5 17,10 12,15 10,20 8,15 3,10 8,5"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="10,0 12,5 17,10 12,15 10,20 8,15 3,10 8,5"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="10,0 12,5 17,10 12,15 10,20 8,15 3,10 8,5"/>
+                    </svg>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="gallery">
-        <img src="https://picsum.photos/seed/g1cooper/800/800" alt="Gallery Image 1">
-        <img src="https://picsum.photos/seed/g2cooper/800/800" alt="Gallery Image 2">
-        <img src="https://picsum.photos/seed/g2cooper/800/800" alt="Gallery Image 3">
-    </div>
-    <div class="testimonials">
-        <div class="testimonial">
-            <h2>Testimonial 1</h2>
-            <p>Cooper's Plumbing & Air provided excellent service and saved me from a huge mess! Highly recommend!</p>
-        </div>
-        <div class="testimonial">
-            <h2>Testimonial 2</h2>
-            <p>The team at Cooper's Plumbing & Air is knowledgeable, friendly, and efficient. I will definitely use them again!</p>
-        </div>
-        <div class="testimonial">
-            <h2>Testimonial 3</h2>
-            <p>Cooper's Plumbing & Air exceeded my expectations with their professionalism and expertise. Five stars!</p>
-        </div>
-    </div>
-    <div class="contact">
-        <div class="contact-text">
-            <h2>Get in Touch</h2>
-            <p>Phone: (850) 616-7969</p>
-            <p>Email: [info@coopersplumbing.com](mailto:info@coopersplumbing.com)</p>
+    </section>
+    <section class="contact">
+        <div class="container">
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <input type="submit" value="Send Message">
+            </form>
             <p>Address: 3632 Shamrock St W Unit #2, Tallahassee, FL 32309, USA</p>
+            <p>Phone: (850) 616-7969</p>
+            <p>Email: </p>
+            <a href="https://instagram.com/coopersplumbingandair" style="display:https://instagram.com/coopersplumbingandair?'block':'none'">Instagram</a>
+            <a href="https://facebook.com/CoopersplumbingAndAir" style="display:https://facebook.com/CoopersplumbingAndAir?'block':'none'">Facebook</a>
+            <a href="https://linkedin.com/cooper-s-plumbing-air" style="display:https://linkedin.com/cooper-s-plumbing-air?'block':'none'">LinkedIn</a>
+            <a href="{{twitter}}" style="display:{{twitter}}?'block':'none'">Twitter</a>
+            <a href="{{youtube}}" style="display:{{youtube}}?'block':'none'">YouTube</a>
         </div>
-    </div>
-    <div class="footer">
-        <p>&copy; 2023 Cooper's Plumbing & Air</p>
-        <p>Rating: 4.8/5 (3137 reviews)</p>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/></svg>
-    </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Cooper's Plumbing & Air</p>
+            <nav>
+                <a href="#hero">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="social">
+                <a href="https://instagram.com/coopersplumbingandair" style="display:https://instagram.com/coopersplumbingandair?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="10" height="10" rx="2.5" fill="#fff" stroke="#fff"/><rect x="4" y="4" width="12" height="12" rx="3" fill="none" stroke="#fff"/></svg></a>
+                <a href="https://facebook.com/CoopersplumbingAndAir" style="display:https://facebook.com/CoopersplumbingAndAir?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 0H7C3.58 0 0 3.58 0 8v12h5V8H3v4c0 1.66 1.34 3 3 3h4v-9c0-1.66-1.34-3-3-3z"/></svg></a>
+                <a href="https://linkedin.com/cooper-s-plumbing-air" style="display:https://linkedin.com/cooper-s-plumbing-air?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1-12 0 6 6 0 0 1 12 0zm-2 0a4 4 0 0 1-8 0 4 4 0 0 1 8 0zM5 8.5a1.5 1.5 0 0 1-3 0 1.5 1.5 0 0 1 3 0z"/></svg></a>
+                <a href="{{twitter}}" style="display:{{twitter}}?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.29 18.25a1 1 0 0 1-.71-.29 2 2 0 0 1-.2-1.41 4 4 0 0 1 .2-5.64A4 4 0 0 1 6 3a4 4 0 0 1 2.75 5.64 2 2 0 0 1-.2 1.41 1 1 0 0 1-.7.29z" fill="#fff" stroke="#fff"/><path d="M14.5 6h-.79l-.28-.27C12.65 4.69 10.76 4 8 4H3a1 1 0 0 1 1-1v10a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V8.1C0 7.33.44 7 1 7h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H9.24c-.38 0-.75.18-1.02.45l-.45.43v9.57c.09.27.36.52.72.72A2.25 2.25 0 0 0 14 17h.79a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-9.43c0-.27.18-.53.44-.72L6.58 8.84c-.67.15-1.42.15-2.09.15z" fill="#fff" stroke="#fff"/></svg></a>
+                <a href="{{youtube}}" style="display:{{youtube}}?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.75 15.25a1.75 1.75 0 0 1-3.5 0 1.75 1.75 0 0 1 3.5 0z" fill="#fff" stroke="#fff"/><path d="M10.25 8.75c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm6.25 6.25c-.69 0-1.25.56-1.25 1.25s.56 1.25 1.25 1.25 1.25-.56 1.25-1.25-.56-1.25-1.25-1.25zm-1.75-3.5c-.69 0-1.25.56-1.25 1.25S13.81 11 14.5 11s1.25-.56 1.25-1.25-0.56-1.25-1.25-1.25z" fill="#fff" stroke="#fff"/></svg></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Smooth scroll navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        // Animation on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.classList.add('animated');
+        });
+    </script>
 </body>
 </html>

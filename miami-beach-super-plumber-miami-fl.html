@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miami Beach Super Plumber</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display&family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0097A7;
+            --accent: #FFC400;
+            --bg: #F7F7F7;
+            --text: #333;
+            --text-muted: #666;
+        }
+        body {
+            font-family: 'Satoshi', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Clash Display', sans-serif;
+            margin-bottom: 0.5em;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, #87CEEB, #4682B4);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            height: 100vh;
+            max-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 48px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .hero a {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+        .hero a:hover {
+            background-color: var(--accent);
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 20px;
+            width: calc(33.33% - 20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .service h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .service p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .about {
+            background-image: linear-gradient(to bottom, #f7f7f7, #fff);
+            padding: 20px;
+        }
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .about p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(50% - 20px);
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .testimonials {
+            background-color: #f7f7f7;
+            padding: 20px;
+        }
+        .testimonial {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .rating {
+            color: #ffd700;
+        }
+        .contact {
+            background-color: #fff;
+            padding: 20px;
+        }
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact button {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .contact button:hover {
+            background-color: var(--accent);
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: var(--accent);
+        }
+        @media (max-width: 768px) {
+            .hero {
+                height: 100vh;
+                max-height: none;
+            }
+            .services {
+                flex-direction: column;
+            }
+            .service {
+                width: 100%;
+                margin: 20px 0;
+            }
+            .gallery {
+                flex-direction: column;
+            }
+            .gallery img {
+                width: 100%;
+                margin: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1>Miami Beach Super Plumber</h1>
+            <p>Reliable and efficient plumbing services in Miami Beach, FL</p>
+            <a href="tel:(305) 796-7752">Call us now: (305) 796-7752</a>
+        </div>
+    </div>
+    <div class="services">
+        <div class="service">
+            <h2>Residential Plumbing</h2>
+            <p>We provide a wide range of residential plumbing services, including repairs, installations, and maintenance.</p>
+            <img src="https://picsum.photos/seed/s1miami-beach-super-plumber-miami-fl/800/600" alt="Residential Plumbing">
+        </div>
+        <div class="service">
+            <h2>Commercial Plumbing</h2>
+            <p>We offer commercial plumbing services for businesses, including repairs, installations, and maintenance.</p>
+            <img src="https://picsum.photos/seed/s2miami-beach-super-plumber-miami-fl/800/600" alt="Commercial Plumbing">
+        </div>
+        <div class="service">
+            <h2>Emergency Plumbing</h2>
+            <p>We provide 24/7 emergency plumbing services for those unexpected plumbing issues.</p>
+            <img src="https://picsum.photos/seed/s3miami-beach-super-plumber-miami-fl/800/600" alt="Emergency Plumbing">
+        </div>
+    </div>
+    <div class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We are a team of experienced plumbers dedicated to providing reliable and efficient plumbing services to the Miami Beach community.</p>
+            <p>We are proud to be a part of the Miami Beach community and strive to build long-lasting relationships with our customers.</p>
+            <img src="https://picsum.photos/seed/abmiami-beach-super-plumber-miami-fl/1200/800" alt="About Us">
+        </div>
+    </div>
+    <div class="gallery">
+        <img src="https://picsum.photos/seed/g1miami-beach-super-plumber-miami-fl/800/800" alt="Gallery Image 1">
+        <img src="https://picsum.photos/seed/g2miami-beach-super-plumber-miami-fl/800/800" alt="Gallery Image 2">
+    </div>
+    <div class="testimonials">
+        <div class="testimonial">
+            <p>Mike and his team are the best! They fixed my leaky faucet in no time and were very professional.</p>
+            <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p>- John D.</p>
+        </div>
+        <div class="testimonial">
+            <p>I was impressed with the prompt service and fair prices. I will definitely be using Miami Beach Super Plumber again!</p>
+            <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p>- Sarah K.</p>
+        </div>
+        <div class="testimonial">
+            <p>Miami Beach Super Plumber saved me from a flooded kitchen! Their emergency service was top-notch.</p>
+            <p class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p>- Mark Z.</p>
+        </div>
+    </div>
+    <div class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>Contact us today to schedule your plumbing service.</p>
+            <p>Address: 335 Ocean Dr, Miami Beach, FL 33139, USA</p>
+            <p>Phone: <a href="tel:(305) 796-7752">(305) 796-7752</a></p>
+            <p>Email: <a href="mailto:"></a></p>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <button>Send Message</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2024 Miami Beach Super Plumber</p>
+            <p><a href="#">Home</a> | <a href="#">Services</a> | <a href="#">About</a> | <a href="#">Contact</a></p>
+            <p>Follow us on social media:</p>
+            <p><a href="" style="display:?'block':'none'">Instagram</a></p>
+            <p><a href="" style="display:?'block':'none'">Facebook</a></p>
+            <p><a href="" style="display:?'block':'none'">TikTok</a></p>
+            <p><a href="" style="display:?'block':'none'">LinkedIn</a></p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                    }
+                });
+            }, { threshold: 1.0 });
+            const elements = document.querySelectorAll(".service, .testimonial, .contact form");
+            elements.forEach((element) => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

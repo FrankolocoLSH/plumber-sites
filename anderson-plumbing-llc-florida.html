@@ -3,310 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anderson Plumbing LLC | Trusted Plumbers in Florida</title>
+    <title>Anderson Plumbing LLC</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;700&family=Outfit:wght@100;200;300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces&family=Satoshi&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #ff9900;
-            --secondary-color: #00698f;
-            --background-color: #f7f7f7;
-            --text-color: #333;
-        }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+            --primary: #0097A7;
+            --accent: #F7DC6F;
+            --bg: #f0f0f0;
+            --text: #333;
+            --text-muted: #666;
         }
         body {
-            font-family: 'Outfit', sans-serif;
-            font-size: 16px;
+            font-family: 'Satoshi', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
-            overflow-x: hidden;
         }
-        header {
-            background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-            background-size: 100% 300px;
-            background-position: 0% 100%;
-            height: 100vh;
+        h1, h2, h3 {
+            font-family: 'Fraunces', serif;
+            color: var(--primary);
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, rgba(0, 151, 167, 0.5), rgba(0, 151, 167, 0.5)), url(https://picsum.photos/seed/heroanderson-plumbing-llc-florida/1920/1080);
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             color: #fff;
         }
-        .hero {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
         .hero h1 {
-            font-family: 'Fraunces', serif;
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
         }
         .hero p {
-            font-size: 18px;
-            margin-bottom: 40px;
+            font-size: clamp(1rem, 3vw, 2rem);
+            margin-bottom: 2rem;
         }
-        .hero img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 10px;
+        .hero a {
+            background-color: var(--accent);
+            color: #333;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 0.5rem;
+        }
+        .hero a:hover {
+            transform: scale(1.1);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
         .services {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            padding: 40px 0;
+            margin-top: 4rem;
         }
         .service {
-            margin: 20px;
-            width: calc(33.33% - 20px);
             background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
+            margin: 2rem;
+            padding: 2rem;
+            border: 1px solid var(--text-muted);
+            border-radius: 1rem;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
-        }
-        .service:hover {
-            transform: scale(1.05);
+            width: clamp(200px, 30%, 300px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .service h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
         .service p {
-            font-size: 16px;
-            margin-bottom: 20px;
+            font-size: 1rem;
+            margin-bottom: 2rem;
         }
         .service img {
             width: 100%;
             height: 150px;
             object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            border-radius: 1rem 1rem 0 0;
         }
         .about {
-            padding: 40px 0;
-            background-image: linear-gradient(to bottom, var(--background-color), var(--primary-color));
-            background-size: 100% 200px;
-            background-position: 0% 100%;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            padding: 4rem;
+            background-image: linear-gradient(to bottom, #f0f0f0, #f0f0f0), url(https://picsum.photos/seed/abanderson-plumbing-llc-florida/1200/800);
+            background-size: cover;
+            background-position: center;
         }
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            color: #fff;
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
         }
-        .about-content h2 {
-            font-family: 'Fraunces', serif;
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        .about-content p {
-            font-size: 18px;
-            margin-bottom: 40px;
-        }
-        .about-content img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        .about p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
         }
         .gallery {
-            padding: 40px 0;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            margin-top: 4rem;
         }
-        .gallery-item {
-            margin: 20px;
-            width: calc(33.33% - 20px);
-        }
-        .gallery-item img {
-            width: 100%;
+        .gallery img {
+            width: clamp(200px, 40%, 300px);
             height: 200px;
             object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
+            margin: 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
-        .gallery-item img:hover {
-            transform: scale(1.05);
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
         }
         .testimonials {
-            padding: 40px 0;
-            background-image: linear-gradient(to bottom, var(--background-color), var(--secondary-color));
-            background-size: 100% 200px;
-            background-position: 0% 100%;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 4rem;
+            background-color: var(--bg);
         }
         .testimonial {
-            margin: 20px;
-            width: calc(50% - 20px);
             background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 2rem;
+            border: 1px solid var(--text-muted);
+            border-radius: 1rem;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .testimonial h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 10px;
+            width: clamp(200px, 60%, 500px);
+            margin: 2rem;
         }
         .testimonial p {
-            font-size: 16px;
-            margin-bottom: 20px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
         }
-        .testimonial img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 20px;
+        .rating {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
         .contact {
-            padding: 40px 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            padding: 4rem;
+            background-color: var(--bg);
         }
-        .contact-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: clamp(200px, 60%, 500px);
         }
-        .contact-content h2 {
-            font-family: 'Fraunces', serif;
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 20px;
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--text-muted);
+            border-radius: 0.5rem;
         }
-        .contact-content p {
-            font-size: 18px;
-            margin-bottom: 40px;
-        }
-        .contact-content a {
-            font-size: 18px;
-            color: var(--primary-color);
+        .contact button {
+            background-color: var(--accent);
+            color: #333;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            cursor: pointer;
             text-decoration: none;
+            border-radius: 0.5rem;
         }
-        .footer {
-            background-color: var(--primary-color);
+        .contact button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            background-color: var(--primary);
             color: #fff;
-            padding: 20px;
+            padding: 2rem;
             text-align: center;
+            clear: both;
         }
-        .footer p {
-            font-size: 16px;
-            margin-bottom: 10px;
+        footer p {
+            margin-bottom: 1rem;
         }
-        .footer a {
-            font-size: 16px;
-            color: #fff;
-            text-decoration: none;
-        }
-        @keyframes animate {
-            0% {
+        @keyframes fadeIn {
+            from {
                 opacity: 0;
-                transform: scale(0.5);
             }
-            100% {
+            to {
                 opacity: 1;
-                transform: scale(1);
             }
         }
-        .animate {
-            animation: animate 0.5s ease;
+        .hero, .services, .about, .gallery, .testimonials, .contact {
+            animation: fadeIn 1s;
+            animation-delay: 0ms;
+        }
+        .hero {
+            animation-delay: 0ms;
+        }
+        .services {
+            animation-delay: 100ms;
+        }
+        .about {
+            animation-delay: 200ms;
+        }
+        .gallery {
+            animation-delay: 300ms;
+        }
+        .testimonials {
+            animation-delay: 400ms;
+        }
+        .contact {
+            animation-delay: 500ms;
+        }
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+            }
+            .gallery {
+                flex-direction: column;
+            }
+            .testimonials {
+                flex-direction: column;
+            }
+            .contact form {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="hero">
-            <h1>Anderson Plumbing LLC</h1>
-            <p>Trusted Plumbers in Florida</p>
-            <img src="https://picsum.photos/seed/handerson/1920/1080" alt="Hero Image">
+    <div class="hero">
+        <h1>Anderson Plumbing LLC</h1>
+        <p>Trusted Plumbers in Florida for Over 4.6 Stars</p>
+        <a href="tel:(850) 383-0166">Call Us Now</a>
+    </div>
+    <div class="services">
+        <div class="service">
+            <img src="https://picsum.photos/seed/s1anderson-plumbing-llc-florida/800/600" alt="Plumbing Services">
+            <h2>Emergency Plumbing</h2>
+            <p>Get help with burst pipes, clogged drains, and more</p>
         </div>
-    </header>
-    <section class="services">
-        <div class="service animate">
-            <h2>Plumbing Installation</h2>
-            <p>Expert installation of plumbing fixtures and appliances</p>
-            <img src="https://picsum.photos/seed/s1anders/800/600" alt="Service Image">
+        <div class="service">
+            <img src="https://picsum.photos/seed/s2anderson-plumbing-llc-florida/800/600" alt="Drain Cleaning">
+            <h2>Drain Cleaning</h2>
+            <p>Clear clogs and keep your drains flowing smoothly</p>
         </div>
-        <div class="service animate">
-            <h2>Plumbing Repair</h2>
-            <p>Fast and reliable repair of leaks, clogs, and other plumbing issues</p>
-            <img src="https://picsum.photos/seed/s2anders/800/600" alt="Service Image">
+        <div class="service">
+            <img src="https://picsum.photos/seed/s3anderson-plumbing-llc-florida/800/600" alt="Water Heater Installation">
+            <h2>Water Heater Installation</h2>
+            <p>Get a new water heater installed by our expert technicians</p>
         </div>
-        <div class="service animate">
-            <h2>Plumbing Maintenance</h2>
-            <p>Regular maintenance to prevent plumbing problems and extend the life of your system</p>
-            <img src="https://picsum.photos/seed/s3anders/800/600" alt="Service Image">
+    </div>
+    <div class="about">
+        <h2>About Us</h2>
+        <p>We are a family-owned and operated plumbing company serving Florida and surrounding areas. Our team of licensed plumbers is dedicated to providing top-notch service and ensuring your complete satisfaction.</p>
+        <p>We are proud to be a part of the local community and strive to build long-lasting relationships with our customers.</p>
+    </div>
+    <div class="gallery">
+        <img src="https://picsum.photos/seed/g1anderson-plumbing-llc-florida/800/800" alt="Plumbing Gallery">
+        <img src="https://picsum.photos/seed/g2anderson-plumbing-llc-florida/800/800" alt="Plumbing Gallery">
+    </div>
+    <div class="testimonials">
+        <div class="testimonial">
+            <p>Anderson Plumbing LLC did an amazing job fixing my leaky faucet. They were prompt, professional, and courteous. I highly recommend them to anyone in need of plumbing services.</p>
+            <div class="rating">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 20 9.23 17 14.23 19.66 17.88 16.66 20"></polygon>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 20 9.23 17 14.23 19.66 17.88 16.66 20"></polygon>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 20 9.23 17 14.23 19.66 17.88 16.66 20"></polygon>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 20 9.23 17 14.23 19.66 17.88 16.66 20"></polygon>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 20 9.23 17 14.23 19.66 17.88 16.66 20"></polygon>
+                </svg>
+            </div>
         </div>
-    </section>
-    <section class="about">
-        <div class="about-content">
-            <h2>About Us</h2>
-            <p>We are a team of experienced plumbers dedicated to providing top-notch service to our customers</p>
-            <img src="https://picsum.photos/seed/abanders/1200/800" alt="About Image">
+        <div class="testimonial">
+            <p>I was impressed with the professionalism and expertise of Anderson Plumbing LLC. They replaced my old water heater with a new one and did a fantastic job.</p>
+            <div class="rating">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 20 9.23 17 14.23 19.66 17.88 16.66 20"></polygon>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 20 9.23 17 14.23 19.66 17.88 16.66 20"></polygon>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 20 9.23 17 14.23 19.66 17.88 16.66 20"></polygon>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 20 9.23 17 14.23 19.66 17.88 16.66 20"></polygon>
+                </svg>
+            </div>
         </div>
-    </section>
-    <section class="gallery">
-        <div class="gallery-item">
-            <img src="https://picsum.photos/seed/g1anders/800/800" alt="Gallery Image">
-        </div>
-        <div class="gallery-item">
-            <img src="https://picsum.photos/seed/g2anders/800/800" alt="Gallery Image">
-        </div>
-    </section>
-    <section class="testimonials">
-        <div class="testimonial animate">
-            <h2>Testimonial 1</h2>
-            <p>Anderson Plumbing LLC provided excellent service and solved our plumbing problem quickly and efficiently</p>
-            <img src="https://picsum.photos/seed/tbanders/1920/1080" alt="Testimonial Background">
-        </div>
-        <div class="testimonial animate">
-            <h2>Testimonial 2</h2>
-            <p>The plumbers at Anderson Plumbing LLC were professional, courteous, and did a great job</p>
-            <img src="https://picsum.photos/seed/tbanders/1920/1080" alt="Testimonial Background">
-        </div>
-    </section>
-    <section class="contact">
-        <div class="contact-content">
-            <h2>Get in Touch</h2>
-            <p>Contact us today to schedule your plumbing service</p>
-            <p>Phone: (850) 383-0166 | Email: info@andersonplumbingllc.com | Address: 4003 Crawfordville Rd, Tallahassee, FL 32305, USA</p>
-            <a href="https://www.instagram.com/https://instagram.com/andersonplumbing">Follow us on Instagram</a>
-            <a href="https://www.facebook.com/https://facebook.com/andersonplumbingllc">Follow us on Facebook</a>
-        </div>
-    </section>
-    <footer class="footer">
-        <p>&copy; 2023 Anderson Plumbing LLC | All rights reserved</p>
-        <p>Rated 4.6 (44 reviews) | Industry: plumbers | City: Florida | Phone: (850) 383-0166 | Address: 4003 Crawfordville Rd, Tallahassee, FL 32305, USA</p>
+    </div>
+    <div class="contact">
+        <h2>Get in Touch</h2>
+        <p>Contact us today to schedule your plumbing service</p>
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p>Address: 4003 Crawfordville Rd, Tallahassee, FL 32305, USA</p>
+        <p>Phone: <a href="tel:(850) 383-0166">(850) 383-0166</a></p>
+        <p>Email: <a href="mailto:info@andersonplumbingllc.com">info@andersonplumbingllc.com</a></p>
+        <a href="https://instagram.com/andersonplumbing" style="display:https://instagram.com/andersonplumbing?'block':'none'">Instagram</a>
+        <a href="https://facebook.com/andersonplumbingllc" style="display:https://facebook.com/andersonplumbingllc?'block':'none'">Facebook</a>
+    </div>
+    <footer>
+        <p>&copy; 2023 Anderson Plumbing LLC. All rights reserved.</p>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h2l1-2h-4V7a1 1 0 011-1h1z"></path>
+        </svg>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 1h16c.55 0 1 .45 1 1v11c0 .55-.45 1-1 1H3c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1zm11.38 7.19l-.93.93c-.31.31-.31.81 0 1.12l3.41 3.41c.31.31.81.31 1.12 0l.93-.93c.31-.31.31-.81 0-1.12l-3.41-3.41c-.31-.31-.81-.31-1.12 0z"></path>
+        </svg>
     </footer>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const elements = document.querySelectorAll(".animate");
-            elements.forEach(function(element) {
-                element.classList.add("animate");
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const targetId = link.getAttribute("href");
+                    const targetElement = document.querySelector(targetId);
+                    targetElement.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                });
             });
         });
     </script>

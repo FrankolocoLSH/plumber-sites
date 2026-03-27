@@ -6,38 +6,34 @@
     <title>Joe Boone Plumbing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100;9..144,200;9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,800;9..144,900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Satoshi:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display&family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #FFC107;
-            --secondary-color: #8B9467;
-            --background-color: #F7F7F7;
-            --text-color: #333;
-            --heading-color: #222;
+            --primary: #1A9648;
+            --accent: #FFC107;
+            --bg: #F7F7F7;
+            --text: #333;
+            --text-muted: #666;
         }
         body {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Satoshi', sans-serif;
+            font-size: 18px;
+            line-height: 1.5;
+            color: var(--text);
+            background-color: var(--bg);
             margin: 0;
             padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
         }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Fraunces', sans-serif;
-            color: var(--heading-color);
+        h1, h2, h3 {
+            font-family: 'Clash Display', sans-serif;
             margin-bottom: 0.5em;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
         .hero {
-            background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-            background-size: 100% 300px;
-            background-position: 0% 100%;
-            height: 100vh;
+            background-image: linear-gradient(to bottom, #1A9648, #3E8E41);
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            max-height: 80vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -45,6 +41,23 @@
         }
         .hero h1 {
             font-size: 48px;
+            margin-bottom: 0.2em;
+        }
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 1em;
+        }
+        .hero .cta {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 1em 2em;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .hero .cta:hover {
+            transform: scale(1.05);
         }
         .services {
             display: flex;
@@ -53,35 +66,29 @@
         }
         .service {
             background-color: #fff;
-            padding: 20px;
-            margin: 20px;
-            width: calc(33.33% - 20px);
+            padding: 2em;
+            margin: 1em;
+            border: 1px solid #ddd;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 2em);
+            transition: transform 0.2s ease;
+        }
+        .service:hover {
+            transform: scale(1.05);
         }
         .service h2 {
             font-size: 24px;
-            margin-top: 0;
-        }
-        .service img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
+            margin-bottom: 0.5em;
         }
         .about {
-            background-color: var(--secondary-color);
-            padding: 20px;
-            color: #fff;
+            background-image: linear-gradient(to bottom, #f7f7f7, #fff);
+            background-size: cover;
+            background-position: center;
+            padding: 2em;
         }
         .about h2 {
-            font-size: 24px;
-            margin-top: 0;
-        }
-        .about img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
+            font-size: 36px;
+            margin-bottom: 0.5em;
         }
         .gallery {
             display: flex;
@@ -89,171 +96,252 @@
             justify-content: center;
         }
         .gallery img {
-            width: calc(33.33% - 20px);
-            height: 200px;
-            object-fit: cover;
-            margin: 20px;
-            border-radius: 10px;
+            width: calc(50% - 1em);
+            margin: 1em;
+            transition: transform 0.2s ease;
         }
-        .testimonials {
-            background-color: var(--primary-color);
-            padding: 20px;
-            color: #fff;
+        .gallery img:hover {
+            transform: scale(1.05);
         }
         .testimonial {
             background-color: #fff;
-            padding: 20px;
-            margin: 20px;
-            width: calc(50% - 20px);
+            padding: 2em;
+            margin: 1em;
+            border: 1px solid #ddd;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 2em);
         }
-        .testimonial h2 {
-            font-size: 24px;
-            margin-top: 0;
+        .testimonial p {
+            font-size: 18px;
+            margin-bottom: 0.5em;
+        }
+        .rating {
+            color: var(--accent);
+            font-size: 18px;
+            margin-bottom: 0.5em;
         }
         .contact {
-            background-color: var(--secondary-color);
-            padding: 20px;
+            background-image: linear-gradient(to bottom, #1A9648, #3E8E41);
+            background-size: cover;
+            background-position: center;
+            padding: 2em;
             color: #fff;
         }
         .contact h2 {
-            font-size: 24px;
-            margin-top: 0;
+            font-size: 36px;
+            margin-bottom: 0.5em;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input, .contact textarea {
+            padding: 1em;
+            margin-bottom: 1em;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .contact button {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 1em 2em;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .contact button:hover {
+            transform: scale(1.05);
         }
         .footer {
-            background-color: var(--primary-color);
-            padding: 20px;
+            background-color: #333;
             color: #fff;
+            padding: 1em;
             text-align: center;
         }
-        .footer ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .footer nav {
+            display: flex;
+            justify-content: center;
         }
-        .footer li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-        .footer a {
+        .footer nav a {
             color: #fff;
-            text-decoration: none;
+            margin: 0 1em;
         }
-        @media only screen and (max-width: 768px) {
-            .service {
-                width: calc(50% - 20px);
-            }
-            .gallery img {
-                width: calc(50% - 20px);
-            }
+        .footer nav a:hover {
+            color: var(--accent);
         }
-        @media only screen and (max-width: 480px) {
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;
+                max-height: 80vh;
+            }
+            .services {
+                flex-direction: column;
+            }
             .service {
                 width: 100%;
+                margin: 1em 0;
+            }
+            .gallery {
+                flex-direction: column;
             }
             .gallery img {
                 width: 100%;
+                margin: 1em 0;
+            }
+            .testimonial {
+                width: 100%;
+                margin: 1em 0;
             }
         }
-        svg {
-            width: 24px;
-            height: 24px;
-            fill: var(--primary-color);
-        }
-        .loading {
-            animation: loading 2s infinite;
-        }
-        @keyframes loading {
-            0% {
+        @keyframes fadeIn {
+            from {
                 opacity: 0;
             }
-            100% {
+            to {
                 opacity: 1;
             }
+        }
+        .animate {
+            animation: fadeIn 1s;
+        }
+        .animate-1 {
+            animation-delay: 0ms;
+        }
+        .animate-2 {
+            animation-delay: 100ms;
+        }
+        .animate-3 {
+            animation-delay: 200ms;
         }
     </style>
 </head>
 <body>
-    <header class="hero loading">
-        <div class="container">
-            <h1>Joe Boone Plumbing</h1>
-            <p>Trusted Plumber in Florida</p>
-            <svg viewBox="0 0 24 24">
-                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/>
-            </svg>
-        </div>
+    <header class="hero animate animate-1">
+        <h1>Joe Boone Plumbing</h1>
+        <p>Expert Plumbing Services in Tallahassee, FL</p>
+        <button class="cta" onclick="location.href='tel:(850) 562-0264'">Call Now: (850) 562-0264</button>
+        <img src="https://picsum.photos/seed/herojoe-boone-plumbing-florida/1920/1080" alt="Hero Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
     </header>
-    <section class="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="service">
-                <h2>Drain Cleaning</h2>
-                <img src="https://picsum.photos/seed/s1joe-bo/800/600" alt="Drain Cleaning">
-                <p>We offer reliable and efficient drain cleaning services to keep your pipes flowing smoothly.</p>
+    <section class="services animate animate-2">
+        <div class="service">
+            <h2>Residential Plumbing</h2>
+            <p>Expert plumbing services for your home, including faucet repair, toilet installation, and drain cleaning.</p>
+            <img src="https://picsum.photos/seed/s1joe-boone-plumbing-florida/800/600" alt="Service Image 1">
+        </div>
+        <div class="service">
+            <h2>Commercial Plumbing</h2>
+            <p>Reliable plumbing services for your business, including water heater installation, sewer line repair, and grease trap cleaning.</p>
+            <img src="https://picsum.photos/seed/s2joe-boone-plumbing-florida/800/600" alt="Service Image 2">
+        </div>
+        <div class="service">
+            <h2>Emergency Plumbing</h2>
+            <p>24/7 emergency plumbing services for your home or business, including burst pipe repair and drain cleaning.</p>
+            <img src="https://picsum.photos/seed/s3joe-boone-plumbing-florida/800/600" alt="Service Image 3">
+        </div>
+    </section>
+    <section class="about animate animate-3">
+        <h2>About Us</h2>
+        <p>We are a locally owned and operated plumbing company in Tallahassee, FL, dedicated to providing top-notch plumbing services to our community.</p>
+        <p>Our team of experienced plumbers are committed to delivering exceptional service and ensuring your complete satisfaction.</p>
+        <img src="https://picsum.photos/seed/abjoe-boone-plumbing-florida/1200/800" alt="About Image">
+    </section>
+    <section class="gallery animate animate-1">
+        <img src="https://picsum.photos/seed/g1joe-boone-plumbing-florida/800/800" alt="Gallery Image 1">
+        <img src="https://picsum.photos/seed/g2joe-boone-plumbing-florida/800/800" alt="Gallery Image 2">
+    </section>
+    <section class="testimonials animate animate-2">
+        <div class="testimonial">
+            <p>Joe Boone Plumbing is the best in town! They fixed my leaky faucet in no time and were very professional.</p>
+            <div class="rating">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="10 0 16 5 10 10 4 5 10 0"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="10 0 16 5 10 10 4 5 10 0"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="10 0 16 5 10 10 4 5 10 0"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="10 0 16 5 10 10 4 5 10 0"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="10 0 16 5 10 10 4 5 10 0"/>
+                </svg>
             </div>
-            <div class="service">
-                <h2>Plumbing Repairs</h2>
-                <img src="https://picsum.photos/seed/s2joe-bo/800/600" alt="Plumbing Repairs">
-                <p>From leaky faucets to burst pipes, our team of experts can handle any plumbing repair job.</p>
-            </div>
-            <div class="service">
-                <h2>Water Heater Installation</h2>
-                <img src="https://picsum.photos/seed/s3joe-bo/800/600" alt="Water Heater Installation">
-                <p>We install and maintain water heaters to ensure you have a steady supply of hot water.</p>
+        </div>
+        <div class="testimonial">
+            <p>I was impressed with the prompt service and fair pricing of Joe Boone Plumbing. I highly recommend them!</p>
+            <div class="rating">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="10 0 16 5 10 10 4 5 10 0"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="10 0 16 5 10 10 4 5 10 0"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="10 0 16 5 10 10 4 5 10 0"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="10 0 16 5 10 10 4 5 10 0"/>
+                </svg>
             </div>
         </div>
     </section>
-    <section class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <img src="https://picsum.photos/seed/abjoe-bo/1200/800" alt="About Us">
-            <p>We are a team of licensed and experienced plumbers dedicated to providing top-notch services to our customers in Florida.</p>
+    <section class="contact animate animate-3">
+        <h2>Get in Touch</h2>
+        <p>Contact us today to schedule your plumbing service!</p>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button>Send</button>
+        </form>
+        <p>Address: 1808 Benado Lomas Dr, Tallahassee, FL 32317, USA</p>
+        <p>Phone: <a href="tel:(850) 562-0264">(850) 562-0264</a></p>
+        <p>Email: <a href="mailto:"></a></p>
+        <div>
+            <a href="" style="display:?'block':'none'">Instagram</a>
+            <a href="" style="display:?'block':'none'">Facebook</a>
+            <a href="" style="display:?'block':'none'">TikTok</a>
+            <a href="" style="display:?'block':'none'">LinkedIn</a>
         </div>
     </section>
-    <section class="gallery">
-        <div class="container">
-            <h2>Our Work</h2>
-            <img src="https://picsum.photos/seed/g1joe-bo/800/800" alt="Gallery Image 1">
-            <img src="https://picsum.photos/seed/g2joe-bo/800/800" alt="Gallery Image 2">
-        </div>
-    </section>
-    <section class="testimonials" style="background-image: url('https://picsum.photos/seed/tbjoe-bo/1920/1080'); background-size: cover; background-position: center;">
-        <div class="container">
-            <h2>What Our Customers Say</h2>
-            <div class="testimonial">
-                <h2>5/5 Stars</h2>
-                <p>Joe Boone Plumbing is the best in town! Their service is prompt, efficient, and affordable.</p>
-            </div>
-            <div class="testimonial">
-                <h2>5/5 Stars</h2>
-                <p>I highly recommend Joe Boone Plumbing for any plumbing needs. Their team is professional and courteous.</p>
-            </div>
-        </div>
-    </section>
-    <section class="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <p>Phone: (850) 562-0264</p>
-            <p>Email: </p>
-            <p>Address: 1808 Benado Lomas Dr, Tallahassee, FL 32317, USA</p>
-        </div>
-    </section>
-    <footer class="footer">
-        <div class="container">
-            <h2>Joe Boone Plumbing</h2>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <p>&copy; 2023 Joe Boone Plumbing. All rights reserved.</p>
+    <footer class="footer animate animate-1">
+        <p>&copy; 2023 Joe Boone Plumbing</p>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 10c0 4.418-4.967 8-11 8s-11-3.582-11-8 4.967-8 11-8 11 3.582 11 8z"/>
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M8 12h13v2.5h-13V12z"/>
+                <path d="M18 5v9a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h5v1h-5c-1.1 0-2 .9-2 2v1H5c0-1.1.9-2 2-2h1v5h2V5h-2v1h-1c-1.1 0-2 .9-2 2v2h2V5h-2v2H8c0-1.1.9-2 2-2h1v2H8V5h2v2h-2V5h2v2H5c0-1.1.9-2 2-2h5v2h-5c0-1.1.9-2 2-2h1v2h2V5z"/>
+            </svg>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 4a2 2 0 100 4 2 2 0 000-4z"/>
+                <path d="M16 8h-4a2 2 0 00-2 2v4h2a2 2 0 002-2v-4a2 2 0 012-2h-4a2 2 0 012-2v6h8v-6a2 2 0 012-2z"/>
+            </svg>
         </div>
     </footer>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const loading = document.querySelector(".loading");
-            loading.classList.remove("loading");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.animate').forEach((element) => {
+            observer.observe(element);
         });
     </script>
 </body>

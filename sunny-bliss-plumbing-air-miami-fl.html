@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunny Bliss Plumbing & Air</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0097A7;
+            --accent: #F7DC6F;
+            --bg: #f2f2f2;
+            --text: #333;
+            --text-muted: #666;
+        }
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .display {
+            font-family: 'Clash Display', sans-serif;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, #87CEEB, #4682B4);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            height: 80vh;
+            max-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero .display {
+            font-size: 48px;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+            transition: transform 0.2s ease;
+        }
+        .service:hover {
+            transform: scale(1.1);
+        }
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .about {
+            background-color: #f7f7f7;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .about img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(50% - 20px);
+            margin: 20px;
+            transition: transform 0.2s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .testimonial {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 20px);
+        }
+        .testimonial .rating {
+            font-size: 18px;
+            color: #ffd700;
+        }
+        .contact {
+            background-color: #f7f7f7;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+        .contact input[type="submit"] {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: var(--primary);
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="display" style="animation: slideIn 1s ease 0s 1 forwards;">Sunny Bliss Plumbing & Air</div>
+        <div style="animation: fadeIn 1s ease 100ms 1 forwards;">Your trusted plumbing and air conditioning experts in Miami, FL</div>
+        <a href="tel:(305) 440-0621" style="animation: fadeIn 1s ease 200ms 1 forwards;">Call us now: (305) 440-0621</a>
+    </header>
+    <section class="services">
+        <div class="service" style="animation: slideIn 1s ease 0s 1 forwards;">
+            <img src="https://picsum.photos/seed/s1sunny-bliss-plumbing-air-miami-fl/800/600" alt="Plumbing Services">
+            <h2>Plumbing Services</h2>
+            <p>From leaky faucets to burst pipes, our team of experts is here to help.</p>
+        </div>
+        <div class="service" style="animation: slideIn 1s ease 100ms 1 forwards;">
+            <img src="https://picsum.photos/seed/s2sunny-bliss-plumbing-air-miami-fl/800/600" alt="Air Conditioning Services">
+            <h2>Air Conditioning Services</h2>
+            <p>Stay cool and comfortable with our top-notch air conditioning services.</p>
+        </div>
+        <div class="service" style="animation: slideIn 1s ease 200ms 1 forwards;">
+            <img src="https://picsum.photos/seed/s3sunny-bliss-plumbing-air-miami-fl/800/600" alt="Water Heater Services">
+            <h2>Water Heater Services</h2>
+            <p>Get hot water on demand with our reliable water heater services.</p>
+        </div>
+    </section>
+    <section class="about">
+        <img src="https://picsum.photos/seed/absunny-bliss-plumbing-air-miami-fl/1200/800" alt="About Us">
+        <h2>Welcome to Sunny Bliss Plumbing & Air</h2>
+        <p>We're a locally-owned and operated business, dedicated to providing top-notch plumbing and air conditioning services to the Miami, FL community.</p>
+        <p>With years of experience and a team of expert technicians, you can trust us to get the job done right.</p>
+    </section>
+    <section class="gallery">
+        <img src="https://picsum.photos/seed/g1sunny-bliss-plumbing-air-miami-fl/800/800" alt="Gallery Image 1" style="animation: slideIn 1s ease 0s 1 forwards;">
+        <img src="https://picsum.photos/seed/g2sunny-bliss-plumbing-air-miami-fl/800/800" alt="Gallery Image 2" style="animation: slideIn 1s ease 100ms 1 forwards;">
+    </section>
+    <section class="testimonials">
+        <div class="testimonial" style="animation: slideIn 1s ease 0s 1 forwards;">
+            <h2>What our customers say:</h2>
+            <p>"Sunny Bliss Plumbing & Air is the best! Their technicians are knowledgeable and friendly, and they got the job done quickly and efficiently."</p>
+            <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+        </div>
+        <div class="testimonial" style="animation: slideIn 1s ease 100ms 1 forwards;">
+            <h2>Another happy customer:</h2>
+            <p>"I was impressed by the professionalism and courtesy of the technicians. They explained everything clearly and made sure I was satisfied with the work."</p>
+            <div class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Get in touch with us:</h2>
+        <p>Address: 605 Lincoln Rd Suite 250B, Miami Beach, FL 33139, USA</p>
+        <p>Phone: <a href="tel:(305) 440-0621">(305) 440-0621</a></p>
+        <p>Email: <a href="mailto:info@sunnybliss.com">info@sunnybliss.com</a></p>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <input type="submit" value="Send">
+        </form>
+        <p>Follow us on social media:</p>
+        <a href="https://instagram.com/sunnybliss_plumbing_air" style="display:https://instagram.com/sunnybliss_plumbing_air?'block':'none'">Instagram</a>
+        <a href="https://facebook.com/sunnyblissplumbingandair" style="display:https://facebook.com/sunnyblissplumbingandair?'block':'none'">Facebook</a>
+        <a href="https://linkedin.com/101358808" style="display:https://linkedin.com/101358808?'block':'none'">LinkedIn</a>
+        <a href="{{youtube}}" style="display:{{youtube}}?'block':'none'">YouTube</a>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2023 Sunny Bliss Plumbing & Air</p>
+        <p><a href="#hero">Home</a> | <a href="#services">Services</a> | <a href="#about">About</a> | <a href="#contact">Contact</a></p>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10 2v6m3-2v6M3 2v18h18V2z"></path>
+        </svg>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17.5 5h-7.5V3h-3v2h-2C5.333 5 2 8.333 2 12.5v5H0v2h5v2H5v2h3v2h2v-2h3v-2h2v-2h5v-5C20 8.333 17.5 5 17.5 5z"></path>
+        </svg>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 12h2v2h-2V6h2c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h2v-2z"></path>
+        </svg>
+    </footer>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 1 });
+        const elements = document.querySelectorAll('.service, .testimonial, .gallery img');
+        elements.forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>

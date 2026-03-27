@@ -6,27 +6,41 @@
     <title>M&L Plumbing & Septic Tank Service</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&family=Outfit:wght@100;200;300;400;500;600;700&family=Fraunces:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900&family=Satoshi:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display&family=Satoshi&display=swap" rel="stylesheet">
     <style>
         :root {
-            --main-color: #FFC107;
-            --secondary-color: #4CAF50;
-            --background-color: #F7F7F7;
-            --text-color: #333;
+            --primary: #0097A7;
+            --accent: #FFC107;
+            --bg: #F7F7F7;
+            --text: #333;
+            --text-muted: #666;
         }
-        body {
-            font-family: 'Outfit', sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            overflow-x: hidden;
+        }
+        body {
+            font-family: 'Satoshi', sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--text);
+            background-color: var(--bg);
+        }
+        h1, h2, h3 {
+            font-family: 'Clash Display', sans-serif;
+            margin-bottom: 10px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
         .hero {
-            background-image: linear-gradient(to bottom, var(--main-color), var(--secondary-color));
+            background-image: linear-gradient(to bottom, #87CEEB, #4682B4);
             background-size: 100% 300px;
             background-position: 0% 100%;
-            height: 100vh;
+            height: 80vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -34,60 +48,48 @@
         }
         .hero h1 {
             font-size: 48px;
-            font-weight: 700;
-            text-align: center;
-            animation: fadeIn 2s;
         }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .hero a {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .hero a:hover {
+            background-color: var(--accent);
         }
         .services {
-            padding: 100px 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
         }
         .service {
-            margin: 20px;
-            width: calc(33.33% - 20px);
             background-color: #fff;
             padding: 20px;
+            margin: 20px;
             border: 1px solid #ddd;
-            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
-        }
-        .service:hover {
-            transform: scale(1.05);
+            width: calc(33.33% - 20px);
         }
         .service h2 {
             font-size: 24px;
-            font-weight: 600;
             margin-bottom: 10px;
         }
-        .service img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px 10px 0 0;
+        .service p {
+            font-size: 18px;
+            margin-bottom: 20px;
         }
         .about {
-            padding: 100px 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-        }
-        .about img {
-            width: calc(50% - 20px);
-            margin: 20px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
         }
         .about-text {
             width: calc(50% - 20px);
@@ -95,153 +97,288 @@
             padding: 20px;
             background-color: #fff;
             border: 1px solid #ddd;
-            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        .about-text h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .about-text p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
         .gallery {
-            padding: 100px 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
         }
         .gallery img {
-            width: calc(25% - 20px);
+            width: calc(50% - 20px);
             margin: 20px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .testimonials {
-            padding: 100px 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
         }
         .testimonial {
-            margin: 20px;
-            width: calc(50% - 20px);
             background-color: #fff;
             padding: 20px;
+            margin: 20px;
             border: 1px solid #ddd;
-            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 20px);
+        }
+        .testimonial h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
         }
         .testimonial p {
             font-size: 18px;
-            font-weight: 400;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .rating {
+            font-size: 18px;
+            color: var(--accent);
         }
         .contact {
-            padding: 100px 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
         }
         .contact-form {
-            width: calc(50% - 20px);
-            margin: 20px;
-            padding: 20px;
             background-color: #fff;
+            padding: 20px;
+            margin: 20px;
             border: 1px solid #ddd;
-            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 20px);
         }
-        .contact-info {
-            width: calc(50% - 20px);
-            margin: 20px;
-            padding: 20px;
-            background-color: #fff;
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
             border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form input[type="submit"] {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .contact-form input[type="submit"]:hover {
+            background-color: var(--accent);
         }
         .footer {
-            background-color: var(--main-color);
+            background-color: #333;
+            color: #fff;
             padding: 20px;
             text-align: center;
-            color: #fff;
         }
-        @media only screen and (max-width: 768px) {
-            .service {
-                width: calc(50% - 20px);
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .svg-icon {
+            width: 20px;
+            height: 20px;
+            margin: 10px;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;
+                background-size: 100% 200px;
             }
-            .about img {
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+            .services {
+                flex-direction: column;
+            }
+            .service {
                 width: 100%;
+                margin: 20px 0;
+            }
+            .about {
+                flex-direction: column;
             }
             .about-text {
                 width: 100%;
+                margin: 20px 0;
+            }
+            .gallery {
+                flex-direction: column;
             }
             .gallery img {
-                width: calc(50% - 20px);
+                width: 100%;
+                margin: 20px 0;
+            }
+            .testimonials {
+                flex-direction: column;
             }
             .testimonial {
                 width: 100%;
+                margin: 20px 0;
+            }
+            .contact {
+                flex-direction: column;
+            }
+            .contact-form {
+                width: 100%;
+                margin: 20px 0;
             }
         }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <h1>M&L Plumbing & Septic Tank Service</h1>
-        <img src="https://picsum.photos/seed/hm-l-plum/1920/1080" alt="Hero Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+    <div class="container">
+        <div class="hero" style="background-image: url(https://picsum.photos/seed/herom-l-plumbing-septic-tank-service-florida/1920/1080);">
+            <h1>M&L Plumbing & Septic Tank Service</h1>
+            <p>Reliable plumbing services in Florida</p>
+            <a href="tel:(850) 575-9393">Call Us Now: (850) 575-9393</a>
+        </div>
+        <div class="services">
+            <div class="service">
+                <h2>Plumbing Repair</h2>
+                <p>Our expert plumbers can fix any leak or issue</p>
+                <img src="https://picsum.photos/seed/s1m-l-plumbing-septic-tank-service-florida/800/600" alt="Plumbing Repair">
+            </div>
+            <div class="service">
+                <h2>Septic Tank Service</h2>
+                <p>We can inspect, pump, and repair your septic tank</p>
+                <img src="https://picsum.photos/seed/s2m-l-plumbing-septic-tank-service-florida/800/600" alt="Septic Tank Service">
+            </div>
+            <div class="service">
+                <h2>Drain Cleaning</h2>
+                <p>Our advanced equipment can clear any clog</p>
+                <img src="https://picsum.photos/seed/s3m-l-plumbing-septic-tank-service-florida/800/600" alt="Drain Cleaning">
+            </div>
+        </div>
+        <div class="about">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>We are a local, family-owned business with years of experience</p>
+                <p>We serve the entire Florida area, including Florida</p>
+                <img src="https://picsum.photos/seed/abm-l-plumbing-septic-tank-service-florida/1200/800" alt="About Us">
+            </div>
+            <div>
+                <h2>Trust Indicators</h2>
+                <p><span class="rating">4.9 stars</span> from 629+ reviews</p>
+            </div>
+        </div>
+        <div class="gallery">
+            <img src="https://picsum.photos/seed/g1m-l-plumbing-septic-tank-service-florida/800/800" alt="Gallery Image 1">
+            <img src="https://picsum.photos/seed/g2m-l-plumbing-septic-tank-service-florida/800/800" alt="Gallery Image 2">
+        </div>
+        <div class="testimonials">
+            <div class="testimonial">
+                <h2>John Doe</h2>
+                <p>Great service, prompt and professional</p>
+                <div class="rating">
+                    <svg class="svg-icon" viewBox="0 0 20 20" fill="none" stroke="var(--accent)" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"></path>
+                    </svg>
+                    <svg class="svg-icon" viewBox="0 0 20 20" fill="none" stroke="var(--accent)" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"></path>
+                    </svg>
+                    <svg class="svg-icon" viewBox="0 0 20 20" fill="none" stroke="var(--accent)" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"></path>
+                    </svg>
+                    <svg class="svg-icon" viewBox="0 0 20 20" fill="none" stroke="var(--accent)" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"></path>
+                    </svg>
+                    <svg class="svg-icon" viewBox="0 0 20 20" fill="none" stroke="#ccc" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="testimonial">
+                <h2>Jane Doe</h2>
+                <p>Excellent work, highly recommended</p>
+                <div class="rating">
+                    <svg class="svg-icon" viewBox="0 0 20 20" fill="none" stroke="var(--accent)" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"></path>
+                    </svg>
+                    <svg class="svg-icon" viewBox="0 0 20 20" fill="none" stroke="var(--accent)" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"></path>
+                    </svg>
+                    <svg class="svg-icon" viewBox="0 0 20 20" fill="none" stroke="var(--accent)" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"></path>
+                    </svg>
+                    <svg class="svg-icon" viewBox="0 0 20 20" fill="none" stroke="var(--accent)" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"></path>
+                    </svg>
+                    <svg class="svg-icon" viewBox="0 0 20 20" fill="none" stroke="#ccc" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="contact">
+            <div class="contact-form">
+                <h2>Get in Touch</h2>
+                <form>
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <textarea placeholder="Message"></textarea>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+            <div>
+                <h2>Contact Info</h2>
+                <p>Address: 4417 Crawfordville Hwy, Crawfordville, FL 32327, USA</p>
+                <p>Phone: <a href="tel:(850) 575-9393">(850) 575-9393</a></p>
+                <p>Email: <a href="mailto:mandl@mandlplumbing.com">mandl@mandlplumbing.com</a></p>
+                <a href="https://facebook.com/MLPlumbingInc" style="display:https://facebook.com/MLPlumbingInc?'block':'none'">
+                    <svg class="svg-icon" viewBox="0 0 20 20" fill="none" stroke="#666" stroke-width="2">
+                        <path d="M16 8a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        <path d="M9 1v3h3a2 2 0 012 2h.09a2 2 0 012 1.5v2h.09a2 2 0 012 1.5H15v3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; M&L Plumbing & Septic Tank Service. All rights reserved.</p>
+            <nav>
+                <a href="#hero">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </div>
-    <div class="services">
-        <div class="service">
-            <h2>Plumbing Services</h2>
-            <img src="https://picsum.photos/seed/s1m-l-pl/800/600" alt="Service Image 1">
-            <p>We offer a wide range of plumbing services, from leaky faucets to whole-house repiping.</p>
-        </div>
-        <div class="service">
-            <h2>Septic Tank Services</h2>
-            <img src="https://picsum.photos/seed/s2m-l-pl/800/600" alt="Service Image 2">
-            <p>Our team of experts can handle all your septic tank needs, from installation to maintenance and repair.</p>
-        </div>
-        <div class="service">
-            <h2>Drain Cleaning</h2>
-            <img src="https://picsum.photos/seed/s3m-l-pl/800/600" alt="Service Image 3">
-            <p>We use the latest technology to clear clogs and blockages in your drains, getting your plumbing system flowing freely again.</p>
-        </div>
-    </div>
-    <div class="about">
-        <img src="https://picsum.photos/seed/abm-l-pl/1200/800" alt="About Image">
-        <div class="about-text">
-            <h2>About Us</h2>
-            <p>M&L Plumbing & Septic Tank Service is a family-owned and operated business serving the Florida area. We pride ourselves on our commitment to quality, customer satisfaction, and community involvement.</p>
-        </div>
-    </div>
-    <div class="gallery">
-        <img src="https://picsum.photos/seed/g1m-l-pl/800/800" alt="Gallery Image 1">
-        <img src="https://picsum.photos/seed/g2m-l-pl/800/800" alt="Gallery Image 2">
-        <img src="https://picsum.photos/seed/g1m-l-pl/800/800" alt="Gallery Image 3">
-        <img src="https://picsum.photos/seed/g2m-l-pl/800/800" alt="Gallery Image 4">
-    </div>
-    <div class="testimonials">
-        <div class="testimonial" style="background-image: url('https://picsum.photos/seed/tbm-l-pl/1920/1080'); background-size: cover; background-position: center;">
-            <p>"M&L Plumbing & Septic Tank Service is the best! They fixed my leaky faucet in no time and were very professional." - John D.</p>
-        </div>
-        <div class="testimonial" style="background-image: url('https://picsum.photos/seed/tbm-l-pl/1920/1080'); background-size: cover; background-position: center;">
-            <p>"I was impressed with the quality of work and the prices were very reasonable. I would definitely recommend M&L Plumbing & Septic Tank Service to anyone." - Sarah K.</p>
-        </div>
-    </div>
-    <div class="contact">
-        <div class="contact-form">
-            <h2>Get in Touch</h2>
-            <form>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <textarea placeholder="Message"></textarea>
-                <button>Send</button>
-            </form>
-        </div>
-        <div class="contact-info">
-            <h2>Contact Info</h2>
-            <p>Phone: (850) 575-9393</p>
-            <p>Email: <a href="mailto:mandl@mandlplumbing.com">mandl@mandlplumbing.com</a></p>
-            <p>Address: 4417 Crawfordville Hwy, Crawfordville, FL 32327, USA</p>
-        </div>
-    </div>
-    <div class="footer">
-        <p>&copy; 2023 M&L Plumbing & Septic Tank Service. All rights reserved.</p>
-    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const scrollElements = document.querySelectorAll(".hero, .services, .about, .gallery, .testimonials, .contact");
+            const navLinks = document.querySelectorAll("nav a");
+            const intersectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        navLinks.forEach((link) => {
+                            link.classList.remove("active");
+                            if (link.getAttribute("href") === `#${id}`) {
+                                link.classList.add("active");
+                            }
+                        });
+                    }
+                });
+            }, { threshold: 0.5 });
+            scrollElements.forEach((element) => {
+                intersectionObserver.observe(element);
+                element.id = element.className;
+            });
+        });
+    </script>
 </body>
 </html>

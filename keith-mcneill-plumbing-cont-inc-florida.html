@@ -4,293 +4,278 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keith McNeill Plumbing Cont Inc</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Satoshi:wght@300;400;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #FFC500;
-            --secondary-color: #212121;
-            --background-color: #F7F7F7;
-            --text-color: #333333;
-            --overlay-color: rgba(0, 0, 0, 0.5);
-        }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+            --primary: #2c6e8f;
+            --accent: #ffd700;
+            --bg: #f7f7f7;
+            --text: #333;
+            --text-muted: #666;
         }
         body {
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Satoshi', sans-serif;
+            margin: 0;
+            padding: 0;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
-            overflow-x: hidden;
+            color: var(--text);
+            background-color: var(--bg);
+        }
+        h1, h2, h3 {
+            font-family: 'Clash Display', sans-serif;
+            margin-bottom: 0.5em;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+        }
         .hero {
-            background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-            background-size: cover;
-            background-position: center;
+            background-image: linear-gradient(to bottom, #2c6e8f, #456778);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
             height: 100vh;
+            max-height: 80vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #FFFFFF;
+            color: #fff;
         }
-        .hero img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.5;
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            animation: fade-in 1s ease-in-out;
         }
-        .hero .content {
-            z-index: 1;
-            text-align: center;
-        }
-        .hero .content h1 {
-            font-family: 'Fraunces', serif;
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        .hero .content p {
-            font-size: 18px;
-            margin-bottom: 40px;
-        }
-        .hero .content a {
-            background-color: var(--primary-color);
-            color: #FFFFFF;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .hero .content a:hover {
-            background-color: #FF9900;
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
         .services {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            margin-top: 40px;
+            margin-top: -100px;
         }
         .service {
-            background-color: #FFFFFF;
+            background-color: #fff;
             padding: 20px;
-            border: 1px solid #DDDDDD;
-            border-radius: 10px;
+            border: 1px solid #ddd;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease-in-out;
         }
         .service:hover {
-            transform: translateY(-10px);
-        }
-        .service img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px 10px 0 0;
-        }
-        .service h2 {
-            font-family: 'Satoshi', sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        .service p {
-            font-size: 14px;
-            margin-bottom: 20px;
+            transform: scale(1.05);
         }
         .about {
-            background-color: var(--secondary-color);
-            color: #FFFFFF;
-            padding: 40px;
-            margin-top: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .about img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin: 0 auto;
-            display: block;
-        }
-        .about h2 {
-            font-family: 'Fraunces', serif;
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 20px;
+            background-image: url('https://picsum.photos/seed/abkeith-mcneill-plumbing-cont-inc-florida/1200/800');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
         }
         .gallery {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-            margin-top: 40px;
         }
         .gallery img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: 10px;
-            transition: transform 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out;
         }
         .gallery img:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
-        .testimonials {
-            background-color: var(--primary-color);
-            color: #FFFFFF;
-            padding: 40px;
-            margin-top: 40px;
-            border-radius: 10px;
+        .testimonial {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
-        .testimonials img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.5;
+        .testimonial::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--accent);
         }
-        .testimonials .content {
-            z-index: 1;
-            padding: 20px;
+        .testimonial-content {
+            margin-top: 10px;
         }
-        .testimonials .content h2 {
-            font-family: 'Fraunces', serif;
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 20px;
+        .rating {
+            display: inline-block;
+            margin-right: 10px;
         }
-        .testimonials .content p {
-            font-size: 16px;
-            margin-bottom: 20px;
+        .rating svg {
+            width: 20px;
+            height: 20px;
+            fill: #ffd700;
         }
         .contact {
-            background-color: var(--secondary-color);
-            color: #FFFFFF;
-            padding: 40px;
-            margin-top: 40px;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 20px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .contact h2 {
-            font-family: 'Fraunces', serif;
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        .contact p {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-        .contact a {
-            background-color: var(--primary-color);
-            color: #FFFFFF;
-            border: none;
+        .contact button {
+            background-color: var(--accent);
+            color: #fff;
             padding: 10px 20px;
-            font-size: 16px;
+            border: none;
+            border-radius: 10px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .contact a:hover {
-            background-color: #FF9900;
         }
         .footer {
-            background-color: var(--secondary-color);
-            color: #FFFFFF;
-            padding: 20px;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px;
             text-align: center;
-            margin-top: 40px;
         }
-        .footer p {
-            font-size: 14px;
-            margin-bottom: 10px;
+        .footer svg {
+            width: 20px;
+            height: 20px;
+            fill: #fff;
+            margin-right: 10px;
         }
-        @media only screen and (max-width: 768px) {
-            .services {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .gallery {
-                grid-template-columns: repeat(1, 1fr);
-            }
+        a {
+            text-decoration: none;
+            color: var(--accent);
         }
-        @media only screen and (max-width: 480px) {
-            .services {
-                grid-template-columns: repeat(1, 1fr);
-            }
-            .gallery {
-                grid-template-columns: repeat(1, 1fr);
-            }
+        a:hover {
+            color: var(--text);
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav a {
+            margin-right: 20px;
         }
     </style>
 </head>
 <body>
-    <section class="hero">
-        <img src="https://picsum.photos/seed/hkeith-mc/1920/1080" alt="Hero Image">
-        <div class="content">
-            <h1>Keith McNeill Plumbing Cont Inc</h1>
-            <p>Trusted plumbers in Florida</p>
-            <a href="tel:(850) 562-5504">Call Us Now</a>
-        </div>
-    </section>
+    <header class="hero">
+        <h1>Trusted Plumbers in Florida</h1>
+        <p>Expert Plumbing Services for Your Home or Business</p>
+        <a href="tel:(850) 562-5504">Call Now: (850) 562-5504</a>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><line x1="12" y1="3" x2="12" y2="21"></line><line x1="15" y1="9" x2="9" y2="9"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+    </header>
     <section class="services">
         <div class="service">
-            <img src="https://picsum.photos/seed/s1keith-/800/600" alt="Service Image 1">
-            <h2>Emergency Plumbing Services</h2>
-            <p>We provide 24/7 emergency plumbing services to ensure your safety and convenience.</p>
+            <h2>Drain Cleaning</h2>
+            <p>Our expert plumbers will clear your clogged drains and get your water flowing again.</p>
+            <img src="https://picsum.photos/seed/s1keith-mcneill-plumbing-cont-inc-florida/800/600" alt="Drain Cleaning">
         </div>
         <div class="service">
-            <img src="https://picsum.photos/seed/s2keith-/800/600" alt="Service Image 2">
-            <h2>Drain Cleaning and Maintenance</h2>
-            <p>Our expert plumbers will clean and maintain your drains to prevent clogs and damage.</p>
+            <h2>Plumbing Repairs</h2>
+            <p>From leaky faucets to burst pipes, we'll fix any plumbing issue you may have.</p>
+            <img src="https://picsum.photos/seed/s2keith-mcneill-plumbing-cont-inc-florida/800/600" alt="Plumbing Repairs">
         </div>
         <div class="service">
-            <img src="https://picsum.photos/seed/s3keith-/800/600" alt="Service Image 3">
-            <h2>Water Heater Installation and Repair</h2>
-            <p>We install and repair water heaters to ensure you have hot water whenever you need it.</p>
+            <h2>Water Heater Installation</h2>
+            <p>Get a new water heater installed by our experienced plumbers and enjoy hot water all year round.</p>
+            <img src="https://picsum.photos/seed/s3keith-mcneill-plumbing-cont-inc-florida/800/600" alt="Water Heater Installation">
         </div>
     </section>
     <section class="about">
-        <img src="https://picsum.photos/seed/abkeith-/1200/800" alt="About Image">
         <h2>About Us</h2>
-        <p>We are a team of experienced plumbers dedicated to providing top-notch services to our clients in Florida.</p>
+        <p>We're a family-owned plumbing company based in Florida, dedicated to providing top-notch services to our community.</p>
+        <p>With years of experience and a team of expert plumbers, you can trust us to get the job done right.</p>
     </section>
     <section class="gallery">
-        <img src="https://picsum.photos/seed/g1keith-/800/800" alt="Gallery Image 1">
-        <img src="https://picsum.photos/seed/g2keith-/800/800" alt="Gallery Image 2">
+        <img src="https://picsum.photos/seed/g1keith-mcneill-plumbing-cont-inc-florida/800/800" alt="Gallery Image 1">
+        <img src="https://picsum.photos/seed/g2keith-mcneill-plumbing-cont-inc-florida/800/800" alt="Gallery Image 2">
     </section>
     <section class="testimonials">
-        <img src="https://picsum.photos/seed/tbkeith-/1920/1080" alt="Testimonial Background">
-        <div class="content">
-            <h2>What Our Clients Say</h2>
-            <p>"Keith McNeill Plumbing Cont Inc is the best plumbing company I've ever worked with. They are professional, reliable, and affordable." - John Doe</p>
-            <p>"I was impressed with the quality of their work and the excellent customer service they provided." - Jane Smith</p>
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <p>Keith McNeill Plumbing did an amazing job fixing my leaky faucet. They were prompt, professional, and affordable.</p>
+            <div class="rating">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+        </div>
+        <div class="testimonial">
+            <p>Keith McNeill Plumbing is the best plumbing company I've ever worked with. They're reliable, efficient, and affordable.</p>
+            <div class="rating">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
         </div>
     </section>
     <section class="contact">
         <h2>Get in Touch</h2>
-        <p>Phone: (850) 562-5504</p>
-        <p>Email: [info@keithmcneillplumbing.com](mailto:info@keithmcneillplumbing.com)</p>
+        <p>Contact us today to schedule your plumbing service.</p>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button>Send</button>
+        </form>
         <p>Address: 3505 N Monroe St, Tallahassee, FL 32303, USA</p>
-        <a href="tel:(850) 562-5504">Call Us Now</a>
+        <p>Phone: <a href="tel:(850) 562-5504">(850) 562-5504</a></p>
+        <p>Email: <a href="mailto:workorders@mcneillplumbing.com">workorders@mcneillplumbing.com</a></p>
+        <div class="nav">
+            <a href="https://instagram.com/McNeillPlumbing" style="display:https://instagram.com/McNeillPlumbing?'block':'none'">Instagram</a>
+            <a href="https://facebook.com/McNeillPlumbing" style="display:https://facebook.com/McNeillPlumbing?'block':'none'">Facebook</a>
+        </div>
     </section>
     <footer class="footer">
-        <p>&copy; 2023 Keith McNeill Plumbing Cont Inc. All rights reserved.</p>
-        <p>Rating: 4.5/5 (4.5 - 440 reviews)</p>
+        <p>&copy; 2024 Keith McNeill Plumbing Cont Inc</p>
+        <div class="nav">
+            <a href="#hero">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a6 6 0 0 1 6-6z"></path></svg>
     </footer>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>

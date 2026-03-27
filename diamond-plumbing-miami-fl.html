@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Plumbing | Miami's Trusted Plumbers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3498db;
+            --accent: #f1c40f;
+            --bg: #f9f9f9;
+            --text: #333;
+            --text-muted: #666;
+        }
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Cabinet Grotesk', sans-serif;
+            margin-bottom: 0.5em;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, #87ceeb, #4682b4);
+            background-size: 100% 300px;
+            background-position: 0% 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 48px;
+        }
+        .hero .subheading {
+            font-size: 24px;
+            opacity: 0.7;
+        }
+        .hero .cta {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .hero .cta:hover {
+            background-color: #ffc107;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+        }
+        .service h2 {
+            font-size: 18px;
+        }
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .about-text {
+            width: calc(66.66% - 20px);
+            padding: 20px;
+        }
+        .about-image {
+            width: calc(33.33% - 20px);
+            padding: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .gallery-item {
+            width: calc(50% - 20px);
+            padding: 20px;
+            position: relative;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .gallery-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .testimonial {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(50% - 20px);
+        }
+        .testimonial .rating {
+            color: #ffd700;
+        }
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .contact-form {
+            width: calc(50% - 20px);
+            padding: 20px;
+        }
+        .contact-info {
+            width: calc(50% - 20px);
+            padding: 20px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+        .fade-out {
+            animation: fadeOut 1s;
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;
+            }
+            .services {
+                flex-direction: column;
+            }
+            .service {
+                width: 100%;
+                margin: 20px 0;
+            }
+            .about {
+                flex-direction: column;
+            }
+            .about-text {
+                width: 100%;
+                padding: 20px 0;
+            }
+            .about-image {
+                width: 100%;
+                padding: 20px 0;
+            }
+            .gallery {
+                flex-direction: column;
+            }
+            .gallery-item {
+                width: 100%;
+                padding: 20px 0;
+            }
+            .testimonials {
+                flex-direction: column;
+            }
+            .testimonial {
+                width: 100%;
+                margin: 20px 0;
+            }
+            .contact {
+                flex-direction: column;
+            }
+            .contact-form {
+                width: 100%;
+                padding: 20px 0;
+            }
+            .contact-info {
+                width: 100%;
+                padding: 20px 0;
+            }
+        }
+    </style>
+</head>
+<body class="smooth-scroll">
+    <header class="hero" style="background-image: url(https://picsum.photos/seed/herodiamond-plumbing-miami-fl/1920/1080);">
+        <div class="container">
+            <h1>Diamond Plumbing</h1>
+            <p class="subheading">Trusted Plumbers in Miami, FL</p>
+            <p>Get expert plumbing services for your home or business. Call us today!</p>
+            <button class="cta" onclick="location.href='tel:(786) 565-6067'">Call Now: (786) 565-6067</button>
+        </div>
+    </header>
+    <section class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service">
+                <h3>Drain Cleaning</h3>
+                <p>Get your drains flowing like new again with our expert cleaning services.</p>
+                <img src="https://picsum.photos/seed/s1diamond-plumbing-miami-fl/800/600" alt="Drain Cleaning">
+            </div>
+            <div class="service">
+                <h3>Plumbing Repairs</h3>
+                <p>Fix leaky faucets, toilets, and more with our reliable repair services.</p>
+                <img src="https://picsum.photos/seed/s2diamond-plumbing-miami-fl/800/600" alt="Plumbing Repairs">
+            </div>
+            <div class="service">
+                <h3>Water Heater Installation</h3>
+                <p>Get a new water heater installed by our experienced technicians.</p>
+                <img src="https://picsum.photos/seed/s3diamond-plumbing-miami-fl/800/600" alt="Water Heater Installation">
+            </div>
+        </div>
+    </section>
+    <section class="about">
+        <div class="container">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>We're a locally-owned plumbing company serving Miami, FL. Our team is dedicated to providing exceptional service and ensuring your complete satisfaction.</p>
+                <p>At Diamond Plumbing, we understand the importance of having a reliable and trustworthy plumber. That's why we're committed to building long-term relationships with our customers and providing them with the best possible service.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://picsum.photos/seed/abdiamond-plumbing-miami-fl/1200/800" alt="About Us">
+            </div>
+        </div>
+    </section>
+    <section class="gallery">
+        <div class="container">
+            <h2>Our Portfolio</h2>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/seed/g1diamond-plumbing-miami-fl/800/800" alt="Gallery Image 1">
+                <div class="overlay">View Project</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/seed/g2diamond-plumbing-miami-fl/800/800" alt="Gallery Image 2">
+                <div class="overlay">View Project</div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial">
+                <p>"Diamond Plumbing is the best! They fixed my leaky faucet in no time and the price was very reasonable."</p>
+                <div class="rating">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                    </svg>
+                </div>
+                <p>- John Doe</p>
+            </div>
+            <div class="testimonial">
+                <p>"I was blown away by the professionalism and expertise of Diamond Plumbing. They installed a new water heater for me and it's been working great ever since."</p>
+                <div class="rating">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                    </svg>
+                </div>
+                <p>- Jane Smith</p>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="tel" placeholder="Phone" required>
+                    <textarea placeholder="Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <p>Diamond Plumbing</p>
+                <p>14250 SW 136th St, Miami, FL 33186, USA</p>
+                <p><a href="tel:(786) 565-6067">(786) 565-6067</a></p>
+                <p><a href="mailto:angel@dharmamarketing.cloud">angel@dharmamarketing.cloud</a></p>
+                <p>Follow us on social media:</p>
+                <a href="https://instagram.com/calldiamondplumbing" style="display:https://instagram.com/calldiamondplumbing?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                </svg> Instagram</a>
+                <a href="https://facebook.com/DiamondPlumbingFlorida" style="display:https://facebook.com/DiamondPlumbingFlorida?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                </svg> Facebook</a>
+                <a href="https://linkedin.com/diamondplumbingusa" style="display:https://linkedin.com/diamondplumbingusa?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+                </svg> LinkedIn</a>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Diamond Plumbing. All rights reserved.</p>
+            <nav>
+                <a href="#hero">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <p>Follow us on social media:</p>
+            <a href="https://instagram.com/calldiamondplumbing" style="display:https://instagram.com/calldiamondplumbing?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+            </svg> Instagram</a>
+            <a href="https://facebook.com/DiamondPlumbingFlorida" style="display:https://facebook.com/DiamondPlumbingFlorida?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+            </svg> Facebook</a>
+            <a href="https://linkedin.com/diamondplumbingusa" style="display:https://linkedin.com/diamondplumbingusa?'block':'none'"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10 2l4 4-4 4-4-4 4-4z"/>
+            </svg> LinkedIn</a>
+        </div>
+    </footer>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                } else {
+                    entry.target.classList.remove('fade-in');
+                }
+            });
+        }, { threshold: 1.0 });
+        const sections = document.querySelectorAll('section');
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

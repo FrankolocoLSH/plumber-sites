@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Plumbing & Sewer</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+        }
+        nav {
+            background-color: var(--primary);
+            padding: .5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .nav-links li {
+            margin-left: 1rem;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color .3s ease;
+        }
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        .hamburger {
+            display: none;
+        }
+        .hamburger-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .hamburger-menu li {
+            margin-bottom: .5rem;
+        }
+        .hamburger-menu a {
+            color: #fff;
+            text-decoration: none;
+            transition: color .3s ease;
+        }
+        .hamburger-menu a:hover {
+            color: var(--accent);
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .hero-content h1 {
+            font-size: 2rem;
+            font-family: 'Syne', sans-serif;
+            margin-bottom: .5rem;
+        }
+        .hero-content .btn {
+            background-color: var(--accent);
+            color: #fff;
+            padding: .5rem 1rem;
+            border: none;
+            border-radius: .5rem;
+            cursor: pointer;
+        }
+        .hero-content .trust {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        .hero-content .trust .badge {
+            background-color: #fff;
+            color: var(--primary);
+            padding: .25rem 1rem;
+            border-radius: .5rem;
+            font-size: .8rem;
+            margin-right: 1rem;
+        }
+        .services {
+            padding: 2rem;
+            background-color: var(--light);
+        }
+        .service {
+            background-color: #fff;
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: .5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: calc(25% - 1rem);
+            vertical-align: top;
+        }
+        .service img {
+            width: 100%;
+        }
+        .service h2 {
+            font-size: 1.5rem;
+            font-family: 'Syne', sans-serif;
+            margin-bottom: .5rem;
+        }
+        .service p {
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+            margin-bottom: 1rem;
+        }
+        .stats {
+            padding: 2rem;
+            background-color: var(--light);
+        }
+        .stat {
+            background-color: #fff;
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: .5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .gallery {
+            padding: 2rem;
+            background-color: var(--light);
+        }
+        .gallery img {
+            width: 50%;
+            height: 50%;
+            object-fit: cover;
+            margin: 1rem;
+        }
+        .reviews {
+            padding: 2rem;
+            background-color: var(--light);
+        }
+        .review {
+            background-color: #fff;
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: .5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .review .rating {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+        .review img {
+            width: 20%;
+            height: 20%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .contact {
+            padding: 2rem;
+            background-color: var(--light);
+        }
+        .contact form {
+            width: 100%;
+        }
+        .contact form input[type="text"], .contact form input[type="email"] {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: .5rem;
+            width: 100%;
+        }
+        .contact form input[type="submit"] {
+            background-color: var(--accent);
+            color: #fff;
+            padding: .5rem 1rem;
+            border: none;
+            border-radius: .5rem;
+            cursor: pointer;
+        }
+        .contact .info {
+            background-color: #fff;
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: .5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .footer {
+            background-color: var(--primary);
+            padding: .5rem;
+            color: #fff;
+            text-align: center;
+            clear: both;
+        }
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .hamburger-menu {
+                display: block;
+                margin-top: 1rem;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hero {
+                height: 500px;
+            }
+            .services {
+                padding: 1rem;
+            }
+            .service {
+                width: 100%;
+                display: block;
+                margin-bottom: 1rem;
+            }
+            .stats {
+                padding: 1rem;
+            }
+            .stat {
+                width: 100%;
+                display: block;
+                margin-bottom: 1rem;
+            }
+            .gallery {
+                padding: 1rem;
+            }
+            .gallery img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                margin: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <button class="hamburger" onclick="document.querySelector('.hamburger-menu').style.display = 'block'"> Menu</button>
+        <div class="hamburger-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="hero" style="background-image: url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop)">
+        <div class="hero-content">
+            <h1>Reliable Plumbing Solutions in Tampa, FL 33611</h1>
+            <p></p>
+            <div class="btn">Get a Quote</div>
+            <div class="trust">
+                <div class="badge">Trust Badges</div>
+                <div class="badge">Trust Badges</div>
+                <div class="badge">Trust Badges</div>
+                <div class="badge">Trust Badges</div>
+            </div>
+        </div>
+    </div>
+    <div class="services">
+        <div class="service">
+            <h2>Emergency Leak Repair</h2>
+            <p>
+                <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Leak Repair Image">
+            </p>
+            <p></p>
+        </div>
+        <div class="service">
+            <h2>Drain Cleaning</h2>
+            <p>
+                <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Drain Cleaning Image">
+            </p>
+            <p></p>
+        </div>
+        <div class="service">
+            <h2>Water Heater Install</h2>
+            <p>
+                <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Water Heater Image">
+            </p>
+            <p></p>
+        </div>
+    </div>
+    <div class="stats">
+        <div class="stat">
+            <p>4.8/5 Star Rating</p>
+            <p>258 Reviews</p>
+        </div>
+    </div>
+    <div class="gallery">
+        <div class="gallery-image">
+            <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image">
+        </div>
+        <div class="gallery-image">
+            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image">
+        </div>
+        <div class="gallery-image">
+            <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image">
+        </div>
+        <div class="gallery-image">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image">
+        </div>
+    </div>
+    <div class="reviews">
+        <div class="review">
+            <p>Rating: 5/5</p>
+            <p>Review Body</p>
+            <img src="#" alt="Reviewer Image">
+        </div>
+        <div class="review">
+            <p>Rating: 4/5</p>
+            <p>Review Body</p>
+            <img src="#" alt="Reviewer Image">
+        </div>
+        <div class="review">
+            <p>Rating: 5/5</p>
+            <p>Review Body</p>
+            <img src="#" alt="Reviewer Image">
+        </div>
+    </div>
+    <div class="contact">
+        <div class="info">
+            <h2>Get in Touch</h2>
+            <p></p>
+            <p></p>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <p></p>
+    </div>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    console.log("Element is visible");
+                } else {
+                    console.log("Element is not visible");
+                }
+            });
+        });
+        observer.observe(document.querySelector('.hero'));
+    </script>
+</body>
+</html>
+
+You can replace the following variables with your actual data:
+```html
+https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop
+https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop
+https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop
+https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop
+https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop
+https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop
+https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop
+https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop
+Case Plumbing & Sewer
+(813) 252-0210
+
+4307 W Pearl Ave, Tampa, FL 33611, USA
+4.8
+258

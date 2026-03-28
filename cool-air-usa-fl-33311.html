@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Air USA | Home Services in FL 33311</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Syne&tital&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-bar {
+                display: none;
+            }
+        }
+        
+        @media only screen and (min-width: 768px) {
+            .hamburger {
+                display: none;
+            }
+            .nav-bar {
+                display: block;
+            }
+        }
+        
+        .hero {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop');
+            background-size: 100% 200%;
+            background-position: 0% -100%;
+            transition: background-position 1s forwards;
+        }
+        
+        .hero--scroll {
+            background-position: 0 0;
+        }
+        
+        .nav-bar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .nav-bar li {
+            margin-bottom: 10px;
+        }
+        
+        .nav-bar a {
+            text-decoration: none;
+            color: var(--light);
+        }
+        
+        .hamburger {
+            display: none;
+        }
+        
+        .hamburger span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: var(--light);
+            margin-bottom: 4px;
+            transition: transform 0.2s;
+        }
+        
+        #hamburger.active span:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
+        }
+        
+        #hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        #hamburger.active span:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+        
+        .service-card img {
+            width: 100%;
+        }
+        
+        .why-choose-us {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .why-choose-us h4 {
+            margin-bottom: 10px;
+        }
+        
+        .why-choose-us p {
+            margin-bottom: 10px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .about {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+        }
+        
+        .about img {
+            width: 100px;
+            height: 100px;
+        }
+        
+        .stats {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .stats ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .stats li {
+            margin-bottom: 10px;
+        }
+        
+        .stats strong {
+            font-weight: bold;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="nav-bar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </li>
+        </ul>
+        <div id="nav-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="hero" id="hero">
+        <h1>Cool Air USA | Servicing FL 33311</h1>
+        <ul class="ctas">
+            <li><a href="#">Get a Quote</a></li>
+            <li><a href="#">Book an Appointment</a></li>
+        </ul>
+        <div class="trust-badges">
+            <img src="https://i.imgur.com/..." alt=""> 
+            <img src="https://i.imgur.com/..." alt=""> 
+            <img src="https://i.imgur.com/..." alt=""> 
+            <img src="https://i.imgur.com/..." alt=""> 
+        </div>
+    </div>
+    <div class="services">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" alt="service 1">
+            <h2>Service 1</h2>
+            <p>Cool Air USA provides top-notch service 1.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="service 2">
+            <h2>Service 2</h2>
+            <p>Cool Air USA provides top-notch service 2.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="service 3">
+            <h2>Service 3</h2>
+            <p>Cool Air USA provides top-notch service 3.</p>
+        </div>
+    </div>
+    <div class="why-choose-us">
+        <h4>Why Choose Us?</h4>
+        <p>Cool Air USA has been serving FL 33311 for years.</p>
+        <ul>
+            <li><strong>Top-Notch Service</strong> - Our technicians are experts in their field.</li>
+            <li><strong>Competitive Pricing</strong> - We offer the best prices for our services.</li>
+            <li><strong>24/7 Available</strong> - We are available 24/7 for emergency services.</li>
+        </ul>
+    </div>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=800&fit=crop" alt="gallery 1">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop" alt="gallery 2">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=800&fit=crop" alt="gallery 3">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="gallery 4">
+    </div>
+    <div class="reviews">
+        <div class="review">
+            <h2>4.9/5 Rating</h2>
+            <p>(4720 reviews)</p>
+        </div>
+        <ul>
+            <li>
+                <h3>Rating: 5/5</h3>
+                <p>"Cool Air USA did an amazing job servicing my AC."</p>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17l-1.411-1.411a3.5 3.5 0 015.414 0L16 15.586 19.294 12 16 8.414z"></path>
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17l-1.411-1.411a3.5 3.5 0 115.414 0L16 15.586 19.414 12z"></path>
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17l-1.411-1.411a3.5 3.5 0 011.411-1.414l7-7a3.5 3.5 0 016 6l-7 7z"></path>
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17l-1.411-1.411a3.5 3.5 0 011.411-1.414l7-7a3.5 3.5 0 116 6l-7 7z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 7.727l-2.879-2.887 0 1.46a2.727 2.727 0 10-3.66-3.66l1.46-1.427z"></path>
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7.727l-2.879-2.887 0 1.46a2.727 2.727 0 10-3.66-3.66l1.46-1.427z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7.727l2.879-2.887 0 1.46a2.727 2.727 0 00-3.66 3.66l1.46 1.427z"></path>
+                </svg>
+                <p>John Doe</p>
+            </li>
+            <li>
+                <h3>Rating: 4/5</h3>
+                <p>"Cool Air USA serviced my AC but it didn't work the next day."</p>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17l-1.411-1.411a3.5 3.5 0 015.414 0L16 15.586 19.294 12 16 8.414z"></path>
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17l-1.411-1.411a3.5 3.5 0 011.411-1.414l7-7a3.5 3.5 0 016 6l-7 7z"></path>
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17l-1.411-1.411a3.5 3.5 0 011.411-1.414l7-7a3.5 3.5 0 116 6l-7 7z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 7.727l-2.879-2.887 0 1.46a2.727 2.727 0 10-3.66-3.66l1.46-1.427z"></path>
+                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 7.727l-2.879-2.887 0 1.46a2.727 2.727 0 10-3.66-3.66l1.46-1.427z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7.727l2.879-2.887 0 1.46a2.727 2.727 0 00-3.66 3.66l1.46 1.427z"></path>
+                </svg>
+                <p>Jane Doe</p>
+            </li>
+        </ul>
+    </div>
+    <div class="about">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop" alt="about">
+        <p>Cool Air USA has been serving FL 33311 for years. Our mission is to provide top-notch service to our customers.</p>
+        <ul class="stats">
+            <li><strong>Years of Experience: 10</strong></li>
+            <li><strong>Services Offered: 5</strong></li>
+            <li><strong>Customer Reviews: 4720</strong></li>
+        </ul>
+    </div>
+    <div class="contact">
+        <h1>Contact Us</h1>
+        <p>3901 NW 16th St, Lauderhill, FL 33311, USA</p>
+        <p class="tel">(877) 692-4651</p>
+        <form>
+            <input type="text" name="name" placeholder="Name">
+            <input type="email" name="email" placeholder="Email">
+            <textarea name="message" placeholder="Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2023 Cool Air USA</p>
+    </footer>
+    <script>
+        let hamburger = document.querySelector('#hamburger');
+        let navLinks = document.querySelector('#nav-links');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benson's Heating and Air Conditioning</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&family=Outfit:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap">
+  <style>
+    :root {
+      --primary: #0d3b6e;
+      --accent: #00aaff;
+      --bg: #fff;
+      --light: #f0f7ff;
+    }
+    /* Global Styles */
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--primary);
+    }
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+    }
+    /* Sticky Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: var(--bg);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .nav .logo {
+      font-size: 1.5rem;
+    }
+    .nav .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav .menu .links {
+      display: flex;
+      list-style: none;
+    }
+    .nav .menu .links li {
+      margin: 0 10px;
+    }
+    .nav .menu .links li a {
+      text-decoration: none;
+      color: var(--primary);
+    }
+    .nav .menu .links li a:hover {
+      color: var(--accent);
+    }
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1rem;
+      }
+      .nav .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: none;
+      }
+      .nav .menu .links {
+        flex-direction: column;
+      }
+      .nav .menu .links li {
+        padding: 10px 0;
+      }
+      .nav .menu .links li a {
+        font-size: 12px;
+      }
+      .nav .menu .links li a:hover {
+        color: var(--accent);
+      }
+      .hamburger {
+        display: block;
+        cursor: pointer;
+      }
+    }
+    /* Hero */
+    .hero {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+      background-size: 200% 100%;
+      background-position: 100% 0;
+      transition: background-position 1s ease;
+    }
+    .hero--show {
+      background-position: 0 0;
+    }
+    .hero .overlay {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+    .hero .overlay::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+    .hero img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+    }
+    .hero .text {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .hero .text h1 {
+      font-size: 2rem;
+      color: #fff;
+    }
+    .hero .text p {
+      font-size: 1.5rem;
+      color: #fff;
+    }
+    .hero .text .ctas {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hero .text .ctas button {
+      background-color: var(--primary);
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .hero .text .ctas button:hover {
+      background-color: var(--accent);
+    }
+    .hero .text .trust {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .hero .text .trust .badge {
+      width: 100px;
+      height: 50px;
+      background-color: #f7f7f7;
+      border: 1px solid #ddd;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+    }
+    .hero .text .trust .badge svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--primary);
+    }
+    /* Services */
+    .services {
+      padding: 2rem;
+    }
+    .services .card {
+      background-color: var(--bg);
+      padding: 2rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      width: calc(33.33% - 20px);
+    }
+    .services .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+    .services .card h2 {
+      font-size: 1.5rem;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+    }
+    .services .card p {
+      font-size: 1rem;
+      font-family: 'DM Sans', sans-serif;
+      margin-bottom: 20px;
+    }
+    /* Why Choose Us */
+    .why-choose-us {
+      padding: 2rem;
+    }
+    .why-choose-us .block {
+      background-color: var(--bg);
+      padding: 2rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+    }
+    .why-choose-us .block h2 {
+      font-size: 1.5rem;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+    }
+    .why-choose-us .block p {
+      font-size: 1rem;
+      font-family: 'DM Sans', sans-serif;
+    }
+    /* Gallery */
+    .gallery {
+      padding: 2rem;
+    }
+    .gallery .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .gallery .grid img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    /* Reviews */
+    .reviews {
+      padding: 2rem;
+    }
+    .reviews .star {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .reviews .star svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--primary);
+    }
+    .reviews .star text {
+      font-size: 1.5rem;
+      font-family: 'DM Sans', sans-serif;
+    }
+    /* About */
+    .about {
+      padding: 2rem;
+    }
+    .about .image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      background-color: #f7f7f7;
+      margin-bottom: 20px;
+    }
+    .about .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .about .text {
+      padding: 2rem;
+    }
+    .about .text h2 {
+      font-size: 1.5rem;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+    }
+    .about .text p {
+      font-size: 1rem;
+      font-family: 'DM Sans', sans-serif;
+    }
+    /* Contact */
+    .contact {
+      padding: 2rem;
+    }
+    .contact .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .contact .info p {
+      font-size: 1.5rem;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .contact .form {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .contact .form input[type="text"] {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .contact .form input[type="email"] {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .contact .form input[type="tel"] {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .contact .form input[type="textarea"] {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    /* Footer */
+    .footer {
+      padding: 2rem;
+      background-color: var(--light);
+    }
+    .footer .links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer .links a {
+      text-decoration: none;
+      color: var(--primary);
+    }
+    .footer .links a:hover {
+      color: var(--accent);
+    }
+  </style>
+  <body>
+    <nav class="nav">
+      <div class="logo">Benson's Heating and Air Conditioning</div>
+      <ul class="menu">
+        <li class="links"><a href="#hero">Home</a></li>
+        <li class="links"><a href="#services">Services</a></li>
+        <li class="links"><a href="#why-choose-us">Why Choose Us</a></li>
+        <li class="links"><a href="#gallery">Gallery</a></li>
+        <li class="links"><a href="#reviews">Reviews</a></li>
+        <li class="links"><a href="#about">About</a></li>
+        <li class="links"><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger"></button>
+    </nav>
+    <div class="hero" id="hero">
+      <div class="overlay"></div>
+      <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=1920&h=1080&fit=crop" alt="hero image">
+      <div class="text">
+        <h1>Welcome to <span style="color: var(--accent)">Benson's Heating and Air Conditioning</span> in Tallahassee!</h1>
+        <p>We provide top-notch heating and air conditioning services to our community.</p>
+        <div class="ctas">
+          <button>Contact Us</button>
+          <button>Learn More</button>
+        </div>
+        <div class="trust">
+          <div class="badge">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM12 4c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+            </svg>
+          </div>
+          <div class="badge">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM12 4c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+            </svg>
+          </div>
+          <div class="badge">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM12 4c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+            </svg>
+          </div>
+          <div class="badge">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h1v-2h-1v 2zm0-5h1v-2h-1v 2zm0-5h1v-2h-1v 2zm-10-4v14h18v-14h-18z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <seciontion class="services" id="services">
+      <h2>Our Services</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="service image 1">
+          <h2>AC Install & Replace</h2>
+          <p>We provide top-notch AC installation and replacement services.</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop" alt="service image 2">
+          <h2>AC Repair</h2>
+          <p>We fix all types of AC issues in no time!</p>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="service image 3">
+          <h2>Heating Service</h2>
+          <p>Stay warm all winter with our reliable heating services.</p>
+        </div>
+      </div>
+    </section>
+    <section class="why-choose-us" id="why-choose-us">
+      <h2>Why Choose Us</h2>
+      <div class="block">
+        <h2>Quality Work</h2>
+        <p>We pride ourselves in providing the highest quality services.</p>
+      </div>
+      <div class="block">
+        <h2>Expert Team</h2>
+        <p>Our team consists of highly skilled and experienced HVAC technicians.</p>
+      </div>
+      <div class="block">
+        <h2>Competitive Prices</h2>
+        <p>We offer the most competitive prices in the market.</p>
+      </div>
+    </section>
+    <section class="gallery" id="gallery">
+      <h2>&#x1F4C5; Gallery &#x1F4C5;</h2>
+      <div class="grid">
+        <div class="img">
+          <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=800&h=800&fit=crop" alt="gallery image 1">
+        </div>
+        <div class="img">
+          <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=800&fit=crop" alt="gallery image 2">
+        </div>
+        <div class="img">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="gallery image 3">
+        </div>
+        <div class="img">
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="gallery image 4">
+        </div>
+      </div>
+    </section>
+    <section class="reviews" id="reviews">
+      <h2>&#x1F49A; Reviews &#x1F49A;</h2>

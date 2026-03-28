@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brown Plumbing Tallahassee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&amp;family=Syne:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--bg);
+        }
+        
+        /* Hamburger Menu */
+        .hamburger {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+        }
+        
+        .hamburger svg {
+            width: 30px;
+            height: 30px;
+        }
+        
+        /* Sticky Nav */
+        .sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            z-index: 1000;
+        }
+        
+        .sticky nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .sticky nav ul li {
+            margin-right: 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.7;
+        }
+        
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-weight: bold;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        /* Hero CTAs */
+        .hero .cta {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .hero .cta i {
+            margin-right: 10px;
+        }
+        
+        /* Hero Trust Badges */
+        .hero .trust {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .hero .trust svg {
+            width: 30px;
+            height: 30px;
+            margin-right: 20px;
+        }
+        
+        /* Service Cards */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .services .service {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: var(--light);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .services .service img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        
+        .services .service h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        /* Why Choose Us */
+        .why-choose-us {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .why-choose-us .block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: var(--light);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .why-choose-us .block svg {
+            width: 30px;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+        
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            padding: 20px;
+        }
+        
+        .gallery .image {
+            background-image: url('https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery .image+.image {
+            grid-column: 2;
+        }
+        
+        .gallery .image+.image:nth-child(3) {
+            grid-column: 1/3;
+        }
+        
+        /* Reviews */
+        .reviews {
+            padding: 20px;
+        }
+        
+        .reviews .rating {
+            display: flex;
+            align-items: center;
+        }
+        
+        .reviews .rating svg {
+            margin-right: 10px;
+        }
+        
+        .reviews .review {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .reviews .review h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        /* About */
+        .about {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .about .image {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about .local-story {
+            padding: 10px;
+        }
+        
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .stats .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: var(--light);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stats .stat svg {
+            width: 30px;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 20px;
+        }
+        
+        .contact .phone {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        
+        .contact .phone i {
+            margin-right: 10px;
+        }
+        
+        .contact .form {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 20px;
+            background-color: var(--primary);
+            color: #fff;
+        }
+        
+        .footer ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .footer ul li {
+            margin-right: 20px;
+        }
+        
+        .footer svg {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header class="sticky">
+        <nav>
+            <ul>
+                <li>
+                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoint="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10M4 5a2 2 0 012-2m-6.364 7.965a2 2 0 112.144 2.854M13 5a1 1 0 011-1m6 2a1 1 0 11-1 1m-1 4a1 1 0 11-2 0a1 1 0 11-1-1m3.364-6.364a1 1 0 11-2 0a1 1 0 011-1m6.364 0a1 1 0 11-1 1m-3.364 6.364a1 1 0 11-2 0a1 1 0 011-1"></path></svg>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    
+        <div class="hero">
+            <h1>Welcome to Brown Plumbing Tallahassee!</h1>
+            <p>Providing top-notch plumbing services in Tallahassee, FL 32304.</p>
+            <a class="cta" href="#">Get Started</a>
+            <a class="cta" href="#">Schedule a Service</a>
+            <div class="trust">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoint="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoint="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoint="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoint="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoint="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+        </div>
+    
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="service" style="background-image: url('https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop');">
+                <h3>Emergency Leak Repair</h3>
+                <p>Our team is available 24/7 to repair leaks and prevent water damage.</p>
+            </div>
+            <div class="service" style="background-image: url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop');">
+                <h3>Drain Cleaning</h3>
+                <p>We use state-of-the-art equipment to clear clogs and keep your pipes flowing.</p>
+            </div>
+            <div class="service" style="background-image: url('https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop');">
+                <h3>Water Heater Install</h3>
+                <p>We install and repair water heaters to ensure you have hot water when you need it.</p>
+            </div>
+        </section>
+    
+        <section class="why-choose-us">
+            <h2>Why Choose Us</h2>
+            <div class="block">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoint="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <h3>24/7 Emergency Service</h3>
+                <p>We're available to help with any plumbing emergency.</p>
+            </div>
+            <div class="block">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoint="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <h3>Locally Owned and Operated</h3>
+                <p>We're a hometown plumbing service dedicated to serving our community.</p>
+            </div>
+            <div class="block">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoint="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <h3>Expert Plumber on Staff</h3>
+                <p>Our team has the skills and expertise to handle any plumbing job.</p>
+            </div>
+        </section>
+    
+        <section class="gallery">
+            <h2>Our Work</h2>
+            <div class="image" style="background-image: url('https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop');"></div>
+            <div class="image" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop');"></div>
+            <div class="image" style="background-image: url('https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop');"></div>
+            <div class="image" style="background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop');"></div>
+        </section>
+    
+        <section class="reviews">
+            <h2>Reviews</h2>
+            <div class="rating">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoint="round" stroke-width="2" d="M20 7l-8-4-4 13m2 0v14l2 2H0M6 7l-8-4-4 13m2 0v14l2 2h16M6 3l-8-4-4 13m2 0V3l2 2h14M4 20v-2a2 2 0 012-2m16 0V18l2-2m-2 2H6M2 14l-2-2m0 0l2-2m-2 2v-10l2-2m0 0t2-2l-2 2m0 0l-2 2">
+                    <animateTransform attributeName="transform" type="rotate" dur="2s" from="0 18 4" to="360 18 4" repeatCount="indefinite" />
+                </path>
+                </svg>
+                <span>4.6/5</span>
+            </div>
+            <div class="review">
+                <h3>5 Stars</h3>
+                <p>This plumber was fast and efficient. I highly recommend!</p>
+            </div>
+            <div class="review">
+                <h3>5 Stars</h3>
+                <p>The plumber was professional and courteous. Great job!</p>
+            </div>
+            <div class="review">
+                <h3>4 Stars</h3>
+                <p>The plumber fixed my issue quickly and explained everything. However, the price was a bit higher

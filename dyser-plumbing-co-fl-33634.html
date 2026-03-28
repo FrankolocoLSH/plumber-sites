@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@200;400&family=Outfit:wght@400;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@charset "UTF-8";
+:root {
+  --primary: #1a2744;
+  --accent: #e8651a;
+  --bg: #fff;
+  --light: #f4f7fb;
+}
+body {
+  font-family: 'DM Sans', sans-serif;
+}
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: var(--primary);
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.menu {
+  display: none;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu li {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.menu-button {
+  background: var(--primary);
+  border: none;
+  padding: 1rem;
+  color: var(--light);
+  cursor: pointer;
+}
+.menu-button:hover {
+  opacity: 0.9;
+}
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  color: var(--light);
+  background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+  background-blend-mode: darken;
+}
+.hero .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hero .inner .heading {
+  font-family: 'Syne', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.hero .inner .heading span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+}
+.hero .inner .ctas {
+  margin-top: 2rem;
+}
+.hero .inner .ctas button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--accent);
+  color: var(--bg);
+  cursor: pointer;
+}
+.hero .inner .ctas button:hover {
+  background: var(--primary);
+}
+.hero .inner .trust-badges img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+.service-cards {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.service-card {
+  background: var(--light);
+  border: 1px solid var(--primary);
+  padding: 1rem;
+  width: calc(33% - 2rem);
+  height: fit-content;
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.service-card figure {
+  margin: 0;
+}
+.service-card .heading {
+  font-family: 'Syne', sans-serif;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.service-card .heading span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  padding: 1rem;
+}
+.gallery figure {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+.gallery .heading {
+  font-family: 'Syne', sans-serif;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.gallery .heading span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+}
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.about .left-text {
+  margin-right: 2rem;
+}
+.about .left-text .heading {
+  font-family: 'Syne', sans-serif;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.about .left-text .heading span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+}
+.about .stats {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.about .stats .stat {
+  padding: 1rem;
+  border: 1px solid var(--primary);
+  border-radius: 0.5rem;
+  background: var(--light);
+  width: 100%;
+  text-align: center;
+}
+.about .stats .stat strong {
+  font-weight: bold;
+}
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.reviews .review {
+  padding: 1rem;
+  border: 1px solid var(--primary);
+  border-radius: 0.5rem;
+  background: var(--light);
+  width: 100%;
+  text-align: center;
+}
+.reviews .review .heading {
+  font-family: 'Syne', sans-serif;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.reviews .review .heading span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+}
+.reviews .review .rating {
+  margin-bottom: 1rem;
+}
+.reviews .review .rating svg {
+  fill: var(--accent);
+  width: 20px;
+}
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.contact .phone {
+  margin-right: 2rem;
+}
+.footer {
+  padding: 1rem;
+  background-color: var(--primary);
+  color: var(--light);
+  text-align: center;
+}
+</style>
+</head>
+<body>
+  <header>
+    <nav class="sticky">
+      <div class="menu-button" onclick="toggleMenu()">
+        <svg width="32" height="32" viewBox="0 0 24 24">
+          <path d="M3 18H18V20H3V18Zm0 4H18V24H3V20Zm13.26.73.73.36.55-.55L19 17.84a1.11 1.11 0 0 1 1.41 0l3.66.41L23.13 15H22V14H17l-1 1h5l5 5v-.69ZM21 4V2H3v2H1v18h2l3 3v-2h12V4l-4-4h-2Zm-11 10h4v9h-4v-9Zm-7 0h4v9H5v-9Zm13.59 0L19 5.17a1.11 1.11 0 0 1 1.41 0l3.65.41L23.13 9H22V8H17l-2 2h5l5 5v-9h2ZM8 9H3v2h5v-2h2v8h2l-3 3v-2H21l-4-4v2h-2V9Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="home" class="hero" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop')">
+      <div class="inner">
+        <h1 class="heading">
+          <span>Expert Plumbing Services</span>
+          in <span>FL 33634 FL 33634</span>
+        </h1>
+        <p>Contact us today to schedule your appointment!</p>
+        <div class="ctas">
+          <button>Get A Quote</button>
+          <button>Emergency Services</button>
+        </div>
+        <div class="trust-badges">
+          <img src="trust-badge-1.png" alt="Trust Badge 1">
+          <img src="trust-badge-2.png" alt="Trust Badge 2">
+          <img src="trust-badge-3.png" alt="Trust Badge 3">
+          <img src="trust-badge-4.png" alt="Trust Badge 4">
+        </div>
+      </div>
+    </section>
+    <section id="services">
+      <div class="service-cards">
+        <article class="service-card">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1">
+          </figure>
+          <h2 class="heading">
+            <span>Emergency Leak Repair</span>
+          </h2>
+          <p>Quick response to any emergency leak repair situation</p>
+        </article>
+        <article class="service-card">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2">
+          </figure>
+          <h2 class="heading">
+            <span>Drain Cleaning</span>
+          </h2>
+          <p>Effective and efficient drain cleaning services</p>
+        </article>
+        <article class="service-card">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3">
+          </figure>
+          <h2 class="heading">
+            <span>Water Heater Install</span>
+          </h2>
+          <p>Expert water heater installation services</p>
+        </article>
+      </div>
+    </section>
+    <section id="why-choose-us">
+      <h2>Why Choose Us?</h2>
+      <div class="blocks">
+        <div class="block">
+          <h3>Expert Plumbers</h3>
+          <p>Our team of expert plumbers has years of experience in the industry</p>
+        </div>
+        <div class="block">
+          <h3>Fast Response Times</h3>
+          <p>We respond quickly to any emergency situation</p>
+        </div>
+        <div class="block">
+          <h3>High-Quality Services</h3>
+          <p>We provide high-quality services to our customers</p>
+        </div>
+      </div>
+    </section>
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery 1">
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery 2">
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery 3">
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery 4">
+        </figure>
+      </div>
+    </section>
+    <section id="reviews">
+      <h2>Reviews</h2>
+      <div class="reviews">
+        <div class="review">
+          <h3>rating 4.5/5</h3>
+          <p>85 reviews</p>
+          <svg width="20" height="20" viewBox="0 0 24 24">
+            <path d="M7 22c-1.1 0-2-.9-2-2s.9-2 2-2 2 0 2 2-.9 2-2 2zm12-2c-1.1 0-2-.9-2-2s.9-2 2-2 2 0 2 2-.9 2-2 2zm-9.27-.71V9.18L4.38 6H1v4.37c0 .55.45 1.11.95 1.39l1.42 1.14 4.58 3.82zm13.62 2.26C19.7 17.85 17.88 16 16 16c-1.19 0-2.28.83-2.28 1.99z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="review">
+          <h3>rating 4.5/5</h3>
+          <p>85 reviews</p>
+          <svg width="20" height="20" viewBox="0 0 24 24">
+            <path d="M7 22c-1.1 0-2-.9-2-2s.9-2 2-2 2 0 2 2-.9 2-2 2zm12-2c-1.1 0-2-.9-2-2s.9-2 2-2 2 0 2 2-.9 2-2 2zm-9.27-.71V9.18L4.38 6H1v4.37c0 .55.45 1.11.95 1.39l1.42 1.14 4.58 3.82zm13.62 2.26C19.7 17.85 17.88 16 16 16c-1.19 0-2.28.83-2.28 1.99z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="review">
+          <h3>rating 4.5/5</h3>
+          <p>85 reviews</p>
+          <svg width="20" height="20" viewBox="0 0 24 24">
+            <path d="M7 22c-1.1 0-2-.9-2-2s.9-2 2-2 2 0 2 2-.9 2-2 2zm12-2c-1.1 0-2-.9-2-2s.9-2 2-2 2 0 2 2-.9 2-2 2zm-9.27-.71V9.18L4.38 6H1v4.37c0 .55.45 1.11.95 1.39l1.42 1.14 4.58 3.82zm13.62 2.26C19.7 17.85 17.88 16 16 16c-1.19 0-2.28.83-2.28 1.99z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <h2>About Us</h2>
+      <div class="about">
+        <div class="left-text">
+          <h3>Expert Plumbers</h3>
+          <p>Our team of expert plumbers has years of experience in the industry</p>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <h4>85</h4>
+            <p>Reviews</p>
+          </div>
+          <div class="stat">
+            <h4>4.5</h4>
+            <p>Rating</p>
+          </div>
+          <div class="stat">
+            <h4>10+</h4>
+            <p>Years of Experience</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Call us today to schedule your appointment!</p>
+      <div class="contact">
+        <p class="phone">(813) 269-4790</p>
+        <p>user@domain.com</p>
+        <p>5430 W Crenshaw St, Tampa, FL 33634, USA</p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>&copy; Dyser Plumbing Co 2024</p>
+  </footer>
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.sticky .menu');
+      nav.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

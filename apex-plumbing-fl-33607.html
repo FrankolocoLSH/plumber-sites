@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Plumbing | Tampa, FL 33607</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Outfit&family=Syne&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            color: var(--bg);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .nav-links li {
+            margin-right: 20px;
+        }
+        .nav-links a {
+            color: var(--bg);
+            text-decoration: none;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--bg);
+            margin-bottom: 5px;
+        }
+        @media only screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+        .hero {
+            height: 100vh;
+            background-image: url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--bg);
+        }
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        .trust-badge {
+            background-color: var(--light);
+            padding: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .services {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+        .service-card {
+            background-color: var(--bg);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            width: calc(33.33% - 20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .service-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .service-card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .why-choose-us {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+        .why-choose-us-block {
+            background-color: var(--bg);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            width: calc(33.33% - 20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .why-choose-us-block h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .reviews {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .review {
+            background-color: var(--bg);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .review h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .review p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .about {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+        .about img {
+            width: 40%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .about-text {
+            width: 60%;
+            padding: 20px;
+        }
+        .about-text h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .stat {
+            background-color: var(--bg);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .stat h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .contact h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input {
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+        }
+        .contact button {
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: var(--primary);
+            color: var(--bg);
+            cursor: pointer;
+        }
+        footer {
+            background-color: var(--primary);
+            color: var(--bg);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose-us">Why Choose Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-overlay">
+            <h1>Apex Plumbing | Tampa, FL 33607</h1>
+            <p>Emergency Leak Repair, Drain Cleaning, Water Heater Install, Pipe Replacement, Bathroom Plumbing, Sewer Repair</p>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                    </svg>
+                    Licensed and Insured
+                </div>
+                <div class="trust-badge">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                    </svg>
+                    24/7 Emergency Service
+                </div>
+                <div class="trust-badge">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                    </svg>
+                    Competitive Pricing
+                </div>
+                <div class="trust-badge">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                    </svg>
+                    Satisfaction Guarantee
+                </div>
+            </div>
+            <a href="#contact" class="btn">Get a Quote</a>
+            <a href="tel:(813) 502-0008" class="btn">Call Now</a>
+        </div>
+    </section>
+    <section id="services" class="services">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Emergency Leak Repair">
+            <h2>Emergency Leak Repair</h2>
+            <p>Our expert plumbers are available 24/7 to repair any leak, big or small.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Drain Cleaning">
+            <h2>Drain Cleaning</h2>
+            <p>Our state-of-the-art equipment and techniques will have your drains flowing freely in no time.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Water Heater Install">
+            <h2>Water Heater Install</h2>
+            <p>Our experienced plumbers will install a new water heater that meets your needs and budget.</p>
+        </div>
+    </section>
+    <section id="why-choose-us" class="why-choose-us">
+        <div class="why-choose-us-block">
+            <h2>Expert Plumbers</h2>
+            <p>Our plumbers are licensed, insured, and have years of experience in the industry.</p>
+        </div>
+        <div class="why-choose-us-block">
+            <h2>Competitive Pricing</h2>
+            <p>We offer competitive pricing without sacrificing quality or service.</p>
+        </div>
+        <div class="why-choose-us-block">
+            <h2>Satisfaction Guarantee</h2>
+            <p>We guarantee your satisfaction with our work, or we'll make it right.</p>
+        </div>
+    </section>
+    <section id="gallery" class="gallery">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+    </section>
+    <section id="reviews" class="reviews">
+        <div class="review">
+            <h2>5/5 Stars</h2>
+            <p>Apex Plumbing did an amazing job repairing my leaky faucet. They were prompt, professional, and courteous. I highly recommend them!</p>
+        </div>
+        <div class="review">
+            <h2>5/5 Stars</h2>
+            <p>I had a sewer backup and Apex Plumbing was able to come out and fix it quickly. They were knowledgeable and efficient. I appreciate their hard work!</p>
+        </div>
+        <div class="review">
+            <h2>5/5 Stars</h2>
+            <p>Apex Plumbing installed a new water heater for me and it's been working great. The price was very reasonable and the service was excellent. I'll definitely use them again!</p>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image">
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>We are a locally owned and operated plumbing company serving Tampa, FL 33607. Our team of experienced plumbers is dedicated to providing excellent service and ensuring customer satisfaction.</p>
+            <div class="stats">
+                <div class="stat">
+                    <h2>10+ Years of Experience</h2>
+                </div>
+                <div class="stat">
+                    <h2>100+ Satisfied Customers</h2>
+                </div>
+                <div class="stat">
+                    <h2>5/5 Star Rating</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <p>Call us at (813) 502-0008 or fill out the form below to schedule a service appointment.</p>
+        <form>
+            <input type="text" name="name" placeholder="Name">
+            <input type="email" name="email" placeholder="Email">
+            <input type="phone" name="phone" placeholder="Phone">
+            <textarea name="message" placeholder="Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 Apex Plumbing | Tampa, FL 33607 | (813) 502-0008 | <a href="mailto:zackarycarney@aol.com">zackarycarney@aol.com</a></p>
+    </footer>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

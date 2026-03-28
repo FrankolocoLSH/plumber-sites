@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excellent Plumbing Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&family=Outfit:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html, body {
+            height: 100%;
+            background-color: var(--bg);
+            font-family: 'DM Sans', sans-serif;
+        }
+        
+        .hamburger {
+            display: none;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1;
+        }
+        
+        nav .logo {
+            font-size: 1.5rem;
+            font-family: 'Outfit', sans-serif;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            font-size: 1.2rem;
+            padding: 0;
+            margin: 0;
+            align-items: center;
+        }
+        
+        nav ul li:hover {
+            cursor: pointer;
+        }
+        
+        nav svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+            cursor: pointer;
+        }
+        
+        .header {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: top;
+            color: white;
+            text-align: center;
+            padding: 5rem;
+        }
+        
+        .header h1 {
+            font-family: 'Syne Mono', sans-serif;
+            font-size: 3.5rem;
+        }
+        
+        .header h3 {
+            font-size: 1.5rem;
+        }
+        
+        .call-to-action {
+            background-color: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .call-to-action:hover {
+            background-color: #e8651a8f;
+        }
+        
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            border-bottom: 1px solid var(--light);
+        }
+        
+        .trust-badges svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary);
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+        }
+        
+        .service {
+            background-color: var(--light);
+            padding: 2rem;
+            border: 1px solid var(--light);
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service h2 {
+            font-size: 1.5rem;
+            font-family: 'Outfit', sans-serif;
+        }
+        
+        .service p {
+            font-size: 1rem;
+            color: var(--primary);
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .reviews {
+            padding: 1rem;
+        }
+        
+        .review {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            border-bottom: 1px solid var(--light);
+        }
+        
+        .review svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary);
+        }
+        
+        .review h3 {
+            font-size: 1.2rem;
+        }
+        
+        .review p {
+            font-size: 1rem;
+        }
+        
+        .about {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+        }
+        
+        .about img {
+            width: 50%;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about h2 {
+            font-size: 1.5rem;
+            font-family: 'Outfit', sans-serif;
+        }
+        
+        .about p {
+            font-size: 1rem;
+        }
+        
+        .stats {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+        
+        .stats:hover {
+            background-color: #1a27448f;
+        }
+        
+        .contact {
+            padding: 1rem;
+        }
+        
+        .contact .logo {
+            font-size: 1.5rem;
+            font-family: 'Syne Mono', sans-serif;
+        }
+        
+        .contact .address {
+            font-size: 1rem;
+        }
+        
+        .contact .phone {
+            font-size: 1.2rem;
+        }
+        
+        .contact .email {
+            font-size: 1rem;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+        
+        footer .icons {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+        }
+        
+        footer svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 0.5rem;
+                background-color: var(--primary);
+                color: white;
+                border: none;
+                border-radius: 0.5rem;
+                cursor: pointer;
+            }
+            
+            .menu {
+                display: none;
+            }
+            
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            nav {
+                position: static;
+                top: inherit;
+                background-color: inherit;
+                color: inherit;
+                padding: 0.5rem;
+            }
+            
+            .services {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Excellent Plumbing Services</div>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="18" x2="6" y2="6"/>
+                <line x1="18" y1="6" x2="6" y2="18"/>
+            </svg>
+        </div>
+        <div class="menu">
+            <button class="hamburger">Menu</button>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="header">
+        <h1>Welcome to Excellent Plumbing Services in Tampa, FL 33612</h1>
+        <h3>Providing top-notch plumbing services to residents of Tampa, FL 33612</h3>
+        <button class="call-to-action">Call Now to Schedule a Service</button>
+        <div class="trust-badges">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10V5l-3-3 3 3v3l3 3V15H5v-3a5 5 0 0110-5zm14.3 9.5c.3-.4-.2-1-.7-.4l-3 3c-.4-.2-.6 0-.6.4.2 1 1.3 1 1.5 0c.1.8-.2 1.3.2 1.5z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c0 .8-.7 1.5-1.5 1.5h-13c-.8 0-1.5-.7-1.5-1.5h10c1.6 0 2.9-1.35 2.9-3 0-1.65-1.35-2.9-3-2.9zm-6.3 6.7c-.4.4-.8 1-1 1.5-.4.6-.6 1-1 1.5h-1c-.6.6-1 1-1 1.5-.2 0-.4-.2-.6-.3l-.7 1h-3c-.8 0-1.5-.7-1.5-1.5 0-.8.6-1 1.5-1.5h2.7l.4-.5c.2-.3.6-.4 1-.4a3.1 3.1 0 011.4 0z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4l9.67 3.33c.039-.03.07-.06.06-.09a2.22 2.22 0 00-.16-1.48c-1.04-1.6-5-1.6-5.96 0l-6 9c-.1.2.01 4.17.34 4.83a1.13 1.13 0 00.35.92l3-5z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 4H5c-1.66 0-3.3 1.41-3.99 3.2-.72.76.07 1.69 1.15 1.95l5.23-3M16 10a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6V4a1 1 0 00-1-1H7M12 6l-2 2H7M12 6l2 2v7l-2 2H5a1 1 0 00-1 1v.8l6 4a1 1 0 00 1 1h1.9"/></svg>
+        </div>
+    </div>
+    <section class="services" id="services">
+        <h1>Our Services</h1>
+        <div class="services-grid">
+            <div class="service">
+                <h2>Emergency Leak Repair</h2>
+                <p>Contact us 24/7 for emergency leak repair services in Tampa, FL 33612</p>
+                <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Emergency Leak Repair">
+            </div>
+            <div class="service">
+                <h2>Drain Cleaning</h2>
+                <p>Get your drain cleaned by our professional plumbers in Tampa, FL 33612</p>
+                <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Drain Cleaning">
+            </div>
+            <div class="service">
+                <h2>Water Heater Install</h2>
+                <p>Contact us for water heater installation services in Tampa, FL 33612</p>
+                <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Water Heater Install">
+            </div>
+        </div>
+    </section>
+    <section class="why-choose-us">
+        <h1>Why Choose Us?</h1>
+        <div class="why-choose-us-grid">
+            <div class="block">
+                <h2>Licensed and Insured</h2>
+                <p>Come to us for certified and insured plumbers in Tampa, FL 33612</p>
+            </div>
+            <div class="block">
+                <h2>Fast and Reliable</h2>
+                <p>Contact us for quick and reliable plumbing services in Tampa, FL 33612</p>
+            </div>
+            <div class="block">
+                <h2>High-Quality Service</h2>
+                <p>We offer top-notch plumbing services in Tampa, FL 33612</p>
+            </div>
+        </div>
+    </section>
+    <section class="gallery" id="gallery">
+        <h1>Our Gallery</h1>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1">
+            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2">
+            <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+        </div>
+    </section>
+    <section class="reviews" id="reviews">
+        <h1>Reviews</h1>
+        <div class="reviews-grid">
+            <div class="review">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16c0 1.1.904.5 1.5.5M2.11 9.65a1.1 1.1 0 00-.9 1.26v3.03a1.1 1.1 0 00.9-1.26l3.11-4.65C4.45 3.69 4.45 3.19 4.45 2.5 3.69 2.45 3.19 2.45 2.45 2.45z"/></svg><span>4.9/5</span>
+                <h3>Name: Excellent Plumbing Services</h3>
+                <p>190</p>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <h1>About Us</h1>
+        <div class="about-grid">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Us Image">
+            <div class="about-text">
+                <h2>We are Excellent Plumbing Services</h2>
+                <p>We are a team of professional plumbers in Tampa, FL 33612. Our goal is to provide top-notch plumbing services to residents of Tampa, FL 33612. We offer emergency leak repairs, drain cleaning, water heater installation, and more.</p>
+            </div>
+        </div>
+    </section>
+    <section class="stats" id="stats">
+        <h1>Statistics</h1>
+        <ul>
+            <

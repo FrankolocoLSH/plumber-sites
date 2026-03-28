@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Hours Plumber</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Outfit&family=Syne&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .nav-links li {
+            margin-right: 20px;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .hamburger {
+            cursor: pointer;
+            display: none;
+        }
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+        .hero {
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-family: 'Syne', sans-serif;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .hero .btn {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .hero .btn:hover {
+            background-color: var(--primary);
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .trust-badges img {
+            height: 50px;
+            margin-right: 20px;
+        }
+        .services {
+            padding: 50px 0;
+            background-color: var(--bg);
+        }
+        .service-card {
+            background-color: var(--light);
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .service-card img {
+            height: 150px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .service-card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .why-choose-us {
+            padding: 50px 0;
+            background-color: var(--bg);
+        }
+        .why-choose-us .block {
+            background-color: var(--light);
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .why-choose-us .block h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .gallery {
+            padding: 50px 0;
+            background-color: var(--bg);
+        }
+        .gallery img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .reviews {
+            padding: 50px 0;
+            background-color: var(--bg);
+        }
+        .review {
+            background-color: var(--light);
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .review .stars {
+            color: var(--accent);
+        }
+        .about {
+            padding: 50px 0;
+            background-color: var(--bg);
+        }
+        .about img {
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            float: left;
+            margin-right: 20px;
+        }
+        .about h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .contact {
+            padding: 50px 0;
+            background-color: var(--bg);
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+        .contact .btn {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .contact .btn:hover {
+            background-color: var(--primary);
+        }
+        footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        svg {
+            fill: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>All Hours Plumber</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose-us">Why Choose Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+            </div>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Plumbing Services in FL 33618</h1>
+        <p>Get expert plumbing solutions from All Hours Plumber</p>
+        <button class="btn">Get a Quote</button>
+        <button class="btn">Call Now</button>
+        <div class="trust-badges">
+            <img src="https://via.placeholder.com/50x50" alt="Trust Badge 1">
+            <img src="https://via.placeholder.com/50x50" alt="Trust Badge 2">
+            <img src="https://via.placeholder.com/50x50" alt="Trust Badge 3">
+            <img src="https://via.placeholder.com/50x50" alt="Trust Badge 4">
+        </div>
+    </section>
+    <section class="services" id="services">
+        <h1>Our Services</h1>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1">
+            <h2>Emergency Leak Repair</h2>
+            <p>We provide 24/7 emergency leak repair services to ensure your home or business is safe and secure.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2">
+            <h2>Drain Cleaning</h2>
+            <p>Our expert technicians use the latest technology to clean and clear your drains, ensuring they flow freely and efficiently.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3">
+            <h2>Water Heater Install</h2>
+            <p>We install and repair water heaters, providing you with hot water when you need it most.</p>
+        </div>
+    </section>
+    <section class="why-choose-us" id="why-choose-us">
+        <h1>Why Choose Us</h1>
+        <div class="block">
+            <h2>Reliable and Trustworthy</h2>
+            <p>We are a licensed and insured plumbing company, dedicated to providing you with the best possible service.</p>
+        </div>
+        <div class="block">
+            <h2>Competitive Pricing</h2>
+            <p>We offer competitive pricing and transparent quotes, ensuring you know exactly what you're paying for.</p>
+        </div>
+        <div class="block">
+            <h2>Emergency Services</h2>
+            <p>We provide 24/7 emergency plumbing services, ensuring you're never left without help when you need it most.</p>
+        </div>
+    </section>
+    <section class="gallery" id="gallery">
+        <h1>Our Gallery</h1>
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+    </section>
+    <section class="reviews" id="reviews">
+        <h1>What Our Customers Say</h1>
+        <div class="review">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+            <div class="stars">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 17.27l5.05 2.71c.19.1.38-.09.38-.31v-4.5l-4.01-1.74c-.33-.14-.68-.52-.68-.95 0-.42.35-.83.76-.9l4.24-1.57c.42-.15.86-.23 1.32-.23.46 0 .88.08 1.28.22l2.78 1c.44.16.86.52 1 .95v4.61l-3.62 1.51zm-5.05-5.09l2.48-1.07c.22-.09.46-.17.7-.17.25 0 .5.08.73.21l2.78 1c.44.16.86.52 1 .95v4.61l-3.62 1.51c-.46.2-.94.3-1.44.24l-2.78-1c-.44-.16-.86-.52-1-.95v-4.5l4.01-1.74c.33-.14.68-.52.68-.95 0-.42-.35-.83-.76-.9z"/>
+                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 17.27l5.05 2.71c.19.1.38-.09.38-.31v-4.5l-4.01-1.74c-.33-.14-.68-.52-.68-.95 0-.42.35-.83.76-.9l4.24-1.57c.42-.15.86-.23 1.32-.23.46 0 .88.08 1.28.22l2.78 1c.44.16.86.52 1 .95v4.61l-3.62 1.51zm-5.05-5.09l2.48-1.07c.22-.09.46-.17.7-.17.25 0 .5.08.73.21l2.78 1c.44.16.86.52 1 .95v4.61l-3.62 1.51c-.46.2-.94.3-1.44.24l-2.78-1c-.44-.16-.86-.52-1-.95v-4.5l4.01-1.74c.33-.14.68-.52.68-.95 0-.42-.35-.83-.76-.9z"/>
+                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 17.27l5.05 2.71c.19.1.38-.09.38-.31v-4.5l-4.01-1.74c-.33-.14-.68-.52-.68-.95 0-.42.35-.83.76-.9l4.24-1.57c.42-.15.86-.23 1.32-.23.46 0 .88.08 1.28.22l2.78 1c.44.16.86.52 1 .95v4.61l-3.62 1.51zm-5.05-5.09l2.48-1.07c.22-.09.46-.17.7-.17.25 0 .5.08.73.21l2.78 1c.44.16.86.52 1 .95v4.61l-3.62 1.51c-.46.2-.94.3-1.44.24l-2.78-1c-.44-.16-.86-.52-1-.95v-4.5l4.01-1.74c.33-.14.68-.52.68-.95 0-.42-.35-.83-.76-.9z"/>
+                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 17.27l5.05 2.71c.19.1.38-.09.38-.31v-4.5l-4.01-1.74c-.33-.14-.68-.52-.68-.95 0-.42.35-.83.76-.9l4.24-1.57c.42-.15.86-.23 1.32-.23.46 0 .88.08 1.28.22l2.78 1c.44.16.86.52 1 .95v4.61l-3.62 1.51zm-5.05-5.09l2.48-1.07c.22-.09.46-.17.7-.17.25 0 .5.08.73.21l2.78 1c.44.16.86.52 1 .95v4.61l-3.62 1.51c-.46.2-.94.3-1.44.24l-2.78-1c-.44-.16-.86-.52-1-.95v-4.5l4.01-1.74c.33-.14.68-.52.68-.95 0-.42-.35-.83-.76-.9z"/>
+                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12 17.27l5.05 2.71c.19.1.38-.09.38-.31v-4.5l-4.01-1.74c-.33-.14-.68-.52-.68-.95 0-.42.35-.83.76-.9l4.24-1.57c.42-.15.86-.23 1.32-.23.46 0 .88.08 1.28.22l2.78 1c.44.16.86.52 1 .95v4.61l-3.62 1.51zm-5.05-5.09l2.48-1.07c.22-.09.46-.17.7-.17.25 0 .5.08.73.21l2.78 1c.44.16.86.52 1 .95v4.61l-3.62 1.51c-.46.2-.94.3-1.44.24l-2.78-1c-.44-.16-.86-.52-1-.95v-4.5l4.01-1.74c.33-.14.68-.52.68-.95 0-.42-.35-.83-.76-.9z"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image">
+        <h1>About Us</h1>
+        <p>We are a team of experienced plumbers dedicated to providing you with the best possible service. We are proud to serve the FL 33618 community and look forward to helping you with all your plumbing needs.</p>
+        <h2>Our Story</h2>
+        <p>We have been in business for over 10 years, providing plumbing services to the local community. We are committed to

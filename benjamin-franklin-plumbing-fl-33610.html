@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benjamin Franklin Plumbing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Outfit&family=Syne&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .nav ul li {
+            margin-right: 20px;
+        }
+        .nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .hamburger {
+            cursor: pointer;
+            display: none;
+        }
+        .hero {
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 48px;
+            z-index: 1;
+        }
+        .hero .cta {
+            margin-top: 20px;
+        }
+        .hero .cta a {
+            background-color: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .service-cards {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+        }
+        .service-card {
+            background-color: var(--bg);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+        }
+        .service-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .why-choose-us {
+            background-color: var(--light);
+            padding: 40px 0;
+            text-align: center;
+        }
+        .why-choose-us .blocks {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+        }
+        .block {
+            background-color: var(--bg);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 40px 0;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .reviews {
+            background-color: var(--light);
+            padding: 40px 0;
+            text-align: center;
+        }
+        .review {
+            background-color: var(--bg);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+        .review .rating {
+            color: #ffd700;
+        }
+        .about {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+        .about img {
+            width: 40%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .about .text {
+            width: 60%;
+            padding: 20px;
+        }
+        .contact {
+            background-color: var(--light);
+            padding: 40px 0;
+            text-align: center;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input, .contact textarea {
+            width: 50%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .footer {
+            background-color: var(--primary);
+            padding: 20px 0;
+            text-align: center;
+            color: #fff;
+        }
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav ul {
+                display: none;
+            }
+            .service-cards {
+                flex-direction: column;
+            }
+            .service-card {
+                width: 100%;
+                margin: 20px 0;
+            }
+            .why-choose-us .blocks {
+                flex-direction: column;
+            }
+            .block {
+                width: 100%;
+                margin: 20px 0;
+            }
+            .gallery {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .about {
+                flex-direction: column;
+            }
+            .about img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+            .about .text {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </div>
+    </nav>
+    <section id="hero" class="hero">
+        <h1>Benjamin Franklin Plumbing - Tampa, FL 33610</h1>
+        <div class="cta">
+            <a href="tel:(813) 278-7159">Call Us Now</a>
+            <a href="#contact">Get a Quote</a>
+        </div>
+        <div class="trust-badges">
+            <img src="https://example.com/trust-badge-1.png" alt="Trust Badge 1">
+            <img src="https://example.com/trust-badge-2.png" alt="Trust Badge 2">
+            <img src="https://example.com/trust-badge-3.png" alt="Trust Badge 3">
+            <img src="https://example.com/trust-badge-4.png" alt="Trust Badge 4">
+        </div>
+    </section>
+    <section id="services" class="service-cards">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Emergency Leak Repair">
+            <h2>Emergency Leak Repair</h2>
+            <p>Our team is available 24/7 to repair any leak in your home or business.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Drain Cleaning">
+            <h2>Drain Cleaning</h2>
+            <p>Our state-of-the-art equipment will quickly and effectively clean your drains.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Water Heater Install">
+            <h2>Water Heater Install</h2>
+            <p>Our experienced technicians will install a new water heater in your home or business.</p>
+        </div>
+    </section>
+    <section id="why-choose-us" class="why-choose-us">
+        <h2>Why Choose Us?</h2>
+        <div class="blocks">
+            <div class="block">
+                <h3>Trustworthy</h3>
+                <p>We are a licensed and insured company with a proven track record.</p>
+            </div>
+            <div class="block">
+                <h3>Experienced</h3>
+                <p>Our technicians have years of experience in the plumbing industry.</p>
+            </div>
+            <div class="block">
+                <h3>Affordable</h3>
+                <p>We offer competitive pricing without sacrificing quality.</p>
+            </div>
+        </div>
+    </section>
+    <section id="gallery" class="gallery">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+    </section>
+    <section id="reviews" class="reviews">
+        <h2>What Our Customers Say</h2>
+        <div class="review">
+            <p>"Benjamin Franklin Plumbing is the best! They fixed my leaky faucet in no time."</p>
+            <div class="rating">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+            </div>
+        </div>
+        <div class="review">
+            <p>"I was very satisfied with the service I received from Benjamin Franklin Plumbing."</p>
+            <div class="rating">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+            </div>
+        </div>
+        <div class="review">
+            <p>"Benjamin Franklin Plumbing is a reliable and trustworthy company."</p>
+            <div class="rating">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image">
+        <div class="text">
+            <h2>About Us</h2>
+            <p>We are a team of experienced plumbers dedicated to providing top-notch service to our customers.</p>
+            <p>Our goal is to provide fast, reliable, and affordable plumbing services to the Tampa, FL area.</p>
+            <ul>
+                <li>Years of experience:

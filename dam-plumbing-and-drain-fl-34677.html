@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reliable Plumbing Services in Oldsmar, FL | Dam Plumbing and Drain</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--primary);
+            line-height: 1.5;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Syne', sans-serif;
+        }
+        
+        .hamburger {
+            display: none;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-right: 20px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+        }
+        
+        nav a:hover {
+            color: var(--accent);
+        }
+        
+        .cta {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .cta:hover {
+            background-color: var(--accent);
+        }
+        
+        .trust-badge {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        
+        .trust-badge:hover {
+            background-color: var(--accent);
+        }
+        
+        .service-card {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .service-card h2 {
+            margin-top: 0;
+        }
+        
+        .service-card p {
+            margin-bottom: 20px;
+        }
+        
+        .why-choose-us {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .why-choose-us h2 {
+            margin-top: 0;
+        }
+        
+        .why-choose-us p {
+            margin-bottom: 20px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            padding: 20px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .reviews {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .reviews h2 {
+            margin-top: 0;
+        }
+        
+        .reviews p {
+            margin-bottom: 20px;
+        }
+        
+        .review {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .review .name {
+            font-weight: bold;
+        }
+        
+        .review .rating {
+            color: var(--accent);
+        }
+        
+        .review svg {
+            width: 1em;
+            height: 1em;
+            fill: currentColor;
+            vertical-align: middle;
+        }
+        
+        .about {
+            display: flex;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .about .text {
+            padding: 10px;
+        }
+        
+        .about .stats {
+            margin-top: 20px;
+        }
+        
+        .about .stats svg {
+            width: 1em;
+            height: 1em;
+            fill: currentColor;
+            vertical-align: middle;
+        }
+        
+        .contact {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact .phone {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .contact .email {
+            margin-top: 10px;
+        }
+        
+        .contact .form {
+            margin-top: 20px;
+        }
+        
+        .form-input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+        
+        .form-submit {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .form-submit:hover {
+            background-color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="hamburger"></div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="cta">Get a Free Quote Now!</div>
+    </nav>
+    
+    <section class="hero">
+        <img class="hero-image" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop" alt="Hero Image" />
+        <div class="overlay">
+            <h1>Reliable Plumbing Services in <span style="color: var(--accent);">Oldsmar, FL 34677</span></h1>
+            <div class="ctas">
+                <div class="cta">Get a Free Quote Now!</div>
+                <div class="cta">Call Us Today at (813) 815-2160</div>
+            </div>
+            <div class="trust-badges">
+                <div class="trust-badge">Trusted by 106+ Clients</div>
+                <div class="trust-badge">Years of Experience</div>
+                <div class="trust-badge">Fully Insured and Bonded</div>
+                <div class="trust-badge">Licenses and Certifications</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1" />
+                <h2>Emergency Leak Repair</h2>
+                <p>We offer emergency leak repair services to help you minimize water damage and avoid costly repairs.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2" />
+                <h2>Drain Cleaning</h2>
+                <p>Our team uses state-of-the-art equipment to clear clogs and maintain your plumbing system.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3" />
+                <h2>Water Heater Installation</h2>
+                <p>We install high-efficiency water heaters that will provide you with hot water throughout your home.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="why-choose-us">
+        <h2>Why Choose Us?</h2>
+        <div class="why-choose-us-content">
+            <p>We are a fully licensed, bonded, and insured plumbing company that has been serving the Oldsmar area for years.</p>
+            <p>We pride ourselves on providing fast, professional, and affordable plumbing services that meet your needs.</p>
+        </div>
+    </section>
+    
+    <section class="gallery">
+        <h2>Gallery</h2>
+        <div class="grid">
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1" />
+            </div>
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2" />
+            </div>
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3" />
+            </div>
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4" />
+            </div>
+        </div>
+    </section>
+    
+    <section class="reviews">
+        <h2>Reviews</h2>
+        <div class="review">
+            <div class="name">5 stars - John D.</div>
+            <div class="rating"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"/> </svg></div>
+            <div class="text">We were very impressed with the professionalism and quality of work.</div>
+        </div>
+        <div class="review">
+            <div class="name">4 stars - Jane D.</div>
+            <div class="rating"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"/> </svg></div>
+            <div class="text">The team was very communicative and efficient.</div>
+        </div>
+        <div class="review">
+            <div class="name">5 stars - Mark S.</div>
+            <div class="rating"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"> <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-16c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"/> </svg></div>
+            <div class="text">We have worked with this company multiple times and are always completely satisfied.</div>
+        </div>
+    </section>
+    
+    <section class="about">
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image" />
+        </div>
+        <div class="text">
+            <h2>About Us</h2>
+            <p>We are a locally owned and operated plumbing company that has been serving the Oldsmar area for years.</p>
+            <p>We pride ourselves on providing fast, professional, and affordable plumbing services that meet your needs.</p>
+        </div>
+        <div class="stats">
+            <div>Years in Business: 10</div>
+            <div>Licensed and Insured: Yes</div>
+            <div>Services Provided: Residential and Commercial</div>
+        </div>
+    </section>
+    
+    <section class="contact">
+        <div class="phone">
+            <a href="tel:(813) 815-2160">(813) 815-2160</a>
+        </div>
+        <div class="email">
+            <a href="mailto:thedamplumbers@gmail.com">thedamplumbers@gmail.com</a>
+        </div>
+        <form>
+            <div class="form-input">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name">
+            </div>
+            <div class="form-input">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+            </div>
+            <div class="form-input">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email">
+            </div>
+            <div class="form-submit">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </section>
+    
+    <footer>
+        <div class="copyright">
+            &copy; 2023 Dam Plumbing and Drain | All Rights Reserved
+        </div>
+        <div class="location">
+            Location: 3980 Tampa Rd Suite 205, Oldsmar, FL 34677
+        </div>
+    </footer>
+</body>
+</html>

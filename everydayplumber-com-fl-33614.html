@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Everyday Plumber</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=Outfit:wght@100;200;300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap">
+  <style>
+    :root {
+      --primary: #1a2744;
+      --accent: #e8651a;
+      --bg: #fff;
+      --light: #f4f7fb;
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .nav {
+      position: sticky;
+      top: 0;
+      background-color: var(--primary);
+      color: #fff;
+      padding: 1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav svg {
+      fill: #fff;
+      cursor: pointer;
+    }
+    .nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: none;
+    }
+    .nav ul li {
+      margin-bottom: 1em;
+    }
+    .nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .nav ul li a:hover {
+      color: var(--accent);
+    }
+    .hero {
+      height: 100vh;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+    .hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3em;
+    }
+    .hero p {
+      font-size: 1.5em;
+    }
+    .hero .ctas {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2em;
+    }
+    .hero .ctas button {
+      background-color: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 1em 2em;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .hero .ctas button:hover {
+      background-color: var(--primary);
+    }
+    .trust-badges {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2em;
+    }
+    .trust-badges img {
+      height: 2em;
+      margin-right: 1em;
+    }
+    .services {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .service {
+      margin: 2em;
+      width: calc(33.33% - 2em);
+    }
+    .service img {
+      width: 100%;
+      height: 10em;
+      object-fit: cover;
+      border-radius: 1em;
+    }
+    .service h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5em;
+      margin-top: 1em;
+    }
+    .why-choose-us {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .why-choose-us .block {
+      margin: 2em;
+      width: calc(33.33% - 2em);
+    }
+    .why-choose-us .block h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5em;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1em;
+    }
+    .gallery img {
+      width: 100%;
+      height: 10em;
+      object-fit: cover;
+      border-radius: 1em;
+    }
+    .reviews {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .review {
+      margin: 2em;
+      width: calc(33.33% - 2em);
+    }
+    .review .rating {
+      font-size: 1em;
+      color: var(--accent);
+    }
+    .review .text {
+      font-size: 1em;
+      margin-top: 1em;
+    }
+    .about {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .about img {
+      height: 10em;
+      border-radius: 1em;
+      margin-right: 2em;
+    }
+    .about .text {
+      font-size: 1em;
+    }
+    .about .stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .about .stat {
+      margin: 1em;
+      width: calc(33.33% - 1em);
+    }
+    .about .stat h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5em;
+    }
+    .contact {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .contact .phone {
+      margin: 1em;
+      font-size: 1em;
+    }
+    .contact form {
+      margin: 1em;
+    }
+    .contact form input {
+      padding: 1em;
+      margin-bottom: 1em;
+      border: none;
+      border-radius: 1em;
+    }
+    .contact form textarea {
+      padding: 1em;
+      margin-bottom: 1em;
+      border: none;
+      border-radius: 1em;
+    }
+    .contact form button {
+      background-color: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 1em 2em;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .contact form button:hover {
+      background-color: var(--primary);
+    }
+    .footer {
+      background-color: var(--primary);
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why-choose-us">Why Choose Us</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <section class="hero">
+    <h1>Reliable Plumbers in FL 33614</h1>
+    <p>Get expert plumbing services in Tampa, FL 33614</p>
+    <div class="ctas">
+      <button>Get a Quote</button>
+      <button>Schedule an Appointment</button>
+    </div>
+    <div class="trust-badges">
+      <img src="https://via.placeholder.com/50" alt="Trust Badge 1">
+      <img src="https://via.placeholder.com/50" alt="Trust Badge 2">
+      <img src="https://via.placeholder.com/50" alt="Trust Badge 3">
+      <img src="https://via.placeholder.com/50" alt="Trust Badge 4">
+    </div>
+  </section>
+  <section id="services" class="services">
+    <div class="service">
+      <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1">
+      <h2>Emergency Leak Repair</h2>
+    </div>
+    <div class="service">
+      <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2">
+      <h2>Drain Cleaning</h2>
+    </div>
+    <div class="service">
+      <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3">
+      <h2>Water Heater Install</h2>
+    </div>
+  </section>
+  <section id="why-choose-us" class="why-choose-us">
+    <div class="block">
+      <h2>Experienced Plumbers</h2>
+      <p>Our team of plumbers have years of experience in providing top-notch services</p>
+    </div>
+    <div class="block">
+      <h2>State-of-the-Art Equipment</h2>
+      <p>We use the latest equipment and technology to ensure efficient and effective solutions</p>
+    </div>
+    <div class="block">
+      <h2>Competitive Pricing</h2>
+      <p>We offer transparent and competitive pricing for all our services</p>
+    </div>
+  </section>
+  <section id="gallery" class="gallery">
+    <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1">
+    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2">
+    <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3">
+    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+  </section>
+  <section id="reviews" class="reviews">
+    <div class="review">
+      <div class="rating">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+      </div>
+      <p class="text">Great service! The plumbers were very professional and efficient.</p>
+    </div>
+    <div class="review">
+      <div class="rating">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+      </div>
+      <p class="text">The plumbers were very knowledgeable and fixed the issue quickly.</p>
+    </div>
+    <div class="review">
+      <div class="rating">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"></polygon></svg>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27

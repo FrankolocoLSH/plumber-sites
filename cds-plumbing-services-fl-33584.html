@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDS Plumbing Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Syne+MT:wght@700&family=Outfit:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+        }
+        /* Sticky Nav */
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary);
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 2em;
+            font-size: 1.5rem;
+        }
+        .hamburger {
+            display: none;
+        }
+        
+        /* Hero */
+        .hero {
+            height: 100vh;
+            background-image: linear-gradient(to bottom, var(--primary), var(--primary)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+            background-size: 100% 100%, 100% 100%;
+            background-position: 0 0, 0 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h1 {
+            font-family: 'Syne MT', sans-serif;
+            font-size: 3rem;
+        }
+        .hero h1 span {
+            font-family: 'Outfit', sans-serif;
+        }
+        .hero-button {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 1em 2em;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .hero-button:hover {
+            background-color: var(--accent);
+        }
+        .trust-badge {
+            background-color: var(--bg);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 0.5em 1em;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        /* Service */
+        .service-card {
+            background-color: var(--light);
+            padding: 1em;
+            margin: 1em;
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .service-card h2 {
+            font-size: 2rem;
+            font-family: 'Syne MT', sans-serif;
+            margin-bottom: 0.5em;
+        }
+        .service-card img {
+            display: block;
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        /* Why Choose Us */
+        .why-choose-us {
+            padding: 1em;
+        }
+        .why-choose-us-block {
+            background-color: var(--light);
+            padding: 1em;
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 1em;
+        }
+        .why-choose-us-block h2 {
+            font-size: 2rem;
+            font-family: 'Syne MT', sans-serif;
+            margin-bottom: 0.5em;
+        }
+        /* Gallery */
+        .gallery {
+            padding: 1em;
+        }
+        .gallery-card {
+            background-color: var(--light);
+            padding: 1em;
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 1em;
+        }
+        .gallery-card img {
+            display: block;
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        /* Reviews */
+        .reviews {
+            padding: 1em;
+        }
+        .rating {
+            font-size: 3rem;
+            font-family: 'Syne MT', sans-serif;
+            color: var(--accent);
+        }
+        /* About */
+        .about {
+            padding: 1em;
+        }
+        .about-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        /* Contact */
+        .contact {
+            padding: 1em;
+        }
+        .contact-form {
+            padding: 1em;
+            border: 1px solid var(--primary);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: var(--light);
+        }
+        .contact-form input {
+            width: 100%;
+            padding: 1em;
+            margin-bottom: 1em;
+            border: none;
+            border-radius: 10px;
+            background-color: var(--bg);
+            font-size: 1.5rem;
+        }
+        .contact-form button {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 1em 2em;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: var(--accent);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 1em;
+            background-color: var(--primary);
+            color: #fff;
+            text-align: center;
+        }
+        
+        /* Mobile View */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-link {
+                display: none;
+            }
+            .sticky-nav {
+                flex-direction: column;
+            }
+            .hero {
+                height: auto;
+            }
+        }
+        
+        #menu {
+            display: none;
+        }
+        
+        #menu:checked + .hamburger {
+            transform: translateX(100%);
+        }
+        
+        #menu:checked ~ .nav-link {
+            display: block;
+        }
+        
+        .sticky-nav ul {
+            list-style: none;
+        }
+        
+        .sticky-nav ul li {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <input id="menu" type="checkbox" />
+    <label for="menu" class="hamburger">
+        <svg viewBox="0 0 100 80" width="40" height="40">
+            <rect x="10" y="10" width="30" height="6" rx="3" ry="3" fill="#000" />
+            <rect x="10" y="40" width="30" height="6" rx="3" ry="3" fill="#000" />
+            <rect x="10" y="70" width="30" height="6" rx="3" ry="3" fill="#000" />
+        </svg>
+    </label>
+    <ul class="sticky-nav">
+        <li><a class="nav-link" href="#">Home</a></li>
+        <li><a class="nav-link" href="#">Services</a></li>
+        <li><a class="nav-link" href="#">About</a></li>
+        <li><a class="nav-link" href="#">Contact</a></li>
+    </ul>
+    <div class="hero">
+        <h1>CDS Plumbing Services <span>Seffner, FL 33584</span></h1>
+        <button class="hero-button">Get Emergency Service Now!</button>
+        <div class="trust-badge">TrustPilot</div>
+        <div class="trust-badge">Angie's List</div>
+        <div class="trust-badge">Better Business Bureau</div>
+        <div class="trust-badge">Yelp</div>
+    </div>
+    <div class="service-cards">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Emergency Leak Repair" loading="lazy">
+            <h2>Emergency Leak Repair</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Drain Cleaning" loading="lazy">
+            <h2>Drain Cleaning</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Water Heater Install" loading="lazy">
+            <h2>Water Heater Install</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="about">
+        <img class="about-image" src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Us" loading="lazy">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="gallery">
+        <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery 1" loading="lazy">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery 2" loading="lazy">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery 3" loading="lazy">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery 4" loading="lazy">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <div class="reviews">
+        <p><span class="rating">4.8/5</span> 227 reviews</p>
+    </div>
+    <div class="contact">
+        <h1>Contact Us</h1>
+        <form class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name">
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email">
+            <br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+            <br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Your Message"></textarea>
+            <br>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+    <footer>
+        <p>Copyright &copy; 2023 CDS Plumbing Services</p>
+        <p>Address: 1103 W Dr Martin Luther King Jr Blvd, Seffner, FL 33584, USA</p>
+        <p>Phone: (813) 592-1617</p>
+        <p>Email: <a href="mailto:tampa@cdsserviceco.com">tampa@cdsserviceco.com</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florida Cool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600&family=Outfit:wght@400;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sticky-nav">
+        <button class="hamburger">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="8" x2="16" y2="8" />
+                <line x1="4" y1="14" x2="16" y2="14" />
+                <line x1="8" y1="2" x2="8" y2="16" />
+            </svg>
+        </button>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <header id="hero">
+        <div class="overlay">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop" alt="Hero Image">
+            <h1>Expert Home Services in <span>Boynton Beach, FL 33426</span></h1>
+            <button class="cta button-primary">Get a Quote</button>
+            <button class="cta button-secondary">Learn More</button>
+            <div class="trust-badges">
+                <i class="icon-star"></i>
+                <i class="icon-star"></i>
+                <i class="icon-star"></i>
+                <i class="icon-star"></i>
+                <i class="icon-star"></i>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="services">
+            <h2>Our Home Services</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" alt="Service Image 1">
+                    <h3>Service 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Service Image 2">
+                    <h3>Service 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Service Image 3">
+                    <h3>Service 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                </div>
+            </div>
+        </section>
+        <section id="why-choose-us">
+            <h2>Why Choose Florida Cool?</h2>
+            <div class="blocks">
+                <div class="block">
+                    <h3>Experience</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                </div>
+                <div class="block">
+                    <h3>Expertise</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                </div>
+                <div class="block">
+                    <h3>Customer Satisfaction</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                </div>
+            </div>
+        </section>
+        <section id="gallery">
+            <h2>Our Work</h2>
+            <div class="gallery">
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=800&fit=crop" alt="Gallery Image 1">
+                </div>
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop" alt="Gallery Image 2">
+                </div>
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=800&fit=crop" alt="Gallery Image 3">
+                </div>
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Gallery Image 4">
+                </div>
+            </div>
+        </section>
+        <section id="reviews">
+            <h2>What Our Customers Say</h2>
+            <div class="reviews">
+                <div class="review">
+                    <span class="stars">
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                    </span>
+                    <p>{{review}}</p>
+                    - Florida Cool
+                </div>
+                <div class="review">
+                    <span class="stars">
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                    </span>
+                    <p>{{review}}</p>
+                    - Florida Cool
+                </div>
+                <div class="review">
+                    <span class="stars">
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                    </span>
+                    <p>{{review}}</p>
+                    - Florida Cool
+                </div>
+                <div class="review">
+                    <span class="stars">
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                        <i class="icon-star"></i>
+                    </span>
+                    <p>{{review}}</p>
+                    - Florida Cool
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <div class="image">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop" alt="About Image">
+            </div>
+            <div class="text">
+                <h2>About Us</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+            </div>
+            <ul>
+                <li>
+                    <i class="icon-statistics"></i>
+                    <p>12 Years of Experience</p>
+                </li>
+                <li>
+                    <i class="icon-guarantee"></i>
+                    <p>100% Satisfaction Guarantee</p>
+                </li>
+                <li>
+                    <i class="icon-savings"></i>
+                    <p>Free Estimates</p>
+                </li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>Want to schedule a service or have a question? Give us a call or send us a message.</p>
+            <div class="contact-info">
+                <ul>
+                    <li>
+                        <i class="icon-phone"></i>
+                        <p>(561) 264-5286</p>
+                    </li>
+                    <li>
+                        <i class="icon-email"></i>
+                        <p>info@floridacool.com</p>
+                    </li>
+                    <li>
+                        <i class="icon-map"></i>
+                        <p>7075 High Ridge Rd, Boynton Beach, FL 33426, USA</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Florida Cool. All rights reserved.</p>
+        <p>Designed and Developed by <a href="#">Your Name</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

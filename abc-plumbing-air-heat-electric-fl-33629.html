@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABC Plumbing, Air, Heat & Electric</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a2744;
+      --accent: #e8651a;
+      --bg: #fff;
+      --light: #f4f7fb;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+    }
+    .hamburger {
+      cursor: pointer;
+      width: 2em;
+      height: 2em;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0.2em;
+      transition: transform 0.3s ease-in-out;
+    }
+    .hamburger:hover {
+      transform: translateX(4px);
+    }
+    .hamburger .bar {
+      width: 100%;
+      height: 1px;
+      background-color: var(--primary);
+      transition: transform 0.3s ease-in-out;
+    }
+    .hamburger .bar:nth-child(2) {
+      margin: 0.3em 0;
+    }
+    .hamburger.open {
+      transform: rotate(0.25turn);
+    }
+    .hamburger.open .bar:nth-child(1) {
+      transform: rotate(45deg) translateY(-2px);
+    }
+    .hamburger.open .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open .bar:nth-child(3) {
+      transform: rotate(-45deg) translateY(4px);
+    }
+    svg {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <button class="hamburger" aria-label="Toggle navigation" id="ham">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="hero">
+    <div class="hero">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop" alt="Hero Image">
+      <div class="dark-overlay">
+        <h1>Experienced Plumbers in <span>FL 33629</span></h1>
+        <button>Get a Quote</button>
+        <img class="trust-badge" src="svg/trust-badge-1.svg" alt="Trust Badge 1">
+        <img class="trust-badge" src="svg/trust-badge-2.svg" alt="Trust Badge 2">
+        <img class="trust-badge" src="svg/trust-badge-3.svg" alt="Trust Badge 3">
+        <img class="trust-badge" src="svg/trust-badge-4.svg" alt="Trust Badge 4">
+      </div>
+    </div>
+  </section>
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service Image 1">
+        <h3>Emergency Leak Repair</h3>
+        <p>Don't wait until it's too late. Our emergency plumbers are here to help.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service Image 2">
+        <h3>Drain Cleaning</h3>
+        <p>Get your drains flowing like new with our professional cleaning services.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service Image 3">
+        <h3>Water Heater Install</h3>
+        <p>New water heater installation? We've got you covered.</p>
+      </div>
+    </div>
+  </section>
+  <section id="why-choose-us">
+    <h2>Why Choose ABC Plumbing?</h2>
+    <div class="why-choose-us-grid">
+      <div class="block">
+        <h3>Experience</h3>
+        <p>We've been serving the Tampa Bay area for over 20 years.</p>
+      </div>
+      <div class="block">
+        <h3>Qualified Technicians</h3>
+        <p>Our team is licensed, insured, and certified to get the job done right.</p>
+      </div>
+      <div class="block">
+        <h3>Customer Service</h3>
+        <p>We're here to help, 24/7. Call us now for a quote.</p>
+      </div>
+    </div>
+  </section>
+  <section id="gallery">
+    <h2>Our Work</h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1">
+      <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2">
+      <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3">
+      <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+    </div>
+  </section>
+  <section id="reviews">
+    <h2>What Our Customers Say</h2>
+    <div class="reviews-grid">
+      <div class="review">
+        <h3>Rating: <span>4.7/5</span></h3>
+        <h4>ABC Plumbing, Air, Heat & Electric</h4>
+        <p>{{review}}</p>
+        {{#ratings}}
+          <img class="rating-star" src="svg/star.svg" alt="Rating Star">
+        {{/ratings}}
+      </div>
+      <div class="review">
+        <h3>Rating: <span>4.8/5</span></h3>
+        <h4>Jane Doe</h4>
+        <p>This company is top-notch! I highly recommend them.</p>
+        {{#ratings}}
+          <img class="rating-star" src="svg/star.svg" alt="Rating Star">
+        {{/ratings}}
+      </div>
+      <div class="review">
+        <h3>Rating: <span>4.6/5</span></h3>
+        <h4>John Smith</h4>
+        <p>I've never been more satisfied with a plumbing company. ABC is the best!</p>
+        {{#ratings}}
+          <img class="rating-star" src="svg/star.svg" alt="Rating Star">
+        {{/ratings}}
+      </div>
+    </div>
+  </section>
+  <section id="about">
+    <h2>About Us</h2>
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image">
+      </div>
+      <div class="about-text">
+        <p>Our story begins in the heart of Tampa Bay, where we've been serving the community for over 20 years. Our team is dedicated to providing the highest quality service to our customers.</p>
+        <h3>Meet Our Team</h3>
+        <ul>
+          <li>Name: <span>ABC Plumbing, Air, Heat & Electric</span></li>
+          <li>City: <span>FL 33629</span></li>
+          <li>Phone: <span>(888) 594-9030</span></li>
+          <li>Email: <span></span></li>
+          <li>Address: <span>4326 W El Prado Blvd Suite 7, Tampa, FL 33629, USA</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Address:</h3>
+        <p>4326 W El Prado Blvd Suite 7, Tampa, FL 33629, USA</p>
+        <h3>Phone:</h3>
+        <p>(888) 594-9030</p>
+        <h3>Email:</h3>
+        <p></p>
+      </div>
+      <form>
+        <input type="text" name="name" placeholder="Name">
+        <input type="email" name="email" placeholder="Email">
+        <textarea name="message" placeholder="Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2024 ABC Plumbing, Air, Heat & Electric</p>
+  </footer>
+  <script>
+    const ham = document.getElementById('ham');
+    const menu = document.querySelector('nav ul');
+    ham.addEventListener('click', () => {
+      ham.classList.toggle('open');
+      menu.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Air Systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono:wght@400;700&family=Outfit:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+        }
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        h2 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 400;
+            color: var(--primary);
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .hamburger {
+            display: none;
+        }
+        .nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            padding: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .nav ul li {
+            margin-right: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: var(--light);
+            transition: color 0.2s ease;
+        }
+        .nav a:hover {
+            color: var(--accent);
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .hero .cta {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .hero .cta:hover {
+            background-color: var(--light);
+            color: var(--primary);
+        }
+        .trust {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .trust .badge {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .service {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .service:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .service img {
+            width: 100%;
+            height: 150px;
+            border-radius: 10px 10px 0 0;
+            object-fit: cover;
+        }
+        .service h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .service p {
+            margin-bottom: 20px;
+        }
+        .why {
+            padding: 20px;
+        }
+        .why-block {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+        .why-block:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .why-block h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .why-block p {
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .reviews {
+            padding: 20px;
+        }
+        .reviews .star {
+            font-size: 1.5em;
+            color: var(--primary);
+        }
+        .about {
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        .about img {
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .about .text {
+            padding: 20px;
+            background-color: var(--light);
+            border-radius: 10px;
+        }
+        .contact {
+            padding: 20px;
+        }
+        .contact .phone {
+            font-size: 1.5em;
+            color: var(--primary);
+        }
+        .contact .form {
+            margin: 20px 0;
+        }
+        .contact .form input[type="text"], .contact .form input[type="email"], .contact .form input[type="phone"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        .contact .form textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        .contact .form button[type="submit"] {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact .form button[type="submit"]:hover {
+            background-color: var(--light);
+            color: var(--primary);
+        }
+        .footer {
+            padding: 20px;
+            background-color: var(--primary);
+            color: #fff;
+            text-align: center;
+        }
+        .footer p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="container">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <button class="hamburger">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" style="background-image: url(https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop);">
+            <div class="container">
+                <h1>Welcome to Advanced Air Systems in Fort Lauderdale, FL 33311</h1>
+                <p>We provide top-notch home services to our community.</p>
+                <button class="cta">Get Started</button>
+            </div>
+            <div class="container">
+                <div class="trust">
+                    <div class="badge">Trusted Partner</div>
+                    <div class="badge">Quality Service</div>
+                    <div class="badge">Customer Focus</div>
+                    <div class="badge">Community Support</div>
+                </div>
+            </div>
+        </section>
+        <section class="services">
+            <div class="container">
+                <div class="service">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" />
+                    <h2>Service 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor nulla id ligula tempus porttitor.</p>
+                </div>
+                <div class="service">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" />
+                    <h2>Service 2</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor nulla id ligula tempus porttitor.</p>
+                </div>
+                <div class="service">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" />
+                    <h2>Service 3</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor nulla id ligula tempus porttitor.</p>
+                </div>
+            </div>
+        </section>
+        <section class="why">
+            <div class="container">
+                <div class="why-block">
+                    <h2>Why Choose Us</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor nulla id ligula tempus porttitor.</p>
+                </div>
+                <div class="why-block">
+                    <h2>Our Mission</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor nulla id ligula tempus porttitor.</p>
+                </div>
+                <div class="why-block">
+                    <h2>Our Values</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor nulla id ligula tempus porttitor.</p>
+                </div>
+            </div>
+        </section>
+        <section class="gallery">
+            <div class="container">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=800&fit=crop" />
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop" />
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=800&fit=crop" />
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" />
+                </div>
+            </div>
+        </section>
+        <section class="reviews">
+            <div class="container">
+                <div class="rating">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
+                    </svg>
+                    <span>4.7</span>
+                </div>
+                <div class="star">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
+                    </svg>
+                    <span>4.7</span>
+                </div>
+                <div class="star">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
+                    </svg>
+                    <span>4.7</span>
+                </div>
+                <div class="star">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
+                    </svg>
+                    <span>4.7</span>
+                </div>
+                <div class="star">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
+                    </svg>
+                    <span>4.7</span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="reviews-box">
+                    <div class="review">
+                        <div class="rating">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
+                            </svg>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="review-text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor nulla id ligula tempus porttitor.</p>
+                        </div>
+                        <div class="review-info">
+                            <span>John Doe</span>
+                            <span>Fort Lauderdale, FL 33311</span>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <div class="rating">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
+                            </svg>
+                            <span>4.7/5</span>
+                        </div>
+                        <div class="review-text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus auctor nulla id ligula tempus porttitor.</

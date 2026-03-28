@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Air Care Heating and Cooling | Tallahassee</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0d3b6e;
+            --accent: #00aaff;
+            --bg: #fff;
+            --light: #f0f7ff;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--primary);
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        .header {
+            background-color: var(--light);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-toggle {
+            display: none;
+            padding: 1rem;
+            background-color: var(--primary);
+            color: var(--light);
+            border: none;
+            cursor: pointer;
+        }
+        .nav-toggle:hover {
+            background-color: var(--accent);
+        }
+        .nav {
+            display: flex;
+        }
+        .nav-links {
+            display: none;
+        }
+        .nav-links.active {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background-color: var(--light);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+        }
+        .nav-links li {
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        .hero {
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-content {
+            text-align: center;
+        }
+        .hero-content h1 {
+            color: var(--light);
+            font-family: 'Syne', sans-serif;
+            font-size: 3rem;
+        }
+        .hero-content h2 {
+            color: var(--primary);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .btn {
+            background-color: var(--primary);
+            color: var(--light);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .btn:hover {
+            background-color: var(--accent);
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        .trust-badges img {
+            width: 50px;
+            margin: 0 10px;
+        }
+        .service-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service-card {
+            width: calc(33.33% - 20px);
+            margin: 20px;
+            background-color: var(--light);
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .service-card h3 {
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .service-card p {
+            color: var(--primary);
+            font-weight: 500;
+        }
+        .why-choose-us {
+            background-color: var(--light);
+            padding: 2rem;
+        }
+        .why-choose-us h2 {
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .block {
+            background-color: var(--light);
+            padding: 2rem;
+            margin: 20px 0;
+        }
+        .block img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .gallery img {
+            max-width: 33.33%;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .reviews {
+            background-color: var(--light);
+            padding: 2rem;
+        }
+        .review {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .review h3 {
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+        .review .rating {
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        .about {
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+            background-color: var(--light);
+        }
+        .about img {
+            width: 200px;
+            margin-right: 20px;
+            border-radius: 10px;
+        }
+        .about-text {
+            color: var(--primary);
+        }
+        .about-statistics {
+            margin-top: 2rem;
+        }
+        .about-statistics ul {
+            list-style: none;
+        }
+        .about-statistic {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .about-statistic img {
+            width: 30px;
+            height: 30px;
+            margin-right: 1rem;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: var(--light);
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer {
+            background-color: var(--light);
+            padding: 1rem;
+            text-align: center;
+            color: var(--primary);
+            clear: both;
+        }
+        .footer p {
+            margin-bottom: 1rem;
+        }
+        .footer .social-links {
+            margin-bottom: 1rem;
+        }
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .footer a:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <button class="nav-toggle" aria-label="Toggle Navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 18L5 20L19 6L18 4Z" fill="currentColor"></path>
+                </svg>
+            </button>
+            <ul class="nav nav-links" id="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose-us">Why Choose Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to Advanced Air Care Heating and Cooling</h1>
+                <h2>Your trusted partner for all your HVAC needs in Tallahassee, FL</h2>
+                <button class="btn">Get a Quote</button>
+                <button class="btn">Schedule Service</button>
+                <div class="trust-badges">
+                    <img src="logo1.png" alt="Trust Badge 1">
+                    <img src="logo2.png" alt="Trust Badge 2">
+                    <img src="logo3.png" alt="Trust Badge 3">
+                    <img src="logo4.png" alt="Trust Badge 4">
+                </div>
+            </div>
+        </section>
+        <section id="services" class="services">
+            <h2>Our Services</h2>
+            <div class="service-cards">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 1">
+                    <h3>AC Install & Replace</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop" alt="Service 2">
+                    <h3>AC Repair</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Service 3">
+                    <h3>Heating Service</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                </div>
+            </div>
+        </section>
+        <section id="why-choose-us" class="why-choose-us">
+            <h2>Why Choose Us?</h2>
+            <div class="block">
+                <h3>Experienced Team</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <img src="team-image.jpg" alt="Team Image">
+            </div>
+            <div class="block">
+                <h3>Quality Workmanship</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <img src="workmanship-image.jpg" alt="Workmanship Image">
+            </div>
+            <div class="block">
+                <h3>Competitive Pricing</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <img src="pricing-image.jpg" alt="Pricing Image">
+            </div>
+        </section>
+        <section id="gallery" class="gallery">
+            <h2>Our Gallery</h2>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=800&h=800&fit=crop" alt="Gallery Image 1">
+                <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=800&fit=crop" alt="Gallery Image 2">
+                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 3">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+            </div>
+        </section>
+        <section id="reviews" class="reviews">
+            <h2>What Our Clients Say</h2>
+            <div class="review">
+                <h3>John Doe</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <span class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            </div>
+            <div class="review">
+                <h3>Jane Doe</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <span class="rating">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+            </div>
+            <div class="review">
+                <h3>Bob Smith</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <span class="rating">&#9733;&#9733;&#9733;&#9734;&#9734;</span>
+            </div>
+        </section>
+        <section id="about" class="about">
+            <h2>About Us</h2>
+            <div class="about-text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&h=800&fit=crop" alt="About Image">
+            </div>
+            <div class="about-statistics">
+                <ul>
+                    <li>
+                        <div class="about-statistic">
+                            <img src="icon1.png" alt="Icon 1">
+                            <p>12 years</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="about-statistic">
+                            <img src="icon2.png" alt="Icon 2">
+                            <p>1000+ projects</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="about-statistic">
+                            <img src="icon3.png" alt="Icon 3">
+                            <p>500+ customers</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <h2>Get in Touch</h2>
+            <p><strong>Address:</strong> 5585 Crawfordville Rd, Tallahassee, FL 32305</p>
+            <p><strong>Phone:</strong> <a href="tel:(850) 688-9265">(850) 688-9265</a></p>
+            <p><strong>Email:</strong> <a href="mailto:info@airconditioningtallahassee.com">info@airconditioningtallahassee.com</a></p>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 Advanced Air Care Heating and Cooling</p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 10c-1.11 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm.66 4H2c-1.1 0-2 .9-2 2v6.66h.55c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2V16l-1.5-2.66c-.71-.9-1.89-1.44-2.95-1.44z"></path></svg></a>
+            <a href="https://twitter.com" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 5H6C4.9 5 4.02 5.09 3 5.62l-1.38-.9c-.55.5-.9 1.14-.9 1.82s.35 1.32.9 1.82l1.38-.9c.51-.5.9-1.14.9-1.82 0-.69-.29-1.32-.9-1.82zm-5.15 2.44c.67 0 1.1.56.8 1.15l-2.28 4.45c-.31.59-.98 1.15-1.85 1.15-.87 0-1.54-.56-1.85-1.15l-1.4-2.39c-.41-.63-.09-1.15.8-1.15.86 0 1.53.56 1.8 1.15L13 6l-2.84 2.44c-.68 0-1.24.56-.99 1.15l2.28-4.45c.25-.59.7-1.15 1.76-1.15zm-1.36 3.92L6 10.45l-1 1.35L7.8 6 8 7.65 18 7.65 18.2 6 9 5.65 8 5.35l-1-1.4L18 1.5l.8 1 1.4-1L18 2.65z"></path></svg></a>
+            <a href="https://linkedin.com" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24

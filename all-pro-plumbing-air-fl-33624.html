@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>All Pro Plumbing & Air</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--primary: #1a2744;
+			--accent: #e8651a;
+			--bg: #fff;
+			--light: #f4f7fb;
+		}
+
+		body {
+			font-family: 'DM Sans';
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			background-color: var(--bg);
+		}
+
+		nav ul {
+			display: flex;
+			list-style: none;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px;
+			background-color: var(--primary);
+			color: #fff;
+			position: sticky;
+			top: 0;
+			z-index: 1;
+		}
+
+		nav ul li {
+			margin-right: 20px;
+		}
+
+		nav ul li a {
+			color: #fff;
+			text-decoration: none;
+			transition: color 0.2s ease;
+		}
+
+		nav ul li a:hover {
+			color: #ccc;
+		}
+
+		.hamburger {
+			display: none;
+		}
+
+		.hamburger svg {
+			width: 20px;
+			height: 10px;
+			fill: #fff;
+			margin-bottom: 5px;
+		}
+
+		.hero {
+			position: relative;
+			height: 100vh;
+			background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			color: #fff;
+		}
+
+		.hero::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+
+		.hero h1 {
+			font-family: 'Outfit';
+			font-size: 36px;
+			margin-bottom: 10px;
+		}
+
+		.hero button {
+			background-color: var(--accent);
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			cursor: pointer;
+		}
+
+		.hero button:hover {
+			background-color: var(--primary);
+		}
+
+		.hero .trust {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 20px;
+		}
+
+		.hero .trust svg {
+			width: 50px;
+			height: 50px;
+			fill: #fff;
+		}
+
+		.service {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px;
+		}
+
+		.service img {
+			width: 100%;
+			height: 150px;
+			object-fit: cover;
+			border-radius: 10px;
+			margin-bottom: 10px;
+		}
+
+		.service h2 {
+			font-family: 'Outfit';
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+
+		.service p {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+
+		.why-choose-us {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px;
+		}
+
+		.why-choose-us h2 {
+			font-family: 'Outfit';
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+
+		.why-choose-us blockquote {
+			background-color: var(--primary);
+			padding: 10px;
+			border-radius: 5px;
+			margin-bottom: 20px;
+		}
+
+		.why-choose-us blockquote p {
+			font-size: 16px;
+			margin-bottom: 10px;
+		}
+
+		.why-choose-us blockquote cite {
+			font-size: 14px;
+			color: #fff;
+			font-style: normal;
+		}
+
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 10px;
+			padding: 20px;
+		}
+
+		.gallery img {
+			width: 100%;
+			height: 150px;
+			object-fit: cover;
+			border-radius: 10px;
+		}
+
+		.reviews {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px;
+		}
+
+		.reviews h2 {
+			font-family: 'Outfit';
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+
+		.reviews .rating {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			margin-bottom: 20px;
+		}
+
+		.reviews .rating .star {
+			margin-right: 10px;
+		}
+
+		.reviews .star {
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			fill: var(--primary);
+		}
+
+		.review {
+			background-color: var(--primary);
+			padding: 10px;
+			border-radius: 5px;
+			margin-bottom: 20px;
+		}
+
+		.review p {
+			font-size: 16px;
+			margin-bottom: 10px;
+		}
+
+		.review cite {
+			font-size: 14px;
+			color: #fff;
+			font-style: normal;
+		}
+
+		.about {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 20px;
+		}
+
+		.about img {
+			width: 200px;
+			height: 200px;
+			border-radius: 10px;
+			margin-right: 20px;
+		}
+
+		.about text {
+			flex: 1;
+		}
+
+		.about .local-story {
+			font-family: 'Outfit';
+			font-size: 18px;
+			margin-bottom: 20px;
+		}
+
+		.about .stats {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			margin-bottom: 20px;
+		}
+
+		.about .stats .stat {
+			width: 20%;
+			margin-right: 10px;
+		}
+
+		.stat {
+			background-color: var(--primary);
+			color: #fff;
+			padding: 10px;
+			border-radius: 5px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.stat h3 {
+			margin-bottom: 10px;
+		}
+
+		.stat p {
+			margin-bottom: 20px;
+		}
+
+		.contact {
+			padding: 20px;
+			background-color: var(--primary);
+			color: #fff;
+			text-align: center;
+		}
+
+		.contact h2 {
+			font-family: 'Outfit';
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+
+		.contact .phone {
+			margin-bottom: 20px;
+		}
+
+		.contact form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.contact input, .contact textarea {
+			width: 100%;
+			margin-bottom: 20px;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+		}
+
+		.contact button {
+			width: 100%;
+			padding: 10px;
+			background-color: var(--accent);
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		.contact button:hover {
+			background-color: var(--primary);
+		}
+
+		footer {
+			padding: 20px;
+			background-color: var(--primary);
+			color: #fff;
+			text-align: center;
+		}
+
+		footer p {
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Services</a></li>
+			<li><a href="#">Contact</a></li>
+			<li class="hamburger"><svg viewBox="0 0 18 12"></svg></li>
+		</ul>
+	</nav>
+	<div class="hero">
+		<h1> Emergency Leak Repair, Drain Cleaning, and more in Tampa FL 33624</h1>
+		<button>Get Started</button>
+		<div class="trust">
+			<a href="#">
+				<svg width="50" height="50" viewBox="0 0 24 24">
+					<path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1.292 17l-6.354-6.354c-0.409-0.409-0.409-1.078 0-1.487 0.409-0.409 1.078-0.409 1.487 0l2.53 2.53c0.409 0.409 1.078 0.409 1.487 0z" fill="var(--accent)"></path>
+				</svg>
+			</a>
+			<a href="#">
+				<svg width="50" height="50" viewBox="0 0 24 24">
+					<path d="M12 0C6.3 0 0 6.3 0 12l3.7 3.7c1.1 1.1 2.9 1.1 4 0L21 12V14h-3v-1h-1v-1h1V14H5v-1h1v-1h-1V12l7.4-7.4c1.1-1.1 1.1-2.9 0-4l7.4-7.4c1.1-1.1 2.9-1.1 4 0l3.7 3.7c1.1 1.1 1.1 2.9 0 4z" fill="var(--accent)"></path>
+				</svg>
+			</a>
+			<a href="#">
+				<svg width="50" height="50" viewBox="0 0 24 24">
+					<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="var(--accent)"></path>
+				</svg>
+			</a>
+			<a href="#">
+				<svg width="50" height="50" viewBox="0 0 24 24">
+					<path d="M11 2H2v20h10v-4h3v4h2v-4h3V2z" fill="var(--accent)"></path>
+				</svg>
+			</a>
+		</div>
+	</div>
+	<section class="service">
+		<h2>Our Services</h2>
+		<article>
+			<img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="service image 1">
+			<h3>Service Name 1</h3>
+			<p>description goes here</p>
+		</article>
+		<article>
+			<img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="service image 2">
+			<h3>Service Name 2</h3>
+			<p>description goes here</p>
+		</article>
+		<article>
+			<img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="service image 3">
+			<h3>Service Name 3</h3>
+			<p>description goes here</p>
+		</article>
+	</section>
+	<section class="why-choose-us">
+		<h2>Why Choose Us</h2>
+		<blockquote>
+			<p>Our team of experts has years of experience in the field and is dedicated to providing top-notch service to our customers.</p>
+			<cite>Rating: {{$rating}} ( {{$reviews}})</cite>
+		</blockquote>
+	</section>
+	<section class="gallery">
+		<article>
+			<img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="gallery image 1">
+		</article>
+		<article>
+			<img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="gallery image 2">
+		</article>
+		<article>
+			<img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="gallery image 3">
+		</article>
+		<article>
+			<img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="gallery image 4">
+		</article>
+	</section>
+	<section class="reviews">
+		<div class="rating">
+			<span class="star"></span>
+			<span class="star"></span>
+			<span class="star"></span>
+			<span class="star"></span>
+			<span class="star"></span>
+		</div>
+		<review>
+			<cite>John Doe</cite>
+			<p>Excellent service</p>
+		</review>
+		<review>
+			<cite>Jane Doe</cite>
+			<p>Great job</p>
+		</review>
+	</section>
+	<section class="about">
+		<article>
+			<img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="about image">
+			<p class="local-story">Our company was founded in Tampa, FL 33624 with the mission to provide top-notch service to our customers.</p>
+			<div class="stats">
+				<div class="stat">
+					<h3>Years in Business</h3>
+					<p>10+</p>
+				</div>
+				<div class="stat">
+					<h3>Experts on Staff</h3>
+					<p>10+</p>
+				</div>
+				<div class="stat">
+					<h3>Projects Completed</h3>
+					<p>100+</p>
+				</div>
+			</div>
+		</article>
+	</section>
+	<section class="contact">
+		<h2>Contact Us</h2>
+		<div class="phone">
+			<span>Phone:</span>
+			<span>(813)</span>
+			<span>616-1851</span>
+		</div>
+		<form action="#" method="post">
+			<input type="text" name="name" placeholder="Name">
+			<textarea name="message" placeholder="Message"></textarea>
+			<button>Send</button>
+		</form>
+	</section>
+	<footer>
+		<p>&copy; 2024 All Pro Plumbing & Air</p>
+		<p>Address: 5555 W Linebaugh Ave, Suite #100, Tampa, FL 33624</p>
+		<p>Email: <a href="mailto:accounting@callthepro.com">accounting@callthepro.com</a></p>
+	</footer>
+	<script>
+		const hamburger = document.querySelector('.hamburger');
+		const nav = document.querySelector('nav');
+
+		hamburger.addEventListener('click', () => {
+			hamburger.classList.toggle('active');
+			nav.classList.toggle('active');
+		});
+	</script>
+</body>
+</html>

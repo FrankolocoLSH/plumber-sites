@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow Pros Plumbing</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Outfit:wght@300;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg);
+            color: #333;
+            padding: 0;
+            margin: 0;
+            max-width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            padding: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.7rem;
+            font-family: 'Syne', sans-serif;
+            font-weight: 500;
+            color: #fff;
+        }
+        
+        .navlinks {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .navlinks li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        
+        .navlinks a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .hamburger {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+            .navlinks {
+                display: none;
+            }
+        }
+        
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            color: #fff;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #fff;
+            padding: 1rem;
+        }
+        
+        .hero .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--accent);
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .hero .btn:hover {
+            background-color: #e74c3c;
+        }
+        
+        .hero .trustbadges {
+            display: flex;
+            justify-content: space-between;
+            width: 40%;
+        }
+        
+        .hero .trustbadge {
+            width: 25%;
+            padding: 20px;
+            background-color: var(--light);
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero .trustbadge .icon {
+            width: 40px;
+            height: 40px;
+            fill: var(--accent);
+        }
+        
+        .hero .trustbadge h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            padding: 10px;
+        }
+        
+        .services {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .services .servicecard {
+            display: inline-block;
+            width: calc(33% - 20px);
+            margin: 20px;
+            padding: 20px;
+            background-color: var(--light);
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .services .servicecard img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .services .servicecard h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            padding: 10px;
+        }
+        
+        .services .servicecard p {
+            font-size: 1.2rem;
+            padding: 10px;
+        }
+        
+        .whyus {
+            padding: 2rem;
+            background-color: #f9f9f9;
+        }
+        
+        .whyus .block {
+            display: inline-block;
+            width: calc(33% - 20px);
+            margin: 20px;
+            padding: 20px;
+            background-color: var(--light);
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .whyus .block h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            padding: 10px;
+        }
+        
+        .whyus .block p {
+            font-size: 1.2rem;
+            padding: 10px;
+        }
+        
+        .gallery {
+            padding: 2rem;
+        }
+        
+        .gallery .galleryitem {
+            display: inline-block;
+            width: calc(50% - 20px);
+            margin: 20px;
+            padding: 20px;
+            background-color: var(--light);
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery .galleryitem img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .gallery .galleryitem h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            padding: 10px;
+        }
+        
+        .gallery .galleryitem p {
+            font-size: 1.2rem;
+            padding: 10px;
+        }
+        
+        .reviews {
+            padding: 2rem;
+            background-color: #f9f9f9;
+        }
+        
+        .reviews .review {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: var(--light);
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .reviews .review img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        .reviews .review .rating {
+            font-size: 2rem;
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .reviews .review .reviewtext {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .about {
+            padding: 2rem;
+        }
+        
+        .about .image {
+            float: left;
+            width: 50%;
+        }
+        
+        .about .image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .about .text {
+            float: right;
+            width: 50%;
+        }
+        
+        .about .text h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            padding: 10px;
+        }
+        
+        .about .text p {
+            font-size: 1.2rem;
+            padding: 10px;
+        }
+        
+        .about .stats {
+            padding: 20px;
+            background-color: var(--light);
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about .stats span {
+            font-size: 2rem;
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        footer {
+            background-color: #333;
+            padding: 2rem;
+            color: #fff;
+        }
+        
+        footer .phone {
+            font-size: 1.5rem;
+            padding: 10px;
+            font-family: 'Syne', sans-serif;
+            font-weight: 500;
+            color: var(--light);
+            margin-bottom: 20px;
+        }
+        
+        footer .address {
+            font-size: 1.2rem;
+            padding: 10px;
+            color: var(--light);
+        }
+        
+        footer .sociallinks {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        footer .sociallinks li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        
+        footer .sociallinks a {
+            color: var(--light);
+            text-decoration: none;
+        }
+        
+        footer .copyright {
+            font-size: 0.8rem;
+            padding: 10px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navlinks">
+                <li><a href="#" class="logo">Flow Pros Plumbing</a></li>
+                <li><a href="#" class="hamburger"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"> <rect x="0" y="0" fill="none" width="100" height="100"/> <rect x="0" y="20" fill="#1A2744" width="20" height="20"/> <rect x="50" y="20" fill="#1A2744" width="20" height="20"/> <rect x="80" y="20" fill="#1A2744" width="20" height="20"/> <rect x="0" y="50" fill="#1A2744" width="20" height="20"/> <rect x="50" y="50" fill="#1A2744" width="20" height="20"/> <rect x="80" y="50" fill="#1A2744" width="20" height="20"/> <rect x="70" y="70" fill="#1A2744" width="20" height="20"/> <rect x="15" y="70" fill="#1A2744" width="20" height="20"/> <rect x="35" y="70" fill="#1A2744" width="20" height="20"/> <rect x="60" y="70" fill="#1A2744" width="20" height="20"/> <rect x="0" y="90" fill="#1A2744" width="20" height="20"/> <rect x="5" y="90" fill="#1A2744" width="20" height="20"/> <rect x="90" y="90" fill="#1A2744" width="20" height="20"/> </svg></a></li>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop" alt="hero image">
+            <h1>Expert Plumbing Services in FL 33713</h1>
+            <p>Get trusted plumbing solutions for all your needs!</p>
+            <button class="btn">Get Started</button>
+            <div class="trustbadges">
+                <div class="trustbadge">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"> <rect x="0" y="0" fill="none" width="100" height="100"/> <rect x="20" y="20" fill="#e8651a" width="60" height="60"/> <rect x="50" y="50" fill="#e8651a" width="10" height="10"/> </svg>
+                    <h3>24/7 Emergency Services</h3>
+                </div>
+                <div class="trustbadge">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"> <rect x="0" y="0" fill="none" width="100" height="100"/> <rect x="20" y="20" fill="#e8651a" width="60" height="60"/> <rect x="50" y="50" fill="#e8651a" width="10" height="10"/> </svg>
+                    <h3>100% Satisfaction Guarantee</h3>
+                </div>
+                <div class="trustbadge">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"> <rect x="0" y="0" fill="none" width="100" height="100"/> <rect x="20" y="20" fill="#e8651a" width="60" height="60"/> <rect x="50" y="50" fill="#e8651a" width="10" height="10"/> </svg>
+                    <h3>Local and Licensed Plumbers</h3>
+                </div>
+            </div>
+        </section>
+        <section class="services">
+            <h2>Our Plumbing Services</h2>
+            <div class="servicecard">
+                <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="service image 1">
+                <h3>Emergency Leak Repair</h3>
+                <p>Get immediate assistance for leaky pipes and faucets!</p>
+            </div>
+            <div class="servicecard">
+                <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="service image 2">
+                <h3>Drain Cleaning</h3>
+                <p>Clean your drains and ensure smooth water flow!</p>
+            </div>
+            <div class="servicecard">
+                <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="service image 3">
+                <h3>Water Heater Install</h3>
+                <p>Get expert installation for new water heaters!</p>
+            </div>
+        </section>
+        <section class="whyus">
+            <h2>Why Choose Us</h2>
+            <div class="block">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"> <rect x="0" y="0" fill="none" width="100" height="100"/> <rect x="20" y="20" fill="#e8651a" width="60" height="60"/> <rect x="50" y="50" fill="#e8651a" width="10" height="10"/> </svg>
+                <h3>24/7 Emergency Services</h3>
+                <p>We're always available to help in case of emergencies!</p>
+            </div>
+            <div class="block">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"> <rect x="0" y="0" fill="none" width="100" height="100"/> <rect x="20" y="20" fill="#e8651a" width="60" height="60"/> <rect x="50" y="50" fill="#e8651a" width="10" height="10"/> </svg>
+                <h3>100% Satisfaction Guarantee</h3>
+                <p>We guarantee your satisfaction with our services!</p>
+            </div>
+            <div class="block">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve"> <rect x="0" y="0" fill="none" width="100" height="100"/> <rect x="20" y="20" fill="#e8651a" width="60" height="60"/>

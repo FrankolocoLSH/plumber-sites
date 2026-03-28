@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-Tom Plumber | Reliable Plumbing Services in Tampa, FL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            display: grid;
+            grid-template-columns: 1fr;
+            min-height: 100vh;
+            gap: 1rem;
+            background-color: var(--bg);
+            font-family: 'DM Sans', sans-serif;
+            scroll-behavior: smooth;
+            padding: 1rem;
+        }
+        @media (max-width: 768px) {
+            body {
+                font-size: 1rem;
+            }
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header nav {
+            display: flex;
+            gap: 2rem;
+        }
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        header nav button {
+            background-color: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        header nav button:hover {
+            background-color: var(--accent);
+        }
+        .hero {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, var(--primary) 90%, var(--primary) 100%);
+            position: relative;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .hero img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3rem;
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+        .hero h1 span {
+            text-transform: uppercase;
+        }
+        .hero .badges {
+            margin-bottom: 4rem;
+        }
+        .hero .badges img {
+            margin-right: 0.5rem;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 2rem;
+        }
+        .service {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 1rem rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .service img {
+            object-fit: cover;
+            width: 100%;
+            height: 150px;
+            margin-bottom: 1rem;
+        }
+        .service h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .service p {
+            font-size: 1rem;
+            color: var(--primary);
+            text-align: center;
+        }
+        .why-choose-us {
+            max-width: 800px;
+            margin: 4rem auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .block {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 1rem rgba(0,0,0,0.15);
+        }
+        .block h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .block p {
+            font-size: 1rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 4rem auto;
+        }
+        .gallery img {
+            object-fit: cover;
+            width: 100%;
+            height: 150px;
+            margin-bottom: 2rem;
+        }
+        .about {
+            max-width: 800px;
+            margin: 4rem auto;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .about img {
+            border-radius: 1rem;
+            object-fit: cover;
+            width: 300px;
+            height: 300px;
+            margin-right: 2rem;
+        }
+        .about-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .about-text h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .about-text p {
+            font-size: 1rem;
+            color: var(--primary);
+        }
+        .stats {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .stats img {
+            height: 50px;
+            margin-bottom: 1rem;
+        }
+        .stats h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .stats p {
+            font-size: 1rem;
+        }
+        .reviews {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .review {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 1rem rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .review h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .review p {
+            font-size: 1rem;
+            color: var(--primary);
+        }
+        .star {
+            fill: var(--accent);
+        }
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 4rem auto;
+            background-color: var(--primary);
+            border-radius: 1rem;
+        }
+        .contact h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .contact p {
+            font-size: 1rem;
+            color: #fff;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 1rem;
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 1rem;
+        }
+        .contact input[type="email"] {
+            height: 40px;
+        }
+        .contact input[type="submit"] {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .contact input[type="submit"]:hover {
+            background-color: var(--primary);
+        }
+        footer {
+            background-color: var(--primary);
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+        }
+        footer ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 1rem;
+            border-bottom: 1px solid #fff;
+        }
+        footer ul li {
+            margin-right: 2rem;
+        }
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        footer ul li a:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#hero">Home</a>
+            <button>Services</button>
+            <button>About</button>
+            <button>Testimonials</button>
+        </nav>
+        <button class="nav-button" onclick="toggleMenu()">&#9776;</button>
+    </header>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('open');
+            const closeButton = document.querySelector('.nav-button');
+            closeButton.classList.toggle('open');
+        }
+    </script>
+    <div id="hero" class="hero">
+        <img class="hero-image" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop" alt="Hero Image">
+        <div class="hero-content">
+            <h1>Reliable Plumbing Services in <span>Tampa, FL</span></h1>
+            <div class="badges">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25962.png" alt="Badge 1">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25681.png" alt="Badge 2">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/26018.png" alt="Badge 3">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/26019.png" alt="Badge 4">
+            </div>
+            <button>Get a Quote</button>
+        </div>
+    </div>
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1">
+            <h2>Emergency Leak Repair</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2">
+            <h2>Bathroom Plumbing</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3">
+            <h2>Sewer Repair</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+    </section>
+    <section class="why-choose-us">
+        <h2>Why Choose Us</h2>
+        <div class="block">
+            <h2>Experienced Plumbers</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25962.png" alt="Icon 1">
+        </div>
+        <div class="block">
+            <h2>Fast Response Time</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25681.png" alt="Icon 2">
+        </div>
+        <div class="block">
+            <h2>Affordable Prices</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+            <img src="https://cdn-icons-png.flaticon.com/512/25/26018.png" alt="Icon 3">
+        </div>
+    </section>
+    <section class="gallery">
+        <h2>Our Gallery</h2>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1">
+            <h2>Gallery Image 1</h2>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2">
+            <h2>Gallery Image 2</h2>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3">
+            <h2>Gallery Image 3</h2>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+            <h2>Gallery Image 4</h2>
+        </div>
+    </section>
+    <section class="about">
+        <h2>About Us</h2>
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image">
+        <div class="about-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="stats">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25962.png" alt="Icon 1">
+            <h2>5+ Years of Experience</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="stats">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25962.png" alt="Icon 2">
+            <h2>99% Customer Satisfaction</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="stats">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25962.png" alt="Icon 3">
+            <h2>100+ 5-Star Reviews</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+    </section>
+    <section class="reviews">
+        <h2>Reviews</h2>
+        <div class="review">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25962.png" alt="Rating 1">
+            <h2>5/5 Stars</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="review">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25681.png" alt="Rating 2">
+            <h2>4/5 Stars</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="review">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/26018.png" alt="Rating 3">
+            <h2>3/5 Stars</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <input type="tel" placeholder="Phone">
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+    <footer>
+        <p>Copyright 2023 1-Tom Plumber</p>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+        </ul>
+    </footer>
+    <div class="overlay" onclick="toggleMenu()">
+        <nav class="overlay-menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        const closeButton = document.querySelector('.overlay');
+        closeButton.addEventListener('click', () => {
+            const

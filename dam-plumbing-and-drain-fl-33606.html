@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dam Plumbing and Drain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne&family=Outfit:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary:#1a2744;
+            --accent:#e8651a;
+            --bg:#fff;
+            --light:#f4f7fb;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg);
+            padding: 0;
+            margin: 0;
+        }
+        
+        header {
+            position: relative;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            height: 2px;
+            width: 20px;
+            background-color: var(--light);
+            margin-bottom: 5px;
+        }
+        
+        #nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        #nav li {
+            margin-right: 20px;
+        }
+        
+        #nav a {
+            color: var(--light);
+            text-decoration: none;
+        }
+        
+        #nav a:hover {
+            color: var(--accent);
+        }
+        
+        .hero {
+            position: relative;
+            background-color: var(--primary);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--light);
+        }
+        
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2em;
+            text-align: center;
+        }
+        
+        .hero img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* opacity: 0.7; */
+        }
+        
+        .hero #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary);
+            opacity: 0.5;
+        }
+        
+        .trustbadges {
+            display: flex;
+            justify-content: space-around;
+            margin: 1rem;
+        }
+        
+        .trustbadge img {
+            width: 50px;
+            height: 50px;
+            filter:invert(1);
+        }
+        
+        .services {
+            display: flex;
+            justify-content: space-around;
+            margin: 1rem;
+        }
+        
+        .service {
+            background-color: var(--light);
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .service h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5em;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .service p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1em;
+        }
+        
+        .whynustrust {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem;
+        }
+        
+        .whynustrust h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        
+        .whynustrust blockquote {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 2rem;
+        }
+        
+        .gallery img {
+            width: 45%;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        
+        .reviews {
+            margin: 2rem;
+        }
+        
+        .review {
+            background-color: var(--light);
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .review img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        
+        .review h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.2em;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .review p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9em;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem;
+        }
+        
+        .stat {
+            background-color: var(--primary);
+            padding: 1rem;
+            border-radius: 10px;
+            color: var(--light);
+        }
+        
+        .stat h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1em;
+            text-align: center;
+        }
+        
+        .stat p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9em;
+        }
+        
+        .about img {
+            width: 50%;
+            height: auto;
+            margin: 20px;
+            border-radius: 20px;
+        }
+        
+        .about h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .about blockquote {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1em;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        footer li {
+            margin-right: 20px;
+        }
+        
+        footer a {
+            color: var(--light);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: var(--accent);
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            #nav li:not(:last-child) {
+                display: none;
+            }
+            
+            .hero {
+                height: 500px;
+            }
+            
+            .hero #overlay {
+                background-color: transparent;
+            }
+            
+            .services {
+                flex-direction: column;
+            }
+            
+            .service {
+                width: 100%;
+            }
+            
+            .whynustrust {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            
+            .whynustrust blockquote {
+                width: 50%;
+            }
+            
+            .gallery {
+                flex-direction: column;
+            }
+            
+            .gallery img {
+                width: 80%;
+            }
+            
+            .reviews {
+                flex-direction: column;
+            }
+            
+            .review {
+                width: 100%;
+            }
+            
+            .stats {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                height: 300px;
+            }
+        }
+        
+        svg {
+            display: block;
+            overflow: hidden;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-image" style="background-image: url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop); background-size: cover; background-position: center;">
+            <div id="overlay"></div>
+            <h1>Dam Plumbing and Drain</h1>
+            <div class="cta">
+                <button>Get a Quote</button>
+                <button>Contact Us</button>
+            </div>
+            <div class="trustbadges">
+                <img src="trustbadge1.svg" alt="Trust badge 1">
+                <img src="trustbadge2.svg" alt="Trust badge 2">
+                <img src="trustbadge3.svg" alt="Trust badge 3">
+                <img src="trustbadge4.svg" alt="Trust badge 4">
+            </div>
+        </div>
+    </section>
+    
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1">
+            <h3>Emergency Leak Repair</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2">
+            <h3>Drain Cleaning</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3">
+            <h3>Water Heater Install</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+    </section>
+    
+    <section class="whynustrust">
+        <h2>Why Choose Us?</h2>
+        <blockquote>Our team of experienced plumbers are dedicated to providing the best service possible.</blockquote>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+    </section>
+    
+    <section class="gallery">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery 1">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery 2">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery 3">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery 4">
+    </section>
+    
+    <section class="reviews">
+        <h2>Reviews</h2>
+        <div class="review">
+            <img src="avatar1.svg" alt="Reviewer 1">
+            <h4>John Doe</h4>
+            <p>Rating: 5/5 - "Great service, would recommend!"</p>
+        </div>
+        <div class="review">
+            <img src="avatar2.svg" alt="Reviewer 2">
+            <h4>Jane Doe</h4>
+            <p>Rating: 4/5 - "Good experience, would consider using again."</p>
+        </div>
+        <div class="review">
+            <img src="avatar3.svg" alt="Reviewer 3">
+            <h4>Jim Doe</h4>
+            <p>Rating: 5/5 - "Quick response and fair price, will use again."</p>
+        </div>
+    </section>
+    
+    <section class="stats">
+        <div class="stat">
+            <h3>4.9/5</h3>
+            <p>Rating</p>
+        </div>
+        <div class="stat">
+            <h3>1000+</h3>
+            <p>Satisfied Customers</p>
+        </div>
+        <div class="stat">
+            <h3>10+</h3>
+            <p>Years of Experience</p>
+        </div>
+    </section>
+    
+    <section class="about">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About us">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        <div class="stats">
+            <div class="stat">
+                <h3>10+</h3>
+                <p>Years of Experience</p>
+            </div>
+            <div class="stat">
+                <h3>1000+</h3>
+                <p>Satisfied Customers</p>
+            </div>
+            <div class="stat">
+                <h3>4.9/5</h3>
+                <p>Rating</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <h3>Dam Plumbing and Drain</h3>
+            <p>1646 W Snow Ave Suite #80, Tampa, FL 33606, USA</p>
+            <p>(813) 815-2160</p>
+            <p>thedamplumbers@gmail.com</p>
+        </div>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button>Send</button>
+        </form>
+    </section>
+    
+    <footer>
+        <ul>
+            <li><a href="#" target="_blank">Facebook</a></li>
+            <li><a href="#" target="_blank">Instagram</a></li>
+            <li><a href="#" target="_blank">Twitter</a></li>
+        </ul>
+        <p>&copy; Dam Plumbing and Drain</p>
+    </footer>
+    
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('#nav');
+        
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        const heroImage = document.querySelector('.hero-image');
+        
+        heroImage.addEventListener('click', () => {
+            window.location.href = '#services';
+        });
+        
+        const reviews = document.querySelectorAll('.review');
+        
+        reviews.forEach(review => {
+            review.addEventListener('click', () => {
+                window.location.href = 'review.html';
+            });
+        });
+    </script>
+</body>
+</html>

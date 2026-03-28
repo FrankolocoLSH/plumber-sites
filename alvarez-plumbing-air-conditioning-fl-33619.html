@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alvarez Plumbing & Air Conditioning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Outfit&family=Syne&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a2744;
+      --accent: #e8651a;
+      --bg: #fff;
+      --light: #f4f7fb;
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: var(--primary);
+      color: var(--bg);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .nav-links li {
+      margin-right: 20px;
+    }
+    .nav-links a {
+      color: var(--bg);
+      text-decoration: none;
+    }
+    .hamburger {
+      cursor: pointer;
+      display: none;
+    }
+    @media only screen and (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 4rem;
+        background-color: var(--primary);
+        padding: 1rem;
+        width: 100%;
+      }
+      .nav-links li {
+        margin-bottom: 10px;
+      }
+    }
+    .hero {
+      height: 100vh;
+      background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--bg);
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-content {
+      z-index: 1;
+    }
+    .hero-content h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 48px;
+    }
+    .hero-content p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .hero-content a {
+      background-color: var(--accent);
+      color: var(--bg);
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    .trust-badges {
+      display: flex;
+      margin-top: 20px;
+    }
+    .trust-badges img {
+      margin-right: 10px;
+    }
+    .service-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .service-card {
+      margin: 20px;
+      width: calc(33.33% - 20px);
+      background-color: var(--bg);
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .service-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px 5px 0 0;
+    }
+    .service-card h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      margin-top: 0;
+    }
+    .why-choose-us {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .why-choose-us-block {
+      margin: 20px;
+      width: calc(33.33% - 20px);
+      background-color: var(--bg);
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .why-choose-us-block h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      margin-top: 0;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .reviews {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .review {
+      margin: 20px;
+      width: calc(33.33% - 20px);
+      background-color: var(--bg);
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .review h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      margin-top: 0;
+    }
+    .review .rating {
+      color: #ffd700;
+    }
+    .about {
+      display: flex;
+      justify-content: space-between;
+    }
+    .about img {
+      width: 50%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .about-content {
+      width: 50%;
+      padding: 20px;
+    }
+    .about-content h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      margin-top: 0;
+    }
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .stat {
+      margin: 20px;
+      width: calc(33.33% - 20px);
+      background-color: var(--bg);
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .stat h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      margin-top: 0;
+    }
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .contact-form {
+      margin: 20px;
+      width: calc(50% - 20px);
+      background-color: var(--bg);
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .contact-info {
+      margin: 20px;
+      width: calc(50% - 20px);
+      background-color: var(--bg);
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .contact-info h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      margin-top: 0;
+    }
+    footer {
+      background-color: var(--primary);
+      color: var(--bg);
+      padding: 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Alvarez Plumbing & Air Conditioning - Your Trusted Plumber in FL 33619</h1>
+        <p>Emergency Leak Repair, Drain Cleaning, Water Heater Install, and more. Call us now at (813) 213-0533</p>
+        <a href="tel:(813) 213-0533">Call Now</a>
+        <a href="#contact">Get a Quote</a>
+        <div class="trust-badges">
+          <img src="trust-badge-1.png" alt="Trust Badge 1">
+          <img src="trust-badge-2.png" alt="Trust Badge 2">
+          <img src="trust-badge-3.png" alt="Trust Badge 3">
+          <img src="trust-badge-4.png" alt="Trust Badge 4">
+        </div>
+      </div>
+    </section>
+    <section id="services" class="service-cards">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1">
+        <h2>Emergency Leak Repair</h2>
+        <p>We provide 24/7 emergency leak repair services to ensure your safety and minimize damage.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2">
+        <h2>Drain Cleaning</h2>
+        <p>Our professional drain cleaning services will clear your clogged drains and get your plumbing system flowing smoothly.</p>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3">
+        <h2>Water Heater Install</h2>
+        <p>We install and repair water heaters to ensure you have a steady supply of hot water.</p>
+      </div>
+    </section>
+    <section id="why-choose-us" class="why-choose-us">
+      <div class="why-choose-us-block">
+        <h2>Why Choose Us?</h2>
+        <p>We are a locally owned and operated plumbing company with years of experience in providing top-notch plumbing services.</p>
+      </div>
+      <div class="why-choose-us-block">
+        <h2>Our Mission</h2>
+        <p>Our mission is to provide excellent customer service and ensure our customers are completely satisfied with our work.</p>
+      </div>
+      <div class="why-choose-us-block">
+        <h2>Our Values</h2>
+        <p>We value honesty, integrity, and professionalism in everything we do.</p>
+      </div>
+    </section>
+    <section id="gallery" class="gallery">
+      <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1">
+      <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2">
+      <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3">
+      <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+    </section>
+    <section id="reviews" class="reviews">
+      <div class="review">
+        <h2>Review 1</h2>
+        <p>Alvarez Plumbing & Air Conditioning did an excellent job fixing my leaky faucet. They were prompt, professional, and affordable.</p>
+        <span class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </div>
+      <div class="review">
+        <h2>Review 2</h2>
+        <p>I was impressed with the quality of work and the customer service provided by Alvarez Plumbing & Air Conditioning. They truly exceeded my expectations.</p>
+        <span class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </div>
+      <div class="review">
+        <h2>Review 3</h2>
+        <p>Alvarez Plumbing & Air Conditioning is the best plumbing company I have ever worked with. They are reliable, efficient, and reasonably priced.</p>
+        <span class="rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      </div>
+    </section>
+    <section id="about" class="about">
+      <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image">
+      <div class="about-content">
+        <h2>About Us</h2>
+        <p>We are a locally owned and operated plumbing company serving FL 33619 and surrounding areas. Our team of experienced plumbers is dedicated to providing excellent customer service and ensuring our customers are completely satisfied with our work.</p>
+        <div class="stats">
+          <div class="stat">
+            <h2>Years of Experience</h2>
+            <p>10+</p>
+          </div>
+          <div class="stat">
+            <h2>Customers Served</h2>
+            <p>1000+</p>
+          </div>
+          <div class="stat">
+            <h2>Rating</h2>
+            <p>4.8/5</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="contact">
+      <div class="contact-form">
+        <h2>Get a Quote</h2>
+        <form>
+          <input type="text" name="name" placeholder="Name">
+          <input type="email" name="email" placeholder="Email">
+          <input type="tel" name="phone" placeholder="Phone">
+          <textarea name="message" placeholder="Message"></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="contact-info">
+        <h2>Contact Us</h2>
+        <p>Phone: (813) 213-0533</p>
+        <p>Email: </p>
+        <p>Address: 1623 S 51st St, Tampa, FL 33619, USA</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 Alvarez Plumbing & Air Conditioning. All rights reserved.</p>
+  </footer>
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

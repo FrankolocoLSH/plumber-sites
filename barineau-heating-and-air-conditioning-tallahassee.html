@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barineau Heating and Air Conditioning</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0d3b6e;
+            --accent: #00aaff;
+            --bg: #fff;
+            --light: #f0f7ff;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hamburger {
+            display: none;
+        }
+        
+        .nav-links ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links ul li {
+            margin-right: 20px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: color 0.2s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .hero-container {
+            position: relative;
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        
+        .hero-container h1 {
+            font-family: 'Syne Mono', monospace;
+            font-size: 36px;
+        }
+        
+        .hero-container .cta {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .hero-container .cta:hover {
+            background-color: var(--accent);
+        }
+        
+        .hero-container .cta + .cta {
+            margin-top: 10px;
+        }
+        
+        .trust-badge {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        .service-card {
+            background-color: var(--bg);
+            padding: 20px;
+            border: 1px solid var(--light);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card h2 {
+            font-family: 'Syne Mono', monospace;
+            font-size: 24px;
+        }
+        
+        .service-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .review {
+            background-color: var(--bg);
+            padding: 20px;
+            border: 1px solid var(--light);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .review .rating {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        .rating svg {
+            width: 1em;
+            height: 1em;
+            fill: var(--accent);
+        }
+        
+        .rating svg.path {
+            transition: fill 0.2s ease;
+        }
+        
+        .rating svg.path:nth-child(1) {
+            transform: rotate(45deg);
+        }
+        
+        .rating svg.path:nth-child(2) {
+            transform: rotate(90deg);
+        }
+        
+        .rating svg.path:nth-child(3) {
+            transform: rotate(135deg);
+        }
+        
+        .rating svg.path:nth-child(4) {
+            transform: rotate(180deg);
+        }
+        
+        .rating svg.path:nth-child(5) {
+            transform: rotate(225deg);
+        }
+        
+        .rating svg.path.active {
+            fill: var(--primary);
+        }
+        
+        .about {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .about img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .about-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .about-stat {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .about-stat span {
+            margin-right: 10px;
+        }
+        
+        .contact {
+            background-color: var(--bg);
+            padding: 20px;
+            border: 1px solid var(--light);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: var(--light);
+        }
+        
+        .contact-form button {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        .contact-form button:hover {
+            background-color: var(--accent);
+        }
+        
+        .footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="nav-links">
+                    <button class="hamburger" id="hamburger">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" width="40" height="40">
+                            <rect x="10" y="10" width="20" height="20" rx="5" fill="var(--primary)" />
+                            <rect x="10" y="30" width="20" height="20" rx="5" fill="var(--primary)" />
+                            <rect x="10" y="50" width="20" height="20" rx="5" fill="var(--primary)" />
+                            <rect x="30" y="10" width="20" height="20" rx="5" fill="var(--primary)" />
+                            <rect x="30" y="30" width="20" height="20" rx="5" fill="var(--primary)" />
+                            <rect x="30" y="50" width="20" height="20" rx="5" fill="var(--primary)" />
+                        </svg>
+                    </button>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-container">
+            <h1>Welcome to Barineau Heating and Air Conditioning in Tallahassee</h1>
+            <p>Experienced HVAC professionals serving the Tallahassee community.</p>
+            <button class="cta">Get a Free Quote</button>
+            <button class="cta">Schedule an Appointment</button>
+            <p>Trust us for your HVAC needs. Learn more about our services:</p>
+            <div class="trust-badge">Licensed Expert</div>
+            <div class="trust-badge">Insured</div>
+            <div class="trust-badge">Local Business</div>
+            <div class="trust-badge">24/7 Emergency Service</div>
+        </section>
+        <section class="service">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="AC Installation" />
+                    <h2>AC Installation</h2>
+                    <p>Trust us for expert installation of your air conditioning system.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop" alt="AC Repair" />
+                    <h2>AC Repair</h2>
+                    <p>Get fast and reliable AC repair services in Tallahassee.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Heating Service" />
+                    <h2>Heating Service</h2>
+                    <p>Don't let the cold blues get you down. Trust us for expert heating services.</p>
+                </div>
+            </div>
+        </section>
+        <section class="why-choose-us">
+            <div class="container">
+                <h2>Why Choose Us?</h2>
+                <div class="block">
+                    <p>We pride ourselves on providing top-notch HVAC services with exceptional customer service.</p>
+                </div>
+                <div class="block">
+                    <p>Our expert technicians have years of experience serving the Tallahassee community.</p>
+                </div>
+                <div class="block">
+                    <p>We offer competitive pricing and flexible financing options to fit your needs.</p>
+                </div>
+            </div>
+        </section>
+        <section class="gallery">
+            <div class="container">
+                <h2>Our Work</h2>
+                <div class="gallery-row">
+                    <div class="gallery">
+                        <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=800&h=800&fit=crop" alt="Happy Customer" />
+                    </div>
+                    <div class="gallery">
+                        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=800&fit=crop" alt="Clean and Efficient System" />
+                    </div>
+                </div>
+                <div class="gallery-row">
+                    <div class="gallery">
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Trusted and Reliable" />
+                    </div>
+                    <div class="gallery">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Satisfied Customer" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="reviews">
+            <div class="container">
+                <div class="review">
+                    <div class="rating">
+                        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 17.27L18.58 12 12 6.73 5.42 12 12 17.27z" fill="var(--accent)" />
+                            <path d="M12 17.27l.71-1.41-.71-1.41L12 6.73l-2.33 2.33A2.333 2.333 0 005 9v6z" fill="#fff" />
+                        </svg>
+                        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 17.27L18.58 12 12 6.73 5.42 12 12 17.27z" fill="var(--accent)" />
+                            <path d="M12 17.27l-.71-1.41-.71-1.41L12 6.73l2.33 2.33A2.333 2.333 0 0012 9v6z" fill="#fff" />
+                        </svg>
+                        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 5v10l8.12-8.12-1.41-1.41L12 16.41l-6.58-6.59L6.41 12l6.59 6.58z" fill="var(--accent)" />
+                            <path d="M16.29 18.69L12 13.41l-4.29 4.29L8.3 12 4.29 13.41l1.41-1.41.71.71L12 9.5l6.72 6.72z" fill="#fff" />
+                        </svg>
+                        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 17.27L15.09 21 12 18.73L8.92 21 6 17.27L11 14.5z" fill="var(--accent)" />
+                            <path d="M6 18.73l6.36-6.36L6 7.08 0.73 4 4.09 4.08 11 14c.55 0 .99.19 1.29.48L16 12z" fill="#fff" />
+                        </svg>
+                        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 1c-4.411 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8zm0 16c-4.411 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM16 2.01c-3.09 0-5.63 2.54-5.63 5.64 0 3.09 2.54 5.64 5.63 5.64 3.09 0 5.63-2.54 5.63-5.64 0-3.1-2.54-5.64-5.63-5.64z" fill="var(--accent)" />
+                        </svg>
+                        <span>4.8</span>
+                    </div>
+                    <p>Based on 89 reviews</p>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <div class="container">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&h=800&fit=crop" alt="Our Story" />
+                </div>
+                <div class="about-text">
+                    <p>Welcome to Barineau Heating and Air Conditioning, your trusted partner for all your HVAC needs in Tallahassee.</p>
+                </div>
+            </div>
+        </section>
+        <section class="about-statistics">
+            <div class="container">
+                <div class="about-stat">
+                    <span>89</span>
+                    <p>Reviews</p>
+                </div>
+                <div class="about-stat">
+                    <span>24/7</span>
+                    <p>Emergency Service</p>
+                </div>
+                <div class="about-stat">
+                    <span>100%</span>
+                    <p>Satisfaction Guarantee</p>
+                </div>
+            </div>
+        </section>
+        <section class="contact">
+            <div class="contact-form">
+                <input type="text" placeholder="Name" />
+                <input type="text" placeholder="Phone" />
+                <input type="email" placeholder="Email" />
+                <textarea placeholder="Message"></textarea>
+                <button>Send Message</button>
+            </div>
+        </section>
+        <section class="footer">
+            <p>&copy; 2023 Barineau Heating and Air Conditioning - All rights reserved.</p>
+            <p>Address: 4829 Corlett St, Tallahassee, FL 32303</p>
+            <p>Phone: <span>(850) 580-4029</span></p>
+            <p>Email: <span>info@barineauac.com</span></p>
+            <p>Rating: <span>4.8</span> out of 5 based on 89 reviews.</p>
+            <p>Tallahassee, FL 32303</p>
+        </section>
+    </main>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

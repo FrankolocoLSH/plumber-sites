@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Rooter Plumbing of Tampa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Outfit&family=Syne&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .nav-links li {
+            margin-right: 20px;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .hamburger {
+            cursor: pointer;
+            display: none;
+        }
+        .hero {
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 48px;
+        }
+        .hero .ctas {
+            display: flex;
+            margin-top: 20px;
+        }
+        .hero .ctas a {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .trust-badges {
+            display: flex;
+            margin-top: 20px;
+        }
+        .trust-badges img {
+            margin-right: 10px;
+        }
+        .services {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        .service-card {
+            background-color: var(--bg);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: calc(33.33% - 20px);
+            margin: 10px;
+        }
+        .service-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .service-card h2 {
+            font-family: 'Outfit', sans-serif;
+            margin-top: 10px;
+        }
+        .why-choose-us {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        .why-choose-us-block {
+            background-color: var(--bg);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: calc(33.33% - 20px);
+            margin: 10px;
+        }
+        .why-choose-us-block h2 {
+            font-family: 'Outfit', sans-serif;
+            margin-top: 10px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+            margin-top: 50px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .reviews {
+            margin-top: 50px;
+        }
+        .review {
+            background-color: var(--bg);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .review .rating {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .review .rating svg {
+            margin-right: 5px;
+        }
+        .about {
+            display: flex;
+            margin-top: 50px;
+        }
+        .about img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .about .stats {
+            display: flex;
+            margin-top: 20px;
+        }
+        .about .stats .stat {
+            margin-right: 20px;
+        }
+        .contact {
+            margin-top: 50px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact input, .contact textarea {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact button {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 50px;
+        }
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+            }
+            .services {
+                flex-direction: column;
+            }
+            .service-card {
+                width: 100%;
+                margin: 10px 0;
+            }
+            .why-choose-us {
+                flex-direction: column;
+            }
+            .why-choose-us-block {
+                width: 100%;
+                margin: 10px 0;
+            }
+            .gallery {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .about {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#">Mr. Rooter Plumbing of Tampa</a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose-us">Why Choose Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="4" width="4" height="4" rx="1" fill="#fff"/>
+                    <rect x="13" y="4" width="4" height="4" rx="1" fill="#fff"/>
+                    <rect x="3" y="11" width="4" height="4" rx="1" fill="#fff"/>
+                    <rect x="13" y="11" width="4" height="4" rx="1" fill="#fff"/>
+                </svg>
+            </div>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-overlay">
+            <h1>Expert Plumbers in FL 33619</h1>
+            <div class="ctas">
+                <a href="tel:(813) 704-2093">Call Now</a>
+                <a href="#contact">Get a Quote</a>
+            </div>
+            <div class="trust-badges">
+                <img src="https://via.placeholder.com/50" alt="Trust Badge 1">
+                <img src="https://via.placeholder.com/50" alt="Trust Badge 2">
+                <img src="https://via.placeholder.com/50" alt="Trust Badge 3">
+                <img src="https://via.placeholder.com/50" alt="Trust Badge 4">
+            </div>
+        </div>
+    </section>
+    <section id="services" class="services">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1">
+            <h2>Emergency Leak Repair</h2>
+            <p>We provide emergency leak repair services to help you avoid water damage and save money.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2">
+            <h2>Drain Cleaning</h2>
+            <p>Our expert plumbers use the latest technology to clean your drains and ensure they are flowing smoothly.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3">
+            <h2>Water Heater Install</h2>
+            <p>We install and repair water heaters to provide you with hot water whenever you need it.</p>
+        </div>
+    </section>
+    <section id="why-choose-us" class="why-choose-us">
+        <div class="why-choose-us-block">
+            <h2>Expert Plumbers</h2>
+            <p>Our plumbers are experienced and trained to provide you with the best service possible.</p>
+        </div>
+        <div class="why-choose-us-block">
+            <h2>Competitive Pricing</h2>
+            <p>We offer competitive pricing to ensure you get the best value for your money.</p>
+        </div>
+        <div class="why-choose-us-block">
+            <h2>Excellent Customer Service</h2>
+            <p>We pride ourselves on providing excellent customer service to ensure you are satisfied with our work.</p>
+        </div>
+    </section>
+    <section id="gallery" class="gallery">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+    </section>
+    <section id="reviews" class="reviews">
+        <div class="review">
+            <div class="rating">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2l4 4-4 4 1.41 1.41-5.58 5.58-5.58-5.58L5 14l4-4z" fill="#ffd700"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2l4 4-4 4 1.41 1.41-5.58 5.58-5.58-5.58L5 14l4-4z" fill="#ffd700"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2l4 4-4 4 1.41 1.41-5.58 5.58-5.58-5.58L5 14l4-4z" fill="#ffd700"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2l4 4-4 4 1.41 1.41-5.58 5.58-5.58-5.58L5 14l4-4z" fill="#ffd700"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2l4 4-4 4 1.41 1.41-5.58 5.58-5.58-5.58L5 14l4-4z" fill="#ffd700"/>
+                </svg>
+            </div>
+            <p>Rating: 4.8 (563 reviews)</p>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image">
+        <div>
+            <h2>About Us</h2>
+            <p>We are a team of expert plumbers dedicated to providing the best service possible.</p>
+            <div class="stats">
+                <div class="stat">
+                    <h3>Years of Experience</h3>
+                    <p>10</p>
+                </div>
+                <div class="stat">
+                    <h3>Clients Served</h3>
+                    <p>1000+</p>
+                </div>
+                <div class="stat">
+                    <h3>Rating</h3>
+                    <p>4.8/5</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <p>Phone: <a href="tel:(813) 704-2093">(813) 704-2093</a></p>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button>Send</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 Mr. Rooter Plumbing of Tampa</p>
+        <p>Address: 249 S 78th St, Tampa, FL 33619, USA</p>
+        <p>Phone: <a href="tel:(813) 704-2093">(813) 704-2093</a></p>
+    </footer>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, { threshold: 1.0 });
+        const sections = document.querySelectorAll('section');
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

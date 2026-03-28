@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampa Plumbers & Drain Experts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Syne+Mono:wght@400;600&family=Syne+Tactile&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg);
+            color: #333;
+            padding: 0;
+            margin: 0;
+        }
+        
+        h1 {
+            font-family: 'Syne Tactile', cursive;
+            font-size: 36px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h2 {
+            font-family: 'Syne Tactile', cursive;
+            font-size: 24px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h3 {
+            font-family: 'Syne Tactile', cursive;
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 24px;
+            width: 24px;
+            cursor: pointer;
+        }
+        
+        .hamburger {
+            span {
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: #fff;
+                transition: transform 0.3s ease;
+            }
+            
+            span:nth-child(1) {
+                top: 0;
+            }
+            
+            span:nth-child(2) {
+                top: 20px;
+            }
+            
+            span:nth-child(3) {
+                bottom: 0;
+            }
+        }
+        
+        header.active {
+            transform: translateY(-100%);
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-right: 24px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        hero {
+            height: 100vh;
+            background: linear-gradient(to bottom, var(--primary), #2d3436);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        
+        hero img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 12px;
+        }
+        
+        trust {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+        
+        .trust-badge {
+            margin-right: 24px;
+        }
+        
+        .trust-badge img {
+            width: 64px;
+            height: auto;
+        }
+        
+        services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        service-card {
+            margin: 24px;
+            padding: 24px;
+            border: 1px solid var(--light);
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+            max-width: 360px;
+        }
+        
+        service-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 24px;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+        }
+        
+        star-rating {
+            margin: 4px;
+            font-size: 18px;
+        }
+        
+        star-rating svg {
+            fill: var(--accent);
+        }
+        
+        star-rating path {
+            stroke: var(--accent);
+        }
+        
+        gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin: 24px;
+        }
+        
+        gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        review {
+            padding: 24px;
+            border: 1px solid var(--light);
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        review img {
+            width: 64px;
+            height: auto;
+            margin-bottom: 24px;
+        }
+        
+        .review-text {
+            margin-bottom: 24px;
+        }
+        
+        about {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 24px;
+            background-color: var(--light);
+            border: 1px solid var(--light);
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image {
+            margin-right: 24px;
+            width: 150px;
+            height: auto;
+        }
+        
+        .about-content {
+            font-size: 20px;
+            margin-bottom: 24px;
+        }
+        
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 24px;
+        }
+        
+        .stat {
+            margin: 12px;
+            padding: 24px;
+            border: 1px solid var(--light);
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat img {
+            width: 64px;
+            height: auto;
+            margin-bottom: 12px;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 24px;
+            text-align: center;
+        }
+        
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        footer ul li {
+            margin-bottom: 24px;
+        }
+        
+        footer ul li a {
+            font-size: 20px;
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        footer address {
+            margin-top: 24px;
+        }
+        
+        @media only screen and (max-width: 768px) {
+            header {
+                padding: 12px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            header.active .nav-links {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary);
+                padding: 24px;
+                border-bottom: 1px solid var(--light);
+            }
+            
+            .hamburger.active .span-1 {
+                transform: rotate(135deg);
+            }
+            
+            .hamburger.active .span-2 {
+                opacity: 0;
+            }
+            
+            .hamburger.active .span-3 {
+                transform: rotate(-135deg);
+            }
+            
+            hero {
+                height: 100vh;
+                background: linear-gradient(to bottom, var(--primary), #2d3436);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+            }
+            
+            hero img {
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 12px;
+            }
+            
+            services {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            service-card {
+                margin: 24px;
+                padding: 24px;
+                border: 1px solid var(--light);
+                border-radius: 12px;
+                box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+                max-width: 360px;
+            }
+            
+            service-card img {
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 24px;
+            }
+            
+            .rating {
+                display: flex;
+                align-items: center;
+            }
+            
+            star-rating {
+                margin: 4px;
+                font-size: 18px;
+            }
+            
+            star-rating svg {
+                fill: var(--accent);
+            }
+            
+            star-rating path {
+                stroke: var(--accent);
+            }
+            
+            gallery {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 24px;
+                margin: 24px;
+            }
+            
+            gallery img {
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+            }
+            
+            review {
+                padding: 24px;
+                border: 1px solid var(--light);
+                border-radius: 12px;
+                box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+            }
+            
+            review img {
+                width: 64px;
+                height: auto;
+                margin-bottom: 24px;
+            }
+            
+            .review-text {
+                margin-bottom: 24px;
+            }
+            
+            about {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 24px;
+                background-color: var(--light);
+                border: 1px solid var(--light);
+                border-radius: 12px;
+                box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+            }
+            
+            .about-image {
+                margin-right: 24px;
+                width: 150px;
+                height: auto;
+            }
+            
+            .about-content {
+                font-size: 20px;
+                margin-bottom: 24px;
+            }
+            
+            .stats {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 24px;
+            }
+            
+            .stat {
+                margin: 12px;
+                padding: 24px;
+                border: 1px solid var(--light);
+                border-radius: 12px;
+                box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+            }
+            
+            .stat img {
+                width: 64px;
+                height: auto;
+                margin-bottom: 12px;
+            }
+            
+            footer {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="hero">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop" alt="Hero Image">
+        <h1>Tampa Plumbers & Drain Experts</h1>
+        <p>Experienced plumbers serving the Tampa area since 2000.</p>
+        <button>Get a Quote</button>
+        <button>Learn More</button>
+        <div class="trust">
+            <div class="trust-badge">
+                <img src="logo1.png" alt="Logo 1">
+            </div>
+            <div class="trust-badge">
+                <img src="logo2.png" alt="Logo 2">
+            </div>
+            <div class="trust-badge">
+                <img src="logo3.png" alt="Logo 3">
+            </div>
+            <div class="trust-badge">
+                <img src="logo4.png" alt="Logo 4">
+            </div>
+        </div>
+    </div>
+    <div id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service Image 1">
+                <h3>Emergency Leak Repair</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service Image 2">
+                <h3>Drain Cleaning</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service Image 3">
+                <h3>Water Heater Install</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </div>
+    <div id="gallery">
+        <h2>Our Work</h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1">
+            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2">
+            <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+        </div>
+    </div>
+    <div id="reviews">
+        <h2>Reviews</h2>
+        <div class="rating">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="star-rating svg-inline--fa fa-star">
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"></path>
+            </svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="star-rating svg-inline--fa fa-star">
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"></path>
+            </svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="star-rating svg-inline--fa fa-star">
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"></path>
+            </svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="star-rating svg-inline--fa fa-star">
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"></path>
+            </svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="star-rating svg-inline--fa fa-star">
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"></path>
+            </svg>
+        </div>
+        <button>Write a Review</button>
+        <div id="reviews-list">
+            <div class="review">
+                <img src="reviewer-image.png" alt="Reviewer Image">
+                <p class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                <div class="rating">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="star-rating svg-inline--fa fa-star">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"></path>
+                    </svg>

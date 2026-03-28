@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampa Bay Plumbers LLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Outfit&family=Syne&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+        }
+        .nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .nav li {
+            margin-right: 20px;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .hamburger {
+            cursor: pointer;
+            display: none;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+        }
+        .hero {
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3rem;
+        }
+        .hero .cta {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .trust-badges img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .service-cards {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .service-card {
+            background-color: var(--light);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 30%;
+        }
+        .service-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .why-choose-us {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .why-choose-us .block {
+            background-color: var(--light);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 30%;
+        }
+        .gallery {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .reviews {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .review {
+            background-color: var(--light);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 50%;
+            margin-bottom: 20px;
+        }
+        .review .stars {
+            display: flex;
+            justify-content: space-between;
+            width: 100px;
+        }
+        .review .stars svg {
+            width: 20px;
+            height: 20px;
+            fill: #ffd700;
+        }
+        .about {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .about img {
+            width: 40%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .about .text {
+            width: 60%;
+            padding: 20px;
+        }
+        .about .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .about .stat {
+            background-color: var(--light);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 30%;
+            text-align: center;
+        }
+        .contact {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .contact button {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            clear: both;
+        }
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav ul {
+                display: none;
+            }
+            .nav ul.show {
+                display: block;
+            }
+            .service-cards {
+                flex-direction: column;
+            }
+            .service-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .why-choose-us {
+                flex-direction: column;
+            }
+            .why-choose-us .block {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .gallery {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .about {
+                flex-direction: column;
+            }
+            .about img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+            .about .text {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <h2>Tampa Bay Plumbers LLC</h2>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('.nav ul');
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+    </script>
+    <section class="hero">
+        <h1>Plumbing Services in FL 33634</h1>
+        <button class="cta">Get a Quote</button>
+        <button class="cta">Schedule a Service</button>
+        <div class="trust-badges">
+            <img src="https://via.placeholder.com/50">
+            <img src="https://via.placeholder.com/50">
+            <img src="https://via.placeholder.com/50">
+            <img src="https://via.placeholder.com/50">
+        </div>
+    </section>
+    <section class="service-cards" id="services">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Emergency Leak Repair">
+            <h2>Emergency Leak Repair</h2>
+            <p>We provide 24/7 emergency leak repair services to fix any plumbing issue.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Drain Cleaning">
+            <h2>Drain Cleaning</h2>
+            <p>Our expert plumbers will clean your drains and ensure they are flowing properly.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Water Heater Install">
+            <h2>Water Heater Install</h2>
+            <p>We install and repair water heaters to provide you with hot water whenever you need it.</p>
+        </div>
+    </section>
+    <section class="why-choose-us">
+        <div class="block">
+            <h2>Why Choose Us?</h2>
+            <p>We are a licensed and insured plumbing company with years of experience.</p>
+        </div>
+        <div class="block">
+            <h2>Our Promise</h2>
+            <p>We promise to provide you with the best plumbing services in FL 33634.</p>
+        </div>
+        <div class="block">
+            <h2>Our Values</h2>
+            <p>We value honesty, integrity, and customer satisfaction.</p>
+        </div>
+    </section>
+    <section class="gallery">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Plumbing Services">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Drain Cleaning">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Water Heater Install">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Pipe Replacement">
+    </section>
+    <section class="reviews">
+        <div class="review">
+            <h2>5.0/5.0</h2>
+            <p>Great service! The plumbers were very professional and fixed my leaky faucet in no time.</p>
+            <div class="stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 3.07 8.63 1.96 16.24 12 17.27zm-1.5-7.75L6.1 16.19 4.18 11.1 12 6.5 19.82 11.1 17.9 16.19 10.5 9.45z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 3.07 8.63 1.96 16.24 12 17.27zm-1.5-7.75L6.1 16.19 4.18 11.1 12 6.5 19.82 11.1 17.9 16.19 10.5 9.45z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 3.07 8.63 1.96 16.24 12 17.27zm-1.5-7.75L6.1 16.19 4.18 11.1 12 6.5 19.82 11.1 17.9 16.19 10.5 9.45z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 3.07 8.63 1.96 16.24 12 17.27zm-1.5-7.75L6.1 16.19 4.18 11.1 12 6.5 19.82 11.1 17.9 16.19 10.5 9.45z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 3.07 8.63 1.96 16.24 12 17.27zm-1.5-7.75L6.1 16.19 4.18 11.1 12 6.5 19.82 11.1 17.9 16.19 10.5 9.45z"></path>
+                </svg>
+            </div>
+        </div>
+        <div class="review">
+            <h2>5.0/5.0</h2>
+            <p>Excellent service! The plumbers were very knowledgeable and fixed my plumbing issue in no time.</p>
+            <div class="stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 3.07 8.63 1.96 16.24 12 17.27zm-1.5-7.75L6.1 16.19 4.18 11.1 12 6.5 19.82 11.1 17.9 16.19 10.5 9.45z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 3.07 8.63 1.96 16.24 12 17.27zm-1.5-7.75L6.1 16.19 4.18 11.1 12 6.5 19.82 11.1 17.9 16.19 10.5 9.45z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 3.07 8.63 1.96 16.24 12 17.27zm-1.5-7.75L6.1 16.19 4.18 11.1 12 6.5 19.82 11.1 17.9 16.19 10.5 9.45z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 3.07 8.63 1.96 16.24 12 17.27zm-1.5-7.75L6.1 16.19 4.18 11.1 12 6.5 19.82 11.1 17.9 16.19 10.5 9.45z"></path>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 3.07 8.63 1.96 16.24 12 17.27zm-1.5-7.75L6.1 16.19 4.18 11.1 12 6.5 19.82 11.1 17.9 16.19 10.5 9.45z"></path>
+                </svg>
+            </div>
+        </div>
+        <div class="review">
+            <h2>5.

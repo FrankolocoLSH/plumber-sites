@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumbgreat Plumbing LLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@300;400;600&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'DM Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+        svg {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+        .hamburger {
+            display: none;
+        }
+        @media only screen and (max-width: 767px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                padding: 1rem;
+                background: var(--primary);
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                transform: translateX(-100%);
+                transition: transform 0.5s;
+            }
+            .nav-links.show {
+                transform: translateX(0);
+            }
+        }
+        .nav-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-links li {
+            margin-bottom: 1rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--light);
+            font-size: 1.5rem;
+        }
+        .hero {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(to bottom, var(--primary), var(--light));
+            color: var(--light);
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px);
+            opacity: 0.5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .ctas {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .cta {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .trust-badge {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 1rem;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: default;
+            margin: 0 1rem;
+        }
+        .trust-badge span {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .section {
+            padding: 5rem 2rem;
+            background-color: var(--light);
+        }
+        .service-card {
+            background-color: var(--bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            width: 80%;
+        }
+        .service-card img {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+            margin: 2rem auto;
+            display: block;
+        }
+        .service-card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .service-description {
+            color: #333;
+            font-size: 1.25rem;
+            font-weight: 400;
+            text-align: center;
+        }
+        .why-choose-us {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .block {
+            background-color: var(--bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 2rem 2rem 2rem 0;
+            width: 45%;
+        }
+        .block img {
+            width: 5rem;
+            height: 5rem;
+            margin: 2rem auto;
+        }
+        .block p {
+            color: #333;
+            font-size: 1.25rem;
+            font-weight: 400;
+            text-align: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding: 5rem;
+        }
+        .gallery img {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+            margin: 2rem auto;
+        }
+        .review {
+            padding: 2rem;
+            background-color: var(--light);
+            border-radius: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 2rem;
+        }
+        .review svg {
+            fill: var(--accent);
+        }
+        .review h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .review p {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        .about {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        .about-text {
+            margin-left: 3rem;
+        }
+        .local-story {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .stats span {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        .stats svg {
+            fill: var(--accent);
+        }
+        .contact {
+            padding: 5rem 2rem;
+            background-color: var(--light);
+        }
+        .contact-form {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .contact-form label {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+        .contact-form input {
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.25rem;
+            width: 100%;
+        }
+        .contact-form button {
+            padding: 1rem;
+            background-color: var(--primary);
+            color: var(--light);
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.25rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        .footer {
+            padding: 2rem;
+            background-color: var(--light);
+            border-radius: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <input class="hamburger" type="checkbox" id="hamburger" />
+            <label for="hamburger">
+                <svg viewBox="0 0 30 30">
+                    <path stroke="#333" stroke-width="2" d="M 3 16 l 18 -18 M 27 8 l -18 18" />
+                </svg>
+            </label>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop" alt="Hero Image" />
+                <h1 class="title">Plumbgreat Plumbing LLC</h1>
+                <h2>Experienced Plumbers in Tampa, FL 33611</h2>
+                <div class="ctas">
+                    <a class="cta" href="#services">Our Services</a>
+                    <a class="cta" href="#about">About Us</a>
+                </div>
+                <div class="trust-badges">
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 16 16">
+                            <path d="M 12 2 C 9.621 2 7.5 3.621 6 6 L 10 12" />
+                        </svg> 5 stars - Google Reviews
+                    </span>
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 16 16">
+                            <path d="M 12 2 C 9.621 2 7.5 3.621 6 6 L 10 12" />
+                        </svg> Highly rated by Angie's List
+                    </span>
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 16 16">
+                            <path d="M 12 2 C 9.621 2 7.5 3.621 6 6 L 10 12" />
+                        </svg> Family-owned business
+                    </span>
+                    <span class="trust-badge">
+                        <svg viewBox="0 0 16 16">
+                            <path d="M 12 2 C 9.621 2 7.5 3.621 6 6 L 10 12" />
+                        </svg> Fully licensed and insured
+                    </span>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="services">
+            <div class="container">
+                <h1 class="title">Our Services</h1>
+                <div class="service-cards">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service Image 1" />
+                        <h2>Emergency Leak Repair</h2>
+                        <p class="service-description">We are available 24/7 to repair leaks and prevent water damage.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service Image 2" />
+                        <h2>Drain Cleaning</h2>
+                        <p class="service-description">Our team can clear clogs and improve the flow of your drains.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service Image 3" />
+                        <h2>Water Heater Install</h2>
+                        <p class="service-description">We can install, repair, and replace water heaters to ensure hot water at home.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="why-choose-us">
+            <div class="container">
+                <h1 class="title">Why Choose Plumbgreat Plumbing LLC?</h1>
+                <div class="why-choose-us">
+                    <div class="block">
+                        <img src="https://image.flaticon.com/icons/png/512/1051/1051366.png" alt="Experienced Plumbers" />
+                        <h2>Experienced Plumbers</h2>
+                        <p>Our team is comprised of experienced plumbers with a deep understanding of plumbing systems and emergency repairs.</p>
+                    </div>
+                    <div class="block">
+                        <img src="https://image.flaticon.com/icons/png/512/1116/1116493.png" alt="Fast Service" />
+                        <h2>Fast Service</h2>
+                        <p>Our emergency plumbing services are designed to deliver fast results, so you can trust your home will be restored to normal quickly.</p>
+                    </div>
+                    <div class="block">
+                        <img src="https://image.flaticon.com/icons/png/512/1153/1153732.png" alt="Affordable Prices" />
+                        <h2>Affordable Prices</h2>
+                        <p>We offer competitive pricing for all plumbing services, including emergency repairs, installation, maintenance, and water heater replacement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="gallery">
+            <div class="container">
+                <h1 class="title">Our Work</h1>
+                <div class="gallery">
+                    <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1" />
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2" />
+                </div>
+            </div>
+        </section>
+        <section class="section" id="reviews">
+            <div class="container">
+                <h1 class="title">Recent Reviews</h1>
+                <div class="reviews-list">
+                    <div class="review">
+                        <svg viewBox="0 0 16 16">
+                            <path stroke="#333" stroke-width="2" d="M 12 2 C 9.621 2 7.5 3.621 6 6 L 10 12" />
+                        </svg>
+                        <h3>5/5 stars - Google Reviews</h3>
+                        <p>Plumbgreat Plumbing LLC is a great choice for emergency plumbing repairs! They are fast and trustworthy.</p>
+                    </div>
+                    <div class="review">
+                        <svg viewBox="0 0 16 16">
+                            <path stroke="#333" stroke-width="2" d="M 12 2 C 9.621 2 7.5 3.621 6 6 L 10 12" />
+                        </svg>
+                        <h3>5/5 stars - Yelp</h3>
+                        <p>Plumbgreat Plumbing LLC has always responded quickly and done a great job on any plumbing service I've needed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="about">
+            <div class="container">
+                <h1 class="title">About Us</h1>
+                <div class="about">
+                    <div class="about-text">
+                        <h2>Local, Family-Owned Business</h2>
+                        <p>At Plumbgreat Plumbing LLC, we are proud to be a local, family-owned plumbing business serving the Tampa area. We specialize in providing expert plumbing service and emergency repair services.</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image" />
+                    <div class="stats">
+                        <span>157 reviews - 5 stars!</span>
+                        <span>A+</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="contact">
+            <div class="container">
+                <h1 class="title">Get in Touch</h1>
+                <div class="contact">
+                    <p>&#9743; <a href="tel:(813) 595-3563">(813) 595-3563</a></p>
+                    <p>&#x2709; <a href="mailto:cthompson@plumbgreat.com">cthompson@plumbgreat.com</a></p>
+                    <p>4315 Aegean Dr APT 256C, Tampa, FL 33611, USA</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="section">
+        <div class="container">
+            <p>&#169; 2023 Plumbgreat Plumbing LLC. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

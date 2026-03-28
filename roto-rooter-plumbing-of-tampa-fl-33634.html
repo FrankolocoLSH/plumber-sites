@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roto-Rooter Plumbing of Tampa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Outfit&family=Syne&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+        }
+        .nav {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .hamburger {
+            cursor: pointer;
+            display: none;
+        }
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero::before {
+            content: '';
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3rem;
+            z-index: 1;
+        }
+        .hero .cta {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        .trust-badges img {
+            height: 2rem;
+        }
+        .service-cards {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5rem;
+        }
+        .service-card {
+            background-color: var(--light);
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 1rem;
+            width: calc(33.33% - 2rem);
+        }
+        .service-card img {
+            width: 100%;
+            height: 10rem;
+            object-fit: cover;
+            border-radius: 1rem 1rem 0 0;
+        }
+        .service-card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+        }
+        .why-choose-us {
+            margin-top: 5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .why-choose-us block {
+            background-color: var(--light);
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 1rem;
+            width: calc(33.33% - 2rem);
+        }
+        .why-choose-us block h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+        }
+        .gallery {
+            margin-top: 5rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        .gallery img {
+            width: 100%;
+            height: 10rem;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+        .reviews {
+            margin-top: 5rem;
+        }
+        .review {
+            background-color: var(--light);
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 1rem;
+        }
+        .review .stars {
+            display: inline-block;
+            width: 5rem;
+            height: 1rem;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.096L3.176 10.088 0.08 6.51l5.884-3.096L10 0z" fill="%23e8651a" /><path d="M10 0l5.878 3.096L16.824 10.088 20 6.51l-5.884 3.096L10 15z" fill="%23e8651a" /></svg>');
+            background-size: 1rem 1rem;
+            background-repeat: repeat-x;
+        }
+        .review .stars::before {
+            content: '';
+            display: inline-block;
+            width: calc(4.8 / 5 * 5rem);
+            height: 1rem;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.096L3.176 10.088 0.08 6.51l5.884-3.096L10 0z" fill="%23e8651a" /><path d="M10 0l5.878 3.096L16.824 10.088 20 6.51l-5.884 3.096L10 15z" fill="%23e8651a" /></svg>');
+            background-size: 1rem 1rem;
+            background-repeat: repeat-x;
+            position: absolute;
+        }
+        .about {
+            margin-top: 5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .about img {
+            width: 20rem;
+            height: 15rem;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+        .about .text {
+            padding: 2rem;
+        }
+        .contact {
+            margin-top: 5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .contact form {
+            padding: 2rem;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+        }
+        .contact button {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="hamburger" onclick="toggleNav()"></div>
+        <ul id="nav-menu">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="hero" id="hero">
+        <h1>Expert Plumbers in FL 33634</h1>
+        <button class="cta">Get a Quote</button>
+        <button class="cta">Schedule a Service</button>
+        <div class="trust-badges">
+            <img src="https://example.com/trust-badge-1.png" alt="Trust Badge 1">
+            <img src="https://example.com/trust-badge-2.png" alt="Trust Badge 2">
+            <img src="https://example.com/trust-badge-3.png" alt="Trust Badge 3">
+            <img src="https://example.com/trust-badge-4.png" alt="Trust Badge 4">
+        </div>
+    </section>
+    <section class="service-cards" id="services">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1">
+            <h2>Emergency Leak Repair</h2>
+            <p>Our expert plumbers are available 24/7 to fix any leak or plumbing issue.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2">
+            <h2>Drain Cleaning</h2>
+            <p>Our state-of-the-art equipment and techniques ensure your drains are flowing freely.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3">
+            <h2>Water Heater Install</h2>
+            <p>From installation to maintenance, we've got you covered for all your water heater needs.</p>
+        </div>
+    </section>
+    <section class="why-choose-us">
+        <div class="block">
+            <h2>Quality Workmanship</h2>
+            <p>Our plumbers are trained to provide the highest level of service and workmanship.</p>
+        </div>
+        <div class="block">
+            <h2>Competitive Pricing</h2>
+            <p>We offer fair and transparent pricing for all our services.</p>
+        </div>
+        <div class="block">
+            <h2>Excellent Customer Service</h2>
+            <p>Our friendly and knowledgeable staff are always happy to help with any questions or concerns.</p>
+        </div>
+    </section>
+    <section class="gallery">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery 1">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery 2">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery 3">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery 4">
+    </section>
+    <section class="reviews">
+        <div class="review">
+            <p>Very professional and courteous service. Highly recommend!</p>
+            <div class="stars"></div>
+        </div>
+        <div class="review">
+            <p>Quick and efficient service. Great price too!</p>
+            <div class="stars"></div>
+        </div>
+        <div class="review">
+            <p>Excellent service from start to finish. Will definitely use again!</p>
+            <div class="stars"></div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image">
+        <div class="text">
+            <h2>About Us</h2>
+            <p>We are a team of expert plumbers dedicated to providing the highest level of service and workmanship.</p>
+            <p>We have been serving the FL 33634 area for over 10 years and have built a reputation for quality and reliability.</p>
+            <h2>Our Story</h2>
+            <p>Our company was founded on the principles of hard work, dedication, and excellent customer service.</p>
+            <h2>Our Stats</h2>
+            <ul>
+                <li>10+ years of experience</li>
+                <li>500+ customers served</li>
+                <li>95% customer satisfaction rate</li>
+            </ul>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="text">
+            <h2>Get in Touch</h2>
+            <p>Phone: <a href="tel:(813) 982-4112">(813) 982-4112</a></p>
+            <p>Address: 5020 Tampa W Blvd, Tampa, FL 33634, USA</p>
+        </div>
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button>Send Message</button>
+        </form>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2023 Roto-Rooter Plumbing of Tampa</p>
+    </footer>
+    <script>
+        function toggleNav() {
+            var navMenu = document.getElementById("nav-menu");
+            if (navMenu.style.display === "block") {
+                navMenu.style.display = "none";
+            } else {
+                navMenu.style.display = "block";
+            }
+        }
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                console.log("Element is visible");
+            }
+        }, { threshold: 1.0 });
+        observer.observe(document.querySelector(".hero"));
+    </script>
+</body>
+</html>

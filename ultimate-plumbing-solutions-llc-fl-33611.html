@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Plumbing Solutions LLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Outfit&family=Syne&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            color: var(--bg);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header svg {
+            width: 2rem;
+            height: 2rem;
+            fill: var(--bg);
+        }
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .nav-links li {
+            margin-right: 2rem;
+        }
+        .nav-links a {
+            color: var(--bg);
+            text-decoration: none;
+        }
+        .hamburger {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+        .hero {
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--bg);
+        }
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3rem;
+        }
+        .hero p {
+            font-size: 1.5rem;
+        }
+        .cta {
+            background-color: var(--accent);
+            color: var(--bg);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        .trust-badge {
+            background-color: var(--light);
+            padding: 1rem;
+            border: 1px solid var(--primary);
+            margin-right: 1rem;
+        }
+        .services {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5rem;
+        }
+        .service {
+            background-color: var(--bg);
+            padding: 2rem;
+            border: 1px solid var(--primary);
+            width: calc(33.33% - 1rem);
+            margin: 1rem;
+        }
+        .service img {
+            width: 100%;
+            height: 10rem;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+        .why-choose-us {
+            margin-top: 5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .why-choose-us block {
+            background-color: var(--light);
+            padding: 2rem;
+            border: 1px solid var(--primary);
+            width: calc(33.33% - 1rem);
+            margin: 1rem;
+        }
+        .gallery {
+            margin-top: 5rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1rem;
+        }
+        .gallery img {
+            width: 100%;
+            height: 10rem;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+        .reviews {
+            margin-top: 5rem;
+        }
+        .review {
+            background-color: var(--light);
+            padding: 2rem;
+            border: 1px solid var(--primary);
+            margin-bottom: 1rem;
+        }
+        .review svg {
+            width: 1rem;
+            height: 1rem;
+            fill: var(--accent);
+        }
+        .about {
+            margin-top: 5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .about img {
+            width: 10rem;
+            height: 10rem;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+        .about-text {
+            margin-left: 2rem;
+        }
+        .stats {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .stat {
+            background-color: var(--light);
+            padding: 1rem;
+            border: 1px solid var(--primary);
+            width: calc(33.33% - 1rem);
+            margin: 1rem;
+        }
+        .contact {
+            margin-top: 5rem;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-form input {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--primary);
+        }
+        .contact-form textarea {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--primary);
+        }
+        .contact-form button {
+            background-color: var(--accent);
+            color: var(--bg);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        footer {
+            background-color: var(--primary);
+            color: var(--bg);
+            padding: 1rem;
+            text-align: center;
+            margin-top: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/></svg>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose-us">Why Choose Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        </div>
+    </header>
+    <section class="hero" id="hero">
+        <h1>Ultimate Plumbing Solutions LLC - Your Trusted Plumber in FL 33611</h1>
+        <p>We provide emergency leak repair, drain cleaning, water heater installation, and more!</p>
+        <button class="cta">Get a Quote</button>
+        <button class="cta">Schedule a Service</button>
+        <div class="trust-badges">
+            <div class="trust-badge">Licensed and Insured</div>
+            <div class="trust-badge">Bonded and Background Checked</div>
+            <div class="trust-badge">24/7 Emergency Services</div>
+            <div class="trust-badge">Satisfaction Guaranteed</div>
+        </div>
+    </section>
+    <section class="services" id="services">
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Emergency Leak Repair">
+            <h2>Emergency Leak Repair</h2>
+            <p>We provide fast and reliable emergency leak repair services to prevent water damage and minimize downtime.</p>
+        </div>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Drain Cleaning">
+            <h2>Drain Cleaning</h2>
+            <p>Our experienced plumbers use state-of-the-art equipment to clean your drains and prevent clogs.</p>
+        </div>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Water Heater Installation">
+            <h2>Water Heater Installation</h2>
+            <p>We install and replace water heaters to provide you with constant hot water and energy efficiency.</p>
+        </div>
+    </section>
+    <section class="why-choose-us" id="why-choose-us">
+        <div class="block">
+            <h2>Experience and Expertise</h2>
+            <p>Our plumbers have years of experience and are trained to handle any plumbing issue.</p>
+        </div>
+        <div class="block">
+            <h2>State-of-the-Art Equipment</h2>
+            <p>We use the latest technology and equipment to ensure efficient and effective plumbing services.</p>
+        </div>
+        <div class="block">
+            <h2>Customer Satisfaction</h2>
+            <p>We prioritize customer satisfaction and strive to provide the best possible service experience.</p>
+        </div>
+    </section>
+    <section class="gallery" id="gallery">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Plumbing Services">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Plumbing Repairs">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Water Heater Installation">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Drain Cleaning">
+    </section>
+    <section class="reviews" id="reviews">
+        <div class="review">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/></svg>
+            <p>Rated 4.9/5 based on 431 reviews</p>
+        </div>
+        <div class="review">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/></svg>
+            <p>Ultimate Plumbing Solutions LLC is the best plumbing company in FL 33611!</p>
+        </div>
+        <div class="review">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/></svg>
+            <p>Their plumbers are professional, efficient, and affordable.</p>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Us">
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>Ultimate Plumbing Solutions LLC is a locally owned and operated plumbing company serving FL 33611.</p>
+            <p>We are committed to providing our customers with the best possible service experience.</p>
+        </div>
+    </section>
+    <section class="stats" id="stats">
+        <div class="stat">
+            <h2>Years of Experience</h2>
+            <p>10+ years of experience in the plumbing industry</p>
+        </div>
+        <div class="stat">
+            <h2>Number of Customers</h2>
+            <p>1000+ satisfied customers in FL 33611</p>
+        </div>
+        <div class="stat">
+            <h2>Rating</h2>
+            <p>Rated 4.9/5 based on 431 reviews</p>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <h2>Get in Touch</h2>
+        <p>Phone: <a href="tel:(813) 296-2010">(813) 296-2010</a></p>
+        <p>Email: </p>
+        <p>Address: 4207 S Dale Mabry Hwy unit 10301, Tampa, FL 33611, USA</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button>Send</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Ultimate Plumbing Solutions LLC</p>
+        <p>4207 S Dale Mabry Hwy unit 10301, Tampa, FL 33611, USA</p>
+        <p>Phone: <a href="tel:(813) 296-2010">(813) 296-2010</a></p>
+    </footer>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, { threshold: 1.0 });
+        const elements = document.querySelectorAll('.service, .block, .review, .stat');
+        elements.forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>

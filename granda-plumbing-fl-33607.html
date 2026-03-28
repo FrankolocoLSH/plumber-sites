@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Granda Plumbing | Emergency Plumbing Services in Tampa, FL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <button class="hamburger" aria-label="Mobile menu">
+        <svg width="20" height="20" viewBox="0 0 20 20">
+          <path d="M0 3.75l2.5-2.5L3.75 0l4 4 4 4l-1.25 1.25l-4 4l-4-4l1.25-1.25l-2.5 2.5L3.75 20l-2.5-2.5l2.5-2.5z"></path>
+        </svg>
+      </button>
+      <ul>
+        <li>
+          <a href="#hero">Home</a>
+        </li>
+        <li>
+          <a href="#services">Services</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="logo">
+      <a href="">
+        Granda Plumbing
+        <span>Emergency Plumbing Services in Tampa, FL</span>
+      </a>
+    </div>
+  </header>
+  <main>
+    <section id="hero">
+      <div class="container">
+        <img src="{{ HERO_IMAGE }}" alt="Hero Image" class="hero-image-cover">
+        <div class="overlay">
+          <h1>Emergency Plumbing Services in Tampa, FL 33607</h1>
+          <h2>Trust Granda Plumbing for all your plumbing needs.</h2>
+          <div class="call-to-action">
+            <a href="#" class="btn">
+              <svg width="20" height="20" viewBox="0 0 20 20">
+                <path d="M0 1.5h7c.83 0 1.5.67 1.5 1.5v8.5l-4 4-4-4h4v-7z"></path>
+                <path d="M16 1.5l-7-7c-.4-.4-.5-.9-.5-1.5-1.15-.65-1.5-1.5-1.5-2.35-.5-2.1.2-2.5 1.5"></path>
+              </svg>
+              Contact Us
+            </a>
+          </div>
+          <div class="trust-badges">
+            <img src="https://raw.githubusercontent.com/TeamHackerTeam/Team-Logo/main/team-1.png" class="badge">
+            <img src="https://raw.githubusercontent.com/TeamHackerTeam/Team-Logo/main/team-2.png" class="badge">
+            <img src="https://raw.githubusercontent.com/TeamHackerTeam/Team-Logo/main/team-3.png" class="badge">
+            <img src="https://raw.githubusercontent.com/TeamHackerTeam/Team-Logo/main/team-4.png" class="badge">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="services">
+      <div class="container">
+        <h1>Our Services</h1>
+        <div class="service-cards">
+          <div class="card">
+            <h2>Emergency Leak Repair</h2>
+            <p>We fix leaks quickly and efficiently.</p>
+          </div>
+          <div class="card">
+            <h2>Drain Cleaning</h2>
+            <p>Clear your drains with our expert service.</p>
+          </div>
+          <div class="card">
+            <h2>Water Heater Install</h2>
+            <p>We install and repair water heaters with ease.</p>
+          </div>
+        </div>
+        <div class="testimonials">
+          <h3>Why Choose Us?</h3>
+          <div class="testimonial-block">
+            <h4>Expert Plumbers</h4>
+            <p>Our team of expert plumbers provide top-notch service.</p>
+          </div>
+          <div class="testimonial-block">
+            <h4>Emergency Services</h4>
+            <p>We offer 24/7 emergency service for all your plumbing needs.</p>
+          </div>
+          <div class="testimonial-block">
+            <h4>Quality Workmanship</h4>
+            <p>Our team of plumbers guarantee quality workmanship for all services.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="gallery">
+      <div class="container">
+        <h1>Gallery</h1>
+        <div class="image-grid">
+          <div class="grid-item">
+            <img src="{{ GALLERY_IMAGE_1 }}" alt="Gallery Image 1">
+          </div>
+          <div class="grid-item">
+            <img src="{{ GALLERY_IMAGE_2 }}" alt="Gallery Image 2">
+          </div>
+          <div class="grid-item">
+            <img src="{{ GALLERY_IMAGE_3 }}" alt="Gallery Image 3">
+          </div>
+          <div class="grid-item">
+            <img src="{{ GALLERY_IMAGE_4 }}" alt="Gallery Image 4">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="reviews">
+      <div class="container">
+        <h1>Reviews</h1>
+        <div class="reviews-container">
+          <div class="review">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 0-2 2-.9 2 2 2zm0-7c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2.001zm0 11c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
+            </svg>
+            <h4>Rating: 4.9</h4>
+            <p>{{ reviews }} Reviews</p>
+          </div>
+          <div class="rating">
+            <!-- Rating stars will be generated dynamically -->
+          </div>
+        </div>
+        <div class="text-area">
+          <h3>Great service from Granda Plumbing!</h3>
+          <p>This is a testimonial from a satisfied customer.</p>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="container">
+        <h1>About Us</h1>
+        <div class="profile-picture">
+          <img src="{{ ABOUT_IMAGE }}" alt="About Image">
+        </div>
+        <div class="story">
+          <h3>Local Plumbing Experts</h3>
+          <p>At Granda Plumbing, we offer emergency plumbing services in Tampa, FL 33607.</p>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <h4>Years of Experience</h4>
+            <p>10+ years of providing top-notch plumbing service.</p>
+          </div>
+          <div class="stat">
+            <h4>Plumbing Services Offered</h4>
+            <p>From emergency repairs to installations, we've got you covered.</p>
+          </div>
+          <div class="stat">
+            <h4>Customer Reviews</h4>
+            <p>Check out what our customers have to say about us!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <div class="contact-container">
+          <div class="phone-number">
+            <h3>Phone:</h3>
+            <p><a href="tel:8135992468">(813) 599-2468</a></p>
+          </div>
+          <div class="mail-address">
+            <h3>Email:</h3>
+            <p><a href="mailto:grandaplumbing@gmail.com">grandaplumbing@gmail.com</a></p>
+          </div>
+          <div class="location">
+            <h3>Location:</h3>
+            <p>1523 W Grace St, Tampa, FL 33607, USA</p>
+          </div>
+          <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <input type="tel" placeholder="Phone">
+            <textarea placeholder="Message"></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Granda Plumbing. All Rights Reserved.</p>
+      <div class="social-links">
+        <a href="#" target="_blank">
+          <svg width="24" height="24" viewBox="0 0 24 24">
+            <path d="M12 2c-3.54 0-6.28 2.74-7.55 6.37-2.54 5.65-2.54 13.43 0 19l5-11c2.19.1 4.38-.97 5.42-3.68a8.38 8.38 0 0 1 3.36-4.92c1.9 2.1 3.35 4.92 3.35 8.03 0 3.1-1.46 5.92-3.34 8.02a8.4 8.4 0 0 1-3.36 4.92c-.95 2.7-2.92 4.69-5.42 3.68l5 11c0 6.64-4.86 12-11.05 12-.98 0-1.87-.15-2.76-.39-.89-.24-1.74-.55-2.54-1.02a2.54 2.54 0 0 0-1.02-.38.55.55 0 0 0-.38-.39h0a5.6 5.6 0 0 0-.38-.39 3.2 3.2 0 0 0-1.01 1.02c-.89.24-1.76.39-2.76.55-.98.15-1.87.28-2.76.39a2.54 2.54 0 0 0-2.76 1.02 2.76 2.76 0 0 0-1.02 2.54c0 .89.24 1.76.55 2.54.31.78.55 1.56.55 2.54 0 11.35 4.86 12 11.05 12-.24 0-.39.15-.39.38-.24.55-.38 1.02-.38 2.54 0 1.89.28 3.69.67 5.35l-5 11a5 5 0 0 0 5 5.1 5 5 0 0 0 5 0v-10a5 5 0 0 0-4-5.1 4.38 4.38 0 0 0-5 0zM7 6h6v2H7V6zm9 8.92l-2.15-2.15a2.15 2.15 0 0 1 0-3.13A2.14 2.14 0 0 1 10 8.92.92.92 0 0 0 9 14a1.92 1.92 0 0 1-1.94.92.92.92 0 0 1-.14.39z"></path>
+          </svg>
+        </a>
+        <a href="#" target="_blank">
+          <svg width="24" height="24" viewBox="0 0 24 24">
+            <path d="M12 2c-3.54 0-6.28 2.74-7.55 6.37-2.54 5.65-2.54 13.43 0 19l5-11c2.19.1 4.38-.97 5.42-3.68a8.38 8.38 0 0 1 3.36-4.92c1.9 2.1 3.35 4.92 3.35 8.03 0 3.1-1.46 5.92-3.34 8.02a8.4 8.4 0 0 1-3.36 4.92c-.95 2.7-2.92 4.69-5.42 3.68l5 11c0 6.64-4.86 12-11.05 12-.98 0-1.87-.15-2.76-.39-.89-.24-1.74-.55-2.54-1.02a2.54 2.54 0 0 0-1.02-.38.55.55 0 0 0-.38-.39h0a5.6 5.6 0 0 0-.38-.39 3.2 3.2 0 0 0-1.01 1.02c-.89.24-1.76.39-2.76.55-.98.15-1.87.28-2.76.39a2.54 2.54 0 0 0-2.76 1.02 2.76 2.76 0 0 0-1.02 2.54c0 .89.24 1.76.55 2.54.31.78.55 1.56.55 2.54 0 11.35 4.86 12 11.05 12-.24 0-.39.15-.39.38-.24.55-.38 1.02-.38 2.54 0 1.89.28 3.69.67 5.35l-5 11a5 5 0 0 0 5 5.1 5 5 0 0 0 5 0v-10a5 5 0 0 0-4-5.1 4.38 4.38 0 0 0-5 0zM7 6h6v2H7V6zm9 8.92l-2.15-2.15a2.15 2.15 0 0 1 0-3.13A2.14 2.14 0 0 1 10 8.92.92.92 0 0 0 9 14a1.92 1.92 0 0 1-1.94.92.92.92 0 0 1-.14.39z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+```
+Please note that this is a basic template and will require CSS and JavaScript to become functional. The provided CSS should be placed in a separate file (e.g. "styles.css") and will be used to style the HTML elements. The JavaScript can be used to add functionality to the website such as animating the hero image, handling form submissions, etc.
+
+The `--primary`, `--accent`, `--bg`, `--light` CSS variables are defined in the `styles.css` file and are used throughout the website.
+
+```css
+/* styles.css */
+
+:root {
+  --primary: #1a2744;
+  --accent: #e8651a;
+  --bg: #fff;
+  --light: #f4f7fb;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+}
+
+header {
+  background-color: var(--primary);
+  color: var(--light);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav li a {
+  color: var(--light);
+  text-decoration: none;
+}
+
+nav li a:hover {
+  color: var(--accent);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--light);
+  text-decoration: none;
+}
+
+.hero-image-cover {
+  object-fit: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+
+.overlay {
+  background

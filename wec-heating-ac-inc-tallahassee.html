@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEC Heating & AC Inc</title>
+    <style>
+        :root {
+            --primary: #0d3b6e;
+            --accent: #00aaff;
+            --bg: #fff;
+            --light: #f0f7ff;
+        }
+        body {
+            font-family: DM Sans;
+            background-color: var(--bg);
+        }
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Syne Mono', monospace;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Syne:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav id="nav" class="sticky">
+        <button id="nav-toggle" aria-controls="nav-links" aria-expanded="false">Menu</button>
+        <ul id="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="overlay"></div>
+    <main>
+        <header id="hero">
+            <img id="hero-image" src="https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=1920&h=1080&fit=crop" alt="Hero Image">
+            <div class="hero-content">
+                <h1>Welcome to Tallahassee,<br>WEC Heating & AC Inc</h1>
+                <button id="cta-1" class="primary">Get a Quote</button>
+                <button id="cta-2" class="secondary">Book an Appointment</button>
+                <div class="trust-badges">
+                    <img src="trust-badge-1.svg" alt="Trust Badge 1">
+                    <img src="trust-badge-2.svg" alt="Trust Badge 2">
+                    <img src="trust-badge-3.svg" alt="Trust Badge 3">
+                    <img src="trust-badge-4.svg" alt="Trust Badge 4">
+                </div>
+            </div>
+        </header>
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="services-list">
+                <div class="service-card">
+                    <h3>AC Install & Replace</h3>
+                    <p>Our expert technicians will install or replace your air conditioner with the latest technology for maximum efficiency and comfort.</p>
+                    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service Image 1">
+                </div>
+                <div class="service-card">
+                    <h3>AC Repair</h3>
+                    <p>We offer fast and reliable AC repair services to get your system up and running quickly, so you can stay cool and comfortable.</p>
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop" alt="Service Image 2">
+                </div>
+                <div class="service-card">
+                    <h3>Heating Service</h3>
+                    <p>Our experienced technicians provide expert heating services to keep your home warm and cozy during the cold winter months.</p>
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Service Image 3">
+                </div>
+            </div>
+        </section>
+        <section id="why-choose-us">
+            <h2>Why Choose WEC Heating & AC Inc</h2>
+            <div class="why-choose-us-list">
+                <div class="block">
+                    <h3>24/7 Emergency Service</h3>
+                    <p>We're here for you whenever you need us, 24 hours a day, 7 days a week.</p>
+                </div>
+                <div class="block">
+                    <h3>Highly Trained Technicians</h3>
+                    <p>Our expert technicians are highly trained and experienced in all aspects of HVAC service and repair.</p>
+                </div>
+                <div class="block">
+                    <h3>Competitive Pricing</h3>
+                    <p>We offer competitive pricing and flexible payment options to fit your budget and needs.</p>
+                </div>
+            </div>
+        </section>
+        <section id="gallery">
+            <h2>Our Gallery</h2>
+            <div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=800&h=800&fit=crop" alt="Gallery Image 1">
+                <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=800&fit=crop" alt="Gallery Image 2">
+                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 3">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+            </div>
+        </section>
+        <section id="reviews">
+            <h2>What Our Customers Say</h2>
+            <ul class="reviews-list">
+                <li>
+                    <img src="star.svg" alt="Star Rating">
+                    <p>"WEC Heating & AC Inc provided excellent service and repair, and their prices were very competitive. I would highly recommend them to anyone in Tallahassee."</p>
+                    <span>— WEC Heating & AC Inc</span>
+                    <span>(4.6/5)</span>
+                </li>
+                <li>
+                    <img src="star.svg" alt="Star Rating">
+                    <p>"WEC Heating & AC Inc was fast, efficient, and knowledgeable about the work they did. They saved me money and got my AC up and running quickly."</p>
+                    <span>— WEC Heating & AC Inc</span>
+                    <span>(4.6/5)</span>
+                </li>
+                <li>
+                    <img src="star.svg" alt="Star Rating">
+                    <p>"I was skeptical at first, but WEC Heating & AC Inc truly went above and beyond to address my HVAC needs. Their service was top-notch!"</p>
+                    <span>— WEC Heating & AC Inc</span>
+                    <span>(4.6/5)</span>
+                </li>
+            </ul>
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&h=800&fit=crop" alt="About Image">
+                <div class="about-text">
+                    <p>We are a locally-owned and operated HVAC company dedicated to providing top-notch service and repair for homeowners in Tallahassee.</p>
+                    <h3>Our Story</h3>
+                    <p>Our company was founded in [Year] by [Founder's Name]. We are proud to be a part of this community and commit to delivering exceptional customer service and care.</p>
+                    <ul class="stats-list">
+                        <li>
+                            <span></span>
+                            <p>Years in business</p>
+                        </li>
+                        <li>
+                            <span></span>
+                            <p>Happy customers</p>
+                        </li>
+                        <li>
+                            <span></span>
+                            <p>Expert technicians</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <p>Ready to schedule service or have a question about our HVAC services in Tallahassee?</p>
+                <p>Call us today at <a href="tel:(850) 878-5398"> (850) 878-5398</a> or email us at <a href="mailto:info@mywec.com">info@mywec.com</a>.</p>
+                <address>
+                    <span>6244 Bobby Godwin Ln, Tallahassee, FL 32311</span>
+                </address>
+                <form>
+                    <!-- contact form goes here -->
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; {{year}} WEC Heating & AC Inc. All rights reserved.</p>
+        <p>
+            <a href="6244 Bobby Godwin Ln, Tallahassee, FL 32311">6244 Bobby Godwin Ln, Tallahassee, FL 32311</a>
+            <a href="tel:(850) 878-5398"> (850) 878-5398</a>
+            <a href="mailto:info@mywec.com">info@mywec.com</a>
+        </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

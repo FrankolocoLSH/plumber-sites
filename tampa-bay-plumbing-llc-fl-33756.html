@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tampa Bay Plumbing LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Outfit&family=Syne&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a2744;
+      --accent: #e8651a;
+      --bg: #fff;
+      --light: #f4f7fb;
+    }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: var(--primary);
+      color: #fff;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header nav {
+      display: flex;
+      align-items: center;
+    }
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 1rem;
+    }
+    header nav a:hover {
+      color: var(--accent);
+    }
+    .hamburger {
+      cursor: pointer;
+    }
+    .hero {
+      height: 100vh;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 3rem;
+    }
+    .hero p {
+      font-size: 1.5rem;
+    }
+    .hero .cta {
+      background-color: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .hero .cta:hover {
+      background-color: var(--primary);
+    }
+    .trust-badges {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
+    .trust-badges img {
+      height: 50px;
+      margin-right: 1rem;
+    }
+    .services {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+    .service {
+      background-color: var(--bg);
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: calc(33.33% - 1rem);
+      margin: 1rem;
+    }
+    .service img {
+      height: 150px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+    .why-choose-us {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+    .why-choose-us block {
+      background-color: var(--bg);
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: calc(33.33% - 1rem);
+      margin: 1rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+      margin-top: 2rem;
+    }
+    .gallery img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .reviews {
+      margin-top: 2rem;
+    }
+    .review {
+      background-color: var(--bg);
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    .review svg {
+      color: #ffd700;
+    }
+    .about {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+    .about img {
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-right: 1rem;
+    }
+    .about .text {
+      width: calc(100% - 200px);
+    }
+    .about .stats {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
+    .about .stats div {
+      background-color: var(--bg);
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: calc(33.33% - 1rem);
+      margin: 1rem;
+    }
+    .contact {
+      margin-top: 2rem;
+    }
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+    .contact button {
+      background-color: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .contact button:hover {
+      background-color: var(--primary);
+    }
+    footer {
+      background-color: var(--primary);
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <span class="hamburger">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </span>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1>Plumbing Services in FL 33756</h1>
+    <p>Trust Tampa Bay Plumbing LLC for all your plumbing needs</p>
+    <button class="cta">Get a Quote</button>
+    <button class="cta">Schedule Service</button>
+    <div class="trust-badges">
+      <img src="https://via.placeholder.com/50" alt="">
+      <img src="https://via.placeholder.com/50" alt="">
+      <img src="https://via.placeholder.com/50" alt="">
+      <img src="https://via.placeholder.com/50" alt="">
+    </div>
+  </section>
+  <section class="services">
+    <div class="service">
+      <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="">
+      <h2>Emergency Leak Repair</h2>
+      <p>Our team is available 24/7 to repair any leaks and prevent water damage</p>
+    </div>
+    <div class="service">
+      <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="">
+      <h2>Drain Cleaning</h2>
+      <p>Our expert technicians will clear any clogs and ensure your drains are flowing smoothly</p>
+    </div>
+    <div class="service">
+      <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="">
+      <h2>Water Heater Install</h2>
+      <p>We install and repair water heaters to ensure you have hot water when you need it</p>
+    </div>
+  </section>
+  <section class="why-choose-us">
+    <div class="block">
+      <h2>Quality Service</h2>
+      <p>Our team is dedicated to providing the highest quality service to our customers</p>
+    </div>
+    <div class="block">
+      <h2>Affordable Prices</h2>
+      <p>We offer competitive pricing without sacrificing quality or service</p>
+    </div>
+    <div class="block">
+      <h2>Trusted Experts</h2>
+      <p>Our technicians are licensed, bonded, and insured to ensure your safety and satisfaction</p>
+    </div>
+  </section>
+  <section class="gallery">
+    <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="">
+    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="">
+    <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="">
+    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="">
+  </section>
+  <section class="reviews">
+    <div class="review">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.5 17 14.72 18.18 21.88 12 17.96 5.82 21.88 7 14.72 2 9.5 8.91 8.26"></polygon></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.5 17 14.72 18.18 21.88 12 17.96 5.82 21.88 7 14.72 2 9.5 8.91 8.26"></polygon></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.5 17 14.72 18.18 21.88 12 17.96 5.82 21.88 7 14.72 2 9.5 8.91 8.26"></polygon></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.5 17 14.72 18.18 21.88 12 17.96 5.82 21.88 7 14.72 2 9.5 8.91 8.26"></polygon></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.5 17 14.72 18.18 21.88 12 17.96 5.82 21.88 7 14.72 2 9.5 8.91 8.26"></polygon></svg>
+      <p>Excellent service! The technician was prompt, courteous, and knowledgeable. I highly recommend Tampa Bay Plumbing LLC.</p>
+    </div>
+    <div class="review">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.5 17 14.72 18.18 21.88 12 17.96 5.82 21.88 7 14.72 2 9.5 8.91 8.26"></polygon></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.5 17 14.72 18.18 21.88 12 17.96 5.82 21.88 7 14.72 2 9.5 8.91 8.26"></polygon></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.5 17 14.72 18.18 21.88 12 17.96 5.82 21.88 7 14.72 2 9.5 8.91 8.26"></polygon></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.5 17 14.72 18.18 21.88 12 17.96 5.82 21.88 7 14.72 2 9.5 8.91 8.26"></polygon></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.5 17 14.72 18.18 21.88 12 17.96 5.82 21.88 7 14.72 2 9.5 8.91 8.26"></polygon></svg>
+      <p>I was very impressed with the professionalism and efficiency of the technician. I will definitely recommend Tampa Bay Plumbing LLC to my friends and family.</p>
+    </div>
+    <div class="review">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.5 17 14.72 18.18 21.88 12 17.96 5.82 21.88 7 14.72 2 9.5 8.91 8.26"></polygon></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.5 17 14.72 18.18 21.88 12 17.96 5.82 21.88 7 14.72 2 9.5 8.91 8.26"></polygon></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.5 17 14.72 18.18 21.88 12 17.96 5.82 21.88 7 14.72 2 9.5 8.91 8.26"></polygon></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.5 17 14.72 18.18 21.88 12 17.96 5.82 21.88 7 14.72 2 9.5 8.91 8.26"></polygon></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.5 17 14.72 18.18 21.88 12 17

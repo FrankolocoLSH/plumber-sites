@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payne's Air Conditioning & Heating</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600&family=DM+Sans&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0d3b6e;
+            --accent: #00aaff;
+            --bg: #fff;
+            --light: #f0f7ff;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="sticky-nav">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger"></label>
+        <ul>
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Services</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Contact</a>
+        </ul>
+    </nav>
+    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=1920&h=1080&fit=crop')">
+        <div class="dark-overlay"></div>
+        <h1>
+            Expert <span>Heating & Air Conditioning</span> Services in Tallahassee, FL
+        </h1>
+        <button class="cta">Get a Quote</button>
+        <button class="cta">Learn More</button>
+        <div class="trust-badges">
+            <img src="trust-badge-1.svg" alt="Trust Badge 1">
+            <img src="trust-badge-2.svg" alt="Trust Badge 2">
+            <img src="trust-badge-3.svg" alt="Trust Badge 3">
+            <img src="trust-badge-4.svg" alt="Trust Badge 4">
+        </div>
+    </section>
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop')">
+                <h3>AC Install & Replace</h3>
+                <p>Get a new AC system installed or replace your old one with our expert services.</p>
+            </div>
+            <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop')">
+                <h3>AC Repair</h3>
+                <p>Don't let your AC break down in the middle of summer. Contact us for prompt repair services.</p>
+            </div>
+            <div class="service-card" style="background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop')">
+                <h3>Heating Service</h3>
+                <p>Stay warm during the winter months with our reliable heating services.</p>
+            </div>
+        </div>
+    </section>
+    <section class="why-choose-us">
+        <h2>Why Choose Us</h2>
+        <div class="block">
+            <h3>Experienced Technicians</h3>
+            <p>We have a team of experienced and certified technicians to handle all your HVAC needs.</p>
+        </div>
+        <div class="block">
+            <h3>Fair Pricing</h3>
+            <p>We believe in transparent pricing. Our prices are competitive and fair.</p>
+        </div>
+        <div class="block">
+            <h3>24/7 Emergency Services</h3>
+            <p>In case of an emergency, we're just a phone call away.</p>
+        </div>
+    </section>
+    <section class="gallery">
+        <h2>Our Work</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=800&h=800&fit=crop')"></div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=800&fit=crop')"></div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop')"></div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop')"></div>
+        </div>
+    </section>
+    <section class="reviews">
+        <h2>What Our Customers Say</h2>
+        <div class="review">
+            <h3>4.6</h3>
+            <div class="rating">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 01-1.071 1.071m0 8a4 4 0 08-4 4 4 4 0 01-1.071-1.071m0 8a4 4 0 08-4 4 4 4 0 01-1.071-1.071m0 8a4 4 0 108 4 4 4 0 01-1.071 1.071m0 8a4 4 0 108 4 4 4 0 01-1.071-1.071" />
+                </svg>
+            </div>
+            <p>31</p>
+        </div>
+        <p>Based on 31 reviews</p>
+    </section>
+    <section class="about">
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&h=800&fit=crop" alt="About Us">
+        </div>
+        <div class="text-container">
+            <h3>Local Story</h3>
+            <p>Since {{year}}, we've been serving the Tallahassee community with expert HVAC services.</p>
+            <div class="stats">
+                <div class="stat">
+                    <h4>4.6</h4>
+                    <p>Average Rating</p>
+                </div>
+                <div class="stat">
+                    <h4>31</h4>
+                    <p>Reviews</p>
+                </div>
+                <div class="stat">
+                    <h4>100+</h4>
+                    <p>Satisfied Customers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <p>(850) 386-3324</p>
+        <div class="contact-form">
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <button>Send</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 Payne's Air Conditioning & Heating. All rights reserved.</p>
+        <p>Address: 1725 Sunset Ln, Tallahassee, FL 32303</p>
+        <p>Email: <a href="mailto:info@payneheatandair.com">info@payneheatandair.com</a></p>
+    </footer>
+</body>
+</html>
+```
+
+Note: This HTML code is just a basic structure, you will need to style it with CSS to make it visually appealing. You can use CSS frameworks like Bootstrap or Tailwind CSS to make it easier.
+
+Also, you need to replace the placeholders (`https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=1920&h=1080&fit=crop`, `https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop`, `https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=800&h=800&fit=crop`, etc.) with the actual image URLs.
+
+You also need to create a `style.css` file and link to it in the `<head>` section of the HTML file to add styles to your website.

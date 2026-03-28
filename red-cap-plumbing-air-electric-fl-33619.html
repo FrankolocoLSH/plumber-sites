@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Cap Plumbing, Air & Electric</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&family=Outfit:wght@400;700&family=DM+Sans:wght@400;700&display=swap">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            color: var(--bg);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header nav {
+            display: flex;
+            align-items: center;
+        }
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        header nav ul li {
+            margin-right: 20px;
+        }
+        header nav a {
+            color: var(--bg);
+            text-decoration: none;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--bg);
+            margin: 5px 0;
+        }
+        @media only screen and (max-width: 768px) {
+            header nav ul {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+        .hero {
+            height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--bg);
+        }
+        .hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero .cta {
+            background-color: var(--accent);
+            color: var(--bg);
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .hero .cta:hover {
+            background-color: var(--primary);
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .trust-badges img {
+            width: 50px;
+            margin-right: 10px;
+        }
+        .services {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .service {
+            background-color: var(--light);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 30%;
+        }
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .service h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .why-choose-us {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .why-choose-us .block {
+            background-color: var(--light);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 30%;
+        }
+        .why-choose-us .block h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .gallery {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .reviews {
+            margin-top: 50px;
+        }
+        .review {
+            background-color: var(--light);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .review .rating {
+            font-size: 18px;
+            color: var(--accent);
+        }
+        .review .text {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .about {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .about img {
+            width: 40%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .about .text {
+            width: 60%;
+            margin-left: 20px;
+        }
+        .about .text h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .stats {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .stat {
+            background-color: var(--light);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 30%;
+            text-align: center;
+        }
+        .stat h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .contact {
+            margin-top: 50px;
+        }
+        .contact .phone {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact input, .contact textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+        .contact button {
+            background-color: var(--accent);
+            color: var(--bg);
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .contact button:hover {
+            background-color: var(--primary);
+        }
+        footer {
+            background-color: var(--primary);
+            color: var(--bg);
+            padding: 10px;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose-us">Why Choose Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+    <section class="hero">
+        <h1>Red Cap Plumbing, Air & Electric - FL 33619</h1>
+        <button class="cta">Get a Quote</button>
+        <button class="cta">Schedule Service</button>
+        <div class="trust-badges">
+            <img src="https://via.placeholder.com/50x50" alt="Trust Badge 1">
+            <img src="https://via.placeholder.com/50x50" alt="Trust Badge 2">
+            <img src="https://via.placeholder.com/50x50" alt="Trust Badge 3">
+            <img src="https://via.placeholder.com/50x50" alt="Trust Badge 4">
+        </div>
+    </section>
+    <section class="services" id="services">
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1">
+            <h2>Emergency Leak Repair</h2>
+            <p>Get help with emergency leak repair services.</p>
+        </div>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2">
+            <h2>Drain Cleaning</h2>
+            <p>Get help with drain cleaning services.</p>
+        </div>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3">
+            <h2>Water Heater Install</h2>
+            <p>Get help with water heater installation services.</p>
+        </div>
+    </section>
+    <section class="why-choose-us" id="why-choose-us">
+        <div class="block">
+            <h2>Why Choose Us</h2>
+            <p>We provide high-quality plumbing services.</p>
+        </div>
+        <div class="block">
+            <h2>Our Expertise</h2>
+            <p>We have experienced plumbers.</p>
+        </div>
+        <div class="block">
+            <h2>Our Guarantee</h2>
+            <p>We guarantee our work.</p>
+        </div>
+    </section>
+    <section class="gallery">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+    </section>
+    <section class="reviews">
+        <div class="review">
+            <div class="rating">4.7/5</div>
+            <div class="text">Red Cap Plumbing, Air & Electric is a great company. They provided excellent service.</div>
+        </div>
+        <div class="review">
+            <div class="rating">4.8/5</div>
+            <div class="text">I was very satisfied with the service I received from Red Cap Plumbing, Air & Electric.</div>
+        </div>
+        <div class="review">
+            <div class="rating">4.9/5</div>
+            <div class="text">Red Cap Plumbing, Air & Electric is a very professional company. They did a great job.</div>
+        </div>
+    </section>
+    <section class="about">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image">
+        <div class="text">
+            <h2>About Us</h2>
+            <p>We are a local plumbing company serving FL 33619.</p>
+            <div class="stats">
+                <div class="stat">
+                    <h2>10+ Years</h2>
+                    <p>Of experience in the plumbing industry.</p>
+                </div>
+                <div class="stat">
+                    <h2>500+ Customers</h2>
+                    <p>Satisfied customers in the FL 33619 area.</p>
+                </div>
+                <div class="stat">
+                    <h2>99% Satisfaction</h2>
+                    <p>Rate from our customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="phone">(813) 596-3030</div>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button>Send</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Red Cap Plumbing, Air & Electric. All rights reserved.</p>
+    </footer>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.5 });
+        const sections = document.querySelectorAll('section');
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>StormBreeze AC Cooling</title>
+	<style>
+		/* Global Styles */
+		:root {
+			--primary: #1a2744;
+			--accent: #e8651a;
+			--bg: #fff;
+			--light: #f4f7fb;
+		}
+		
+		/* Typography */
+		* {
+			font-family: 'Outfit', sans-serif;
+		}
+		h1, h2, h3 {
+			font-family: 'Syne', sans-serif;
+		}
+		
+		/* Sticky Navigation */
+		.sticky-nav {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background-color: var(--primary);
+			color: var(--bg);
+			padding: 1rem;
+			z-index: 1;
+		}
+		.sticky-nav .hamburger {
+			display: none;
+			cursor: pointer;
+		}
+		.sticky-nav nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: space-between;
+		}
+		.sticky-nav nav ul li {
+			margin-right: 2rem;
+		}
+		.sticky-nav nav a {
+			color: var(--bg);
+			text-decoration: none;
+			transition: color 0.2s ease;
+		}
+		.sticky-nav nav a:hover {
+			color: var(--accent);
+		}
+		
+		/* Hero */
+		.hero {
+			min-height: 100vh;
+			background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop');
+			background-size: cover;
+			background-position: center;
+			background-color: #000;
+			color: #fff;
+			padding: 6rem;
+		}
+		.hero .container {
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+		.hero .container h1 {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+		.hero .container .dark-overlay {
+			background-color: rgba(0, 0, 0, 0.5);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.hero .container .hero-ctas {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 2rem;
+		}
+		.hero .container .hero-ctas a {
+			background-color: var(--primary);
+			color: var(--bg);
+			padding: 1rem 2rem;
+			border-radius: 0.5rem;
+			transition: background-color 0.2s ease;
+		}
+		.hero .container .hero-ctas a:hover {
+			background-color: var(--accent);
+		}
+		.hero .container .trust-badges {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 2rem;
+		}
+		.hero .container .trust-badges a {
+			background-color: var(--primary);
+			color: var(--bg);
+			padding: 1rem 2rem;
+			border-radius: 0.5rem;
+			transition: background-color 0.2s ease;
+		}
+		.hero .container .trust-badges a:hover {
+			background-color: var(--accent);
+		}
+		
+		/* Services */
+		.services {
+			margin-top: 7rem;
+		}
+		.services .service-card {
+			background-color: var(--light);
+			padding: 2rem;
+			margin-bottom: 2rem;
+			border-radius: 0.5rem;
+		}
+		.services .service-card img {
+			width: 100%;
+			height: 150px;
+			object-fit: cover;
+			border-radius: 0.5rem;
+		}
+		.services .service-card h2 {
+			margin-bottom: 1rem;
+		}
+		.services .service-card .service-content {
+			margin-bottom: 2rem;
+		}
+		.services .service-card .service-cta {
+			background-color: var(--primary);
+			color: var(--bg);
+			padding: 1rem 2rem;
+			border-radius: 0.5rem;
+			transition: background-color 0.2s ease;
+		}
+		.services .service-card .service-cta:hover {
+			background-color: var(--accent);
+		}
+		
+		/* Why Choose Us */
+		.why-choose-us {
+			margin-bottom: 7rem;
+		}
+		.why-choose-us .block {
+			background-color: var(--light);
+			padding: 2rem;
+			margin-bottom: 2rem;
+			border-radius: 0.5rem;
+		}
+		.why-choose-us .block img {
+			width: 100%;
+			height: 150px;
+			object-fit: cover;
+			border-radius: 0.5rem;
+		}
+		.why-choose-us .block h2 {
+			margin-bottom: 1rem;
+		}
+		.why-choose-us .block .block-content {
+			margin-bottom: 2rem;
+		}
+		
+		/* Gallery */
+		.gallery {
+			margin-bottom: 7rem;
+		}
+		.gallery .gallery-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 1rem;
+		}
+		.gallery .gallery-grid img {
+			width: 100%;
+			height: 150px;
+			object-fit: cover;
+			border-radius: 0.5rem;
+		}
+		
+		/* Reviews */
+		.reviews {
+			margin-bottom: 7rem;
+		}
+		.reviews .review {
+			background-color: var(--light);
+			padding: 2rem;
+			margin-bottom: 2rem;
+			border-radius: 0.5rem;
+		}
+		.reviews .review .rating {
+			margin-bottom: 1rem;
+		}
+		.reviews .review .rating svg {
+			fill: var(--accent);
+		}
+		.reviews .review .rating-text {
+			margin-bottom: 2rem;
+		}
+		
+		/* About */
+		.about {
+			margin-bottom: 7rem;
+		}
+		.about .about-content {
+			display: flex;
+			align-items: center;
+		}
+		.about .about-content img {
+			width: 150px;
+			height: 150px;
+			object-fit: cover;
+			border-radius: 0.5rem;
+		}
+		.about .about-content .about-text-wrapper {
+			margin-left: 2rem;
+		}
+		.about .about-content .about-text-wrapper h2 {
+			margin-bottom: 1rem;
+		}
+		.about .about-content .about-text-wrapper .stats {
+			margin-bottom: 2rem;
+		}
+		
+		/* Contact */
+		.contact {
+			margin-bottom: 7rem;
+		}
+		.contact .contact-content {
+			background-color: var(--light);
+			padding: 2rem;
+			border-radius: 0.5rem;
+		}
+		.contact .contact-content h2 {
+			margin-bottom: 1rem;
+		}
+		.contact .contact-content .contact-info {
+			margin-bottom: 2rem;
+		}
+		.contact .contact-content .contact-info .address {
+			margin-bottom: 1rem;
+		}
+		
+		/* Footer */
+		.footer {
+			background-color: var(--primary);
+			color: var(--bg);
+			padding: 2rem;
+			text-align: center;
+		}
+		.footer .footer-content {
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+		.footer .footer-content .links {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: space-between;
+		}
+		.footer .footer-content .links li {
+			margin-right: 2rem;
+		}
+		.footer .footer-content .copyright {
+			margin-top: 2rem;
+		}
+	</style>
+</head>
+<body>
+	<!-- Sticky Navigation -->
+	<nav class="sticky-nav">
+		<div class="hamburger">
+			<!-- Hamburger Menu -->
+			<button>
+				<svg viewBox="0 0 100 80" width="40" height="40">
+					<rect x="10" y="10" width="20" height="20" fill="var(--bg)" rx="5" />
+					<rect x="40" y="10" width="20" height="20" fill="var(--bg)" rx="5" />
+					<rect x="10" y="40" width="20" height="20" fill="var(--bg)" rx="5" />
+				</svg>
+			</button>
+		</div>
+		<div class="navbar">
+			<ul>
+				<li><a href="#hero">Home</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#gallery">Gallery</a></li>
+				<li><a href="#reviews">Reviews</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Hero -->
+	<section class="hero" id="hero">
+		<div class="container">
+			<div class="dark-overlay"></div>
+			<div class="container">
+				<h1>Welcome to StormBreeze AC Cooling, serving Fort Lauderdale, FL 33301!</h1>
+				<div class="hero-ctas">
+					<a href="#">Get a free quote!</a>
+					<a href="#">Book a service!</a>
+				</div>
+				<div class="trust-badges">
+					<a href="#">Trustpilot 5/5</a>
+					<a href="#">Better Business Bureau A+</a>
+					<a href="#">Certified technicians</a>
+					<a href="#">Local family-owned</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Services -->
+	<section class="services" id="services">
+		<div class="container">
+			<h2>Our Services</h2>
+			<div class="service-card">
+				<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" alt="Service Image 1">
+				<h2>Repair</h2>
+				<p>Our experienced technicians can repair your air conditioner, heat pump, or other HVAC system.</p>
+				<div class="service-cta">Get a repair quote!</div>
+			</div>
+			<div class="service-card">
+				<img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Service Image 2">
+				<h2>Installation</h2>
+				<p>Let us install a new air conditioner, heat pump, or other HVAC system to keep you comfortable.</p>
+				<div class="service-cta">Get a new system installed!</div>
+			</div>
+			<div class="service-card">
+				<img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Service Image 3">
+				<h2>Maintenance</h2>
+				<p>Regular maintenance can help extend the life of your air conditioner and other HVAC systems.</p>
+				<div class="service-cta">Schedule a maintenance visit!</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Why Choose Us -->
+	<section class="why-choose-us" id="why-choose-us">
+		<div class="container">
+			<h2>Why Choose Us</h2>
+			<div class="block">
+				<img src="" alt="Block Image">
+				<h2>Experienced Technicians</h2>
+				<p>Our technicians have years of experience in HVAC repair and installation.</p>
+			</div>
+			<div class="block">
+				<img src="" alt="Block Image">
+				<h2>Quality Workmanship</h2>
+				<p>We guarantee high-quality workmanship and attention to detail.</p>
+			</div>
+			<div class="block">
+				<img src="" alt="Block Image">
+				<h2>Competitive Pricing</h2>
+				<p>We offer competitive pricing and free estimates.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Gallery -->
+	<section class="gallery" id="gallery">
+		<div class="container">
+			<h2>Our Gallery</h2>
+			<div class="gallery-grid">
+				<img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=800&fit=crop" alt="Gallery Image 1">
+				<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop" alt="Gallery Image 2">
+				<img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=800&fit=crop" alt="Gallery Image 3">
+				<img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Gallery Image 4">
+			</div>
+		</div>
+	</section>
+
+	<!-- Reviews -->
+	<section class="reviews" id="reviews">
+		<div class="container">
+			<h2>Our Reviews</h2>
+			<div class="review">
+				<div class="rating">
+					<svg viewBox="0 0 24 24">
+						<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-6C6.24 6 3 3.76 3 1 3.51 0 5.25 0 8 0h8l2.61 4H4V2z" />
+					</svg>
+					5/5
+				</div>
+				<div class="rating-text">Our technician was friendly and knowledgeable!</div>
+				<p>StormBreeze AC Cooling</p>
+			</div>
+			<div class="review">
+				<div class="rating">
+					<svg viewBox="0 0 24 24">
+						<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-6C6.24 6 3 3.76 3 1 3.51 0 5.25 0 8 0h8l2.61 4H4V2z" />
+					</svg>
+					5/5
+				</div>
+				<div class="rating-text">We received great customer service!</div>
+				<p>StormBreeze AC Cooling</p>
+			</div>
+			<div class="review">
+				<div class="rating">
+					<svg viewBox="0 0 24 24">
+						<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-6c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z" />
+					</svg>
+					5/5
+				</div>
+				<div class="rating-text">We are satisfied with the work done!</div>
+				<p>StormBreeze AC Cooling</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- About -->
+	<section class="about" id="about">
+		<div class="container">
+			<h2>About Us</h2>
+			<div class="about-content">
+				<img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop" alt="About Image">
+				<div class="about-text-wrapper">
+					<h2>Welcome to StormBreeze AC Cooling!</h2>
+					<div class="stats">
+						<p>5 years in business</p>
+						<p>4 reviews on Google</p>
+						<p>100% customer satisfaction</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact -->
+	<section class="contact" id="contact">
+		<div class="container">
+			<h2>Get in Touch</h2>
+			<div class="contact-content">
+				<h2>Contact Information</h2>
+				<div class="contact-info">
+					<p>Address: 1513 SE 2nd Ct, Fort Lauderdale, FL 33301, USA</p>
+					<p>Phone: (954) 355-1061</p>
+					<p>Email: </p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="footer-content">
+			<ul class="links">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="#">Gallery</a></li>
+				<li><a href="#">Reviews</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+			<p class="copyright">StormB

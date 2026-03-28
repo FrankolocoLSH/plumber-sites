@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turbo Plumbing - Reliable Plumbing Services in Tampa, FL 33611</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Syne', sans-serif;
+        }
+
+        .nav {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin: 0 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .hero .content {
+            text-align: center;
+        }
+
+        .hero .content h1 {
+            margin-bottom: 10px;
+        }
+
+        .hero .content .trust-badges {
+            margin-top: 20px;
+        }
+
+        .hero .content .trust-badges img {
+            width: 40px;
+            margin: 0 10px;
+            border-radius: 50%;
+        }
+
+        .services {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 0;
+        }
+
+        .services-card {
+            background-color: var(--light);
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .services-card img {
+            width: 100px;
+            margin: 20px 0;
+        }
+
+        .services-card h2 {
+            margin-bottom: 10px;
+        }
+
+        .services-card p {
+            margin-bottom: 20px;
+        }
+
+        .why-choose-us {
+            padding: 50px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .why-choose-us .block {
+            background-color: var(--light);
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .why-choose-us .block h2 {
+            margin-bottom: 10px;
+        }
+
+        .why-choose-us .block p {
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 200px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .reviews {
+            padding: 50px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .reviews .star {
+            font-size: 1.5rem;
+            margin: 10px;
+        }
+
+        .about {
+            padding: 50px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .about img {
+            width: 150px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .stats {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .stats div {
+            background-color: var(--light);
+            padding: 10px;
+            margin: 0 20px;
+            border-radius: 10px;
+        }
+
+        .stats div h2 {
+            margin-bottom: 10px;
+        }
+
+        .stats div p {
+            margin-bottom: 20px;
+        }
+
+        .contact {
+            padding: 50px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact img {
+            width: 50px;
+            margin: 10px;
+            border-radius: 50%;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact form input[type="text"], .contact form input[type="email"], .contact form input[type="tel"]{
+            margin: 10px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            width: 300px;
+        }
+
+        .contact form input[type="submit"]{
+            background-color: var(--accent);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .contact form input[type="submit"]:hover{
+            background-color: #ff9800;
+        }
+
+        .footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul class="nav-links">
+            <li><hamburger onclick="toggleMenu()"></hamburger></li>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-choose-us">Why Choose Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="content">
+                <h1>Welcome to Turbo Plumbing in Tampa, FL 33611</h1>
+                <p>We are your go-to plumbing service for all your needs in Tampa and surrounding areas.</p>
+                <div class="trust-badges">
+                    <img src="https://example.com/badge1.png" alt="Badge 1">
+                    <img src="https://example.com/badge2.png" alt="Badge 2">
+                    <img src="https://example.com/badge3.png" alt="Badge 3">
+                    <img src="https://example.com/badge4.png" alt="Badge 4">
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <h2>Our Plumbing Services</h2>
+            <div class="services-card">
+                <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service Image 1">
+                <h2>Service 1</h2>
+                <p>We offer a wide range of plumbing services including emergency leak repair, drain cleaning, and water heater installation.</p>
+            </div>
+
+            <div class="services-card">
+                <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service Image 2">
+                <h2>Service 2</h2>
+                <p>We have a team of experienced plumbers who can handle all types of plumbing issues, from minor leaks to major repairs.</p>
+            </div>
+
+            <div class="services-card">
+                <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service Image 3">
+                <h2>Service 3</h2>
+                <p>We use only the latest equipment and techniques to ensure that our services are efficient and effective.</p>
+            </div>
+        </section>
+
+        <section id="why-choose-us" class="why-choose-us">
+            <h2>Why Choose Turbo Plumbing?</h2>
+            <div class="block">
+                <h2>Quick Response</h2>
+                <p>Our team is available 24/7 to respond to your emergency plumbing needs.</p>
+            </div>
+
+            <div class="block">
+                <h2>Expert Plumbers</h2>
+                <p>Our plumbers are experienced, licensed, and insured to handle all types of plumbing issues.</p>
+            </div>
+
+            <div class="block">
+                <h2>Competitive Pricing</h2>
+                <p>We offer competitive pricing for all our plumbing services to ensure that you get the best value for your money.</p>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1">
+            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2">
+            <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+        </section>
+
+        <section id="reviews" class="reviews">
+            <h2>What Our Customers Say</h2>
+            <div class="star">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                    <polygon points="12 2 15.09 8.26 22 9.27 18.91 16.97 12 19.28 5.09 16.97 2 12 4.91 7.03 6 9.27 8.26 15.09 8.26 12 2">
+                    </polygon>
+                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                    <polygon points="12 2 15.09 8.26 22 9.27 18.91 16.97 12 19.28 5.09 16.97 2 12 4.91 7.03 6 9.27 8.26 15.09 8.26 12 2">
+                    </polygon>
+                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                    <polygon points="12 2 15.09 8.26 22 9.27 18.91 16.97 12 19.28 5.09 16.97 2 12 4.91 7.03 6 9.27 8.26 15.09 8.26 12 2">
+                    </polygon>
+                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                    <polygon points="12 2 15.09 8.26 22 9.27 18.91 16.97 12 19.28 5.09 16.97 2 12 4.91 7.03 6 9.27 8.26 15.09 8.26 12 2">
+                    </polygon>
+                </svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                    <polygon points="12 2 15.09 8.26 22 9.27 18.91 16.97 12 19.28 5.09 16.97 2 12 4.91 7.03 6 9.27 8.26 15.09 8.26 12 2">
+                    </polygon>
+                </svg>
+            </div>
+            <p>79 reviews on Google</p>
+        </section>
+
+        <section id="about" class="about">
+            <div class="stats">
+                <div>
+                    <h2>Years of Experience</h2>
+                    <p>5 years of experience in plumbing services</p>
+                </div>
+                <div>
+                    <h2>Number of Satisfied Customers</h2>
+                    <p>79 satisfied customers</p>
+                </div>
+                <div>
+                    <h2>Areas We Serve</h2>
+                    <p>Tampa and surrounding areas</p>
+                </div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image">
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Get in Touch with Us</h2>
+            <div class="address">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
+                    </path>
+                    <circle cx="12" cy="10" r="3">
+                    </circle>
+                </svg>
+                <p>4817 S Westshore Blvd, Tampa, FL 33611, USA</p>
+            </div>
+            <div class="phone">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
+                    <path d="M22 16l-4-4h-4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2C11.5 2 10 2 9 4v10H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3h7a3 3 0 0 0 3-3 3 3 0 0 0-3-3z">
+                    </path>
+                </svg>
+                <p><a href="tel:(813) 404-8137">(813) 404-8137</a></p>
+            </div>
+            <div class="email">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+                    <path d="M20.48 4.98C19.49 4 18 4.5 16.51 5.98c-2 2-4 4-4.72 5.41a8 8 0 0 1-1.88.34C12.97 11 13 11.97 14.9 13.5c1.9-1.51 3.73-3.08 5.62-4.99z">
+                    </path>
+                </svg>
+                <p>contact@turboplumbingtampa.com</p>
+            </div>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="tel" placeholder="Phone Number">
+                <input type="submit" value="Send Message">
+            </form>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2023 Turbo Plumbing. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            var hammertime = new Hammer(document.querySelector('.nav-links'));
+            hammertime.on('tap press', function(e) {
+                e.preventDefault();
+                var target = e.target;
+                if (target.classList.contains('hamburger')) {
+                    var menu = document.querySelector('.nav-links');
+                    menu.classList.toggle('open');
+                    target.classList.toggle('close');
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            toggleMenu();
+        });
+    </script>
+</body>
+</html>

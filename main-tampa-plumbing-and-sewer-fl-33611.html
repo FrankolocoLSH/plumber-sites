@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Tampa Plumbing and Sewer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono:wght@500&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--primary);
+        }
+        
+        .hamburger {
+            background-color: var(--bg);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            padding: 0 20px;
+            transform: translateX(-300px);
+        }
+        
+        .hamburger.active {
+            transform: translateX(0);
+        }
+        
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sticky-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        
+        .sticky-nav li {
+            margin-right: 20px;
+        }
+        
+        .sticky-nav a {
+            color: var(--light);
+            text-decoration: none;
+        }
+        
+        .sticky-nav a:hover {
+            color: var(--accent);
+        }
+        
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            color: var(--light);
+            position: relative;
+            padding: 20px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-family: 'Syne Mono', monospace;
+            font-size: 3rem;
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        .hero button {
+            background-color: var(--accent);
+            color: var(--light);
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        
+        .hero button:hover {
+            background-color: var(--primary);
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .trust-badge {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .service-card {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .service-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .service-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+            padding: 10px 0;
+        }
+        
+        .service-card p {
+            font-size: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .why-choose-us {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .block {
+            width: 30%;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 20px;
+            margin-right: 20px;
+        }
+        
+        .block h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+            padding: 10px 0;
+        }
+        
+        .block p {
+            font-size: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .gallery img {
+            width: 33.33%;
+            height: 150px;
+            object-fit: cover;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        
+        .reviews {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .review {
+            width: 30%;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 20px;
+            margin-right: 20px;
+        }
+        
+        .review .svg-icon {
+            fill: var(--accent);
+        }
+        
+        .about {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 20px;
+        }
+        
+        .about img {
+            width: 30%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        
+        .stat {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+            padding: 10px 0;
+        }
+        
+        .contact {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 20px;
+        }
+        
+        .contact .phone, .contact .email {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <nav class="sticky-nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger-button">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="2" rx="1" fill="currentColor" y="1" x="1"/>
+                <rect width="20" height="2" rx="1" fill="currentColor" y="7" x="1"/>
+                <rect width="20" height="2" rx="1" fill="currentColor" y="13" x="1"/>
+            </svg>
+        </button>
+    </nav>
+    <div class="hamburger" id="hamburger">
+        <div class="hamburger-content">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="hero" style="background-image: url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop);">
+        <div class="hero-content">
+            <h1>Main Tampa Plumbing and Sewer</h1>
+            <button>Get a Quote</button>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="10,1 1,10 10,19 19,10" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="19,1 10,10 1,19 10,10" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="10,1 1,10 10,19 19,10" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="trust-badge">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="19,1 10,10 1,19 10,10" fill="currentColor"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="services">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1">
+            <h2>Emergency Leak Repair</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2">
+            <h2>Drain Cleaning</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3">
+            <h2>Water Heater Install</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+    </div>
+    <div class="why-choose-us">
+        <div class="block">
+            <h2>Experience</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="block">
+            <h2>Quality</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="block">
+            <h2>Reliability</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+    </div>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery 1">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery 2">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery 3">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery 4">
+    </div>
+    <div class="reviews">
+        <div class="review">
+            <div class="rating">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="10,1 1,10 10,19 19,10" fill="currentColor" style="fill: var(--accent);"/>
+                    <polygon points="10,1 1,10 10,19 19,10" fill="currentColor" style="fill: var(--accent);"/>
+                    <polygon points="10,1 1,10 10,19 19,10" fill="currentColor" style="fill: var(--accent);"/>
+                    <polygon points="10,1 1,10 10,19 19,10" fill="currentColor" style="fill: var(--accent);"/>
+                    <polygon points="10,1 1,10 10,19 19,10" fill="currentColor" style="fill: var(--accent);"/>
+                </svg>
+            </div>
+            <p>5/5</p>
+            <p>Main Tampa Plumbing and Sewer from FL 33611</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="review">
+            <div class="rating">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="10,1 1,10 10,19 19,10" fill="currentColor" style="fill: var(--accent);"/>
+                    <polygon points="10,1 1,10 10,19 19,10" fill="currentColor" style="fill: var(--accent);"/>
+                    <polygon points="10,1 1,10 10,19 19,10" fill="currentColor" style="fill: var(--accent);"/>
+                    <polygon points="10,1 1,10 10,19 19,10" fill="currentColor" style="fill: var(--accent);"/>
+                    <polygon points="10,1 1,10 10,19 19,10" fill="currentColor" style="fill: var(--accent);"/>
+                </svg>
+            </div>
+            <p>4/5</p>
+            <p>Main Tampa Plumbing and Sewer from FL 33611</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="review">
+            <div class="rating">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="10,1 1,10 10,19 19,10" fill="currentColor" style="fill: var(--accent);"/>
+                    <polygon points="10,1 1,10 10,19 19,10" fill="currentColor" style="fill: var(--accent);"/>
+                    <polygon points="10,1 1,10 10,19 19,10" fill="currentColor" style="fill: var(--accent);"/>
+                    <polygon points="10,1 1,10 10,19 19,10" fill="currentColor" style="fill: var(--accent);"/>
+                    <polygon points="10,1 1,10 10,19 19,10" fill="currentColor" style="fill: var(--accent);"/>
+                </svg>
+            </div>
+            <p>5/5</p>
+            <p>Main Tampa Plumbing and Sewer from FL 33611</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+    </div>
+    <div class="about">
+        <div class="info">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="image">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Us">
+        </div>
+    </div>
+    <div class="contact">
+        <div class="info">
+            <h2>Get in Touch</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="form">
+            <input type="tel" placeholder="Phone">
+            <input type="email" placeholder="Email">
+            <input type="text" placeholder="Message">
+            <button>Send</button>
+        </div>
+        <div class="social-media">
+            <a href="#">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="20" height="2" rx="1" fill="currentColor" y="1" x="1"/>
+                    <rect width="20" height="2" rx="1" fill="currentColor" y="7" x="1"/>
+                    <rect width="20" height="2" rx="1" fill="currentColor" y="13" x="1"/>
+                </svg>
+            </a>
+            <a href="#">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="20" height="2" rx="1" fill="currentColor" y="1" x="1"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+    <footer>
+        <div class="copyright">
+            <p>&copy; 2024 Main Tampa Plumbing and Sewer</p>
+        </div>
+        <div class="address">
+            <p>4004 S MacDill Ave #121, Tampa, FL 33611, USA</p>
+        </div

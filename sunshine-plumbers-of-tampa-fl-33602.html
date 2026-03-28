@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunshine Plumbers of Tampa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Outfit&family=Syne&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            color: var(--bg);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav li {
+            margin-right: 20px;
+        }
+        .nav a {
+            color: var(--bg);
+            text-decoration: none;
+        }
+        .hamburger {
+            display: none;
+        }
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+            .nav {
+                display: none;
+            }
+        }
+        .hero {
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--bg);
+        }
+        .hero-content h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 48px;
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .trust-badges img {
+            margin: 0 10px;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service {
+            margin: 20px;
+            width: calc(33.33% - 20px);
+            background-color: var(--bg);
+            padding: 20px;
+            border: 1px solid var(--light);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .service h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .why-choose-us {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .why-choose-us block {
+            margin: 20px;
+            width: calc(33.33% - 20px);
+            background-color: var(--bg);
+            padding: 20px;
+            border: 1px solid var(--light);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .reviews {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .review {
+            margin: 20px;
+            width: calc(33.33% - 20px);
+            background-color: var(--bg);
+            padding: 20px;
+            border: 1px solid var(--light);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .review h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .about {
+            display: flex;
+        }
+        .about img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .about-content {
+            flex-grow: 1;
+        }
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .contact-form {
+            margin: 20px;
+            width: calc(50% - 20px);
+        }
+        .contact-info {
+            margin: 20px;
+            width: calc(50% - 20px);
+        }
+        footer {
+            background-color: var(--primary);
+            color: var(--bg);
+            padding: 1rem;
+            text-align: center;
+        }
+        svg {
+            fill: var(--bg);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <rect x="4" y="6" width="16" height="2" rx="1" fill="#fff"/>
+                <rect x="4" y="12" width="16" height="2" rx="1" fill="#fff"/>
+                <rect x="4" y="18" width="16" height="2" rx="1" fill="#fff"/>
+            </svg>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Emergency Plumbers in FL 33602</h1>
+            <p>Get the best plumbing services in Tampa, FL 33602</p>
+            <div class="trust-badges">
+                <img src="badge1.png" alt="Badge 1">
+                <img src="badge2.png" alt="Badge 2">
+                <img src="badge3.png" alt="Badge 3">
+                <img src="badge4.png" alt="Badge 4">
+            </div>
+            <button>Emergency Leak Repair</button>
+            <button>Schedule Service</button>
+        </div>
+    </section>
+    <section class="services">
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1">
+            <h2>Emergency Leak Repair</h2>
+            <p>Get 24/7 emergency leak repair services in Tampa, FL 33602</p>
+        </div>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2">
+            <h2>Drain Cleaning</h2>
+            <p>Get professional drain cleaning services in Tampa, FL 33602</p>
+        </div>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3">
+            <h2>Water Heater Install</h2>
+            <p>Get top-notch water heater installation services in Tampa, FL 33602</p>
+        </div>
+    </section>
+    <section class="why-choose-us">
+        <div>
+            <h2>Why Choose Us</h2>
+            <p>We are a team of experienced plumbers committed to providing the best services in Tampa, FL 33602</p>
+        </div>
+        <div>
+            <h2>Our Mission</h2>
+            <p>Our mission is to provide fast, reliable, and affordable plumbing services to our customers</p>
+        </div>
+        <div>
+            <h2>Our Values</h2>
+            <p>We value honesty, integrity, and customer satisfaction above all else</p>
+        </div>
+    </section>
+    <section class="gallery">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery 1">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery 2">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery 3">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery 4">
+    </section>
+    <section class="reviews">
+        <div class="review">
+            <h2>4.9/5 Stars</h2>
+            <p>Based on 55 reviews</p>
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <polygon points="12,2 15.31,8.69 20,12 15.31,15.31 12,22 8.69,15.31 4,12 8.69,8.69"/>
+            </svg>
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <polygon points="12,2 15.31,8.69 20,12 15.31,15.31 12,22 8.69,15.31 4,12 8.69,8.69"/>
+            </svg>
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <polygon points="12,2 15.31,8.69 20,12 15.31,15.31 12,22 8.69,15.31 4,12 8.69,8.69"/>
+            </svg>
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <polygon points="12,2 15.31,8.69 20,12 15.31,15.31 12,22 8.69,15.31 4,12 8.69,8.69"/>
+            </svg>
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <polygon points="12,2 15.31,8.69 20,12 15.31,15.31 12,22 8.69,15.31 4,12 8.69,8.69"/>
+            </svg>
+        </div>
+    </section>
+    <section class="about">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image">
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>We are a team of experienced plumbers dedicated to providing the best services in Tampa, FL 33602</p>
+            <ul>
+                <li>10+ years of experience</li>
+                <li>100+ satisfied customers</li>
+                <li>5-star rating on Google</li>
+            </ul>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Phone: <a href="tel:+18135502465">(813) 550-2465</a></p>
+            <p>Email: <a href="mailto:web@thesunshineplumbers.com">web@thesunshineplumbers.com</a></p>
+            <p>Address: 100 Ashley Dr S Suite 600A, Tampa, FL 33602, USA</p>
+        </div>
+        <form class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+    <footer>
+        &copy; 2023 Sunshine Plumbers of Tampa. All rights reserved.
+    </footer>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                console.log('Element is visible');
+            }
+        }, { threshold: 1.0 });
+        observer.observe(document.querySelector('.hero'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jim Crosby Plumbing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&family=Syne&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+        }
+
+        h1 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+        }
+
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger {
+            display: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-right: 1rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .hero {
+            height: 100vh;
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            padding: 5rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .hero buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .hero buttons button {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .service-cards {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--light);
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 0.25rem;
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 12rem;
+            object-fit: cover;
+            border-radius: 0.25rem 0.25rem 0 0;
+        }
+
+        .service-card h2 {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .why-choose-us {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+            background-color: var(--light);
+        }
+
+        .why-choose-us block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .why-choose-us block i {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 2rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 12rem;
+            object-fit: cover;
+            border-radius: 0.25rem;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        .reviews {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: var(--light);
+        }
+
+        .reviews-star {
+            font-size: 2rem;
+            color: var(--accent);
+            margin: 0 0.25rem;
+        }
+
+        .review {
+            display: flex;
+            align-items: center;
+        }
+
+        .review-text {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 0.25rem;
+        }
+
+        .about {
+            display: flex;
+            padding: 2rem;
+        }
+
+        .about img {
+            width: 12rem;
+            height: 12rem;
+            object-fit: cover;
+            border-radius: 0.25rem;
+        }
+
+        .about-text {
+            padding: 1rem;
+        }
+
+        .stats {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .stats-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stats-block i {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .contact {
+            padding: 2rem;
+        }
+
+        .contact form {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .contact form input[type="text"] {
+            width: 100%;
+            padding: 0.5rem 1rem;
+        }
+
+        .contact form button[type="submit"] {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+        }
+
+        .contact-phone {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer {
+            padding: 2rem;
+            color: #666;
+            background-color: var(--light);
+        }
+
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 7rem;
+                left: -100rem;
+                background-color: var(--primary);
+                padding: 1rem;
+                width: fit-content;
+                transition: all 0.3s ease;
+            }
+
+            .mobile-nav-links {
+                display: flex;
+                flex-direction: column;
+                margin: 1rem;
+            }
+
+            .mobile-nav-links li {
+                margin-right: 1rem;
+            }
+
+            .mobile-nav-links a {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="sticky-nav">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <button class="hamburger">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
+        </nav>
+        <div class="contact-phone">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 21V3a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14c0 2.21 1.79 4 4 4h4a2 2 0 0 0 2-2zm-1-10a12 12 0 1 0 0 21.21 12 12 0 0 0-21.21-21.21z" />
+            </svg>
+            <p>Phone: <span class="tel">(850) 222-0000</span></p>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>We're Jim Crosby Plumbing, your trusted plumbers in <span class="city">Tallahassee</span>, FL</h1>
+            <div class="hero buttons">
+                <button>Get a Quote</button>
+                <button>Learn More</button>
+            </div>
+            <div class="trust-badges">
+                <img src="https://img.icons8.com/fluent/24/000000/marvel-certificate.png" />
+                <img src="https://img.icons8.com/fluent/24/000000/trustpilot.png" />
+                <img src="https://img.icons8.com/fluent/24/000000/angie-lists.png" />
+                <img src="https://img.icons8.com/fluent/24/000000/best--v2.png" />
+            </div>
+        </section>
+        <section class="services">
+            <h1>Our Services</h1>
+            <div class="service-cards">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" />
+                    <h2>Emergency Leak Repair</h2>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" />
+                    <h2>Drain Cleaning</h2>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" />
+                    <h2>Water Heater Install</h2>
+                </div>
+            </div>
+        </section>
+        <section class="why-choose-us">
+            <h1>Why Choose Us?</h1>
+            <div class="why-choose-us block">
+                <i class="fas fa-heart"></i>
+                <p>We care about our customers and provide top-notch service.</p>
+            </div>
+            <div class="why-choose-us block">
+                <i class="fas fa-star"></i>
+                <p>We have excellent reviews and ratings from satisfied customers.</p>
+            </div>
+            <div class="why-choose-us block">
+                <i class="fas fa-bolt"></i>
+                <p>We offer quick and efficient solutions to your plumbing problems.</p>
+            </div>
+        </section>
+        <section class="gallery">
+            <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" />
+            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" />
+            <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" />
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" />
+        </section>
+    </main>
+    <section class="reviews">
+        <h1>Reviews</h1>
+        <div class="reviews">
+            <span class="rating">4.7/5</span>
+            <span class="reviews-count">31 reviews</span>
+            <div class="review">
+                <span class="reviews-star"></span>
+                <span>Great service and prices!</span>
+                <span class="review-text">5-star review</span>
+            </div>
+            <div class="review">
+                <span class="reviews-star"></span>
+                <span>Excellent communication and quick response!</span>
+                <span class="review-text">5-star review</span>
+            </div>
+            <div class="review">
+                <span class="reviews-star"></span>
+                <span>Professional and knowledgeable service!</span>
+                <span class="review-text">5-star review</span>
+            </div>
+        </div>
+    </section>
+    <section class="about">
+        <h1>About Us</h1>
+        <div class="about img">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" />
+        </div>
+        <div class="about-text">
+            <p>Welcome to Jim Crosby Plumbing. We are a locally owned and operated plumbing company serving Tallahassee and surrounding areas.</p>
+            <p>With years of experience and a team of highly trained professionals, we can handle any plumbing job big or small.</p>
+        </div>
+        <div class="stats">
+            <div class="stats-block">
+                <i class="fas fa-user"></i>
+                <p>10+ years of experience</p>
+            </div>
+            <div class="stats-block">
+                <i class="fas fa-star"></i>
+                <p>4.7/5 rating on Google</p>
+            </div>
+            <div class="stats-block">
+                <i class="fas fa-briefcase"></i>
+                <p>100+ satisfied customers</p>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <h1>Get in Touch</h1>
+        <form>
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <textarea placeholder="Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <div class="contact-phone">
+            <p>Phone: <span class="tel">(850) 222-0000</span></p>
+            <p>Email: <span class="tel">info@jimcrosbyplumbing.com</span></p>
+            <p>Address: 2704-1 Power Mill Ct, Tallahassee, FL 32301</p>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2023 Jim Crosby Plumbing</p>
+    </footer>
+</body>
+</html>

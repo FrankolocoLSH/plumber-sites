@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Heating & Cooling | HVAC Services in Tallahassee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@300&family=Outfit:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Reset CSS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Global Styles */
+        :root {
+            --primary: #0d3b6e;
+            --accent: #00aaff;
+            --bg: #fff;
+            --light: #f0f7ff;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Syne', sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Sticky Nav */
+        .nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            padding: 1rem;
+            text-align: center;
+            transition: top 0.3s ease;
+        }
+
+        .nav .hamburger {
+            display: none;
+        }
+
+        .nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav li {
+            margin-right: 20px;
+        }
+
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                position: relative;
+            }
+
+            .nav .hamburger {
+                display: inline-block;
+            }
+
+            .nav ul {
+                display: none;
+            }
+
+            .nav .hamburger svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        /* Hero */
+        .hero {
+            background-image: var(--hero-image);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 1rem;
+        }
+
+        .hero .btn {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem 2rem;
+            border-width: 0;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background-color: var(--accent);
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+
+        .trust-badge {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        .trust-badge img {
+            width: 50px;
+            height: 50px;
+        }
+
+        /* Services */
+        .services {
+            background-color: var(--light);
+            padding: 5rem 0;
+        }
+
+        .service-card {
+            background-color: var(--bg);
+            padding: 2rem;
+            margin: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Why Choose Us */
+        .why-choose-us {
+            padding: 5rem 0;
+        }
+
+        .block {
+            background-color: var(--bg);
+            padding: 2rem;
+            margin: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .block:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Gallery */
+        .gallery {
+            background-color: var(--light);
+            padding: 5rem 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background-color: var(--bg);
+            padding: 1rem;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        /* Reviews */
+        .reviews {
+            padding: 5rem 0;
+        }
+
+        .review {
+            background-color: var(--bg);
+            padding: 2rem;
+            margin: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .review:hover {
+            transform: translateY(-5px);
+        }
+
+        .review .rating {
+            color: var(--accent);
+        }
+
+        /* About */
+        .about {
+            padding: 5rem 0;
+        }
+
+        .about-image {
+            max-width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .stats {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .stat {
+            background-color: var(--bg);
+            padding: 1rem;
+            margin: 1rem;
+            border: 1px solid var(--light);
+            transition: transform 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Contact */
+        .contact {
+            padding: 5rem 0;
+        }
+
+        .contact-info {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .contact-info .info {
+            background-color: var(--bg);
+            padding: 1rem;
+            margin: 1rem;
+            border: 1px solid var(--light);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info .info:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-form {
+            background-color: var(--bg);
+            padding: 2rem;
+            margin: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: var(--light);
+            border: 1px solid var(--light);
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary);
+            padding: 2rem;
+            color: #fff;
+            text-align: center;
+        }
+
+        .footer ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer li {
+            margin-right: 20px;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="nav">
+        <button class="hamburger">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+        </button>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-choose-us">Why Choose Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+    <main>
+        <!-- Hero -->
+        <section id="hero" class="hero">
+            <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=1920&h=1080&fit=crop" alt="Hero Image">
+            <h1>Welcome to Key Heating & Cooling in Tallahassee</h1>
+            <button class="btn">Get a Quote</button>
+            <button class="btn">Schedule an Appointment</button>
+            <ul class="trust-badges">
+                <li class="trust-badge"><img src="icon1.png" alt="Trust Badge 1"></li>
+                <li class="trust-badge"><img src="icon2.png" alt="Trust Badge 2"></li>
+                <li class="trust-badge"><img src="icon3.png" alt="Trust Badge 3"></li>
+                <li class="trust-badge"><img src="icon4.png" alt="Trust Badge 4"></li>
+            </ul>
+        </section>
+        <!-- Services -->
+        <section id="services" class="services">
+            <h2>Our Services</h2>
+            <div class="container">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service Image 1">
+                    <h3>AC Install & Replace</h3>
+                    <p>Get a custom quote for your AC installation or replacement.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop" alt="Service Image 2">
+                    <h3>AC Repair</h3>
+                    <p>Get your AC fixed quickly and efficiently.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Service Image 3">
+                    <h3>Heating Service</h3>
+                    <p>Get reliable heating services to keep you warm.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Why Choose Us -->
+        <section id="why-choose-us" class="why-choose-us">
+            <h2>Why Choose Us</h2>
+            <div class="container">
+                <div class="block">
+                    <h3>Experience</h3>
+                    <p>Over 10 years of experience in the industry.</p>
+                </div>
+                <div class="block">
+                    <h3>Quality</h3>
+                    <p>We use only the highest quality materials.</p>
+                </div>
+                <div class="block">
+                    <h3>Customer-centric</h3>
+                    <p>We prioritize customer satisfaction above all.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Gallery -->
+        <section id="gallery" class="gallery">
+            <h2>Our Work</h2>
+            <div class="container">
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=800&h=800&fit=crop" alt="Gallery Image 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=800&fit=crop" alt="Gallery Image 2">
+                    </div>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 3">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Reviews -->
+        <section id="reviews" class="reviews">
+            <h2>Reviews</h2>
+            <div class="container">
+                <div class="review">
+                    <span class="rating">4.8/5</span>
+                    We had a great experience with Key Heating & Cooling. They were professional and courteous.
+                    <p>- Key Heating & Cooling</p>
+                </div>
+                <div class="review">
+                    <span class="rating">4.8/5</span>
+                    The technician was knowledgeable and made sure to explain everything to me.
+                    <p>- Key Heating & Cooling</p>
+                </div>
+                <div class="review">
+                    <span class="rating">4.8/5</span>
+                    We love Key Heating & Cooling! They are reliable and affordable.
+                    <p>- Key Heating & Cooling</p>
+                </div>
+            </div>
+        </section>
+        <!-- About -->
+        <section id="about" class="about">
+            <h2>About Us</h2>
+            <div class="container">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&h=800&fit=crop" alt="About Image">
+                <div class="stats">
+                    <div class="stat">
+                        <h3>Years in Business</h3>
+                        <p>10+</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Customer Reviews</h3>
+                        <p>55+</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Locations</h3>
+                        <p>Tallahassee</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <div class="container">
+                <div class="contact-info">
+                    <div class="info">
+                        <h3>Phone</h3>
+                        <p>(850) 695-4108</p>
+                    </div>
+                    <div class="info">
+                        <h3>Email</h3>
+                        <p>info@keyheatingandcooling.com</p>
+                    </div>
+                    <div class="info">
+                        <h3>Address</h3>
+                        <p>4478 Entrepot Blvd, Tallahassee, FL 32310</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2023 Key Heating & Cooling. All Rights Reserved.</p>
+        <ul>
+            <li><a href="https://www.facebook.com/">Facebook</a></li>
+            <li><a href="https://www.instagram.com/">Instagram</a></li>
+            <li><a href="https://www.twitter.com/">Twitter</a></li>
+        </ul>
+    </footer>
+    <script>
+        // Hamburger Menu
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('.nav ul');
+
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Contact Info
+        const contactInfo = document.querySelectorAll('.contact-info .info');
+
+        contactInfo.forEach((info) => {
+            info.addEventListener('click', () => {
+                info.classList.toggle('active');
+            });
+        });
+
+        // Mobile Responsive
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+        mediaQuery.addEventListener('change', () => {
+            if (mediaQuery.matches) {
+                // Mobile Responsive Code
+                // ...
+            } else {
+                // Desktop Responsive Code
+                // ...
+            }
+        });
+    </script>
+</body>
+</html>

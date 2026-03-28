@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scott Burnett Mechanical Contractors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500&family=Syne:wght@400&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+        }
+        
+        h1, h2 {
+            font-family: 'Syne', sans-serif;
+            color: var(--primary);
+        }
+        
+        /* Sticky Navigation */
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1;
+        }
+        
+        .sticky-nav h2 {
+            color: var(--bg);
+            margin: 0;
+        }
+        
+        .hamburger {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .sticky-nav {
+                padding: 0.5rem;
+            }
+            
+            .hamburger {
+                display: block;
+                font-size: 2rem;
+                cursor: pointer;
+            }
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--bg);
+            padding: 0 2rem;
+            position: relative;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            text-align: center;
+        }
+        
+        .hero .buttons {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .hero .btn {
+            background-color: var(--accent);
+            color: var(--bg);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin: 0 1rem;
+        }
+        
+        .hero .btn:hover {
+            background-color: var(--bg);
+            color: var(--primary);
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .trust-badge {
+            background-color: var(--primary);
+            color: var(--bg);
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            margin: 0 0.5rem;
+        }
+        
+        /* Service Cards */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 4rem;
+            text-align: center;
+        }
+        
+        .service-card {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-card img {
+            width: 50%;
+        }
+        
+        /* Why Choose Us */
+        .why-choose-us {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 4rem;
+        }
+        
+        .block {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            padding: 4rem;
+        }
+        
+        .gallery-item {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Reviews */
+        .reviews {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .rating {
+            background-image: linear-gradient(to right, var(--accent) 0%, var(--accent) var(--rating), var(--bg) var(--rating), var(--bg) 100%);
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            border-radius: 1rem;
+        }
+        
+        .review {
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            padding: 1rem;
+            border-radius: 1rem;
+            background-color: var(--light);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* About */
+        .about {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .about img {
+            width: 50%;
+        }
+        
+        /* Contact */
+        .contact {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .contact-info {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--primary);
+            color: var(--bg);
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="sticky-nav">
+        <h2>Scott Burnett Mechanical Contractors</h2>
+        <button class="hamburger"></button>
+    </nav>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to Scott Burnett Mechanical Contractors in Tallahassee</h1>
+                <div class="buttons">
+                    <button class="btn">Learn More</button>
+                    <button class="btn">Get a Quote</button>
+                </div>
+                <div class="trust-badges">
+                    <div class="trust-badge">5-Star Rating</div>
+                    <div class="trust-badge">Emergency Services</div>
+                    <div class="trust-badge">Quality Workmanship</div>
+                    <div class="trust-badge">Competitive Pricing</div>
+                </div>
+            </div>
+        </section>
+        <section class="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="service-card">
+                    <h3>Emergency Leak Repair</h3>
+                    <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Emergency Leak Repair">
+                    <p>Get immediate help for leaky pipes and faucets.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Drain Cleaning</h3>
+                    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Drain Cleaning">
+                    <p>Clear clogged drains with our professional cleaning services.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Water Heater Install</h3>
+                    <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Water Heater Install">
+                    <p>Install a new water heater with our expert installation services.</p>
+                </div>
+            </div>
+        </section>
+        <section class="why-choose-us">
+            <div class="container">
+                <h2>Why Choose Us</h2>
+                <div class="block">
+                    <h3>Experience</h3>
+                    <p>We have years of experience in plumbing services.</p>
+                </div>
+                <div class="block">
+                    <h3>Licensed and Insured</h3>
+                    <p>We are fully licensed and insured for your protection.</p>
+                </div>
+                <div class="block">
+                    <h3>Competitive Pricing</h3>
+                    <p>We offer competitive pricing for all our services.</p>
+                </div>
+            </div>
+        </section>
+        <section class="gallery">
+            <div class="container">
+                <h2>Our Work</h2>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+                </div>
+            </div>
+        </section>
+        <section class="reviews">
+            <div class="container">
+                <h2>Reviews</h2>
+                <div class="rating" style="width: 4.5%">
+                    <span>4.5/5</span>
+                </div>
+                <div class="review" style="background-color: #f7f7f7;">"Great service and knowledgeable staff!" - Scott Burnett Mechanical Contractors</div>
+                <div class="review" style="background-color: #f7f7f7;">"Quick and efficient repair service!" - Scott Burnett Mechanical Contractors</div>
+                <div class="review" style="background-color: #f7f7f7;">"Professional and reliable plumbers!" - Scott Burnett Mechanical Contractors</div>
+            </div>
+        </section>
+        <section class="about">
+            <div class="container">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image">
+                <div class="info">
+                    <h3>Locally Owned and Operated</h3>
+                    <p>We are proud to serve the Tallahassee community with quality plumbing services.</p>
+                </div>
+            </div>
+        </section>
+        <section class="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>711 W Gaines St, Tallahassee, FL 32304, Tallahassee, FL 32304</p>
+                    <a href="tel:(850) 222-4183">(850) 222-4183</a>
+                    <a href="mailto:info@scottburnettinc.com">info@scottburnettinc.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; Scott Burnett Mechanical Contractors. All rights reserved.</p>
+    </footer>
+</body>
+</html>

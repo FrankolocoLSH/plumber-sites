@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Fresh Ducts & AC Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Outfit:wght@600&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Syne', 'Outfit', sans-serif;
+        }
+        svg {
+            width: 1em;
+            height: 1em;
+            fill: currentColor;
+            vertical-align: middle;
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+        @media (min-width: 768px) {
+            .hamburger {
+                display: none;
+            }
+            .nav-links {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <h1>Fresh Ducts & AC Solutions</h1>
+        </div>
+        <button class="hamburger" aria-controls="primary-nav" aria-expanded="false" type="button">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+            </svg>
+        </button>
+        <ul class="nav-links" id="primary-nav">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section class="hero">
+            <div class="hero-overlay">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop" alt="Hero Image" class="hero-image">
+                <div class="hero-content">
+                    <h1>Welcome to Fresh Ducts & AC Solutions in Fort Lauderdale, FL 33311</h1>
+                    <button class="cta">Get a Quote</button>
+                    <button class="cta secondary">Learn More</button>
+                    <div class="trust-badges">
+                        <img src="icon-1.svg" alt="Trust Badge 1">
+                        <img src="icon-2.svg" alt="Trust Badge 2">
+                        <img src="icon-3.svg" alt="Trust Badge 3">
+                        <img src="icon-4.svg" alt="Trust Badge 4">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="service-cards">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" alt="Service Image 1">
+                    <h3>Service 1</h3>
+                    <p>Short description of service 1</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Service Image 2">
+                    <h3>Service 2</h3>
+                    <p>Short description of service 2</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Service Image 3">
+                    <h3>Service 3</h3>
+                    <p>Short description of service 3</p>
+                </div>
+            </div>
+        </section>
+        <section class="why-choose-us">
+            <h2>Why Choose Us?</h2>
+            <div class="why-blocks">
+                <div class="why-block">
+                    <h3>Block 1</h3>
+                    <p>Short description of block 1</p>
+                </div>
+                <div class="why-block">
+                    <h3>Block 2</h3>
+                    <p>Short description of block 2</p>
+                </div>
+                <div class="why-block">
+                    <h3>Block 3</h3>
+                    <p>Short description of block 3</p>
+                </div>
+            </div>
+        </section>
+        <section class="gallery">
+            <h2>Our Gallery</h2>
+            <div class="gallery-images">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=800&fit=crop" alt="Gallery Image 1">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop" alt="Gallery Image 2">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=800&fit=crop" alt="Gallery Image 3">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Gallery Image 4">
+            </div>
+        </section>
+        <section class="reviews">
+            <h2>Reviews</h2>
+            <div class="review-cards">
+                <div class="review-card">
+                    <div class="rating">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="#FFD700" />
+                            <path d="M11.6 19L5.16 12.6c-.4-1.66.05-3.59 1.63-4.24V10h2v3.24c1.58-.65 3.07-1.58 4.24-1.63l6.44 6.44c.33.33.33.87 0 1.2-.33.33-1.05.16-1.2-.22z" stroke="#FFD700" stroke-width="2" fill="none" />
+                        </svg>
+                        5
+                    </div>
+                    <p>43</p>
+                </div>
+                <div class="review-card">
+                    <div class="rating">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="#FFD700" />
+                            <path d="M11.6 19L5.16 12.6c-.4-1.66.05-3.59 1.63-4.24V10h2v3.24c1.58-.65 3.07-1.58 4.24-1.63l6.44 6.44c.33.33.33.87 0 1.2-.33.33-1.05.16-1.2-.22z" stroke="#FFD700" stroke-width="2" fill="none" />
+                        </svg>
+                        5
+                    </div>
+                    <p>43</p>
+                </div>
+                <div class="review-card">
+                    <div class="rating">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="#FFD700" />
+                            <path d="M11.6 19L5.16 12.6c-.4-1.66.05-3.59 1.63-4.24V10h2v3.24c1.58-.65 3.07-1.58 4.24-1.63l6.44 6.44c.33.33.33.87 0 1.2-.33.33-1.05.16-1.2-.22z" stroke="#FFD700" stroke-width="2" fill="none" />
+                        </svg>
+                        5
+                    </div>
+                    <p>43</p>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop" alt="About Image" class="about-image">
+                <div class="about-text">
+                    <h3>Welcome to Fresh Ducts & AC Solutions</h3>
+                    <p>We are a trusted and experienced home service company providing top-notch solutions for all your AC and duct needs.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="value">10</div>
+                        <div class="label">Years of Experience</div>
+                    </div>
+                    <div class="stat">
+                        <div class="value">100</div>
+                        <div class="label">Happy Customers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="value">90</div>
+                        <div class="label">Certified Technicians</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact">
+            <h2>Get in Touch</h2>
+            <p>Phone: <a href="tel:+19543006918">+1 954 300 6918</a></p>
+            <p>Email: <a href="mailto:"></a></p>
+            <p>Address: N Andrews Ave, Fort Lauderdale, FL 33311, USA</p>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Name">
+                <input type="email" name="email" placeholder="Email">
+                <input type="tel" name="phone" placeholder="Phone">
+                <textarea name="message" placeholder="Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+        <footer class="footer">
+            <p>&copy; 2023 Fresh Ducts & AC Solutions. All rights reserved.</p>
+        </footer>
+    </main>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fort Lauderdale Heating & Air Conditioning Service</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne+Offret:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--primary);
+            padding: 0;
+            margin: 0;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+        }
+        
+        a:hover {
+            color: var(--accent);
+        }
+        
+        .hamburger {
+            display: none;
+        }
+        
+        .nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1;
+        }
+        
+        .nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        
+        .nav ul li {
+            margin-right: 20px;
+        }
+        
+        .nav a {
+            color: var(--light);
+            font-size: 1rem;
+            font-family: 'DM Sans', sans-serif;
+        }
+        
+        .dark-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            background-position: center;
+            background-size: cover;
+            background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop');
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-family: 'Syne Offret', sans-serif;
+            margin: 0;
+        }
+        
+        .hero .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero .hero-content .trust-badges {
+            margin-bottom: 2rem;
+        }
+        
+        .hero .hero-content .trust-badges .badge {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 1rem;
+            display: inline-block;
+            border-radius: 0.5rem;
+            margin-right: 1rem;
+        }
+        
+        .hero . hero-content .trust-badges .badge:last-child {
+            margin-right: 0;
+        }
+        
+        .services {
+            padding: 5rem 0;
+        }
+        
+        .services .service-card {
+            background-color: var(--light);
+            padding: 2rem;
+            margin: 1rem;
+            border: 1px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .services .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .services .service-card img {
+            width: 100%;
+            object-fit: cover;
+            height: 200px;
+        }
+        
+        .why-choose-us {
+            padding: 5rem 0;
+        }
+        
+        .why-choose-us .block {
+            background-color: var(--light);
+            padding: 2rem;
+            margin: 1rem;
+            border: 1px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .why-choose-us .block:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery {
+            padding: 5rem 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            object-fit: cover;
+            height: 200px;
+        }
+        
+        .reviews {
+            padding: 5rem 0;
+        }
+        
+        .reviews .review {
+            padding: 2rem;
+            margin: 1rem;
+            border: 1px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .reviews .review:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stats {
+            padding: 5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .stats .stat {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .stats .stat h2 {
+            font-size: 2rem;
+        }
+        
+        .stats .stat p {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact {
+            padding: 5rem 0;
+        }
+        
+        .contact .form {
+            padding: 2rem;
+            margin: 1rem;
+            border: 1px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .contact .form:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer {
+            padding: 2rem;
+            background-color: var(--primary);
+            color: #fff;
+            text-align: center;
+        }
+        
+        .footer a {
+            color: #fff;
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav ul {
+                display: none;
+            }
+            
+            .nav ul.is-display {
+                display: flex;
+            }
+        }
+        
+        @media (max-height: 768px) {
+            .hero {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="nav">
+        <div class="logo">
+            <a href="#">Fort Lauderdale Heating & Air Conditioning Service</a>
+        </div>
+        <div class="hamburger">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </div>
+        <ul>
+            <li class="is-display"><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    
+    <!-- Hero -->
+    <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop')">
+        <div class="dark-overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to Fort Lauderdale Heating & Air Conditioning Service in FL 33315</h1>
+            <div class="trust-badges">
+                <div class="badge">5-Star Rating</div>
+                <div class="badge">100% Satisfaction</div>
+                <div class="badge">10+ Years Experience</div>
+                <div class="badge">Fully Licensed & Insured</div>
+            </div>
+            <button>Get a Quote</button>
+            <button>Learn More</button>
+        </div>
+    </div>
+    
+    <!-- Services -->
+    <div class="services">
+        <h2>Our Services</h2>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" alt="Service 1">
+            <h3>Service 1</h3>
+            <p>Descirption for Service 1.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Service 2">
+            <h3>Service 2</h3>
+            <p>Descirption for Service 2.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Service 3">
+            <h3>Service 3</h3>
+            <p>Descirption for Service 3.</p>
+        </div>
+    </div>
+    
+    <!-- Why Choose Us -->
+    <div class="why-choose-us">
+        <h2>Why Choose Us?</h2>
+        <div class="block">
+            <h3>Block 1</h3>
+            <p>Descirption for Block 1.</p>
+        </div>
+        <div class="block">
+            <h3>Block 2</h3>
+            <p>Descirption for Block 2.</p>
+        </div>
+        <div class="block">
+            <h3>Block 3</h3>
+            <p>Descirption for Block 3.</p>
+        </div>
+    </div>
+    
+    <!-- Gallery -->
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=800&fit=crop" alt="Gallery 1">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop" alt="Gallery 2">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=800&fit=crop" alt="Gallery 3">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Gallery 4">
+    </div>
+    
+    <!-- Reviews -->
+    <div class="reviews">
+        <h2>Reviews</h2>
+        <div class="review">
+            <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p>Review 1.</p>
+            <p>5 out of 5</p>
+        </div>
+        <div class="review">
+            <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p>Review 2.</p>
+            <p>5 out of 5</p>
+        </div>
+        <div class="review">
+            <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p>Review 3.</p>
+            <p>5 out of 5</p>
+        </div>
+    </div>
+    
+    <!-- About -->
+    <div class="about">
+        <div class="left">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop" alt="About Image">
+        </div>
+        <div class="right">
+            <h2>About Us</h2>
+            <p>Descirption for About Us.</p>
+            <div class="stats">
+                <div class="stat">
+                    <h2>10+</h2>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="stat">
+                    <h2>100%</h2>
+                    <p>Satisfaction Rate</p>
+                </div>
+                <div class="stat">
+                    <h2>10+</h2>
+                    <p>Certified Technicians</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Contact -->
+    <div class="contact">
+        <h2>Get in Touch</h2>
+        <div class="form">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <input type="text" placeholder="Phone">
+            <textarea placeholder="Message"></textarea>
+            <button>Send</button>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2023 Fort Lauderdale Heating & Air Conditioning Service. All rights reserved.</p>
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+<script>
+    let navbarLinks = document.querySelectorAll('.nav ul li');
+    let hamburger = document.querySelector('.hamburger');
+
+    hamburger.addEventListener('click', () => {
+        navbarLinks.classList.toggle('is-display');
+    });
+</script>
+    <!-- Local Story -->
+    <div class="local-story">
+        <h2>Meet Our Family in Fort Lauderdale</h2>
+        <p>We are a family-owned business, dedicated to serving the Fort Lauderdale community for over 10 years. Our team of certified technicians are trained to provide top-notch service and repair your heating and cooling needs.</p>
+        <div class="stats">
+            <div class="stat">
+                <h2>5</h2>
+                <p>5-Star Reviews</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Set up the IntersectionObserver to load the reviews
+        const reviews = document.querySelectorAll('.review');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.intersectionRatio > 0) {
+                    const rating = entry.target.querySelector('.rating');
+                    rating.innerHTML = `
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    `;
+
+                    if (entry.target.querySelector('p') !== null) {
+                        const ratingElement = entry.target.querySelector('p');
+                        ratingElement.textContent = '5 out of 5';
+                    }
+                }
+            });
+        }, { threshold: 1.0 });
+
+        reviews.forEach((review) => {
+            observer.observe(review);
+        });
+    </script>
+    <script>
+        // Set up the IntersectionObserver to load the service cards
+        const services = document.querySelectorAll('.service-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.intersectionRatio > 0) {
+                    const serviceCard = entry.target;
+                    const image = serviceCard.querySelector('img');
+                    const rating = serviceCard.querySelector('.rating');
+                    const ratingElement = serviceCard.querySelector('h3');
+
+                    image.src = 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop';
+                    rating.innerHTML = `
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    `;
+                    ratingElement.textContent = serviceCard.querySelector('h3').textContent;
+                }
+            });
+        }, { threshold: 1.0 });
+
+        services.forEach((service) => {
+            observer.observe(service);
+        });
+    </script>
+    <!-- Google Maps -->
+    <div class="google-maps">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.3422131438135!2d-80.1355274854926!2d26.14347528485945!3d26.14347684999888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b74c6a7b6a0f%3A0x55d9c5f7c6a3b9b3!2sFort%20Lauderdale%20Heating%20%26%20Air%20Conditioning%20Service!5e0!3m2!1sen!2sin!4v1669841151136!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <!-- Local Address -->
+    <addr>1419 FL-84, Fort Lauderdale, FL 33315, USA</addr>
+    <!-- Phone Number -->
+    <p><abbr title="Phone Number">P:</

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Air Services LLC</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--primary);
+            padding: 0;
+            margin: 0;
+        }
+        
+        .hamburger {
+            display: none;
+            position: relative;
+            top: 0;
+            left: 1em;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            border: 0;
+        }
+        
+        .hamburger::before, .hamburger::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+            transition: transform 0.2s ease-in-out;
+        }
+        
+        .hamburger::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        
+        .hamburger::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        
+        .hamburger.active {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .hamburger.active::before, .hamburger.active::after {
+            transform: translate(-50%, -50%) rotate(0);
+            width: 0%;
+            height: 100%;
+            background-color: var(--bg);
+        }
+        
+        .hamburger.active::before {
+            transform: translate(50%, -50%) rotate(-45deg);
+        }
+        
+        .hamburger.active::after {
+            transform: translate(50%, -50%) rotate(45deg);
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1em;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: color 0.2s ease-in-out;
+        }
+        
+        nav a:hover {
+            color: var(--accent);
+        }
+        
+        nav svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 4em);
+            background-image: linear-gradient(to bottom, var(--bg), #333);
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            text-align: center;
+            padding: 2em;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.5;
+        }
+        
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 48px;
+            font-weight: bold;
+            line-height: 1.2;
+            color: var(--light);
+            text-align: center;
+        }
+        
+        .hero .ctas {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1em;
+        }
+        
+        .hero .cta {
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--accent);
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 1em 2em;
+        }
+        
+        .hero .cta:hover {
+            background-color: #eee;
+        }
+        
+        .hero .trust-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1em;
+        }
+        
+        .trust-badge {
+            text-align: center;
+            padding: 1em;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        
+        .trust-badge img {
+            height: 20px;
+        }
+        
+        /* Service Cards */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2em;
+            padding: 2em;
+        }
+        
+        .service-card {
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        
+        .service-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        /* Why Choose Us */
+        .why-choose-us {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2em;
+            padding: 2em;
+        }
+        
+        .why-block {
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2em;
+            padding: 2em;
+        }
+        
+        .gallery-item {
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            width: calc(50% - 1em);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2em;
+            padding: 2em;
+        }
+        
+        .review {
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        
+        .review svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+        
+        /* About */
+        .about {
+            position: relative;
+            padding: 2em;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to bottom, var(--bg), #333);
+            z-index: -1;
+        }
+        
+        .about-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            line-height: 1.5;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .local-story {
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            margin-top: 2em;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .local-story::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 1em;
+            width: 10px;
+            height: 100%;
+            background-color: var(--primary);
+        }
+        
+        .local-story::after {
+            content: '';
+            position: absolute;
+            top: 1em;
+            left: 1em;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary);
+            border-radius: 50%;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1em;
+        }
+        
+        .stat {
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            margin: 0 1em;
+        }
+        
+        .stat svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 2em;
+        }
+        
+        .contact .address {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5em;
+        }
+        
+        .contact .phone-number {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5em;
+        }
+        
+        .contact .email {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 0.5em;
+        }
+        
+        .contact form {
+            padding: 1em;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Footer */
+        .footer {
+            position: relative;
+            background-color: #333;
+            color: #fff;
+            padding: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .footer::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="#"><img src="logo.svg" alt="Top Air Services logo"><span>TAS</span></a>
+        </div>
+        <button class="hamburger" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" class="hamburger-icon">
+                <path d="M3 18h18v-2H3v2zm0-12h18v-2H3v2zm0-10v2h18V2H3z" />
+            </svg>
+        </button>
+        <div class="menu">
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose">Why Choose Us</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Top Air Services LLC</h1>
+            <p>We provide top-notch home services in Fort Lauderdale, FL 33311</p>
+            <div class="ctas">
+                <a href="#" class="cta">Learn More</a>
+                <a href="#" class="cta">Get a Quote</a>
+            </div>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <img src="trust-badge-1.png" alt="Trust badge 1">
+                </div>
+                <div class="trust-badge">
+                    <img src="trust-badge-2.png" alt="Trust badge 2">
+                </div>
+                <div class="trust-badge">
+                    <img src="trust-badge-3.png" alt="Trust badge 3">
+                </div>
+                <div class="trust-badge">
+                    <img src="trust-badge-4.png" alt="Trust badge 4">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h1>Our Services</h1>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" alt="Service 1">
+            <p>Service 1 description</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Service 2">
+            <p>Service 2 description</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Service 3">
+            <p>Service 3 description</p>
+        </div>
+    </section>
+    <!-- Why Choose Us -->
+    <section id="why-choose" class="why-choose-us">
+        <h1>Why Choose Us</h1>
+        <div class="why-block">
+            <h2>Block 1</h2>
+            <p>Block 1 description</p>
+        </div>
+        <div class="why-block">
+            <h2>Block 2</h2>
+            <p>Block 2 description</p>
+        </div>
+        <div class="why-block">
+            <h2>Block 3</h2>
+            <p>Block 3 description</p>
+        </div>
+    </section>
+    <!-- Gallery -->
+    <section id="gallery" class="gallery">
+        <h1>Galleries</h1>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=800&fit=crop" alt="Gallery 1">
+            <div class="gallery-item-content">
+                <p>Description 1</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop" alt="Gallery 2">
+            <div class="gallery-item-content">
+                <p>Description 2</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=800&fit=crop" alt="Gallery 3">
+            <div class="gallery-item-content">
+                <p>Description 3</p>
+            </div>
+        </div>
+    </section>
+    <!-- Reviews -->
+    <section id="reviews" class="reviews">
+        <h1>Reviews</h1>
+        <div class="review">
+            <svg viewBox="0 0 24 24" class="rating">
+                <path d="M12 17.27L18.58 12L12 6.73L5.42 12L12 17.27zM12 12c-1.669 0-3-1.33-3-3s1.33-3 3-3 3 1.33 3 3-1.33 3-3 3z" />
+                <path d="M0 0h24v24H0V0z" fill="none" />
+            </svg>
+            <span>Rating</span>
+            <p>User review</p>
+        </div>
+        <div class="review">
+            <svg viewBox="0 0 24 24" class="rating">
+                <path d="M12 17.27L18.58 12L12 6.73L5.42 12L12 17.27zM12 12c-1.669 0-3-1.33-3-3s1.33-3 3-3 3 1.33 3 3-1.33 3-3 3z" />
+                <path d="M0 0h24v24H0V0z" fill="none" />
+            </svg>
+            <span>Rating</span>
+            <p>User review</p>
+        </div>
+        <div class="review">
+            <svg viewBox="0 0 24 24" class="rating">
+                <path d="M12 17.27L18.58 12L12 6.73L5.42 12L12 17.27zM12 12c-1.669 0-3-1.33-3-3s1.33-3 3-3 3 1.33 3 3-1.33 3-3 3z" />
+                <path d="M0 0h24v24H0V0z" fill="none" />
+            </svg>
+            <span>Rating</span>
+            <p>User review</p>
+        </div>
+    </section>
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="about-text">
+            <h1>About Us</h1>
+            <p>Top Air Services LLC is a leading provider of home services in Fort Lauderdale, FL 33311</p>
+            <p>Our team of experienced professionals is dedicated to

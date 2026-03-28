@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grable Plumbing & Air</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Outfit&family=Syne&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: var(--primary);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .hamburger {
+            display: none;
+        }
+        @media only screen and (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url/https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 48px;
+        }
+        .hero p {
+            font-size: 18px;
+        }
+        .hero .btn {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .hero .btn:hover {
+            background-color: #e65e0a;
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .trust-badges img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .services {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .service {
+            background-color: var(--light);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: calc(33.33% - 20px);
+            margin: 10px;
+        }
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .service h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .why-choose-us {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .why-choose-us .block {
+            background-color: var(--light);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: calc(33.33% - 20px);
+            margin: 10px;
+        }
+        .why-choose-us .block h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+            margin-top: 50px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .reviews {
+            margin-top: 50px;
+        }
+        .review {
+            background-color: var(--light);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .review .rating {
+            display: flex;
+        }
+        .review .rating svg {
+            width: 20px;
+            height: 20px;
+            fill: #ffd700;
+            margin-right: 5px;
+        }
+        .about {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .about img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .about .text {
+            width: calc(100% - 320px);
+        }
+        .about .text h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .contact {
+            margin-top: 50px;
+        }
+        .contact .phone {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact form input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .contact form textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .contact form button {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .contact form button:hover {
+            background-color: #e65e0a;
+        }
+        footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="#">Grable Plumbing & Air</a>
+        </div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-choose-us">Why Choose Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </div>
+    </nav>
+    <section class="hero">
+        <h1>Grable Plumbing & Air - Your Trusted Plumbers in FL 33610</h1>
+        <p>Emergency Leak Repair, Drain Cleaning, Water Heater Install, Pipe Replacement, Bathroom Plumbing, Sewer Repair</p>
+        <button class="btn">Get a Quote</button>
+        <button class="btn">Schedule Service</button>
+        <div class="trust-badges">
+            <img src="https://via.placeholder.com/50" alt="Trust Badge 1">
+            <img src="https://via.placeholder.com/50" alt="Trust Badge 2">
+            <img src="https://via.placeholder.com/50" alt="Trust Badge 3">
+            <img src="https://via.placeholder.com/50" alt="Trust Badge 4">
+        </div>
+    </section>
+    <section class="services" id="services">
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1">
+            <h2>Emergency Leak Repair</h2>
+            <p>Our team of experts is available 24/7 to repair any leak or plumbing issue.</p>
+        </div>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2">
+            <h2>Drain Cleaning</h2>
+            <p>Our state-of-the-art equipment and techniques ensure your drains are clean and flowing freely.</p>
+        </div>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3">
+            <h2>Water Heater Install</h2>
+            <p>We offer a wide range of water heaters and installation services to meet your needs.</p>
+        </div>
+    </section>
+    <section class="why-choose-us" id="why-choose-us">
+        <div class="block">
+            <h2>Why Choose Us</h2>
+            <p>We are a family-owned and operated business with years of experience in the plumbing industry.</p>
+        </div>
+        <div class="block">
+            <h2>Our Mission</h2>
+            <p>Our mission is to provide the highest quality plumbing services to our customers while maintaining a high level of customer satisfaction.</p>
+        </div>
+        <div class="block">
+            <h2>Our Values</h2>
+            <p>We value honesty, integrity, and transparency in all our interactions with our customers and employees.</p>
+        </div>
+    </section>
+    <section class="gallery" id="gallery">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+    </section>
+    <section class="reviews" id="reviews">
+        <div class="review">
+            <h2>Rating: 4.8</h2>
+            <div class="rating">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 6.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <p>We have 865 reviews</p>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image">
+        <div class="text">
+            <h2>About Us</h2>
+            <p>We are a family-owned and operated business with years of experience in the plumbing industry. We are dedicated to providing the highest quality plumbing services to our customers while maintaining a high level of customer satisfaction.</p>
+            <p>We are proud to serve the FL 33610 area and are committed to being the best plumbers in the region.</p>
+            <h2>Our Stats</h2>
+            <ul>
+                <li>10+ years of experience</li>
+                <li>100+ satisfied customers</li>
+                <li>5-star rating on Google</li>
+            </ul>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <h2>Get in Touch</h2>
+        <p class="phone"><a href="tel:(813) 680-4806">(813) 680-4806</a></p>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button>Send Message</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 Grable Plumbing & Air. All rights reserved.</p>
+        <p>Address: 3723 E Hillsborough Ave, Tampa, FL 33610, USA</p>
+    </footer>
+    <script>
+        // IntersectionObserver code here
+    </script>
+</body>
+</html>

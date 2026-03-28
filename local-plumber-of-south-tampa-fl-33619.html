@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Plumber of South Tampa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne+MT:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+    </style>
+    <svg width="0" height="0">
+        <symbol id="icon-svg-hamburger" viewBox="0 0 1024 1024">
+            <path d="M8 264 184.666667 472 368 456C272.333333 444.666667 168 444.666667 56 472 .666667 536.333333 84.666667 632 184.666667 688 272.333333 744 368 748C444.666667 755.333333 536.333333 746.666667 624.666667 692.666667l192 96-192 96zM688 56c-44.666667 0-56 44.666667-56 84.666667 0 40 11.333333 76 56 84.666667 44.666667 8.666667 84.666667 8.666667 128.666667-.666667 44.666667-44.666667 84.666667-84.666667 84.666667-40 0-76-11.333333-84.666667-56zm0-16c-21.333333 0-32 16-32 34.666667C656 60 680 56 688 56z"/>
+        </symbol>
+        <symbol id="icon-svg-star" viewBox="0 0 512 512">
+            <path d="M256 128l128 65.333333c4.666667 4.666667 8.666667 9.333333 12.666667 14.333333l-64 64c-12.666667 12.666667-17.333333 29.333333-14.333333 49.333333l-64-64c-4.666667-7.333333-8.666667-18-8.666667-24.666667 0-6.666667 6.666667-12 13.333333-12s12.666667-6.666667 16.666667 0c7.333333 7.333333 7.333333 20 0 24.666667l64 64c5.333333 5.333333 10 10 15.333333 10 6.666667 0 13.333333-2 20-2s12.666667 6.666667 15.333333 0zM256 384l-160 0c-7.333333 0-14-3.666667-21.333333-4.667s-12-6-10-14l40-20c4.666667-5.333333 11-7.333333 17-3 6.666667 4.666667 14 6 16 6 2 10.666667 4.667 18.666667 4.666667 14 0 21.333333-11 32-16 6-5.333333 12-5.333333 10-.666667L256 384z"/>
+        </symbol>
+    </svg>
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+        }
+        .hamburger {
+            cursor: pointer;
+            fill: var(--accent);
+        }
+        .nav-links {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: var(--primary);
+            padding: 1rem;
+        }
+        .nav-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .nav-links a:hover {
+            opacity: .8;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+        }
+        .hero h1 {
+            font-family: 'Syne MT', sans-serif;
+            font-size: 64px;
+            margin-top: 0;
+        }
+        .trust-badges {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 2rem;
+        }
+        .trust-badges .badge {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin: 1rem;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0,0,0,.2);
+        }
+        .trust-badges .badge .icon {
+            width: 32px;
+            height: 32px;
+            fill: #777;
+            margin-right: 10px;
+        }
+        service-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f7fb;
+            box-shadow: 0 0 10px rgba(0,0,0,.2);
+        }
+        service-card .service-icon {
+            width: 64px;
+            height: 64px;
+            background: url('https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop');
+            background-size: cover;
+            border-radius: 50%;
+            margin: 20px auto;
+            background-position: center;
+        }
+        service-card h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent);
+        }
+        service-card p {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .cta {
+            background-color: var(--primary);
+            padding: 1rem;
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            margin: 20px auto;
+        }
+        .cta:hover {
+            opacity: .8;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-gap: 20px;
+            padding: 20px;
+        }
+        .gallery .item {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            background-color: #f4f7fb;
+            box-shadow: 0 0 10px rgba(0,0,0,.2);
+        }
+        .gallery .item img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .reviews {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+        }
+        .reviews .rating {
+            font-size: 24px;
+            color: var(--accent);
+        }
+        .reviews .review {
+            font-size: 16px;
+            color: #333;
+        }
+        .reviews .review-name {
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .about {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+        }
+        .about .image {
+            display: block;
+            width: 300px;
+            height: 300px;
+            background: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop');
+            background-size: cover;
+            border-radius: 10px;
+            margin: 10px 20px;
+            background-position: center;
+        }
+        .about .text {
+            font-size: 16px;
+            color: #333;
+        }
+        .stats {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+            background-color: var(--light);
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0,0,0,.2);
+        }
+        .stats .stat {
+            font-size: 24px;
+            color: var(--accent);
+            margin: 20px 0;
+            background-color: #f4f7fb;
+            padding: 10px;
+        }
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+            background-color: var(--primary);
+            color: #fff;
+        }
+        .footer .social {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .footer .social a {
+            text-decoration: none;
+            color: #fff;
+            margin: 20px;
+        }
+        .footer .social a:hover {
+            opacity: .8;
+        }
+    </style>
+</head>
+<body>
+    <header class="nav">
+        <button class="hamburger"></button>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Emergency Plumbing Services in <span style="color: var(--accent);">South Tampa, FL 33619</span></h1>
+                <p>Contact us for 24/7 emergency plumbing services!</p>
+                <div class="trust-badges">
+                    <div class="badge">
+                        <i class="icon" style="width: 32px; height: 32px; fill: var(--accent); margin-right: 10px;"></i>
+                        <p>Awards Badge</p>
+                    </div>
+                    <div class="badge">
+                        <i class="icon" style="width: 32px; height: 32px; fill: var(--accent); margin-right: 10px;"></i>
+                        <p>Partner Badge</p>
+                    </div>
+                    <div class="badge">
+                        <i class="icon" style="width: 32px; height: 32px; fill: var(--accent); margin-right: 10px;"></i>
+                        <p>Recommendation Badge</p>
+                    </div>
+                    <div class="badge">
+                        <i class="icon" style="width: 32px; height: 32px; fill: var(--accent); margin-right: 10px;"></i>
+                        <p>License Badge</p>
+                    </div>
+                    <div class="badge">
+                        <i class="icon" style="width: 32px; height: 32px; fill: var(--accent); margin-right: 10px;"></i>
+                        <p>Certificate Badge</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ctas">
+                <a href="#services" class="cta">View Services</a>
+                <a href="#about" class="cta">About Us</a>
+            </div>
+        </section>
+        <section id="services" class="services">
+            <div class="container">
+                <h1>Our Services</h1>
+                <div class="gallery">
+                    <div class="item">
+                        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop">
+                    </div>
+                    <div class="item">
+                        <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop">
+                    </div>
+                    <div class="item">
+                        <h2>Leak Repair</h2>
+                        <p>Contact us for 24/7 emergency leak repair services!</p>
+                    </div>
+                    <div class="item">
+                        <h2>Drain Cleaning</h2>
+                        <p>Contact us for 24/7 emergency drain cleaning services!</p>
+                    </div>
+                    <div class="item">
+                        <h2>Water Heater Install</h2>
+                        <p>Contact us for 24/7 emergency water heater install services!</p>
+                    </div>
+                    <div class="item">
+                        <h2>Pipe Replacement</h2>
+                        <p>Contact us for 24/7 emergency pipe replacement services!</p>
+                    </div>
+                    <div class="item">
+                        <h2>Bathroom Plumbing</h2>
+                        <p>Contact us for 24/7 emergency bathroom plumbing services!</p>
+                    </div>
+                    <div class="item">
+                        <h2>Sewer Repair</h2>
+                        <p>Contact us for 24/7 emergency sewer repair services!</p>
+                    </div>
+                </div>
+                <h2>Learn More</h2>
+                <div class="stats">
+                    <div class="stat">10+ Years of Experience</div>
+                    <div class="stat">
+                        <i class="icon" style="width: 32px; height: 32px; fill: var(--accent); margin-right: 10px;"></i> 500+ Satisfied Clients
+                    </div>
+                    <div class="stat">100% Satisfaction Guarantee</div>
+                </div>
+            </div>
+        </section>
+        <section id="why-choose-us" class="why-choose-us">
+            <div class="container">
+                <h1>Why Choose Us?</h1>
+                <div class="grid">
+                    <div class="col">
+                        <i class="icon" style="width: 32px; height: 32px; fill: var(--accent); margin-right: 10px;"></i>
+                        <h2>Expert Plumbers</h2>
+                    </div>
+                    <div class="col">
+                        <i class="icon" style="width: 32px; height: 32px; fill: var(--accent); margin-right: 10px;"></i>
+                        <h2>Fast Response Time</h2>
+                    </div>
+                    <div class="col">
+                        <i class="icon" style="width: 32px; height: 32px; fill: var(--accent); margin-right: 10px;"></i>
+                        <h2>Competitive Pricing</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <h1>Our Gallery</h1>
+                <div class="grid">
+                    <div class="item">
+                        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop">
+                    </div>
+                    <div class="item">
+                        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop">
+                    </div>
+                    <div class="item">
+                        <h2>Bathroom Plumbing</h2>
+                    </div>
+                    <div class="item">
+                        <h2>Water Heater Install</h2>
+                    </div>
+                    <div class="item">
+                        <h2>Pipe Replacement</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="reviews" class="reviews">
+            <div class="container">
+                <h1>We Have Received 65+ Reviews With A 5-Star Rating!</h1>
+                <div class="rating">
+                    <i class="icon" style="width: 32px; height: 32px; fill: var(--accent); margin-right: 10px;"></i>
+                    <span style="font-size: 48px; color: var(--primary);">5</span>
+                </div>
+                <div class="reviews">
+                    <div class="review">
+                        <p>"The plumber was very professional and courteous. They explained everything before starting work and made sure everything was done right."</p>
+                        <p>~ Local Plumber of South Tampa</p>
+                    </div>
+                    <div class="review">
+                        <p>"I was very impressed with the service. They showed up on time and did a great job fixing the leak."</p>
+                        <p>~ Local Plumber of South Tampa</p>
+                    </div>
+                    <div class="review">
+                        <p>"The price was very reasonable and the work was done quickly and efficiently. Thank you for the great service!"</p>
+                        <p>~ Local Plumber of South Tampa</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="about">
+            <div class="container">
+                <h1>About Us</h1>
+                <div class="text">
+                    <p>We are a team of experienced plumbers dedicated to providing top-quality service with a smile. Our team is fully licensed and bonded, and we have a proven reputation for reliability and professionalism.</p>
+                </div>
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop">
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <div class="grid">
+                    <div class="col">
+                        <i class="icon" style="width: 32px; height: 32px; fill: var(--accent); margin-right: 10px;"></i>

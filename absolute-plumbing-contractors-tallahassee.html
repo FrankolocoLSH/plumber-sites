@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absolute Plumbing Contractors</title>
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+            --color: #333;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+        }
+
+        h1 {
+            font-family: 'Syne/Outfit', sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Syne+Mono&family=DM+Sans:wght@400;500;700&family=Outfit:wght@400;700&text=Absolute+Plumbing+Contractors">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:ital,wght@0,400;1,600&family=DM+Sans:wght@400;500;700&family=Outfit:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://unpkg.com/intersection-observer@0.12.0/intersection-observer.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <button class="hamburger">
+                <svg width="20px" height="20px" viewBox="0 0 20 20" fill="var(--primary)" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+            </button>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="hero" id="hero">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop" alt="Hero Image" class="hero-image">
+        <div class="hero-content">
+            <h1>Tallahassee's Trusted Plumbers for Emergency & Routine Repairs</h1>
+            <button class="cta cta-1">Get Emergency Service Now</button>
+            <button class="cta cta-2">Schedule Your Appointment</button>
+            <div class="trust-badges">
+                <img src="icons/trust-badge-1.svg" alt="Trust Badge 1">
+                <img src="icons/trust-badge-2.svg" alt="Trust Badge 2">
+                <img src="icons/trust-badge-3.svg" alt="Trust Badge 3">
+                <img src="icons/trust-badge-4.svg" alt="Trust Badge 4">
+            </div>
+        </div>
+    </section>
+    <section class="services">
+        <h2>Expert Plumbing Services in Tallahassee</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service Image 1" class="service-image">
+                <h3>Emergency Leak Repair</h3>
+                <p>We'll stop the leak and fix the issue quickly and affordably.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service Image 2" class="service-image">
+                <h3>Drain Cleaning</h3>
+                <p>Get your drains flowing freely and efficiently with our expert cleaning services.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service Image 3" class="service-image">
+                <h3>Water Heater Install</h3>
+                <p>We'll help you choose the right water heater for your home and install it correctly.</p>
+            </div>
+        </div>
+    </section>
+    <section class="why-choose-us">
+        <h2>Why Choose Us for Your Plumbing Needs</h2>
+        <div class="blocks">
+            <div class="block">
+                <h3>24/7 Emergency Service</h3>
+                <p>We're available to help you day or night, no matter the emergency.</p>
+            </div>
+            <div class="block">
+                <h3>Free Estimates & Quotes</h3>
+                <p>We'll come to your home, assess your needs, and provide a free estimate for our services.</p>
+            </div>
+            <div class="block">
+                <h3>Local, Licensed, Bonded, and Insured</h3>
+                <p>We're committed to providing the highest level of service and ensuring your home is protected.</p>
+            </div>
+        </div>
+    </section>
+    <section class="gallery">
+        <h2>Take a Look at Our Recent Projects</h2>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1" class="gallery-image">
+            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2" class="gallery-image">
+            <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3" class="gallery-image">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4" class="gallery-image">
+        </div>
+    </section>
+    <section class="reviews">
+        <h2>What Our Customers Say</h2>
+        <ul>
+            <li>
+                <div class="review-content">
+                    <div class="review-stars">
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                    </div>
+                    <h3>Absolute Plumbing Contractors</h3>
+                    <p>"The team at Absolute Plumbing Contractors was incredibly professional and efficient. They fixed my leaky faucet in no time and even left a thank-you note!"</p>
+                    <span class="reviewer">- Emily R.</span>
+                </div>
+            </li>
+            <li>
+                <div class="review-content">
+                    <div class="review-stars">
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                    </div>
+                    <h3>Absolute Plumbing Contractors</h3>
+                    <p>"The team at Absolute Plumbing Contractors was incredibly professional and efficient. They fixed my leaky faucet in no time and even left a thank-you note!"</p>
+                    <span class="reviewer">- Emily R.</span>
+                </div>
+            </li>
+            <li>
+                <div class="review-content">
+                    <div class="review-stars">
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                    </div>
+                    <h3>Absolute Plumbing Contractors</h3>
+                    <p>"The team at Absolute Plumbing Contractors was incredibly professional and efficient. They fixed my leaky faucet in no time and even left a thank-you note!"</p>
+                    <span class="reviewer">- Emily R.</span>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section class="about">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image" class="about-image">
+        <div class="about-content">
+            <p>Welcome to Absolute Plumbing Contractors, your trusted partner for all your plumbing needs in Tallahassee. Our team of experts is dedicated to providing prompt, efficient, and top-quality service to our customers.</p>
+        </div>
+    </section>
+    <section class="stats">
+        <div class="stat">
+            <h3>Years of Experience</h3>
+            <p>Our team has a collective experience of over 20 years in the plumbing industry.</p>
+            <span>20+</span>
+        </div>
+        <div class="stat">
+            <h3>Happy Customers</h3>
+            <p>We've helped hundreds of customers in Tallahassee find the perfect plumbing solution for their needs.</p>
+            <span>18</span>
+        </div>
+        <div class="stat">
+            <h3>5-Star Reviews</h3>
+            <p>Our customers rave about our service, and we're proud to consistently receive top ratings.</p>
+            <span>4.5</span>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Get in Touch with Us</h2>
+        <div class="contact-info">
+            <p><strong>Phone:</strong> <a href="tel:850-555-0101">850-555-0101</a></p>
+            <p><strong>Email:</strong> <a href="mailto:info@absoluteplumbingfl.com">info@absoluteplumbingfl.com</a></p>
+            <p><strong>Address:</strong> 123 Main St, Tallahassee, FL 32303</p>
+        </div>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea><br><br>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 Absolute Plumbing Contractors. All rights reserved.</p>
+    </footer>
+</body>
+</html>

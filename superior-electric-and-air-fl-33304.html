@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superior Electric and Air</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500&family=Outfit:wght@500&family=DM+Sans:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hamburger {
+            display: none;
+        }
+        #hero {
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            padding: 20px;
+            position: relative;
+        }
+        .dark-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f7f7f7;
+            margin-bottom: 20px;
+        }
+        .service-card {
+            background-color: var(--bg);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .service-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .card-text {
+            padding: 20px;
+        }
+        .why-choose-us {
+            background-color: #f7f7f7;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .why-choose-us .block {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: var(--bg);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .block-text {
+            padding: 10px;
+        }
+        .review {
+            background-color: #f7f7f7;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .review .rating {
+            display: flex;
+            align-items: center;
+        }
+        .rating-star {
+            margin-right: 5px;
+            color: var(--accent);
+            font-size: 20px;
+            width: 20px;
+            height: 20px;
+        }
+        .rating-text {
+            font-size: 18px;
+            color: #666;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .about {
+            padding: 20px;
+            background-color: #f7f7f7;
+            margin-bottom: 20px;
+        }
+        .about img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .stat {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: var(--bg);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .stat-text {
+            padding: 10px;
+        }
+        #contact {
+            padding: 20px;
+            background-color: var(--bg);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            padding: 10px;
+            background-color: var(--primary);
+            color: #fff;
+            text-align: center;
+        }
+        svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <nav id="sticky-nav">
+        <div>
+            <span>Superior Electric and Air</span>
+            <button class="hamburger">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" fill="none" stroke="currentColor">
+                    <line x1="0" y1="40" x2="80" y2="40" stroke-width="4"></line>
+                    <line x1="0" y1="20" x2="80" y2="20" stroke-width="4"></line>
+                    <line x1="0" y1="60" x2="80" y2="60" stroke-width="4"></line>
+                </svg>
+            </button>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <header id="hero">
+        <div class="dark-overlay">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop" alt="Hero Image">
+            <h1>Welcome to Superior Electric and Air, Serving FL 33304</h1>
+            <button><a href="#">Get a Quote</a></button>
+            <button><a href="#">Schedule Service</a></button>
+            <div class="trust-badges">
+                <span>Better Business Bureau Accredited Business</span>
+                <span>HomeAdvisor Best of Award Winner</span>
+                <span>Angie's List Super Service Award Winner</span>
+                <span>Florida Department of Business and Professional Regulation</span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Services We Offer</h2>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" alt="Service Image 1">
+                <div class="card-text">
+                    <h3>Service 1</h3>
+                    <p>Our first service offering.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Service Image 2">
+                <div class="card-text">
+                    <h3>Service 2</h3>
+                    <p>Our second service offering.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Service Image 3">
+                <div class="card-text">
+                    <h3>Service 3</h3>
+                    <p>Our third service offering.</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Why Choose Us?</h2>
+            <div class="why-choose-us">
+                <div class="block">
+                    <i class="fa fa-star"></i>
+                    <div class="block-text">
+                        <h3>Expert Service Technicians</h3>
+                        <p>Experienced and trained service technicians.</p>
+                    </div>
+                </div>
+                <div class="block">
+                    <i class="fa fa-star"></i>
+                    <div class="block-text">
+                        <h3>Fast and Reliable Service</h3>
+                        <p>Faster service times and reliable service.</p>
+                    </div>
+                </div>
+                <div class="block">
+                    <i class="fa fa-star"></i>
+                    <div class="block-text">
+                        <h3>Competitive Pricing</h3>
+                        <p>Discounts and promotions available.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=800&fit=crop" alt="Gallery Image 1">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop" alt="Gallery Image 2">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=800&fit=crop" alt="Gallery Image 3">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Gallery Image 4">
+            </div>
+        </section>
+        <section>
+            <h2>Reviews</h2>
+            <div class="review">
+                <div class="rating">
+                    <span class="rating-star"></span><span class="rating-star"></span><span class="rating-star"></span><span class="rating-star"></span><span class="rating-star"></span>
+                    <span class="rating-text">5/5</span>
+                </div>
+                <p>This is a review from a satisfied customer.</p>
+            </div>
+            <div class="review">
+                <div class="rating">
+                    <span class="rating-star"></span><span class="rating-star"></span><span class="rating-star"></span><span class="rating-star"></span><span class="rating-star"></span>
+                    <span class="rating-text">5/5</span>
+                </div>
+                <p>This is another review from a satisfied customer.</p>
+            </div>
+        </section>
+        <section>
+            <h2>About Us</h2>
+            <div class="about">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop" alt="About Image">
+                <div>
+                    <h3>Our Story</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+                </div>
+            </div>
+            <div class="stat">
+                <i class="fa fa-star"></i>
+                <div class="stat-text">
+                    <h3>5/5 Rating</h3>
+                    <p>Based on 83 reviews.</p>
+                </div>
+            </div>
+            <div class="stat">
+                <i class="fa fa-star"></i>
+                <div class="stat-text">
+                    <h3>83 Reviews</h3>
+                    <p>Satisfied customers who have used our services.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>1975 E Sunrise Blvd #535, Fort Lauderdale, FL 33304</p>
+            <p>(954) 575-1327</p>
+            <p><a href="mailto:superiorelectricandair@gmail.com">superiorelectricandair@gmail.com</a></p>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2023 Superior Electric and Air. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ideal HVAC Creations Inc. provides top-notch home services in Fort Lauderdale, FL 33312.">
+  <meta name="keywords" content="Ideal HVAC Creations Inc., home services, Fort Lauderdale, FL, 33312">
+  <title>Ideal HVAC Creations Inc.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a2744;
+      --accent: #e8651a;
+      --bg: #fff;
+      --light: #f4f7fb;
+    }
+    body {
+      background-color: var(--bg);
+      font-family: 'DM Sans', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Syne', sans-serif;
+    }
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      background-color: var(--primary);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .sticky-nav .hamburger {
+      background-color: var(--accent);
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    .hero {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop");
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      .CTAs {
+        display: flex;
+        gap: 2rem;
+        a {
+          background-color: var(--accent);
+          color: #fff;
+          padding: 1rem 2rem;
+          border-radius: 0.5rem;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        a:hover {
+          background-color: var(--primary);
+        }
+      }
+      .trust-badges {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+        .badge {
+          background-color: var(--accent);
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          color: #fff;
+          font-weight: bold;
+          text-align: center;
+        }
+      }
+    }
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 4rem 0;
+      .card {
+        background-color: var(--light);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .icon {
+          background-color: var(--accent);
+          padding: 1rem;
+          border-radius: 50%;
+          display: inline-block;
+          margin-right: 1rem;
+        }
+        h4 {
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+        }
+        p {
+          font-size: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    .why-choose-us {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 4rem 0;
+      .block {
+        background-color: var(--light);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .icon {
+          background-color: var(--accent);
+          padding: 1rem;
+          border-radius: 50%;
+          display: inline-block;
+          margin-right: 1rem;
+        }
+        h4 {
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+        }
+        p {
+          font-size: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 4rem 0;
+      .image {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=800&fit=crop");
+        background-size: cover;
+        background-position: center;
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .image-2 {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop");
+        background-size: cover;
+        background-position: center;
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .image-3 {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=800&fit=crop");
+        background-size: cover;
+        background-position: center;
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .image-4 {
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop");
+        background-size: cover;
+        background-position: center;
+        height: 20rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    }
+    .reviews {
+      background-color: var(--light);
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      .review {
+        background-color: var(--primary);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        color: #fff;
+      }
+      .rating {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        .star {
+          background-color: var(--accent);
+          padding: 0.5rem;
+          border-radius: 50%;
+        }
+        .star:hover {
+          background-color: var(--primary);
+        }
+      }
+    }
+    .about {
+      display: flex;
+      gap: 2rem;
+      margin: 4rem 0;
+      .image {
+        width: 30%;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop");
+        background-size: cover;
+        background-position: center;
+        height: 15rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.5rem;
+      }
+      .text {
+        width: 70%;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      .stats {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        .stat {
+          background-color: var(--light);
+          padding: 1rem;
+          border-radius: 0.5rem;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+    .contact {
+      background-color: var(--light);
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .phone {
+        background-color: var(--accent);
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        color: #fff;
+        text-decoration: none;
+        cursor: pointer;
+        margin-bottom: 2rem;
+      }
+      form {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        input {
+          padding: 1rem;
+          border-radius: 0.5rem;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+          width: 40%;
+        }
+        input[type="email"] {
+          width: 40%;
+        }
+        input[type="tel"] {
+          width: 40%;
+        }
+        input[type="submit"] {
+          background-color: var(--accent);
+          color: #fff;
+          padding: 1rem 2rem;
+          border-radius: 0.5rem;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        input[type="submit"]:hover {
+          background-color: var(--primary);
+        }
+      }
+    }
+    footer {
+      background-color: var(--primary);
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      color: #fff;
+      text-align: center;
+      .copyright {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="sticky-nav">
+    <div class="logo">
+      <a href="#">Ideal HVAC Creations Inc.</a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger">
+      <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </div>
+  </header>
+  <section class="hero">
+    <h1>Welcome to Ideal HVAC Creations Inc. in FL 33312, FL 33312!</h1>
+    <div class="CTAs">
+      <a href="#">Get a Quote</a>
+      <a href="#">Schedule a Service</a>
+    </div>
+    <div class="trust-badges">
+      <div class="badge">5/5 Star Rating</div>
+      <div class="badge">100+ Happy Customers</div>
+      <div class="badge">Years of Experience</div>
+    </div>
+  </section>
+  <section class="service-cards">
+    <div class="card">
+      <div class="icon">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9a9 9 0 00-9-9zM3 5a1 1 0 011-1h16a1 1 0 011 1v4a1 1 0 01-1 1H4a1 1 0 01-1-1V6z"></path>
+        </svg>
+      </div>
+      <h4>Heating</h4>
+      <p>We offer expert heating installation, repair, and maintenance services.</p>
+    </div>
+    <div class="card">
+      <div class="icon">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 010 1.932l-4.493 1.497a11.039 11.039 0 00-5.516 5.516l-2.257-1.13a1 1 0 01-1.21.502l4.546-4.547a2 2 0 00-2-3.264z"></path>
+        </svg>
+      </div>
+      <h4>Air Conditioning</h4>
+      <p>We offer expert air conditioning installation, repair, and maintenance services.</p>
+    </div>
+    <div class="card">
+      <div class="icon">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+      <h4>Refrigeration</h4>
+      <p>We offer expert refrigeration installation, repair, and maintenance services.</p>
+    </div>
+  </section>
+  <section class="why-choose-us">
+    <div class="block">
+      <div class="icon">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H7V4h10v10z"></path>
+        </svg>
+      </div>
+      <h4>Expert Technicians</h4>
+      <p>Our team of expert technicians have years of experience in the industry.</p>
+    </div>
+    <div class="block">
+      <div class="icon">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8H5v2H7z"></path>
+        </svg>
+      </div>
+      <h4>Fast Response Times</h4>
+      <p>We respond quickly to emergency and non-emergency calls.</p>
+    </div>
+    <div class="block">
+      <div class="icon">
+        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+        </svg>
+      </div>
+      <h4>Competitive Pricing</h4>
+      <p>We offer competitive pricing with no hidden fees.</p>
+    </div>
+  </section>
+  <section class="gallery">
+    <div class="image">
+      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=800&fit=crop">
+    </div>
+    <div class="image-2">
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop">
+    </div>
+    <div class="image-3">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=800&fit=crop">
+    </div>
+    <div class="image-4">
+      <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop">
+    </div>
+  </section>
+  <section class="reviews">
+    <div class="review">
+      <div class="rating">
+        <div class="

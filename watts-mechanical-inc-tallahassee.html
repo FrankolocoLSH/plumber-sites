@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Watts Mechanical Inc | HVAC Services in Tallahassee</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne+Monserrat:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+	<style>
+	:root{
+		--primary:#0d3b6e;
+		--accent:#00aaff;
+		--bg:#fff;
+		--light:#f0f7ff;
+	}
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		display: flex;
+		min-height: 100vh;
+		flex-direction: column;
+		font-family: 'DM Sans', sans-serif;
+		background-color: var(--bg);
+	}
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem;
+	}
+	.header {
+		position: sticky;
+		top: 0;
+		z-index: 1;
+		background-color: var(--primary);
+		color: #fff;
+		padding: 1rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.header ul {
+		list-style: none;
+		margin: 0 2rem;
+		display: flex;
+	}
+	.header li {
+		margin-right: 2rem;
+	}
+	.header a {
+		color: #fff;
+		text-decoration: none;
+	}
+	.header a:hover {
+		color: #ddd;
+	}
+	.hamburger {
+		display: none;
+	}
+	.hamburger, .hamburger::before, .hamburger::after {
+		content: "";
+		display: inline-block;
+		width: 20px;
+		height: 2px;
+		background-color: #fff;
+		transition: 0.3s;
+	}
+	.hamburger::before, .hamburger::after {
+		transform: translateY(-6px);
+	}
+	.hamburger::before {
+		transform: translateY(-10px);
+	}
+	.hamburger.open {
+		transform: rotate(45deg);
+	}
+	.hamburger.open::before {
+		transform: translateY(-15px) rotate(135deg);
+	}
+	.hamburger.open::after {
+		transform: translateY(-5px) rotate(-90deg);
+	}
+	.hero {
+		height: 100vh;
+		background-size: cover;
+		background-position: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+	}
+	.hero img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: -1;
+	}
+	.dark-overlay {
+		background-color: rgba(0, 0, 0, 0.5);
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.hero h1 {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+	.hero h1 span {
+		color: var(--primary);
+	}
+	.hero p {
+		font-size: 1.5rem;
+		margin-bottom: 2rem;
+	}
+	.cta {
+		background-color: var(--accent);
+		padding: 1rem 2rem;
+		border: none;
+		border-radius: 10px;
+		cursor: pointer;
+	}
+	.cta:hover {
+		background-color: var(--primary);
+	}
+	.hero .cta {
+		margin: 0 1rem;
+	}
+	.hero .icon {
+		margin-right: 1rem;
+		fill: var(--primary);
+	}
+	.trust-badge {
+		background-color: var(--primary);
+		padding: 1rem 2rem;
+		border-radius: 10px;
+		color: #fff;
+		margin: 0 1rem;
+	}
+	.service-card {
+		background-color: var(--bg);
+		padding: 2rem;
+		border: 1px solid #ddd;
+		border-radius: 10px;
+		margin: 2rem;
+	}
+	.service-card img {
+		width: 100%;
+		height: 150px;
+		object-fit: cover;
+		border-radius: 10px 10px 0 0;
+	}
+	.service-card h2 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+	.service-card p {
+		font-size: 1.5rem;
+		margin-bottom: 2rem;
+	}
+	.why-choose-us {
+		background-color: var(--light);
+		padding: 2rem;
+		border: 1px solid #ddd;
+		border-radius: 10px;
+		margin: 2rem;
+	}
+	.why-choose-us h2 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+		grid-auto-rows: 300px;
+		margin: 2rem;
+	}
+	.gallery img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 10px;
+	}
+	.review {
+		background-color: var(--bg);
+		padding: 2rem;
+		border: 1px solid #ddd;
+		border-radius: 10px;
+		margin: 2rem;
+	}
+	.review h3 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	.rate {
+		display: flex;
+		align-items: center;
+		font-size: 1.5rem;
+	}
+	.rate svg {
+		margin: 0 0.5rem;
+		fill: var(--primary);
+	}
+	.about {
+		display: flex;
+		margin: 2rem;
+	}
+	.about img {
+		width: 200px;
+		height: 200px;
+		object-fit: cover;
+		border-radius: 10px;
+		margin: 0 2rem;
+	}
+	.about p {
+		font-size: 1.5rem;
+		margin-bottom: 2rem;
+	}
+	.stats {
+		margin: 2rem;
+	}
+	.stats ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	.stats li {
+		background-color: var(--primary);
+		padding: 1rem;
+		border-radius: 10px;
+		margin: 1rem;
+		display: inline-block;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		<header class="header">
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Services</a></li>
+					<li><a href="#">About</a></li>
+				</ul>
+			</nav>
+			<button class="hamburger" aria-controls="primary-nav" aria-expanded="false" onclick="toggleHamburger()">&#9776;</button>
+		</header>
+		<main>
+			<section class="hero">
+				<img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=1920&h=1080&fit=crop" alt="Hero Image" class="hero-img">
+				<div class="dark-overlay"></div>
+				<div class="content">
+					<h1><span>Tallahassee</span></h1>
+					<p>Welcome to Watts Mechanical Inc. Your trusted partner for all your HVAC needs.</p>
+					<button class="cta hero-cta cta-primary">Get a Quote</button>
+					<button class="cta hero-cta cta-secondary">Learn More</button>
+					<div class="trust-badge-grid">
+						<div class="trust-badge">Trusted by thousands</div>
+						<div class="trust-badge">5-star rated</div>
+						<div class="trust-badge">Over 10 years of experience</div>
+						<div class="trust-badge">Top-rated by experts</div>
+					</div>
+				</div>
+			</section>
+			<section class="services">
+				<h2>Our Services</h2>
+				<div class="container">
+					<article class="service-card">
+						<img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 1" class="service-img">
+						<h2>AC Install & Replace</h2>
+						<p>We install and replace air conditioning systems to keep you cool and comfortable.</p>
+						<button class="cta service-cta cta-primary">Learn More</button>
+					</article>
+					<article class="service-card">
+						<img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop" alt="Service 2" class="service-img">
+						<h2>AC Repair</h2>
+						<p>We fix and repair air conditioning systems to get you back to normal as soon as possible.</p>
+						<button class="cta service-cta cta-secondary">Learn More</button>
+					</article>
+					<article class="service-card">
+						<img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Service 3" class="service-img">
+						<h2>Heating Service</h2>
+						<p>We provide heating services to keep you warm and cozy during the cold winter months.</p>
+						<button class="cta service-cta cta-primary">Learn More</button>
+					</article>
+				</div>
+			</section>
+			<section class="why-choose-us">
+				<h2>Why Choose Us</h2>
+				<div class="why-choose-us-text">
+					<p>We are a reputable and trusted HVAC company in Tallahassee, providing top-notch services to our customers.</p>
+				</div>
+			</section>
+			<section class="gallery">
+				<div class="gallery-grid">
+					<div class="gallery-item">
+						<img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=800&h=800&fit=crop" alt="Gallery Image 1" class="gallery-img">
+						<h3>Gallery Image 1</h3>
+					</div>
+					<div class="gallery-item">
+						<img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=800&fit=crop" alt="Gallery Image 2" class="gallery-img">
+						<h3>Gallery Image 2</h3>
+					</div>
+				</div>
+				<div class="gallery-grid">
+					<div class="gallery-item">
+						<img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 3" class="gallery-img">
+						<h3>Gallery Image 3</h3>
+					</div>
+					<div class="gallery-item">
+						<img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4" class="gallery-img">
+						<h3>Gallery Image 4</h3>
+					</div>
+				</div>
+			</section>
+			<section class="reviews">
+				<h2>Reviews</h2>
+				<div class="reviews-grid">
+					<div class="review">
+						<h3>Review 1</h3>
+						<p>Watts Mechanical Inc is an excellent company! They fixed my AC and did a great job!</p>
+						<div class="rate">
+							<svg width="1em" height="1em" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M8 2C8.548 2 9 2.453 9 .548L.548 5.453.548.548 8.548.548 16 8 8 14.548 2.548 2.548L9.452 0" fill="currentColor"></path>
+							</svg>
+							<svg width="1em" height="1em" fill="none" viewBox="0 0 24 24">
+								<circle cx="12" cy="12" r="10" stroke="#000" stroke-width="4"></circle>
+								<circle cx="12" cy="12" r="10" fill="currentColor">
+									<animateTransform attributeName="transform" type="scale" from="1" to=".5" dur="3s" repeatCount="indefinite"></animateTransform>
+								</circle>
+							</svg>
+							<svg width="1em" height="1em" fill="none" viewBox="0 0 24 24">
+								<circle cx="12" cy="12" r="10" stroke="#000" stroke-width="4"></circle>
+								<circle cx="12" cy="12" r="10" fill="currentColor">
+									<animateTransform attributeName="transform" type="scale" from="1" to=".5" dur="3s" repeatCount="indefinite"></animateTransform>
+								</circle>
+							</svg>
+							<svg width="1em" height="1em" fill="none" viewBox="0 0 24 24">
+								<circle cx="12" cy="12" r="10" stroke="#000" stroke-width="4"></circle>
+								<circle cx="12" cy="12" r="10" fill="currentColor">
+									<animateTransform attributeName="transform" type="scale" from="1" to=".5" dur="3s" repeatCount="indefinite"></animateTransform>
+								</circle>
+							</svg>
+							<svg width="1em" height="1em" fill="none" viewBox="0 0 24 24">
+								<circle cx="12" cy="12" r="10" stroke="#000" stroke-width="4"></circle>
+								<circle cx="12" cy="12" r="10" fill="currentColor">
+									<animateTransform attributeName="transform" type="scale" from="1" to=".5" dur="3s" repeatCount="indefinite"></animateTransform>
+								</circle>
+							</svg>
+						</div>
+						<p>— John Doe</p>
+						<p>Tallahassee, FL</p>
+					</div>
+					<div class="review">
+						<h3>Review 2</h3>
+						<p>Watts Mechanical Inc is a top-notch company! They fixed my AC and did a great job!</p>
+						<div class="rate">
+							<svg width="1em" height="1em" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M8 2C8.548 2 9 2.453 9 .548L.548 5.453.548.548 8.548.548 16 8 8 14.548 2.548 2.548L9.452 0" fill="currentColor"></path>
+							</svg>
+							<svg width="1em" height="1em" fill="none" viewBox="0 0 24 24">
+								<circle cx="12" cy="12" r="10" stroke="#000" stroke-width="4"></circle>
+								<circle cx="12" cy="12" r="10" fill="currentColor">
+									<animateTransform attributeName="transform" type="scale" from="1" to=".5" dur="3s" repeatCount="indefinite"></animateTransform>
+								</circle>
+							</svg>
+							<svg width="1em" height="1em" fill="none" viewBox="0 0 24 24">
+								<circle cx="12" cy="12" r="10" stroke="#000" stroke-width="4"></circle>
+								<circle cx="12" cy="12" r="10" fill="currentColor">
+									<animateTransform attributeName="transform" type="scale" from="1" to=".5" dur="3s" repeatCount="indefinite"></animateTransform>
+								</circle>
+							</svg>
+							<svg width="1em" height="1em" fill="none" viewBox="0 0 24 24">
+								<circle cx="12" cy="12" r="10" stroke="#000" stroke-width="4"></circle>
+								<circle cx="12" cy="12" r="10" fill="currentColor">
+									<animateTransform attributeName="transform" type="scale" from="1" to=".5" dur="3s" repeatCount="indefinite"></animateTransform>
+								</circle>
+							</svg>
+							<svg width="1em" height="1em" fill="none" viewBox="0 0 24 24">
+								<circle cx="12" cy="12" r="10" stroke="#000" stroke-width="4"></circle>
+								<circle cx="12" cy="12" r="10" fill="currentColor">
+									<animateTransform attributeName="transform" type="scale" from="1" to=".5" dur="3s" repeatCount="indefinite"></animateTransform>
+								</circle>
+							</svg>
+						</div>
+						<p>— Jane Doe</p>
+						<p>Tallahassee, FL</p>
+					</div>
+				</div>
+			</section>
+			<section class="about">
+				<div class="about-text">
+					<h2>About Us</h2>
+					<p>Watts Mechanical Inc is a reputable and trusted HVAC company in Tallahassee, providing top-notch services to our customers.</p>
+					<div class="about-image">
+						<img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&h=800&fit=crop" alt="About Image" class="about-img">
+					</div>
+				</div>
+				<ul class="stats">
+					<li>10+ years of experience</li>
+					<li>5-star rated on all platforms</li>
+					<li>Top-rated by experts in the industry</li>
+				</ul>
+			</section>
+			<section class="contact">

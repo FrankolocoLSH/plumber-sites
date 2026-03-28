@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Plumbing | Trusted Plumbers in FL 33614</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Outfit&family=Syne&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .nav li {
+            margin-right: 20px;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 48px;
+        }
+        .hero button {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .trust-badges img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .service {
+            background-color: var(--bg);
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+        }
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .service h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .why-choose-us {
+            background-color: var(--light);
+            padding: 20px;
+        }
+        .why-choose-us h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .why-choose-us .blocks {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .block {
+            background-color: var(--bg);
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .reviews {
+            background-color: var(--light);
+            padding: 20px;
+        }
+        .review {
+            background-color: var(--bg);
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .review h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .stars {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .star {
+            width: 20px;
+            height: 20px;
+            background-color: #ffd700;
+            margin-right: 5px;
+        }
+        .about {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .about img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .about h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .stat {
+            background-color: var(--bg);
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+        }
+        .stat h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .contact {
+            padding: 20px;
+        }
+        .contact h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .contact textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .contact button {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Premium Plumbing | Trusted Plumbers in FL 33614</h1>
+        <button>Get a Quote</button>
+        <button>Call Now</button>
+        <div class="trust-badges">
+            <img src="https://example.com/badge1.png" alt="Badge 1">
+            <img src="https://example.com/badge2.png" alt="Badge 2">
+            <img src="https://example.com/badge3.png" alt="Badge 3">
+            <img src="https://example.com/badge4.png" alt="Badge 4">
+        </div>
+    </section>
+    <section class="services">
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1">
+            <h2>Emergency Leak Repair</h2>
+            <p>Our team of experts will quickly and efficiently repair any leaks in your home or business.</p>
+        </div>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2">
+            <h2>Drain Cleaning</h2>
+            <p>Our state-of-the-art equipment will leave your drains flowing like new.</p>
+        </div>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3">
+            <h2>Water Heater Install</h2>
+            <p>Our team will install a new water heater that meets your needs and budget.</p>
+        </div>
+    </section>
+    <section class="why-choose-us">
+        <h2>Why Choose Us?</h2>
+        <div class="blocks">
+            <div class="block">
+                <h2>Fast Response Time</h2>
+                <p>We understand that plumbing emergencies can be stressful, which is why we offer fast response times to get your problem fixed quickly.</p>
+            </div>
+            <div class="block">
+                <h2>Experienced Technicians</h2>
+                <p>Our team of technicians has years of experience in the plumbing industry, ensuring that your problem is fixed correctly the first time.</p>
+            </div>
+            <div class="block">
+                <h2>Competitive Pricing</h2>
+                <p>We offer competitive pricing for all of our services, so you can get the help you need without breaking the bank.</p>
+            </div>
+        </div>
+    </section>
+    <section class="gallery">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+    </section>
+    <section class="reviews">
+        <h2>What Our Customers Say</h2>
+        <div class="review">
+            <h2>5/5 Stars</h2>
+            <div class="stars">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+            <p>Premium Plumbing did an amazing job fixing my leaky faucet. They were quick, professional, and affordable.</p>
+        </div>
+        <div class="review">
+            <h2>5/5 Stars</h2>
+            <div class="stars">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+            <p>I was impressed with the level of service I received from Premium Plumbing. They were friendly, knowledgeable, and efficient.</p>
+        </div>
+        <div class="review">
+            <h2>5/5 Stars</h2>
+            <div class="stars">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+            <p>Premium Plumbing exceeded my expectations in every way. They were prompt, courteous, and did an excellent job.</p>
+        </div>
+    </section>
+    <section class="about">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image">
+        <div>
+            <h2>About Us</h2>
+            <p>We are a team of experienced plumbers dedicated to providing top-notch service to our customers in FL 33614.</p>
+            <div class="stats">
+                <div class="stat">
+                    <h2>Years of Experience</h2>
+                    <p>10+</p>
+                </div>
+                <div class="stat">
+                    <h2>Customers Served</h2>
+                    <p>1000+</p>
+                </div>
+                <div class="stat">
+                    <h2>Rating</h2>
+                    <p>4.9/5</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <p>Phone: <a href="tel:(813) 773-6486">(813) 773-6486</a></p>
+        <p>Email: <a href="mailto:service@mypremiumplumbing.com">service@mypremiumplumbing.com</a></p>
+        <p>Address: 4706 N Thatcher Ave, Tampa, FL 33614, USA</p>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button>Send</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 Premium Plumbing. All rights reserved.</p>
+    </footer>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                } else {
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, { threshold: 1.0 });
+        const elements = document.querySelectorAll('.service, .block, .review, .stat');
+        elements.forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>

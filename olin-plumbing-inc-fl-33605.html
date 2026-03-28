@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olin Plumbing Inc.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Outfit&family=Syne&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+        .nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .nav li {
+            margin-right: 20px;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .hamburger {
+            cursor: pointer;
+            display: none;
+        }
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav ul {
+                display: none;
+            }
+        }
+        .hero {
+            height: 100vh;
+            background-image: url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 48px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .hero .btn {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .hero .btn:hover {
+            background-color: var(--primary);
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .trust-badges img {
+            height: 50px;
+            width: 50px;
+            margin-right: 10px;
+        }
+        .service-cards {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .service-card {
+            background-color: var(--light);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: calc(33.33% - 20px);
+            margin: 10px;
+        }
+        .service-card img {
+            height: 150px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .service-card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .why-choose-us {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .why-choose-us-block {
+            background-color: var(--light);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: calc(33.33% - 20px);
+            margin: 10px;
+        }
+        .why-choose-us-block h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 50px;
+        }
+        .gallery img {
+            height: 150px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .reviews {
+            margin-top: 50px;
+        }
+        .review {
+            background-color: var(--light);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .review h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .review p {
+            font-size: 16px;
+        }
+        .review .rating {
+            font-size: 16px;
+            color: var(--accent);
+        }
+        .about {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .about img {
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .about-text {
+            width: calc(100% - 220px);
+        }
+        .about-text h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .about-text p {
+            font-size: 16px;
+        }
+        .about-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .about-stat {
+            background-color: var(--light);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: calc(33.33% - 20px);
+            margin: 10px;
+            text-align: center;
+        }
+        .about-stat h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+        .contact {
+            margin-top: 50px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 100%;
+        }
+        .contact textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 100%;
+            height: 100px;
+        }
+        .contact .btn {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .contact .btn:hover {
+            background-color: var(--primary);
+        }
+        footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="hamburger">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </div>
+    </header>
+    <section id="hero" class="hero">
+        <div class="hero-overlay">
+            <h1>Emergency Plumbing Services in FL 33605</h1>
+            <p>Get 24/7 plumbing solutions with Olin Plumbing Inc.</p>
+            <button class="btn">Get a Quote</button>
+            <button class="btn">Schedule a Service</button>
+            <div class="trust-badges">
+                <img src="badge1.png" alt="Badge 1">
+                <img src="badge2.png" alt="Badge 2">
+                <img src="badge3.png" alt="Badge 3">
+                <img src="badge4.png" alt="Badge 4">
+            </div>
+        </div>
+    </section>
+    <section id="services" class="service-cards">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1">
+            <h2>Emergency Leak Repair</h2>
+            <p>Fast and reliable leak repair services to prevent water damage.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2">
+            <h2>Drain Cleaning</h2>
+            <p>Professional drain cleaning services to keep your pipes flowing smoothly.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3">
+            <h2>Water Heater Installation</h2>
+            <p>Expert water heater installation services for hot water on demand.</p>
+        </div>
+    </section>
+    <section id="why-choose-us" class="why-choose-us">
+        <div class="why-choose-us-block">
+            <h2>Experience</h2>
+            <p>Olin Plumbing Inc. has years of experience in providing top-notch plumbing services.</p>
+        </div>
+        <div class="why-choose-us-block">
+            <h2>Reliability</h2>
+            <p>Our team of professionals is dedicated to providing reliable and efficient services.</p>
+        </div>
+        <div class="why-choose-us-block">
+            <h2>Customer Satisfaction</h2>
+            <p>We prioritize customer satisfaction and strive to exceed your expectations.</p>
+        </div>
+    </section>
+    <section id="gallery" class="gallery">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+    </section>
+    <section id="reviews" class="reviews">
+        <div class="review">
+            <h2>Review 1</h2>
+            <p>This company is amazing! They fixed my leaky faucet in no time.</p>
+            <p class="rating">4.9/5</p>
+        </div>
+        <div class="review">
+            <h2>Review 2</h2>
+            <p>I highly recommend Olin Plumbing Inc. for all your plumbing needs.</p>
+            <p class="rating">4.9/5</p>
+        </div>
+        <div class="review">
+            <h2>Review 3</h2>
+            <p>Their prices are very competitive and the service is top-notch.</p>
+            <p class="rating">4.9/5</p>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image">
+        <div class="about-text">
+            <h2>About Olin Plumbing Inc.</h2>
+            <p>We are a locally owned and operated plumbing company serving FL 33605.</p>
+            <div class="about-stats">
+                <div class="about-stat">
+                    <h2>Years of Experience</h2>
+                    <p>10+</p>
+                </div>
+                <div class="about-stat">
+                    <h2>Customers Served</h2>
+                    <p>1000+</p>
+                </div>
+                <div class="about-stat">
+                    <h2>Rating</h2>
+                    <p>4.9/5</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Get in Touch</h2>
+        <p>Call us at <a href="tel:(813) 443-5820">(813) 443-5820</a> or fill out the form below.</p>
+        <form>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button class="btn">Send Message</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Olin Plumbing Inc. | <a href="mailto:info@olinplumbinginc.com">info@olinplumbinginc.com</a> | <a href="tel:(813) 443-5820">(813) 443-5820</a> | 3201 E 8th Ave, Tampa, FL 33605, USA</p>
+    </footer>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('.nav ul');
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

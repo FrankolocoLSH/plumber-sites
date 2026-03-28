@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC Repair Now</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@200;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+    </style>
+    <style>
+        @supports (display: grid) {
+            .grid {
+                display: grid;
+                gap: 2rem;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+    <style>
+        @supports (display: grid) {
+            .gallery-grid {
+                display: grid;
+                gap: 1rem;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="#">AC Repair Now</a>
+            </div>
+            <button class="nav-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
+            <ul class="nav-items">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Services</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="hero">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop" alt="Hero Image">
+        <div class="hero-overlay">
+            <h1>Welcome to AC Repair Now in FL 33312 33312!</h1>
+            <button class="hero-button">Get Free Estimate</button>
+            <button class="hero-button">Schedule Service</button>
+            <div class="trust-badges">
+                <div class="badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 014 4z" />
+                    </svg>
+                </div>
+                <div class="badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 014 4z" />
+                    </svg>
+                </div>
+                <div class="badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M4.343 4.343l.707.707M11 21l2-2m2 0l2-2" />
+                    </svg>
+                </div>
+                <div class="badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="4" y="4" width="16" height="16" rx="2" />
+                        <line x1="12" y1="16" x2="12" y2="6" />
+                        <line x1="8" y1="16" x2="8" y2="6" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="services">
+        <div class="grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" alt="Service Image 1">
+                <h2>AC Repair</h2>
+                <p>Our team of experts will diagnose and repair your AC system quickly and efficiently.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Service Image 2">
+                <h2>AC Installation</h2>
+                <p>We offer high-quality AC installations that will keep you cool and comfortable all season long.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Service Image 3">
+                <h2>AC Maintenance</h2>
+                <p>Our maintenance plans will keep your AC system running smoothly and prolong its lifespan.</p>
+            </div>
+        </div>
+    </section>
+    <section class="why-choose-us">
+        <div class="block">
+            <h2>Experienced Team</h2>
+            <p>Our team of experts has years of experience in AC repair, installation, and maintenance.</p>
+        </div>
+        <div class="block">
+            <h2>Quality Service</h2>
+            <p>We use only the highest-quality materials and equipment to ensure your satisfaction.</p>
+        </div>
+        <div class="block">
+            <h2>Competitive Pricing</h2>
+            <p>We offer competitive pricing that fits your budget, without compromising on quality.</p>
+        </div>
+    </section>
+    <section class="gallery">
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=800&fit=crop" alt="Gallery Image 1" class="grid-item">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop" alt="Gallery Image 2" class="grid-item">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=800&fit=crop" alt="Gallery Image 3" class="grid-item">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Gallery Image 4" class="grid-item">
+            <img src="{{GALLERY_IMAGE_5}}" alt="Gallery Image 5" class="grid-item">
+            <img src="{{GALLERY_IMAGE_6}}" alt="Gallery Image 6" class="grid-item">
+        </div>
+    </section>
+    <section class="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="review">
+            <div class="rating">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3v1m0 16v1m-9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 014 4z" />
+                    <path d="M12 3v1m0 16v1m-9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 014 4z" />
+                    <path d="M12 3v1m0 16v1m-9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 014 4z" />
+                </svg>
+            </div>
+            <p>5/5 stars</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+            <p>— AC Repair Now</p>
+        </div>
+        <div class="review">
+            <div class="rating">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3v1m0 16v1m-9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 014 4z" />
+                    <path d="M12 3v1m0 16v1m-9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 014 4z" />
+                    <path d="M12 3v1m0 16v1m-9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 014 4z" />
+                    <path d="M12 3v1m0 16v1m-9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 014 4z" />
+                    <path d="M12 3v1m0 16v1m-9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 014 4z" />
+                    <path d="M12 3v1m0 16v1m-9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 014 4z" />
+                </svg>
+            </div>
+            <p>4/5 stars</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+            <p>— AC Repair Now</p>
+        </div>
+    </section>
+    <section class="about">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop" alt="About Image" class="about-image">
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>AC Repair Now is a trusted and reliable provider of AC repair, installation, and maintenance services in FL 33312 33312.</p>
+            <p>We have been serving the local community for years, and our team of experts is dedicated to providing top-notch service and ensuring customer satisfaction.</p>
+            <ul class="stats">
+                <li>Years in Business: 10+</li>
+                <li>Number of Customers Served: 1000+</li>
+                <li>Number of Reviews: 5+</li>
+            </ul>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <address>
+            620 SW 31st Ave, Fort Lauderdale, FL 33312, USA<br>
+            FL 33312, {{state}} 33312<br>
+            Phone: <a href="tel:(305) 834-4503">(305) 834-4503</a><br>
+            Email: <a href="mailto:"></a>
+        </address>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone"><br><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea><br><br>
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 AC Repair Now. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+```
+
+Please replace https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop, https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop, https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop, https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop, https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=800&fit=crop, https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop, https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=800&fit=crop, https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop, https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop, AC Repair Now, FL 33312, (305) 834-4503, , and 620 SW 31st Ave, Fort Lauderdale, FL 33312, USA with your actual values.
+
+This is a basic structure of the website, you can add more styles, content and features as per your requirement.
+
+This code uses:
+
+- Semantic HTML5
+- SVG icons
+- CSS variables
+- CSS grid layout
+- IntersectionObserver API (though not used in this example)
+- Google Fonts
+
+Please add your own styles and content for each section as per your requirement. 
+
+Create a style.css file in your project directory to add your custom styles.
+
+Example style.css:
+
+```css
+/* Global Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+
+.header {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.nav-logo {
+    float: left;
+}
+
+.nav-toggle {
+    float: right;
+}
+
+.nav-toggle svg {
+    width: 24px;
+    height: 24px;
+}
+
+.nav-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Hero Styles */
+
+.hero {
+    background-image: linear-gradient(to bottom, var(--primary), var(--light));
+    background-size: 100% 300px;
+    background-position: 0% 100%;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    background-color: rgba(0

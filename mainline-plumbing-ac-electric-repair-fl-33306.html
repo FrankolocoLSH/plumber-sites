@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mainline Plumbing, AC & Electric Repair</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Syne', sans-serif;
+        }
+        .hamburger {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--accent);
+        }
+        .stars {
+            display: flex;
+            gap: 5px;
+            font-size: 16px;
+        }
+        .rating {
+            font-size: 24px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <button aria-label="Hamburger menu" class="hamburger">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-6h18v-2H3v2zm0-6h18V6H3v2z"/></svg>
+            </button>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop" alt="Hero image">
+            <div class="dark-overlay"></div>
+            <div class="hero-content">
+                <h1>Mainline Plumbing, AC & Electric Repair - Serving <span>Fort Lauderdale, FL 33306</span></h1>
+                <button class="cta">Schedule Your Service</button>
+                <button class="cta">Get a Quote</button>
+                <div class="trust-badges">
+                    <div><img src="https://cdn-icons-png.flaticon.com/512/1879/1879334.png" alt="Trust badge 1"></div>
+                    <div><img src="https://cdn-icons-png.flaticon.com/512/1880/1880056.png" alt="Trust badge 2"></div>
+                    <div><img src="https://cdn-icons-png.flaticon.com/512/1880/1880054.png" alt="Trust badge 3"></div>
+                    <div><img src="https://cdn-icons-png.flaticon.com/512/1880/1880055.png" alt="Trust badge 4"></div>
+                </div>
+            </div>
+        </section>
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="service-cards">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" alt="Service image 1">
+                    <h3>Plumbing Services</h3>
+                    <p>Get reliable plumbing services for all your needs.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Service image 2">
+                    <h3>AC Services</h3>
+                    <p>Stay cool with our top-notch AC services.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Service image 3">
+                    <h3>Electric Services</h3>
+                    <p>Get professional electric services for your home.</p>
+                </div>
+            </div>
+        </section>
+        <section class="why-choose-us">
+            <h2>Why Choose Us?</h2>
+            <div class="blocks">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 14.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    <h3>24/7 Emergency Service</h3>
+                    <p>We're here to help you anytime, day or night.</p>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 14.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    <h3>Fast and Reliable Service</h3>
+                    <p>We'll get the job done quickly and efficiently.</p>
+                </div>
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 14.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    <h3>Competitive Pricing</h3>
+                    <p>We offer affordable prices without compromising quality.</p>
+                </div>
+            </div>
+        </section>
+        <section class="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=800&fit=crop" alt="Gallery image 1">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop" alt="Gallery image 2">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=800&fit=crop" alt="Gallery image 3">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Gallery image 4">
+            </div>
+        </section>
+        <section class="reviews">
+            <h2>Reviews</h2>
+            <div class="rating">4.7/5 <span class="stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 14.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 14.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 14.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 14.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 14.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 14.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+            </span></div>
+            <p>
+                Based on 190 reviews
+            </p>
+        </section>
+        <section class="about">
+            <div class="about-content">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop" alt="About image">
+                <div class="about-text">
+                    <h3>Welcome to Mainline Plumbing, AC & Electric Repair</h3>
+                    <p>We're a family-owned business dedicated to providing top-notch services for all your plumbing, AC, and electrical needs.</p>
+                </div>
+            </div>
+        </section>
+        <section class="stats">
+            <h2>Some impressive stats:</h2>
+            <div class="stats-grid">
+                <div>
+                    <h3>90%</h3>
+                    <p>Customer Satisfaction Rate</p>
+                </div>
+                <div>
+                    <h3>24/7</h3>
+                    <p>Emergency Service Available</p>
+                </div>
+                <div>
+                    <h3>$150</h3>
+                    <p>Minimum Service Call Charge</p>
+                </div>
+            </div>
+        </section>
+        <section class="contact">
+            <h2>Get in Touch</h2>
+            <p>Mainline Plumbing, AC & Electric Repair - <span>2881 E Oakland Park Blvd #222, Fort Lauderdale, FL 33306, USA</span>
+            <p>Phone: <span>(954) 266-0466 (Tel: on phones)</span>
+            <p>Email: <span>info@mainlineplumbingservice.com</span>
+            <form method="post" action="/contact">
+                <input type="text" name="name" placeholder="Name">
+                <input type="phone" name="phone" placeholder="Phone">
+                <input type="email" name="email" placeholder="Email">
+                <textarea name="message" placeholder="Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Mainline Plumbing, AC & Electric Repair</p>
+    </footer>
+</body>
+</html>

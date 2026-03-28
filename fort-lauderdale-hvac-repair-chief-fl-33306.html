@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fort Lauderdale HVAC Repair Chief</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&amp;family=Syne+Mono:ital,wght@0,400;0,700;1,400&amp;weight=400" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Syne', 'Syne Mono', monospace;
+        }
+        
+        .hamburger {
+            display: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--primary);
+        }
+        
+        .nav-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav-links ul li {
+            display: inline-block;
+            margin-right: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--light);
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .hero {
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-image: url("https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop");
+            background-color: #000;
+            color: var(--light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .hero h1 {
+            text-align: center;
+            font-size: 4rem;
+        }
+        
+        .hero .call-to-action {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: var(--accent);
+            color: var(--light);
+            border-radius: 1rem;
+        }
+        
+        .hero .trust-badges {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+        
+        .trust-badge {
+            width: 50px;
+            height: 50px;
+            margin: 1rem 1rem 0 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--light);
+            border-radius: 10rem;
+            font-size: 1rem;
+            color: var(--primary);
+        }
+        
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-card .icon {
+            font-size: 3rem;
+            color: var(--accent);
+        }
+        
+        .service-card h2 {
+            font-size: 1.8rem;
+            line-height: 2rem;
+            padding: 0.2rem;
+        }
+        
+        .service-card p {
+            font-size: 1.2rem;
+            line-height: 1.6rem;
+        }
+        
+        .why-choose-us {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .why-choose-us-block {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+        }
+        
+        .why-choose-us-block h3 {
+            font-size: 1.8rem;
+            line-height: 2rem;
+            padding: 0.2rem;
+        }
+        
+        .why-choose-us-block p {
+            font-size: 1.2rem;
+            line-height: 1.6rem;
+            color: var(--primary);
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .gallery-grid {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+        }
+        
+        .review {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background-color: var(--light);
+            border-radius: 1rem;
+            box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+        }
+        
+        .review .rating {
+            font-size: 3rem;
+            color: var(--accent);
+        }
+        
+        .about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background-color: var(--light);
+            border-radius: 1rem;
+            box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+        }
+        
+        .about img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 1rem 0 0 1rem;
+        }
+        
+        .contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background-color: var(--light);
+            border-radius: 1rem;
+            box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+        }
+        
+        .footer {
+            padding: 2rem;
+            background-color: var(--primary);
+            color: var(--light);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-links">
+        <div class="hamburger"></div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop')">
+        <h1>Expert HVAC Repair in Fort Lauderdale, FL 33306</h1>
+        <div class="call-to-action">Get a Quote Today!</div>
+        <div class="trust-badges">
+            <div class="trust-badge">Top Rated</div>
+            <div class="trust-badge">24/7 Service</div>
+            <div class="trust-badge">Guaranteed Work</div>
+        </div>
+    </section>
+    <section class="service-cards">
+        <div class="service-card">
+            <i class="fa-solid fa-wrench fa-lg fa-fw" style="color: var(--accent);"></i>
+            <h2>Emergency Repairs</h2>
+            <p>Our team is available 24/7 for emergency repairs.</p>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-screwdriver fa-lg fa-fw" style="color: var(--accent);"></i>
+            <h2>Regular Maintenance</h2>
+            <p>Keep your HVAC system running smoothly with regular maintenance.</p>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-box fa-lg fa-fw" style="color: var(--accent);"></i>
+            <h2>System Installation</h2>
+            <p>Get a new HVAC system installed with our expert team.</p>
+        </div>
+    </section>
+    <section class="why-choose-us">
+        <div class="why-choose-us-block">
+            <i class="fa-solid fa-star fa-lg fa-fw" style="color: var(--accent);"></i>
+            <h3>Top Rated</h3>
+            <p>We have a 5-star rating from our satisfied customers.</p>
+        </div>
+        <div class="why-choose-us-block">
+            <i class="fa-solid fa-clock fa-lg fa-fw" style="color: var(--accent);"></i>
+            <h3>24/7 Service</h3>
+            <p>We're available 24/7 for all your HVAC needs.</p>
+        </div>
+        <div class="why-choose-us-block">
+            <i class="fa-solid fa-guarantee fa-lg fa-fw" style="color: var(--accent);"></i>
+            <h3>Guaranteed Work</h3>
+            <p>We guarantee all our work for your satisfaction.</p>
+        </div>
+    </section>
+    <section class="gallery">
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=800&fit=crop" alt="Gallery Image 1" style="border-radius: 1rem 0 0 1rem;">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop" alt="Gallery Image 2" style="border-radius: 0 1rem 1rem 0;">
+        </div>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=800&fit=crop" alt="Gallery Image 3" style="border-radius: 1rem 0 0 1rem;">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Gallery Image 4" style="border-radius: 0 1rem 1rem 0;">
+        </div>
+    </section>
+    <section class="review">
+        <div class="rating">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.000000 40.000000" enable-background="new 0 0 40.000000 40.000000" height="40px">
+                <polygon fill="#ffd700" points="13.5,11.5 18,16 28,16 19.5,22.5 27.5,11.5 28,13.5 22,13.5 13.5,11.5 "/>
+            </svg>
+        </div>
+        <div style="display: flex; flex-direction: column; padding: 2rem;">
+            <p>Great service and great people.</p>
+            <span style="color: var(--accent); font-weight: 600; font-size: 1.2rem;"> 5/5 - Fort Lauderdale HVAC Repair Chief</span>
+        </div>
+    </section>
+    <section class="about">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop" alt="About Image" style="width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 1rem 0 0 1rem;">
+        <div style="padding: 2rem; float: right;">
+            <h3>Our Story</h3>
+            <p>Our company was founded in 2010 by our CEO, who wanted to bring high-quality HVAC services to the Fort Lauderdale area.</p>
+        </div>
+        <div style="padding: 2rem;">
+            <div>
+                <h3>Number 1 HVAC Company in Fort Lauderdale</h3>
+                <p>We have served over 10,000 homes in the Fort Lauderdale area and have built a reputation for quality and reliability.</p>
+            </div>
+            <div>
+                <h3>Awards and Recognition</h3>
+                <p>We have received numerous awards and recognition from the Fort Lauderdale community and industry leaders.</p>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <div style="padding: 2rem;">
+            <h3>Get in Touch</h3>
+            <p>Ready to get started? Fill out the form below or give us a call at (323) 805-6143.</p>
+            <form style="padding: 2rem; background-color: var(--light); border-radius: 1rem; box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.2);">
+                <input type="text" placeholder="Name" style="padding: 1rem; margin-bottom: 1rem;">
+                <input type="email" placeholder="Email" style="padding: 1rem; margin-bottom: 1rem;">
+                <input type="tel" placeholder="Phone" style="padding: 1rem; margin-bottom: 1rem;">
+                <textarea placeholder="Message" style="padding: 1rem; margin-bottom: 1rem;"></textarea>
+                <button type="submit" style="padding: 1rem; background-color: var(--accent); color: var(--light); border: none; border-radius: 1rem;">Submit</button>
+            </form>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2024 Fort Lauderdale HVAC Repair Chief</p>
+        <p>Address: 2699 E Oakland Park Blvd, Fort Lauderdale, FL 33306, USA</p>
+        <p>Phone: (323) 805-6143</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburger = document.querySelector(".hamburger");
+            const navLinks = document.querySelector(".nav-links");
+            hamburger.addEventListener("click", function () {
+                navLinks.classList.toggle("open");
+            });
+        });
+    </script>
+</body>
+</html>

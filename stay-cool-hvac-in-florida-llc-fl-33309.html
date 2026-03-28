@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stay Cool HVAC In Florida LLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+        }
+        
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+        
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        header nav ul li {
+            margin-right: 20px;
+        }
+        
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        header nav ul li a:hover {
+            color: #c9e4d6;
+        }
+        
+        #hamburger {
+            display: none;
+            background-color: var(--primary);
+            color: #fff;
+            position: absolute;
+            top: 1em;
+            right: 1em;
+            padding: 0.5em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .hero {
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            background-color: #000;
+            opacity: 0.8;
+        }
+        
+        .hero h1 {
+            font-family: 'Syne Mono', monospace;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero #cta {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 1em 2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .hero #cta:hover {
+            background-color: var(--primary);
+        }
+        
+        .hero #cta img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        
+        .hero .trust-badges {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .hero .trust-badges img {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .services {
+            padding: 2em;
+            background-color: var(--light);
+        }
+        
+        .services .service-card {
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .services .service-card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 20px;
+        }
+        
+        .services .service-card h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .services .service-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .why-choose-us {
+            padding: 2em;
+            background-color: var(--light);
+        }
+        
+        .why-choose-us .block {
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .why-choose-us .block h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .why-choose-us .block p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .gallery {
+            padding: 2em;
+            background-color: var(--light);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .reviews {
+            padding: 2em;
+            background-color: var(--light);
+        }
+        
+        .reviews .star {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .about {
+            padding: 2em;
+            background-color: var(--light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .about img {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
+        
+        .contact {
+            padding: 2em;
+            background-color: var(--light);
+        }
+        
+        .contact form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .contact form input, .contact form textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact form input[type="submit"] {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .contact form input[type="submit"]:hover {
+            background-color: var(--primary);
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="">Stay Cool HVAC In Florida LLC</a></li>
+                <li><button id="hamburger" aria-label="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-6h18v-2H3v2zm0-6v2h18v-2H3zm-4-4h12v2H5v-2z"/></svg></button></li>
+            </ul>
+        </nav>
+        <button id="close-hamburger" aria-label="Close Menu">Close</button>
+    </header>
+    <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop')">
+        <h1>Stay Cool HVAC In Florida LLC</h1>
+        <button id="cta">Get a Quote!</button>
+        <div class="trust-badges">
+            <img src="" alt="Trust Badge 1">
+            <img src="" alt="Trust Badge 2">
+            <img src="" alt="Trust Badge 3">
+            <img src="" alt="Trust Badge 4">
+        </div>
+        <div class="rating" style="font-size: 24px;">4.9/5</div>
+        <div class="reviews">Based on 346 reviews</div>
+    </header>
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" alt="Service Image 1">
+            <h2>SERVICE 1</h2>
+            <p>Service 1 description</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Service Image 2">
+            <h2>SERVICE 2</h2>
+            <p>Service 2 description</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Service Image 3">
+            <h2>SERVICE 3</h2>
+            <p>Service 3 description</p>
+        </div>
+    </section>
+    <section class="why-choose-us">
+        <h2>Why Choose Us</h2>
+        <div class="block">
+            <h2>Reason 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="block">
+            <h2>Reason 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+        <div class="block">
+            <h2>Reason 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+    </section>
+    <section class="gallery">
+        <h2>Our Work</h2>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=800&fit=crop" alt="Gallery Image 1">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop" alt="Gallery Image 2">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=800&fit=crop" alt="Gallery Image 3">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Gallery Image 4">
+        </div>
+    </section>
+    <section class="reviews">
+        <h2>Reviews</h2>
+        <div class="star-rating">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="#ff9900" />
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 6c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" fill="#ff9900" />
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 6c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" fill="#ff9900" />
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 6c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" fill="#ff9900" />
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 6c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" fill="#ff9900" />
+            </svg>
+            <span>4.9/5</span>
+        </div>
+    </section>
+    <section class="about">
+        <h2>About Us</h2>
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop" alt="About Image">
+        <p>Located in Fort Lauderdale, FL, Stay Cool HVAC In Florida LLC is a family-owned business dedicated to providing the highest quality HVAC services in South Florida.</p>
+        <p>We pride ourselves on our excellent customer service, competitive pricing, and fast response times. Our technicians are all NATE-certified and will treat your home with the respect and care it deserves.</p>
+        <div class="stats">
+            <div>4.9/5 Rating</div>
+            <div>346 Reviews</div>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <form>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 Stay Cool HVAC In Florida LLC.</p>
+    </footer>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const closeHamburger = document.getElementById('close-hamburger');
+        const hero = document.querySelector('.hero');
+        
+        hamburger.addEventListener('click', () => {
+            hero.style.cssText = hero.style.display === 'none' ? 'block' : 'none';
+        });
+        
+        closeHamburger.addEventListener('click', () => {
+            hero.style.cssText = 'none';
+        });
+    </script>
+</body>
+</html>

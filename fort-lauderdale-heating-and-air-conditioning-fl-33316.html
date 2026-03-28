@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fort Lauderdale Heating and Air Conditioning</title>
+    <link href="https://fonts.googleapis.com/css2? 
+        family=Syne:wght@500;600&family=Outfit:wght@300;500;700&family=DM+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--primary);
+        }
+        
+        h1 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        .hamburger {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--primary);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .hamburger span {
+            position: relative;
+            width: 100%;
+            height: 2px;
+            background-color: var(--white);
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+        
+        .hamburger::before, .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: var(--white);
+            box-shadow: -10px 0 var(--white), 10px 0 var(--white);
+            transition: transform 0.3s ease;
+        }
+        
+        .hamburger::before {
+            transform: translateY(-8px);
+        }
+        
+        .hamburger::after {
+            transform: translateY(8px);
+        }
+        
+        .hamburger.collapsed {
+            transform: rotate(45deg);
+        }
+        
+        .hamburger.collapsed::before {
+            transform: translateY(10px) rotate(90deg);
+            box-shadow: -10px 10px var(--white);
+        }
+        
+        .hamburger.collapsed::after {
+            transform: translateY(-10px) rotate(-90deg);
+            box-shadow: 10px -10px var(--white);
+        }
+        
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom, var(--primary), var(--primary)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop');
+            background-size: 100% 100px, cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 100px;
+            color: var(--white);
+            text-shadow: var(--white) -1px 0, var(--white) 1px 0, var(--white) 0 1px, var(--white) 0 -1px;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--accent);
+            opacity: 0.5;
+        }
+        
+        .hero h1 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .hero .cta {
+            text-align: center;
+        }
+        
+        .hero .cta a {
+            padding: 15px 30px;
+            background-color: var(--accent);
+            color: var(--white);
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .hero .cta a:hover {
+            background-color: var(--primary);
+        }
+        
+        .trust-badge {
+            display: inline-block;
+            width: 50px;
+            height: 30px;
+            font-size: 14px;
+            text-align: center;
+            color: var(--white);
+            background-color: var(--accent);
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+        
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .service {
+            width: calc(33.33% - 20px);
+            margin: 20px;
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .service img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .why-choose-us {
+            margin-bottom: 100px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .review {
+            position: relative;
+            padding: 20px;
+            background-color: var(--light);
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .review h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .review svg {
+            fill: var(--accent);
+            width: 18px;
+            height: 18px;
+            margin-left: 10px;
+        }
+        
+        .review .rating {
+            font-size: 14px;
+            color: var(--accent);
+        }
+        
+        .about {
+            display: flex;
+            align-items: center;
+        }
+        
+        .about img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        
+        .about .local-story {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .stats span {
+            font-size: 18px;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+        
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 100px;
+        }
+        
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        
+        .contact-info .address {
+            font-size: 16px;
+            color: var(--Accent);
+        }
+        
+        .contact-info .phone-email {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info .phone-email a {
+            text-decoration: none;
+            color: var(--primary);
+        }
+        
+        .contact-info .phone-email a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="sticky-nav">
+        <nav>
+            <div class="logo"></div>
+            <a href="#" class="hamburger collapsed"></a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="hero">
+        <a href="#" class="cta">Contact Us</a>
+        <a href="#" class="cta">Schedule an Appointment</a>
+        <div class="trust-badge">TrustBadge1</div>
+        <div class="trust-badge">TrustBadge2</div>
+        <div class="trust-badge">TrustBadge3</div>
+        <div class="trust-badge">TrustBadge4</div>
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop" alt="Hero Image">
+        <div class="hero-content">
+            <h1>Fort Lauderdale Heating and Air Conditioning</h1>
+        </div>
+    </div>
+    <div class="services">
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" alt="Service Image">
+            <h2>Service 1</h2>
+            <p>Cras facilisis ligula nec sem lacinia. Proin sagittis lacus sit amet erat. In at felis quis sapien malesuada vestibulum.</p>
+        </div>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Service Image">
+            <h2>Service 2</h2>
+            <p>Cras facilisis ligula nec sem lacinia. Proin sagittis lacus sit amet erat. In at felis quis sapien malesuada vestibulum.</p>
+        </div>
+        <div class="service">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="Service Image">
+            <h2>Service 3</h2>
+            <p>Cras facilisis ligula nec sem lacinia. Proin sagittis lacus sit amet erat. In at felis quis sapien malesuada vestibulum.</p>
+        </div>
+    </div>
+    <div class="why-choose-us">
+        <h2>Why Choose Us?</h2>
+        <p>Cras facilisis ligula nec sem lacinia. Proin sagittis lacus sit amet erat. In at felis quis sapien malesuada vestibulum.</p>
+        <div class="statistic">
+            <span>Years of Experience</span>
+            <span>50</span>
+        </div>
+        <div class="statistic">
+            <span>Number of Happy Customers</span>
+            <span>1000</span>
+        </div>
+        <div class="statistic">
+            <span>Services Offered</span>
+            <span>10</span>
+        </div>
+    </div>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=800&fit=crop" alt="Gallery Image">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop" alt="Gallery Image">
+    </div>
+    <div class="review">
+        <h2>4 out of 5 stars</h2>
+        <svg>
+            <path d="M9.3,4.5c0.2-0.1,0.5-0.1,0.7,0c0.2,0.1,0.5,0.1,0.7,0s0.5-0.1,0.7,0l7.2,6.5c0.3,0.3,0.3,0.8,0,1.1C11,7.9,10.2,7.9,9.3,4.5z"></svg>
+        </div>
+    <div class="review-stat">
+        <span class="rating">4/5</span>
+        <span class="rating">43 reviews</span>
+    </div>
+    <div class="review">
+        <p>"Cras facilisis ligula nec sem lacinia. Proin sagittis lacus sit amet erat. In at felis quis sapien malesuada vestibulum."</p>
+        <span class="reviewer">John Doe</span>
+    </div>
+    <div class="about">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop" alt="About Image">
+        <div class="local-story">
+            <p>Cras facilisis ligula nec sem lacinia. Proin sagittis lacus sit amet erat. In at felis quis sapien malesuada vestibulum.</p>
+        </div>
+    </div>
+    <div class="contact">
+        <div class="contact-info">
+            <span class="address">1302 SE 17th St</span>
+            <span class="phone-email">Fort Lauderdale, FL 33316</span>
+            <span class="phone-email">(954) 278-7897</span>
+        </div>
+        <div class="contact-form">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            <button>Send Message</button>
+        </div>
+    </div>
+    <footer>
+        <div class="copyright">
+            &copy; Fort Lauderdale Heating and Air Conditioning. All rights reserved.
+        </div>
+    </footer>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            hamburger.classList.toggle('collapsed');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harper Revell Heating & Air Conditioning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Syne&display=swap" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Outfit:wght@500;700&display=swap" rel="stylesheet" type="text/css">
+    <style>
+        :root {
+            --primary: #0d3b6e;
+            --accent: #00aaff;
+            --bg: #fff;
+            --light: #f0f7ff;
+        }
+        @media only screen and (max-width: 768px){
+            nav{
+                position: relative;
+            }
+            .icon-menu{
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                transform: translateY(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav" role="navigation">
+        <div class="inner" style="display: flex;justify-content: space-between;align-items: center;padding: 10px;">
+            <a href="#" class="menu-toggle" aria-label="Mobile menu toggle">
+                <svg role="img" aria-hidden="true" viewBox="0 0 24 24" focusable="false" fill="none" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h7a1 1 0 0 1 1 1v17a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zM16 17H9a4 4 0 0 1-4-4v-5a4 4 0 0 1 4-4H5v1H2v2h12v-2h1V17h-3z">
+                    </path>
+                </svg>
+            </a>
+            <button class="menu-toggle" aria-label="Main menu toggle" type="button"><i></i><i></i><i></i></button>
+        </div>
+        <ul class="menu menu--main">
+            <li class="menu-item">
+                <a href="#" class="menu-link">AC Install & Replace</a>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link">AC Repair</a>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link">Heating Service</a>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link">Air Quality</a>
+            </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link">Duct Cleaning</a>
+            </li>
+            <li class="menu-item menu-item--last">
+                <a href="#" class="menu-link">24/7 Emergency</a>
+            </li>
+        </ul>
+    </nav>
+    <header class="hero" style="background-image: url('https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=1920&h=1080&fit=crop'); height: 100vh; display: flex;align-items: center;justify-content: flex-start;flex-direction: column;padding: 10px;">
+        <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6);"></div>
+        <h1 style="color: #fff;max-width: 800px;">Harper Revell Heating & Air Conditioning - Your trusted partner in Tallahassee</h1>
+        <button style="color: #fff; background-color: var(--accent); border: none; padding: 10px 20px; font-size: 16px;">Get Service Now</button>
+        <button style="color: #fff; background-color: var(--primary); border: none; padding: 10px 20px; font-size: 16px;">Get A Quote</button>
+        <div class="trustbadges" style="display: flex;justify-content: space-between;max-width: 800px;margin-top: 20px;">
+            <div class="trustbadge" style="background-color: var(--primary);color: #fff;padding: 10px 20px;border-radius: 10px;">
+                <i style="font-size: 24px;">Verified by Google</i>
+            </div>
+            <div class="trustbadge" style="background-color: var(--primary);color: #fff;padding: 10px 20px;border-radius: 10px;">
+                <i style="font-size: 24px;">BBB Accredited</i>
+            </div>
+            <div class="trustbadge" style="background-color: var(--primary);color: #fff;padding: 10px 20px;border-radius: 10px;">
+                <i style="font-size: 24px;">Better Business Bureau</i>
+            </div>
+            <div class="trustbadge" style="background-color: var(--primary);color: #fff;padding: 10px 20px;border-radius: 10px;">
+                <i style="font-size: 24px;">Angie's List</i>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="services">
+            <h2 style="max-width: 800px;">Our Services</h2>
+            <div class="servicecards" style="display: flex;justify-content: space-between;flex-wrap: wrap;">
+                <div class="servicecard" style="background-color: #fff;padding: 20px;max-width: 250px;margin: 20px;">
+                    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service Image 1" style="width: 100%;height: 150px;object-fit: cover;">
+                    <h3 style="margin-bottom: 10px;">AC Install & Replace</h3>
+                    <p>We can help you with air conditioning installation.</p>
+                </div>
+                <div class="servicecard" style="background-color: #fff;padding: 20px;max-width: 250px;margin: 20px;">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop" alt="Service Image 2" style="width: 100%;height: 150px;object-fit: cover;">
+                    <h3 style="margin-bottom: 10px;">AC Repair</h3>
+                    <p>We can help you fix your broken air conditioning.</p>
+                </div>
+                <div class="servicecard" style="background-color: #fff;padding: 20px;max-width: 250px;margin: 20px;">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Service Image 3" style="width: 100%;height: 150px;object-fit: cover;">
+                    <h3 style="margin-bottom: 10px;">Heating Service</h3>
+                    <p>We can help you fix your heating system.</p>
+                </div>
+            </div>
+        </section>
+        <section class="whychooseus">
+            <h2 style="max-width: 800px;">Why Choose Us?</h2>
+            <div class="blocks" style="display: grid;grid-template-columns: repeat(3, 1fr);grid-gap: 20px;">
+                <div class="block">
+                    <h3 style="margin-bottom: 10px;">24/7 Emergency Service</h3>
+                    <p>We are available to help you whenever you need us.</p>
+                </div>
+                <div class="block">
+                    <h3 style="margin-bottom: 10px;">Expert Technicians</h3>
+                    <p>All of our technicians are trained and certified professionals.</p>
+                </div>
+                <div class="block">
+                    <h3 style="margin-bottom: 10px;">Free Estimates</h3>
+                    <p>We will come to your location and give you a free estimate.</p>
+                </div>
+            </div>
+        </section>
+        <section class="gallery">
+            <h2 style="max-width: 800px;">Our Work</h2>
+            <div class="images" style="display: grid;grid-template-columns: repeat(2, 1fr);grid-gap: 20px;">
+                <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df7b?w=800&h=800&fit=crop" alt="Image 1" style="width: 100%;height: 150px;object-fit: cover;">
+                <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=800&fit=crop" alt="Image 2" style="width: 100%;height: 150px;object-fit: cover;">
+            </div>
+            <div class="images" style="display: grid;grid-template-columns: repeat(2, 1fr);grid-gap: 20px;">
+                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Image 3" style="width: 100%;height: 150px;object-fit: cover;">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Image 4" style="width: 100%;height: 150px;object-fit: cover;">
+            </div>
+        </section>
+        <section class="reviews">
+            <h2 style="max-width: 800px;">What Our Customers Say</h2>
+            <div class="review" style="display: grid;grid-template-columns: repeat(3, 1fr);grid-gap: 20px;">
+                <div class="rating" style="display: flex;align-items: center;">
+                    <svg role="img" aria-hidden="true" viewBox="0 0 24 24" focusable="false" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11.5 2h4.5v9H8.5V16h4.5v-7h4.5v5h-4.5V10h-2v6h1.5v-7h1.5v5z">
+                        </path>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.485 8.35c-1.707 1.457-2.646 2.793-2.646 3.533c0 .726.045 2.046.283 2.783.239 3.57 2.45 6.354 5.286 6.354 2.434 0 4.278-0.616 4.278-1.65V14h1.369v-1h.581v-.581l-.5-1h-3.178l-.5 1h-.581v.581l1 .5v1h3.178l.5 1v.581l-.5 1h.581v1h1.369V19.83c0 .724.045 1.966.282 2.783.239 3.57 2.44 6.354 5.287 6.354 2.436 0 4.275-0.616 4.275-1.65V16h1v3.5h-1V19.83c0 .724.045 1.966.28 2.783.239 3.57 2.44 6.354 5.287 6.354 2.436 0 4.277-0.617 4.277-1.65v-3.5h1v3.5h-1C14.55 22.35 15.35 23 16 23c.745 0 1.45-.655 1.45-1.5V14H20v5h-1.5c-.5 0 1.4.655 1.4 1.5z">
+                        </path>
+                    </svg>
+                    <span>4.9/5</span>
+                </div>
+                <h3>Harper Revell Heating & Air Conditioning</h3>
+                <p>Tallahassee, FL</p>
+            </div>
+        </section>
+        <section class="about">
+            <h2 style="max-width: 800px;">About Us</h2>
+            <div class="image">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&h=800&fit=crop" alt="About Image" style="width: 100%;height: 150px;object-fit: cover;">
+            </div>
+            <div class="text">
+                <h3 style="margin-bottom: 10px;">We are a heating and air conditioning company based in Tallahassee.</h3>
+                <p>We have been serving our community for 10 years.</p>
+            </div>
+            <div class="stats" style="display: flex;justify-content: space-between;max-width: 800px;margin-top: 20px;">
+                <div>
+                    <span style="font-size: 24px;">10+</span> years of experience
+                </div>
+                <div>
+                    <span style="font-size: 24px;">100+</span> satisfied customers
+                </div>
+                <div>
+                    <span style="font-size: 24px;">5+</span> star rating
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="inner" style="display: flex;justify-content: space-between;align-items: center;padding: 10px;">
+            <div class="contact">
+                <p style="margin-bottom: 10px;">Phone: <span class="phone">tel: (850) 877-1306</span></p>
+                <p style="margin-bottom: 10px;">Email: <a href="mailto:info@harperrevell.com">info@harperrevell.com</a></p>
+                <p style="margin-bottom: 10px;">Address: <span class="address">3015 Nathan Ln, Tallahassee, FL 32308</span></p>
+            </div>
+            <div class="social">
+                <a href="#" class="social-link" aria-label="Facebook link">
+                    <svg role="img" aria-hidden="true" viewBox="0 0 24 24" focusable="false" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 0h-6c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Instagram link">
+                    <svg role="img" aria-hidden="true" viewBox="0 0 24 24" focusable="false" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V7.01a2 2 0 0 1 2-2H5V3zm0 4H3v12c0 1.1.9 2 2 2h19c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2H3V17c0 1.1-.9 2-2 2zm9 2h-3v-4h4v4h-2.98l-4.03 4H9v-6L3 8z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="LinkedIn link">
+                    <svg role="img" aria-hidden="true" viewBox="0 0 24 24" focusable="false" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0z">
+                        </path>
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M2 6L22 6m0 0L2 20">
+                        </path>
+                    </svg>
+                </a>
+                <a href="#" class="social-link" aria-label="Twitter link">
+                    <svg role="img" aria-hidden="true" viewBox="0 0 24 24" focusable="false" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M23 19a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v14ZM5 9v5h4V9H5zm8 0v5h4V9H13z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>

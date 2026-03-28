@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrity Home Solutions - Plumbing Services in Tampa, FL 33610</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono:wght@500;700&family=Outfit:wght@400;600&family=DM+Sans:opsz,wght@24,400;24,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg);
+        }
+        
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            color: #fff;
+        }
+        
+        .hamburger {
+            display: none;
+        }
+        
+        .hamburger:checked + .nav-links {
+            flex: 0 0 100%;
+            transition: opacity 100ms ease-in-out;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding-top: 10px;
+            text-align: center;
+            gap: 20px;
+        }
+        
+        .hamburger:checked + .nav-links ul {
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .hamburger:checked + .nav-links li {
+            text-align: center;
+        }
+        
+        .nav-links ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .hero-container {
+            height: 100vh;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--dark);
+            opacity: 0.9;
+        }
+        
+        .hero-content {
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-family: 'Syne Mono', monospace;
+            color: #fff;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content h1 span {
+            color: var(--accent);
+        }
+        
+        .hero-content p {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .hero-content .btn {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        .hero-content .btn:hover {
+            background-color: var(--primary);
+        }
+        
+        .trustbadges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .service-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+        }
+        
+        .service-card {
+            width: calc(33.33% - 20px);
+            background-color: var(--bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .service-card h2 {
+            font-family: 'Syne Mono', monospace;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .service-card p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .why-choose-us {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .why-choose-us h2 {
+            font-family: 'Syne Mono', monospace;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .why-choose-us block {
+            padding: 20px;
+            margin-bottom: 30px;
+            background-color: var(--light);
+            border-radius: 10px;
+        }
+        
+        .why-choose-us block h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .why-choose-us block p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        
+        .gallery img {
+            width: calc(50% - 20px);
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .reviews {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .review {
+            background-color: var(--bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+        }
+        
+        .review h2 {
+            font-family: 'Syne Mono', monospace;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .review p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+        }
+        
+        .rating svg {
+            margin-right: 10px;
+        }
+        
+        .rating span {
+            font-size: 24px;
+        }
+        
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .about img {
+            width: 50%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .about-info {
+            width: 50%;
+            padding: 20px;
+        }
+        
+        .about-info h2 {
+            font-family: 'Syne Mono', monospace;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .about-info ul {
+            list-style: none;
+        }
+        
+        .about-info ul li {
+            margin-bottom: 20px;
+        }
+        
+        .about-info ul li::before {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            margin-right: 10px;
+        }
+        
+        .contact {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact h2 {
+            font-family: 'Syne Mono', monospace;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .contact .social {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .contact .social img {
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .contact input[type="text"], .contact input[type="email"], .contact textarea {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            width: 50%;
+            background-color: var(--light);
+        }
+        
+        .contact input[type="submit"] {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        .contact input[type="submit"]:hover {
+            background-color: var(--primary);
+        }
+        
+        .contact hr {
+            width: 50%;
+            background-color: var(--primary);
+            height: 2px;
+            border: none;
+        }
+        
+        .footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer h2 {
+            font-family: 'Syne Mono', monospace;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .footer ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer hr {
+            width: 50%;
+            background-color: var(--primary);
+            height: 2px;
+            border: none;
+        }
+        
+        .footer address a {
+            margin-left: 10px;
+        }        
+    </style>
+</head>
+<body>
+    <input type="checkbox" class="hamburger" id="hamburger">
+    <label for="hamburger" class="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <nav class="nav-links">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div class="hero-container" id="home">
+        <div class="hero-content">
+            <h1>Welcome to <span>Integrity Home Solutions</span> in Tampa, FL 33610!</h1>
+            <p>Expert plumbing services for emergency <strong>leak repair</strong>, <strong>drain cleaning</strong>, and more!</p>
+            <button class="btn">Get Started Today!</button>
+        </div>
+    </div>
+    <div class="trustbadges">
+        <div class="badge">
+            <img src="https://image.flaticon.com/icons/png/64/128/128492.png" alt="Trusted by">
+        </div>
+        <div class="badge">
+            <img src="https://image.flaticon.com/icons/png/64/1225/1225410.png" alt="Highly Rated">
+        </div>
+        <div class="badge">
+            <img src="https://image.flaticon.com/icons/png/64/1224/1224455.png" alt="Experienced">
+        </div>
+        <div class="badge">
+            <img src="https://image.flaticon.com/icons/png/64/1226/1225412.png" alt="Reliable">
+        </div>
+    </div>
+    <div class="service-cards" id="services">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1">
+            <h2>Emergency Leak Repair</h2>
+            <p>Get assistance with <strong>plumbing emergencies</strong> 24/7!</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2">
+            <h2>Professional Drain Cleaning</h2>
+            <p>Experience state-of-the-art <strong>drain cleaning solutions</strong>!</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3">
+            <h2>Affordable Plumbing Services</h2>
+            <p>Discover the best <strong>pricing and services</strong> in Tampa, FL!</p>
+        </div>
+    </div>
+    <div class="why-choose-us" id="about">
+        <h2>Why Choose Us?</h2>
+        <div class="block">
+            <h2>Honesty and Integrity</h2>
+            <p>We believe in treating our customers like family and always doing the right thing.</p>
+        </div>
+        <div class="block">
+            <h2>Professional Expertise</h2>
+            <p>Our technicians are highly trained and experienced in all types of plumbing issues.</p>
+        </div>
+        <div class="block">
+            <h2>State-of-the-Art Equipment</h2>
+            <p>We only use the latest and greatest equipment to ensure the best results every time.</p>
+        </div>
+    </div>
+    <div class="gallery" id="gallery">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery 1">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery 2">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery 3">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery 4">
+    </div>
+    <div class="reviews" id="reviews">
+        <div class="review">
+            <h2>5/5 Stars</h2>
+            <p>Integrity Home Solutions was the only company that could fix my <strong>leaky faucet</strong> on a <strong>sunday</strong>!</p>
+            <i class="rating">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                    <polygon points="12 2 15.09 8.26 22 9.27 18 14.15 15.91 19.68 12 21 7.74 19.68 4 14.15 6 9.27 8.26 2 12 9.27 15.09 8.26 12 2">
+                    </polygon>
+                </svg>
+                <span>5</span>
+                (4.7/8772)
+            </i>
+        </div>
+        <div class="review">
+            <h2>5/5 Stars</h2>
+            <p>The plumbers that came to my house were so <strong>courteous</strong> and efficient, they really did a <strong>great job</strong>!</p>
+            <i class="rating">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                    <polygon points="12 2 15.09 8.26 22 9.27 18 14.15 15.91 19.68 12 21 7.74 19.68 4 14.15 6 9.27 8.26 2 12 9.27 15.09 8.26 12 2">
+                    </polygon>
+                </svg>
+                <span>5</span>
+                (4.7/8772)
+            </i>
+        </div>
+        <div class="review">
+            <h2>5/5 Stars</h2>
+            <p>The price they quoted was extremely competitive and the quality of the <strong>plumbing work</strong> was exceptional!</p>
+            <i class="rating">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                    <polygon points="12 2 15.09 8.26 22 9.27 18 14.15 15.91 19.68 12 21 7.74 19.68 4 14.15 6 9.27 8.26 2 12 9.27 15.09 8.26 12 2">
+                    </polygon>
+                </svg>
+                <span>5</span>
+                (4.7/8772)
+            </i>
+        </div>
+    </div>
+    <div class="about" id="about">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Us">
+        <div class="about-info">
+            <h2>About Us</h2>
+            <p>We believe in providing the best <strong>plumbing services</strong> with honesty and integrity. At Integrity Home Solutions, we pride ourselves on delivering exceptional results and building long-lasting relationships with our customers.</p>
+            <ul>
+                <li><strong>Address:</strong> 5904 Hampton Oaks Pkwy, Tampa, FL 33610, USA</li>
+                <li><strong>Phone:</strong> (813) 575-6500</

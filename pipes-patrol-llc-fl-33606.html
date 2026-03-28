@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipes Patrol LLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&family=DM+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            background-color: var(--bg);
+        }
+        @media (max-width: 768px) {
+            body {
+                font-size: 12px;
+            }
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+        }
+    </style>
+    <style>
+        .hamburger {
+            display: none;
+            @media (max-width: 768px) {
+                display: inline-block;
+            }
+        }
+        .nav {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 1rem;
+            text-align: center;
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .nav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--light);
+                padding: 2rem;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                justify-content: space-between;
+            }
+            .nav a {
+                display: inline-block;
+                margin: 1rem;
+                color: var(--dark);
+                text-decoration: none;
+            }
+        }
+        .nav a:hover {
+            color: var(--accent);
+        }
+        .hero {
+            background-image: url('{{Hero_Image}}');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--light);
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            background-color: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .hero h1 {
+            font-size: 2rem;
+        }
+        .hero h2 {
+            font-size: 1.5rem;
+        }
+        .hero .trust {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        .hero .trust img {
+            width: 20px;
+            height: 20px;
+        }
+        .hero .ctas {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        .hero .ctas a {
+            background-color: var(--accent);
+            color: var(--light);
+            padding: 1rem;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+        .services {
+            padding: 1rem;
+        }
+        .services .card {
+            background-color: var(--light);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .services .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .services .card p {
+            margin-bottom: 1rem;
+        }
+        .services .card img {
+            width: 50%;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1rem;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .review {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--light);
+        }
+        .review h2 {
+            margin-bottom: 0;
+        }
+        .review svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--accent);
+        }
+        .review p {
+            margin-left: 1rem;
+        }
+        .about {
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .about img {
+            width: 30%;
+        }
+        .about p {
+            margin: 1rem;
+        }
+        .contact {
+            padding: 1rem;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact label {
+            margin-bottom: 0.5rem;
+        }
+        .contact input {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .contact textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .contact button {
+            background-color: var(--accent);
+            color: var(--light);
+            padding: 1rem;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+        .contact button:hover {
+            background-color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <h1 class="hamburger">☰</h1>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+    <header class="hero">
+        <div class="container">
+            <h1>Pipes Patrol LLC, <span style="font-size: 1rem;">Serving FL 33606</span></h1>
+            <h2>Emergency Leak Repair, Drain Cleaning, Water Heater Install, Pipe Replacement, Bathroom Plumbing, Sewer Repair</h2>
+            <div class="trust">
+                <img src="" alt="Trust badge 1">
+                <img src="" alt="Trust badge 2">
+                <img src="" alt="Trust badge 3">
+                <img src="" alt="Trust badge 4">
+            </div>
+            <div class="ctas">
+                <a href="#">Get a Quote</a>
+                <a href="#">Schedule Service</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="services">
+            <h1>Our Services</h1>
+            <div class="container">
+                <div class="card">
+                    <h3>Emergency Leak Repair</h3>
+                    <p>We can handle any emergency leak situation 24/7.</p>
+                    <img src="{{Service_Image_1}}" alt="Emergency Leak Repair">
+                </div>
+                <div class="card">
+                    <h3>Drain Cleaning</h3>
+                    <p>We have the tools to clear even the toughest clogs.</p>
+                    <img src="{{Service_Image_2}}" alt="Drain Cleaning">
+                </div>
+                <div class="card">
+                    <h3>Water Heater Install</h3>
+                    <p>We can install new water heaters or replace old ones.</p>
+                    <img src="{{Service_Image_3}}" alt="Water Heater Install">
+                </div>
+            </div>
+        </section>
+        <section class="gallery">
+            <img src="{{Gallery_Image_1}}" alt="Gallery Image 1">
+            <img src="{{Gallery_Image_2}}" alt="Gallery Image 2">
+            <img src="{{Gallery_Image_3}}" alt="Gallery Image 3">
+            <img src="{{Gallery_Image_4}}" alt="Gallery Image 4">
+        </section>
+        <section class="reviews">
+            <h1>What Our Customers Say</h1>
+            <div class="container">
+                <div class="review">
+                    <h2>Rating: 4.9</h2>
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10C22 6.48 17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                    <p>103 reviews</p>
+                </div>
+                <div class="review">
+                    <h2>Rating: 4.9/5</h2>
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10C22 6.48 17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path></svg>
+                    <p>103 reviews</p>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <img src="{{About_Image}}" alt="About Image" class="about img">
+            <div>
+                <h1>We're a Local Business Serving FL 33606</h1>
+                <p>Pipes Patrol LLC is a local, family-owned business dedicated to providing top-notch plumbing services to the Tampa area.</p>
+                <div>
+                    <p>Address: 1510 W North B St, Tampa, FL 33606, USA</p>
+                    <p>Phone: <a href="tel:8136966668">813.696.6668</a></p>
+                    <p>Email: <a href="mailto:support@pipespatrol.com">support@pipespatrol.com</a></p>
+                </div>
+            </div>
+        </section>
+        <section class="contact">
+            <h1>Get in Touch with Us</h1>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Pipes Patrol LLC, 2023</p>
+    </footer>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('.nav');
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

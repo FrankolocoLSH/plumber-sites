@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC Repairs by FreezeTop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--primary);
+        }
+        
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--accent);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .hamburger {
+            display: none;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        
+        .nav-link {
+            color: var(--light);
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: 2px solid var(--light);
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .nav-link:hover {
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .hero {
+            height: 100vh;
+            background-image: linear-gradient(var(--primary), var(--primary)), url("https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&h=1080&fit=crop");
+            background-size: cover;
+            background-position: center;
+            color: var(--bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-text {
+            text-align: center;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .trust-badge-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        
+        .service-card {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--primary);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: var(--light);
+        }
+        
+        .service-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        
+        .service-card-text {
+            color: var(--primary);
+        }
+        
+        .why-us {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .why-us-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: var(--light);
+            margin: 20px;
+            border: 1px solid var(--primary);
+            border-radius: 10px;
+        }
+        
+        .why-us-icon {
+            height: 50px;
+            width: 50px;
+            border-radius: 10px;
+            fill: #333;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            padding-bottom: 150%;
+            background-color: var(--light);
+            border: 1px solid var(--primary);
+            border-radius: 10px;
+            margin: 20px;
+        }
+        
+        .gallery-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .reviews {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .reviews-text {
+            color: var(--light);
+        }
+        
+        .reviews-stars {
+            display: flex;
+            align-items: center;
+        }
+        
+        .review-star {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            fill: #fff;
+        }
+        
+        .about {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .about-text {
+            color: var(--light);
+        }
+        
+        .about-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            color: var(--light);
+        }
+        
+        .footer {
+            background-color: var(--primary);
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="sticky-nav">
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-link">Home</li>
+                <li class="nav-link">Services</li>
+                <li class="nav-link">About</li>
+                <li class="nav-link">Contact</li>
+            </ul>
+            <button class="hamburger">&#9776;</button>
+        </nav>
+    </div>
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h1>AC Repairs by FreezeTop in <span>FL 33301</span></h1>
+        </div>
+    </header>
+    <section class="trust-badges">
+        <div class="trust-badge">
+            <svg class="trust-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 1v2m0 0h5.66m-5.66 8h6a.6.6 0 01.6 1v15a1 1 0 01-1.6 1h-14a1 1 0 01-1-1v-15c0-1.6.6-3.2 1.6-4.6">
+                </path>
+                <path d="M15 5v10h-5v-10h8v8h-4v-8z">
+                </path>
+                <path d="M5 6h14z">
+                </path>
+            </svg>
+            <p>Excellent Service</p>
+        </div>
+        <div class="trust-badge">
+            <svg class="trust-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <p>Timely Response</p>
+        </div>
+        <div class="trust-badge">
+            <svg class="trust-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="7" y="5" width="10" height="14"></rect>
+                <rect x="7" y="12" width="10" height="14"></rect>
+                <line x1="10" y1="1" x2="12" y2="1"></line>
+                <line x1="16" y1="1" x2="18" y2="1"></line>
+                <line x1="8" y1="1" x2="10" y2="1"></line>
+            </svg>
+            <p>Fair Pricing</p>
+        </div>
+    </section>
+    <section class="service-cards">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" alt="">
+            <div class="service-card-text">
+                <h2>Service Card 1</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas commodi natus cupiditate eos.</p>
+            </div>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="">
+            <div class="service-card-text">
+                <h2>Service Card 2</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas commodi natus cupiditate eos.</p>
+            </div>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="">
+            <div class="service-card-text">
+                <h2>Service Card 3</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas commodi natus cupiditate eos.</p>
+            </div>
+        </div>
+    </section>
+    <section class="why-us">
+        <div class="why-us-block">
+            <svg class="why-us-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+            </svg>
+            <h2>Why Choose Us?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="why-us-block">
+            <svg class="why-us-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="19" x2="19" y2="19"></line>
+            </svg>
+            <h2>Our Promise</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="why-us-block">
+            <svg class="why-us-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 2H4v16h16V2zm0 2H8v12h12V4z">
+                </path>
+            </svg>
+            <h2>Our Process</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </section>
+    <section class="gallery">
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=800&fit=crop" alt="">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=800&fit=crop" alt="">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=800&fit=crop" alt="">
+        </div>
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" alt="">
+        </div>
+    </section>
+    <section class="reviews">
+        <div class="reviews-text">
+            <p>5/5 (50 reviews)</p>
+        </div>
+        <div class="reviews-stars">
+            <svg class="review-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                </path>
+            </svg>
+            <svg class="review-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                </path>
+            </svg>
+            <svg class="review-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                </path>
+            </svg>
+            <svg class="review-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                </path>
+            </svg>
+            <svg class="review-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                </path>
+            </svg>
+        </div>
+    </section>
+    <section class="about">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=800&fit=crop" alt="">
+        </div>
+        <div class="about-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut ex ac nulla pellentesque sollicitudin ut eu diam. Nunc sed ultrices ligula. Curabitur auctor lacus et arcu convallis, vel semper magna mollis.</p>
+        </div>
+    </section>
+    <section class="about-stats">
+        <div class="stats">
+            <div class="stat">
+                <h2>5 Years</h2>
+                <p>Experience in AC Repairs</p>
+            </div>
+            <div class="stat">
+                <h2>50+</h2>
+                <p>Happy Customers</p>
+            </div>
+            <div class="stat">
+                <h2>95%</h2>
+                <p>Customer Satisfaction Rate</p>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>315 NW 1st Ave suite 109, Fort Lauderdale, FL 33301, USA</p>
+            <p>(954) 284-9851</p>
+            <p>Email: <a href="#">info@freetopac.com</a></p>
+        </div>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id

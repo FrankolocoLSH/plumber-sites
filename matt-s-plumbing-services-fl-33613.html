@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt's Plumbing Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        .hamburger svg {
+            width: 25px;
+            height: 25px;
+            fill: #fff;
+        }
+        @media only screen and (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+        .hero {
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .hero .btn {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .trust-badges img {
+            width: 50px;
+            height: 50px;
+            margin: 0 10px;
+        }
+        .service-cards {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0;
+        }
+        .service-card {
+            background-color: var(--bg);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+            margin: 10px;
+        }
+        .service-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .service-card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .why-choose-us {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0;
+        }
+        .why-choose-us block {
+            background-color: var(--bg);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: calc(33.33% - 20px);
+            margin: 10px;
+        }
+        .why-choose-us block h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .why-choose-us block p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+            margin: 50px 0;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .reviews {
+            margin: 50px 0;
+        }
+        .review {
+            background-color: var(--bg);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+        }
+        .review h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .review p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .review .stars {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .review .stars svg {
+            width: 20px;
+            height: 20px;
+            fill: #ffd700;
+            margin: 0 2px;
+        }
+        .about {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0;
+        }
+        .about img {
+            width: 50%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .about-text {
+            width: 50%;
+            padding: 20px;
+        }
+        .about-text h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .about-text p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .stat h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .contact {
+            margin: 50px 0;
+        }
+        .contact h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .contact p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input {
+            width: 100%;
+            height: 40px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .contact textarea {
+            width: 100%;
+            height: 100px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .contact button {
+            background-color: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: var(--primary);
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="hamburger">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+        </div>
+    </header>
+    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop')">
+        <div class="hero-content">
+            <h1>Matt's Plumbing Services - FL 33613</h1>
+            <p>Emergency Leak Repair, Drain Cleaning, Water Heater Install, Pipe Replacement, Bathroom Plumbing, Sewer Repair</p>
+            <button class="btn">Get a Quote</button>
+            <button class="btn">Contact Us</button>
+            <div class="trust-badges">
+                <img src="https://via.placeholder.com/50" alt="Trust Badge 1">
+                <img src="https://via.placeholder.com/50" alt="Trust Badge 2">
+                <img src="https://via.placeholder.com/50" alt="Trust Badge 3">
+                <img src="https://via.placeholder.com/50" alt="Trust Badge 4">
+            </div>
+        </div>
+    </section>
+    <section class="service-cards">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1">
+            <h2>Emergency Leak Repair</h2>
+            <p>Our team is available 24/7 to repair any leak, no matter the size or complexity.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2">
+            <h2>Drain Cleaning</h2>
+            <p>Our state-of-the-art equipment and techniques ensure your drains are flowing freely and efficiently.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3">
+            <h2>Water Heater Install</h2>
+            <p>Our experienced technicians will install a new water heater that meets your needs and budget.</p>
+        </div>
+    </section>
+    <section class="why-choose-us">
+        <div class="block">
+            <h2>Experience</h2>
+            <p>Our team has years of experience in the plumbing industry, ensuring you receive the best service possible.</p>
+        </div>
+        <div class="block">
+            <h2>Quality</h2>
+            <p>We use only the highest quality materials and equipment to ensure your plumbing system is reliable and efficient.</p>
+        </div>
+        <div class="block">
+            <h2>Customer Service</h2>
+            <p>We pride ourselves on providing exceptional customer service, ensuring you're satisfied with every aspect of our service.</p>
+        </div>
+    </section>
+    <section class="gallery">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery 1">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery 2">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery 3">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery 4">
+    </section>
+    <section class="reviews">
+        <div class="review">
+            <h2>Rating: 4.7/5 (1674 reviews)</h2>
+            <p>"Matt's Plumbing Services did an excellent job fixing my leaky faucet. The technician was professional and courteous." - Matt's Plumbing Services</p>
+            <div class="stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+        </div>
+    </section>
+    <section class="about">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="About Image">
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>We're a local plumbing company dedicated to providing top-notch service to our community. Our team is committed to ensuring your plumbing system is running smoothly and efficiently.</p>
+            <div class="stats">
+                <div class="stat">
+                    <h2>10+</h2>
+                    <p>Years of Experience</p>
+                </div>
+                <div class="stat">
+                    <h2>500+</h2>
+                    <p>Customers Served</p>
+                </div>
+                <div class="stat">
+                    <h2>99%</h2>
+                    <p>Customer Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Get in Touch</h2>
+        <p>Call us today to schedule your plumbing service: <a href="tel:(813) 269-7370">(813) 269-7370</a></p>
+        <form>
+            <input type="text" name="name" placeholder="Name">
+            <input type="email" name="email" placeholder="Email">
+            <textarea name="message" placeholder="Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Matt's Plumbing Services. All rights reserved.</p>
+        <p>Address: 13775 N Nebraska Ave, Tampa, FL 33613, USA</p>
+        <p>Phone: <a href="tel:(813) 269-7370">(813) 269-7370</a></p>
+    </footer>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('.nav');
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

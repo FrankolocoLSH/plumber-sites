@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampa Luxury Plumbing | Expert Plumbing Services in Tampa, FL 33609</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+tight+Outfit:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Syne tight Outfit', sans-serif;
+        }
+        
+        /* Sticky Nav */
+        .nav {
+            position: sticky;
+            top: 0;
+            background: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav img {
+            height: 2rem;
+        }
+        
+        .nav hamburger {
+            display: none;
+        }
+        
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 2rem;
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .nav hamburger {
+                display: block;
+            }
+            .nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        
+        /* Hero */
+        .hero {
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .hero__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.5;
+        }
+        
+        .hero__h1 {
+            color: #fff;
+            font-size: 3rem;
+        }
+        
+        /* Contact Cards */
+        .contact-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact__icon {
+            width: 5rem;
+            height: 5rem;
+            color: var(--primary);
+        }
+        
+        .contact-card h2 {
+            font-size: 2rem;
+            font-family: 'Syne tight Outfit', sans-serif;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-card p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+        }
+        
+        .stats div {
+            width: 25%;
+            padding: 2rem;
+            border-radius: 10px;
+            background: var(--light);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stats__h3 {
+            font-size: 2rem;
+            font-family: 'Syne tight Outfit', sans-serif;
+            margin-bottom: 2rem;
+        }
+        
+        .stats p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.5rem;
+        }
+        
+        /* Review */
+        .review {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .review__star {
+            color: var(--accent);
+            font-size: 2rem;
+            margin-right: 2rem;
+        }
+        
+        .review__text {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Contact */
+        .contact {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .contact__info {
+            width: 50%;
+        }
+        
+        .contact__form {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact__form input, .contact__form textarea {
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border: none;
+            border-radius: 10px;
+            background: var(--light);
+            width: 100%;
+        }
+        
+        .contact__form textarea {
+            resize: false;
+        }
+        
+        .contact__form button {
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            background: var(--primary);
+            color: #fff;
+            width: 100%;
+            cursor: pointer;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: #fff;
+            padding: 1rem;
+        }
+        
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .footer__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer__list li {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Nav -->
+    <nav class="nav">
+        <a href="#"><img src="{{logo}}" alt="Logo"></a>
+        <button class="nav hamburger">Menu</button>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Hero -->
+    <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');">
+        <div class="hero__overlay"></div>
+        <h1 class="hero__h1">Expert Plumbing Services in Tampa, FL 33609</h1>
+        <a href="#" class="hero__cta hero__cta--primary">Get a Free Quote</a>
+        <a href="#" class="hero__cta hero__cta--accent">Learn More</a>
+        <div class="trust__badges">
+            <img src="icon1.svg" alt="Icon 1">
+            <img src="icon2.svg" alt="Icon 2">
+            <img src="icon3.svg" alt="Icon 3">
+            <img src="icon4.svg" alt="Icon 4">
+            <img src="icon5.svg" alt="Icon 5">
+        </div>
+    </div>
+    
+    <!-- Services -->
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="services__cards">
+            <div class="contact-card">
+                <i class="fa fa-wrench" aria-hidden="true"></i>
+                <h2>Emergency Leak Repair</h2>
+                <p>We offer 24/7 emergency leak repair services to stop water damage and prevent costly repairs.</p>
+            </div>
+            <div class="contact-card">
+                <i class="fa fa-bolt" aria-hidden="true"></i>
+                <h2>Drain Cleaning</h2>
+                <p>We use advanced technology to clear clogs and restore your pipes to optimal performance.</p>
+            </div>
+            <div class="contact-card">
+                <i class="fa fa-hot-water" aria-hidden="true"></i>
+                <h2>Water Heater Install</h2>
+                <p>We install and repair water heaters efficiently and cost-effectively, ensuring warm water for your home.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <h2>Why Choose Tampa Luxury Plumbing</h2>
+        <div class="stats">
+            <div>
+                <h3>5-Year Warranty</h3>
+                <p>We stand behind our work with a comprehensive 5-year warranty.</p>
+            </div>
+            <div>
+                <h3>Emergency Services</h3>
+                <p>24/7 emergency services available for unexpected pipe bursts or water damage.</p>
+            </div>
+            <div>
+                <h3>Affordable Prices</h3>
+                <p>Competitive pricing for top-quality plumbing services in Tampa, FL 33609.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery -->
+    <section class="gallery">
+        <h2>Our Work</h2>
+        <div class="gallery__images">
+            <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Image 1">
+            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Image 2">
+            <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Image 3">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Image 4">
+        </div>
+    </section>
+    
+    <!-- Reviews -->
+    <section class="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="reviews__cards">
+            <div class="review">
+                <span class="review__star">
+                    <svg width="24" height="24" fill="none" stroke="#e8651a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 2l3 2 7 7-7 7-3 2 4 5 6-6z"></path>
+                    </svg>
+                    <svg width="24" height="24" fill="none" stroke="#e8651a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 2l3 2 7 7-7 7-3 2 4 5 6-6z"></path>
+                    </svg>
+                    <svg width="24" height="24" fill="none" stroke="#e8651a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 2l3 2 7 7-7 7-3 2 4 5 6-6z"></path>
+                    </svg>
+                    <svg width="24" height="24" fill="none" stroke="#e8651a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 2l3 2 7 7-7 7-3 2 4 5 6-6z"></path>
+                    </svg>
+                    <svg width="24" height="24" fill="none" stroke="#e8651a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 2l3 2 7 7-7 7-3 2 4 5 6-6z"></path>
+                    </svg>
+                    <svg width="24" height="24" fill="none" stroke="#e8651a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 2l3 2 7 7-7 7-3 2 4 5 6-6z"></path>
+                    </svg>
+                </span>
+                <p class="review__text">"Tampa Luxury Plumbing did a fantastic job fixing our leaky faucet. They were professional, punctual, and left our home spotless. 5/5 stars!"</p>
+            </div>
+            <div class="review">
+                <span class="review__star">
+                    <svg width="24" height="24" fill="none" stroke="#e8651a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 2l3 2 7 7-7 7-3 2 4 5 6-6z"></path>
+                    </svg>
+                    <svg width="24" height="24" fill="none" stroke="#e8651a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 2l3 2 7 7-7 7-3 2 4 5 6-6z"></path>
+                    </svg>
+                    <svg width="24" height="24" fill="none" stroke="#e8651a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 2l3 2 7 7-7 7-3 2 4 5 6-6z"></path>
+                    </svg>
+                    <svg width="24" height="24" fill="none" stroke="#e8651a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 2l3 2 7 7-7 7-3 2 4 5 6-6z"></path>
+                    </svg>
+                    <svg width="24" height="24" fill="none" stroke="#e8651a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 2l3 2 7 7-7 7-3 2 4 5 6-6z"></path>
+                    </svg>
+                </span>
+                <p class="review__text">"Tampa Luxury Plumbing did an excellent job installing our water heater. They were timely, efficient, and professional. 5/5 stars!"</p>
+            </div>
+            <div class="review">
+                <span class="review__star">
+                    <svg width="24" height="24" fill="none" stroke="#e8651a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 2l3 2 7 7-7 7-3 2 4 5 6-6z"></path>
+                    </svg>
+                    <svg width="24" height="24" fill="none" stroke="#e8651a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 2l3 2 7 7-7 7-3 2 4 5 6-6z"></path>
+                    </svg>
+                    <svg width="24" height="24" fill="none" stroke="#e8651a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 2l3 2 7 7-7 7-3 2 4 5 6-6z"></path>
+                    </svg>
+                    <svg width="24" height="24" fill="none" stroke="#e8651a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 2l3 2 7 7-7 7-3 2 4 5 6-6z"></path>
+                    </svg>
+                    <svg width="24" height="24" fill="none" stroke="#e8651a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 2l3 2 7 7-7 7-3 2 4 5 6-6z"></path>
+                    </svg>
+                </span>
+                <p class="review__text">"Tampa Luxury Plumbing performed an excellent service repair on our leaky faucet. They were courteous, efficient, and priced fairly. 5/5 stars!"</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About -->
+    <section class="about">
+        <h2>Our Story</h2>
+        <div class="about__image">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="Image">
+        </div>
+        <div class="about__text">
+            <p>Tampa Luxury Plumbing is a full-service plumbing company dedicated to providing top-quality service and exceptional customer experiences.</p>
+            <p>We are locally owned and operated in Tampa, FL 33609, and our team of highly skilled plumbers are trained to tackle a wide range of plumbing

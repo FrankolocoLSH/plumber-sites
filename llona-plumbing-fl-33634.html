@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llona Plumbing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Outfit&family=Syne&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2744;
+            --accent: #e8651a;
+            --bg: #fff;
+            --light: #f4f7fb;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header nav {
+            display: flex;
+            align-items: center;
+        }
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        header nav ul li {
+            margin-right: 20px;
+        }
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .hamburger {
+            display: none;
+        }
+        @media only screen and (max-width: 768px) {
+            header nav ul {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+        }
+        .hero {
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            z-index: 1;
+        }
+        .service-cards {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem 0;
+        }
+        .service-card {
+            background-color: var(--light);
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .service-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .why-choose-us {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem 0;
+        }
+        .why-choose-us block {
+            background-color: var(--light);
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 2rem 0;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .reviews {
+            margin: 2rem 0;
+        }
+        .review {
+            background-color: var(--light);
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .review .rating {
+            color: var(--accent);
+        }
+        .about {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem 0;
+        }
+        .about img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .contact {
+            margin: 2rem 0;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 1rem;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </div>
+    </header>
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Llona Plumbing - Your Trusted Plumber in FL 33634</h1>
+            <p>Get expert plumbing services in Tampa, FL 33634. Call us now at (813) 477-1870 for emergency leak repair, drain cleaning, and more.</p>
+            <div>
+                <a href="#contact" class="btn">Get a Quote</a>
+                <a href="tel:(813) 477-1870" class="btn">Call Now</a>
+            </div>
+            <div class="trust-badges">
+                <img src="https://via.placeholder.com/50" alt="Trust Badge 1">
+                <img src="https://via.placeholder.com/50" alt="Trust Badge 2">
+                <img src="https://via.placeholder.com/50" alt="Trust Badge 3">
+                <img src="https://via.placeholder.com/50" alt="Trust Badge 4">
+            </div>
+        </div>
+    </section>
+    <section id="services" class="service-cards">
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Service 1">
+            <h2>Emergency Leak Repair</h2>
+            <p>Our team is available 24/7 to fix any leak or plumbing issue.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Service 2">
+            <h2>Drain Cleaning</h2>
+            <p>We use the latest technology to clean and clear your drains.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Service 3">
+            <h2>Water Heater Install</h2>
+            <p>Get a new water heater installed by our expert technicians.</p>
+        </div>
+    </section>
+    <section id="why-choose-us" class="why-choose-us">
+        <div class="block">
+            <h2>Why Choose Us?</h2>
+            <p>We are a family-owned business with years of experience in plumbing services.</p>
+        </div>
+        <div class="block">
+            <h2>Our Mission</h2>
+            <p>Our mission is to provide the best plumbing services in Tampa, FL 33634.</p>
+        </div>
+        <div class="block">
+            <h2>Our Values</h2>
+            <p>We value honesty, integrity, and customer satisfaction.</p>
+        </div>
+    </section>
+    <section id="gallery" class="gallery">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="Gallery Image 1">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="Gallery Image 2">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="Gallery Image 3">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Gallery Image 4">
+    </section>
+    <section id="reviews" class="reviews">
+        <h2>What Our Customers Say</h2>
+        <div class="review">
+            <p>Great service! The plumber was on time and fixed the issue quickly.</p>
+            <div class="rating">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.23 17 14.14 19.66 17.77 15.09 23 12 20 8.91 17.77 7 14.14 4 9.23 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.23 17 14.14 19.66 17.77 15.09 23 12 20 8.91 17.77 7 14.14 4 9.23 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.23 17 14.14 19.66 17.77 15.09 23 12 20 8.91 17.77 7 14.14 4 9.23 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.23 17 14.14 19.66 17.77 15.09 23 12 20 8.91 17.77 7 14.14 4 9.23 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.23 17 14.14 19.66 17.77 15.09 23 12 20 8.91 17.77 7 14.14 4 9.23 8.91 8.26"></polygon></svg>
+            </div>
+        </div>
+        <div class="review">
+            <p>Excellent service! The plumber was very professional and courteous.</p>
+            <div class="rating">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.23 17 14.14 19.66 17.77 15.09 23 12 20 8.91 17.77 7 14.14 4 9.23 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.23 17 14.14 19.66 17.77 15.09 23 12 20 8.91 17.77 7 14.14 4 9.23 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.23 17 14.14 19.66 17.77 15.09 23 12 20 8.91 17.77 7 14.14 4 9.23 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.23 17 14.14 19.66 17.77 15.09 23 12 20 8.91 17.77 7 14.14 4 9.23 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.23 17 14.14 19.66 17.77 15.09 23 12 20 8.91 17.77 7 14.14 4 9.23 8.91 8.26"></polygon></svg>
+            </div>
+        </div>
+        <div class="review">
+            <p>Very satisfied with the service. The plumber was very knowledgeable and helpful.</p>
+            <div class="rating">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.23 17 14.14 19.66 17.77 15.09 23 12 20 8.91 17.77 7 14.14 4 9.23 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.23 17 14.14 19.66 17.77 15.09 23 12 20 8.91 17.77 7 14.14 4 9.23 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.23 17 14.14 19.66 17.77 15.09 23 12 20 8.91 17.77 7 14.14 4 9.23 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.23 17 14.14 19.66 17.77 15.09 23 12 20 8.91 17.77 7 14.14 4 9.23 8.91 8.26"></polygon></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 20 9.23 17 14.14 19.66 17.77 15.09 23 12 20 8.91 17.77 7 14.14 4 9.23 8.91 8.26"></polygon></svg>
+            </div>
+        </div>
+    </section

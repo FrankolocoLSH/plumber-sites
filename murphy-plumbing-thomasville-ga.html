@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Murphy Plumbing Inc | Plumber in Thomasville, GA</title>
+<meta name="description" content="Murphy Plumbing Inc — Plumbing services in Thomasville, GA. Call (229) 226-4109 for fast, reliable service.">
+<style>
+:root{--primary:#1a2744;--accent:#e8651a;--bg:#fff;--light:#f4f7fb;--text:#2b3550}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding-top:46px}
+#demo-banner{position:fixed;top:0;left:0;right:0;z-index:99999;background:#1a2744;color:#fff;text-align:center;padding:11px 14px;font-size:13px;font-weight:600;letter-spacing:.02em;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.site-header{position:sticky;top:46px;z-index:900;background:var(--primary);color:#fff}
+.site-header .wrap{max-width:1150px;margin:0 auto;padding:.9rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.brand{font-size:1.25rem;font-weight:800;letter-spacing:.01em}
+.brand a{color:#fff;text-decoration:none}
+.site-nav{display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap}
+.site-nav a{color:#dbe4f5;text-decoration:none;font-size:.95rem}
+.site-nav a:hover{color:#fff}
+.btn-call{display:inline-block;background:var(--accent);color:#fff!important;font-weight:700;text-decoration:none;padding:.65rem 1.3rem;border-radius:.5rem;border:none;cursor:pointer;font-size:1rem}
+.btn-call:hover{background:#c95412}
+.btn-ghost{display:inline-block;background:transparent;color:#fff!important;font-weight:700;text-decoration:none;padding:.65rem 1.3rem;border-radius:.5rem;border:2px solid #fff;font-size:1rem}
+.hero{position:relative;min-height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+.hero img.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .overlay{position:absolute;inset:0;background:linear-gradient(rgba(26,39,68,.72),rgba(26,39,68,.55))}
+.hero .inner{position:relative;z-index:2;max-width:800px;padding:4rem 1.25rem}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;margin-bottom:1rem;line-height:1.15}
+.hero .rating-line{font-size:1.15rem;margin-bottom:1.75rem;color:#ffe9d6}
+.hero .ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.trustbar{background:var(--light);padding:1.1rem;text-align:center;font-weight:600;color:var(--primary);font-size:.98rem}
+section.block{padding:3.5rem 1.25rem}
+.wrap{max-width:1150px;margin:0 auto}
+h2.sec-title{text-align:center;color:var(--primary);font-size:clamp(1.6rem,3.5vw,2.3rem);margin-bottom:.6rem}
+.sec-sub{text-align:center;color:#5b6b8c;max-width:640px;margin:0 auto 2.25rem}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.service-card{background:#fff;border:1px solid #e3e9f4;border-radius:.9rem;overflow:hidden;box-shadow:0 4px 14px rgba(26,39,68,.07)}
+.service-card img{width:100%;height:170px;object-fit:cover;display:block}
+.service-card .pad{padding:1.35rem}
+.service-card h3{color:var(--primary);margin-bottom:.5rem;font-size:1.15rem}
+.service-card p{font-size:.96rem;color:#5b6b8c}
+.why{background:var(--light)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.why-card{background:#fff;border-radius:.9rem;padding:1.75rem;box-shadow:0 4px 14px rgba(26,39,68,.07);border-top:4px solid var(--accent)}
+.why-card h3{color:var(--primary);margin-bottom:.5rem}
+.why-card p{color:#5b6b8c;font-size:.97rem}
+.stars{color:var(--accent);font-size:1.6rem;letter-spacing:.15em}
+.review-agg{max-width:640px;margin:0 auto;background:#fff;border-radius:1rem;padding:2.5rem 2rem;text-align:center;box-shadow:0 6px 22px rgba(26,39,68,.1);border:1px solid #e3e9f4}
+.review-agg .big{font-size:2.6rem;font-weight:800;color:var(--primary)}
+.review-agg p{color:#5b6b8c;margin-top:.6rem}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.about-grid img{width:100%;border-radius:1rem;box-shadow:0 6px 22px rgba(26,39,68,.12)}
+.about-grid h2{color:var(--primary);font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:1rem}
+.about-grid p{margin-bottom:1rem;color:#41506e}
+.fact-list{list-style:none;margin-top:1.25rem}
+.fact-list li{padding:.55rem 0;border-bottom:1px solid #e8edf6;color:#41506e}
+.fact-list li strong{color:var(--primary)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.contact-card{background:var(--light);border-radius:1rem;padding:2rem}
+.contact-card h3{color:var(--primary);margin-bottom:1rem}
+.contact-card p{margin-bottom:.9rem}
+.contact-card a{color:var(--accent);font-weight:700}
+form.demo-form{background:#fff;border:1px solid #e3e9f4;border-radius:1rem;padding:2rem;box-shadow:0 6px 22px rgba(26,39,68,.08)}
+form.demo-form label{display:block;font-weight:600;color:var(--primary);margin:.9rem 0 .3rem;font-size:.93rem}
+form.demo-form input,form.demo-form textarea{width:100%;padding:.8rem;border:1px solid #c9d4e8;border-radius:.5rem;font-size:1rem;font-family:inherit}
+form.demo-form input:focus,form.demo-form textarea:focus{outline:2px solid var(--accent);border-color:var(--accent)}
+form.demo-form button{margin-top:1.25rem;width:100%}
+footer{background:var(--primary);color:#c7d2e8;padding:2.25rem 1.25rem;text-align:center;font-size:.92rem}
+footer p{margin:.3rem 0}
+footer a{color:#fff}
+@media(max-width:760px){.about-grid,.contact-grid{grid-template-columns:1fr}.site-nav{gap:.8rem}#demo-banner{font-size:11px}body{padding-top:42px}.site-header{top:42px}.hero{min-height:64vh}}
+</style>
+</head>
+<body>
+<div id="demo-banner">DEMO SITE &mdash; Concept built by Hayman Empire &middot; Not affiliated with Murphy Plumbing Inc</div>
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand"><a href="#">Murphy Plumbing Inc</a></div>
+    <nav class="site-nav">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn-call" href="tel:+12292264109">Call (229) 226-4109</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="hero-bg" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop" alt="Plumbing work in Thomasville">
+  <div class="overlay"></div>
+  <div class="inner">
+    <h1>Expert Plumbing Services in Thomasville</h1>
+    <p class="rating-line"><span class="stars">★★★★★</span><br>~4.2 stars from ~27 Google reviews</p>
+    <div class="ctas">
+      <a class="btn-call" href="tel:+12292264109">Call (229) 226-4109 Now</a>
+      <a class="btn-ghost" href="#contact">Get a Free Estimate</a>
+    </div>
+  </div>
+</section>
+
+<div class="trustbar">Murphy Plumbing Inc &mdash; serving Thomasville, GA &mdash; 303 Baybrook St, Thomasville, GA 31792</div>
+
+<section class="block" id="services">
+  <div class="wrap">
+    <h2 class="sec-title">Our Plumbing Services</h2>
+    <p class="sec-sub">Straightforward pricing, clean work, and technicians who treat your home with respect.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Emergency Repairs">
+        <div class="pad"><h3>Emergency Repairs</h3><p>Burst pipes, major leaks, and urgent fixes — fast response when it matters most.</p></div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Drain Cleaning">
+        <div class="pad"><h3>Drain Cleaning</h3><p>Slow or clogged drains cleared safely and thoroughly, done right the first time.</p></div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Water Heaters">
+        <div class="pad"><h3>Water Heaters</h3><p>Repair and replacement of traditional and tankless water heaters.</p></div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop" alt="Leak Detection">
+        <div class="pad"><h3>Leak Detection</h3><p>Pinpoint hidden leaks before they turn into expensive water damage.</p></div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=600&fit=crop" alt="Fixture Installation">
+        <div class="pad"><h3>Fixture Installation</h3><p>Faucets, toilets, sinks, and showers installed cleanly and correctly.</p></div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=600&fit=crop" alt="Sewer &amp; Line Services">
+        <div class="pad"><h3>Sewer &amp; Line Services</h3><p>Sewer line inspection, repair, and replacement with minimal disruption.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block why" id="why">
+  <div class="wrap">
+    <h2 class="sec-title">Why Choose Murphy Plumbing Inc</h2>
+    <p class="sec-sub">A local Thomasville shop with the reviews to back it up.</p>
+    <div class="why-grid">
+      <div class="why-card"><h3>Highly Rated</h3><p>~4.2 stars across ~27 Google reviews from real local customers.</p></div>
+      <div class="why-card"><h3>Local &amp; Accountable</h3><p>Based at 303 Baybrook St, Thomasville, GA 31792 — when you call, you reach people in Thomasville, not a call center.</p></div>
+      <div class="why-card"><h3>Straightforward Service</h3><p>Clear explanations, honest pricing, and no-pressure recommendations on every job.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="reviews">
+  <div class="wrap">
+    <h2 class="sec-title">Customer Reviews</h2>
+    <p class="sec-sub">Aggregate rating from Google.</p>
+    <div class="review-agg">
+      <div class="stars">★★★★★</div>
+      <div class="big">~4.2 / 5</div>
+      <p>Based on ~27 Google reviews.<br>Individual review quotes are intentionally omitted in this demo concept.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block why" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="Murphy Plumbing Inc technicians at work">
+      <div>
+        <h2>About Murphy Plumbing Inc</h2>
+        <p>Led by Kirk Murphy, serving Thomasville, GA.</p>
+        <p>Murphy Plumbing Inc is based at 303 Baybrook St, Thomasville, GA 31792, serving Thomasville, GA and the surrounding area.</p>
+        <p>Ask for Kirk Murphy when you call — you'll talk to someone who knows the work.</p>
+        <ul class="fact-list">
+          <li><strong>Business:</strong> Murphy Plumbing Inc</li>
+          <li><strong>Phone:</strong> <a href="tel:+12292264109">(229) 226-4109</a></li>
+          <li><strong>Address:</strong> 303 Baybrook St, Thomasville, GA 31792</li>
+          <li><strong>Google rating:</strong> ~4.2 stars from ~27 reviews</li>
+          <li><strong>Owner:</strong> Kirk Murphy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contact">
+  <div class="wrap">
+    <h2 class="sec-title">Get in Touch</h2>
+    <p class="sec-sub">Call now or send a message — we usually respond the same business day.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Contact Murphy Plumbing Inc</h3>
+        <p><strong>Phone:</strong> <a href="tel:+12292264109">(229) 226-4109</a></p>
+        <p><strong>Address:</strong> 303 Baybrook St, Thomasville, GA 31792</p>
+        <p><strong>Hours:</strong> Mon–Fri 8am–6pm · 24/7 emergency line</p>
+        <p style="margin-top:1.25rem"><a class="btn-call" href="tel:+12292264109">Call (229) 226-4109</a></p>
+      </div>
+      <form class="demo-form" action="https://formsubmit.co/lhayman1100@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New demo-site inquiry for Murphy Plumbing Inc">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <label for="f-name">Name</label>
+        <input id="f-name" type="text" name="name" placeholder="Your name" required>
+        <label for="f-email">Email</label>
+        <input id="f-email" type="email" name="email" placeholder="you@example.com" required>
+        <label for="f-phone">Phone</label>
+        <input id="f-phone" type="tel" name="phone" placeholder="Your phone number">
+        <label for="f-msg">How can we help?</label>
+        <textarea id="f-msg" name="message" rows="4" placeholder="Describe your project…" required></textarea>
+        <button class="btn-call" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Murphy Plumbing Inc. All rights reserved.</p>
+  <p>303 Baybrook St, Thomasville, GA 31792 &middot; <a href="tel:+12292264109">(229) 226-4109</a></p>
+  <p style="margin-top:.6rem;font-size:.82rem;opacity:.75">Demo concept built by Hayman Empire. Not affiliated with Murphy Plumbing Inc.</p>
+</footer>
+</body>
+</html>

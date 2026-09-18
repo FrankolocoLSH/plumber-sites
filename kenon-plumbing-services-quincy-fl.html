@@ -6,10 +6,10 @@
 <title>Kenon Plumbing Services | Plumber in Quincy, FL</title>
 <meta name="description" content="Kenon Plumbing Services — Plumbing services in Quincy, FL. Call (850) 875-9316 for fast, reliable service.">
 <style>
-:root{--primary:#1a2744;--accent:#e8651a;--bg:#fff;--light:#f4f7fb;--text:#2b3550}
+:root{--primary:#334155;--primary-rgb:51,65,85;--on-primary:#ffffff;--accent:#38bdf8;--accent-dark:#2d9acb;--on-accent:#1a2744;--link:#217194;--bg:#fff;--light:#f4f7fb;--text:#2b3550}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding-top:46px}
-#demo-banner{position:fixed;top:0;left:0;right:0;z-index:99999;background:#1a2744;color:#fff;text-align:center;padding:11px 14px;font-size:13px;font-weight:600;letter-spacing:.02em;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#demo-banner{position:fixed;top:0;left:0;right:0;z-index:99999;background:var(--primary);color:var(--on-primary);text-align:center;padding:11px 14px;font-size:13px;font-weight:600;letter-spacing:.02em;box-shadow:0 2px 8px rgba(0,0,0,.25)}
 .site-header{position:sticky;top:46px;z-index:900;background:var(--primary);color:#fff}
 .site-header .wrap{max-width:1150px;margin:0 auto;padding:.9rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .brand{font-size:1.25rem;font-weight:800;letter-spacing:.01em}
@@ -17,12 +17,12 @@ body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;back
 .site-nav{display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap}
 .site-nav a{color:#dbe4f5;text-decoration:none;font-size:.95rem}
 .site-nav a:hover{color:#fff}
-.btn-call{display:inline-block;background:var(--accent);color:#fff!important;font-weight:700;text-decoration:none;padding:.65rem 1.3rem;border-radius:.5rem;border:none;cursor:pointer;font-size:1rem}
-.btn-call:hover{background:#c95412}
+.btn-call{display:inline-block;background:var(--accent);color:var(--on-accent)!important;font-weight:700;text-decoration:none;padding:.65rem 1.3rem;border-radius:.5rem;border:none;cursor:pointer;font-size:1rem}
+.btn-call:hover{background:var(--accent-dark)}
 .btn-ghost{display:inline-block;background:transparent;color:#fff!important;font-weight:700;text-decoration:none;padding:.65rem 1.3rem;border-radius:.5rem;border:2px solid #fff;font-size:1rem}
 .hero{position:relative;min-height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
 .hero img.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero .overlay{position:absolute;inset:0;background:linear-gradient(rgba(26,39,68,.72),rgba(26,39,68,.55))}
+.hero .overlay{position:absolute;inset:0;background:linear-gradient(rgba(var(--primary-rgb),.72),rgba(var(--primary-rgb),.55))}
 .hero .inner{position:relative;z-index:2;max-width:800px;padding:4rem 1.25rem}
 .hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;margin-bottom:1rem;line-height:1.15}
 .hero .rating-line{font-size:1.15rem;margin-bottom:1.75rem;color:#ffe9d6}
@@ -33,22 +33,22 @@ section.block{padding:3.5rem 1.25rem}
 h2.sec-title{text-align:center;color:var(--primary);font-size:clamp(1.6rem,3.5vw,2.3rem);margin-bottom:.6rem}
 .sec-sub{text-align:center;color:#5b6b8c;max-width:640px;margin:0 auto 2.25rem}
 .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
-.service-card{background:#fff;border:1px solid #e3e9f4;border-radius:.9rem;overflow:hidden;box-shadow:0 4px 14px rgba(26,39,68,.07)}
+.service-card{background:#fff;border:1px solid #e3e9f4;border-radius:.9rem;overflow:hidden;box-shadow:0 4px 14px rgba(var(--primary-rgb),.07)}
 .service-card img{width:100%;height:170px;object-fit:cover;display:block}
 .service-card .pad{padding:1.35rem}
 .service-card h3{color:var(--primary);margin-bottom:.5rem;font-size:1.15rem}
 .service-card p{font-size:.96rem;color:#5b6b8c}
 .why{background:var(--light)}
 .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
-.why-card{background:#fff;border-radius:.9rem;padding:1.75rem;box-shadow:0 4px 14px rgba(26,39,68,.07);border-top:4px solid var(--accent)}
+.why-card{background:#fff;border-radius:.9rem;padding:1.75rem;box-shadow:0 4px 14px rgba(var(--primary-rgb),.07);border-top:4px solid var(--accent)}
 .why-card h3{color:var(--primary);margin-bottom:.5rem}
 .why-card p{color:#5b6b8c;font-size:.97rem}
-.stars{color:var(--accent);font-size:1.6rem;letter-spacing:.15em}
-.review-agg{max-width:640px;margin:0 auto;background:#fff;border-radius:1rem;padding:2.5rem 2rem;text-align:center;box-shadow:0 6px 22px rgba(26,39,68,.1);border:1px solid #e3e9f4}
+.stars{color:var(--link);font-size:1.6rem;letter-spacing:.15em}
+.review-agg{max-width:640px;margin:0 auto;background:#fff;border-radius:1rem;padding:2.5rem 2rem;text-align:center;box-shadow:0 6px 22px rgba(var(--primary-rgb),.1);border:1px solid #e3e9f4}
 .review-agg .big{font-size:2.6rem;font-weight:800;color:var(--primary)}
 .review-agg p{color:#5b6b8c;margin-top:.6rem}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
-.about-grid img{width:100%;border-radius:1rem;box-shadow:0 6px 22px rgba(26,39,68,.12)}
+.about-grid img{width:100%;border-radius:1rem;box-shadow:0 6px 22px rgba(var(--primary-rgb),.12)}
 .about-grid h2{color:var(--primary);font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:1rem}
 .about-grid p{margin-bottom:1rem;color:#41506e}
 .fact-list{list-style:none;margin-top:1.25rem}
@@ -58,8 +58,8 @@ h2.sec-title{text-align:center;color:var(--primary);font-size:clamp(1.6rem,3.5vw
 .contact-card{background:var(--light);border-radius:1rem;padding:2rem}
 .contact-card h3{color:var(--primary);margin-bottom:1rem}
 .contact-card p{margin-bottom:.9rem}
-.contact-card a{color:var(--accent);font-weight:700}
-form.demo-form{background:#fff;border:1px solid #e3e9f4;border-radius:1rem;padding:2rem;box-shadow:0 6px 22px rgba(26,39,68,.08)}
+.contact-card a{color:var(--link);font-weight:700}
+form.demo-form{background:#fff;border:1px solid #e3e9f4;border-radius:1rem;padding:2rem;box-shadow:0 6px 22px rgba(var(--primary-rgb),.08)}
 form.demo-form label{display:block;font-weight:600;color:var(--primary);margin:.9rem 0 .3rem;font-size:.93rem}
 form.demo-form input,form.demo-form textarea{width:100%;padding:.8rem;border:1px solid #c9d4e8;border-radius:.5rem;font-size:1rem;font-family:inherit}
 form.demo-form input:focus,form.demo-form textarea:focus{outline:2px solid var(--accent);border-color:var(--accent)}

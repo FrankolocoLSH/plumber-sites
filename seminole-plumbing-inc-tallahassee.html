@@ -1,508 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seminole Plumbing Inc | Trustworthy Plumbers in Tallahassee</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <style>
-body{padding-top:46px!important}
-/* fallback: replaces missing styles.css */
-:root{--primary:#1a2744;--accent:#e8651a;--bg:#fff;--light:#f4f7fb;--text:#2b3550;--muted:#6b7690}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seminole Plumbing Inc | Plumber in Tallahassee, FL</title>
+<meta name="description" content="Seminole Plumbing Inc — Plumbing services in Tallahassee, FL. Call (850) 459-8212 for fast, reliable service.">
+<style>
+:root{--primary:#1e3a5f;--primary-rgb:30,58,95;--on-primary:#ffffff;--accent:#e8632a;--accent-dark:#be5122;--on-accent:#ffffff;--link:#e8632a;--bg:#fff;--light:#f4f7fb;--text:#2b3550}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-img{max-width:100%;height:auto;display:block}
-a{color:var(--primary)}
-section,div[class*="section"],div[class*="block"]{padding:2.5rem 1.25rem}
-div[class*="container"],div[class*="content"],div[class*="wrap"]{max-width:1150px;margin:0 auto}
-h1,h2,h3,div[class*="title"],div[class*="headline"]{color:var(--primary);line-height:1.25;margin-bottom:.75rem}
-h1,div[class*="hero-heading"],div[class*="headline"]{font-size:2rem}
-h2,div[class*="section-title"]{font-size:1.5rem;text-align:center}
-p,div[class*="text"]{margin-bottom:1rem;color:var(--text)}
-div[class*="hero"]{background:linear-gradient(135deg,#1a2744,#2c3f66);color:#fff;text-align:center;padding:4rem 1.25rem}
-div[class*="hero"] h1,div[class*="hero"] h2,div[class*="hero"] p,div[class*="hero"] div{color:#fff}
-nav,div[class*="nav"],div[class*="navbar"]{background:var(--primary);color:#fff;padding:.9rem 1.25rem}
-nav a,div[class*="nav"] a{color:#dbe4f5;text-decoration:none;margin-right:1.1rem}
-a[class*="btn"],button,[class*="btn"]{display:inline-block;background:var(--accent);color:#fff!important;font-weight:700;text-decoration:none;padding:.8rem 1.6rem;border-radius:8px;border:0;cursor:pointer;margin:.4rem .4rem .4rem 0}
-a[class*="secondary"],[class*="secondary-btn"]{background:#fff;color:var(--primary)!important;border:2px solid var(--primary)}
-div[class*="grid"]{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;max-width:1150px;margin:0 auto}
-div[class*="card"],div[class*="review"],div[class*="testimonial"],div[class*="stat"]{background:var(--light);border-radius:12px;padding:1.5rem;box-shadow:0 2px 10px rgba(26,39,68,.08)}
-div[class*="stats"]{background:var(--primary);color:#fff;text-align:center}
-div[class*="stats"] *{color:#fff}
-div[class*="badge"]{display:inline-block;background:#e8f5e9;color:#1b7a3d;font-weight:700;font-size:.8rem;padding:.35rem .8rem;border-radius:999px;margin:.25rem}
-div[class*="star"]{color:#f5a623}
-form{max-width:560px;margin:0 auto;background:var(--light);padding:1.75rem;border-radius:12px}
-input,textarea,select{width:100%;padding:.8rem;border:1px solid #cfd6e4;border-radius:8px;margin-bottom:1rem;font-size:1rem;font-family:inherit}
-footer,div[class*="footer"]{background:var(--primary);color:#cfd6e4;text-align:center;padding:2rem 1.25rem}
-footer a,div[class*="footer"] a{color:#fff}
-ul{list-style-position:inside}
-#hamburger{display:none}
-label[for="hamburger"]{display:none}
-@media(max-width:700px){h1{font-size:1.6rem}section{padding:1.75rem 1rem}}
+body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding-top:46px}
+#demo-banner{position:fixed;top:0;left:0;right:0;z-index:99999;background:var(--primary);color:var(--on-primary);text-align:center;padding:11px 14px;font-size:13px;font-weight:600;letter-spacing:.02em;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.site-header{position:sticky;top:46px;z-index:900;background:var(--primary);color:#fff}
+.site-header .wrap{max-width:1150px;margin:0 auto;padding:.9rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.brand{font-size:1.25rem;font-weight:800;letter-spacing:.01em}
+.brand a{color:#fff;text-decoration:none}
+.site-nav{display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap}
+.site-nav a{color:#dbe4f5;text-decoration:none;font-size:.95rem}
+.site-nav a:hover{color:#fff}
+.btn-call{display:inline-block;background:var(--accent);color:var(--on-accent)!important;font-weight:700;text-decoration:none;padding:.65rem 1.3rem;border-radius:.5rem;border:none;cursor:pointer;font-size:1rem}
+.btn-call:hover{background:var(--accent-dark)}
+.btn-ghost{display:inline-block;background:transparent;color:#fff!important;font-weight:700;text-decoration:none;padding:.65rem 1.3rem;border-radius:.5rem;border:2px solid #fff;font-size:1rem}
+.hero{position:relative;min-height:78vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+.hero img.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero .overlay{position:absolute;inset:0;background:linear-gradient(rgba(var(--primary-rgb),.72),rgba(var(--primary-rgb),.55))}
+.hero .inner{position:relative;z-index:2;max-width:800px;padding:4rem 1.25rem}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:800;margin-bottom:1rem;line-height:1.15}
+.hero .rating-line{font-size:1.15rem;margin-bottom:1.75rem;color:#ffe9d6}
+.hero .ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.trustbar{background:var(--light);padding:1.1rem;text-align:center;font-weight:600;color:var(--primary);font-size:.98rem}
+section.block{padding:3.5rem 1.25rem}
+.wrap{max-width:1150px;margin:0 auto}
+h2.sec-title{text-align:center;color:var(--primary);font-size:clamp(1.6rem,3.5vw,2.3rem);margin-bottom:.6rem}
+.sec-sub{text-align:center;color:#5b6b8c;max-width:640px;margin:0 auto 2.25rem}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.service-card{background:#fff;border:1px solid #e3e9f4;border-radius:.9rem;overflow:hidden;box-shadow:0 4px 14px rgba(var(--primary-rgb),.07)}
+.service-card img{width:100%;height:170px;object-fit:cover;display:block}
+.service-card .pad{padding:1.35rem}
+.service-card h3{color:var(--primary);margin-bottom:.5rem;font-size:1.15rem}
+.service-card p{font-size:.96rem;color:#5b6b8c}
+.why{background:var(--light)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.why-card{background:#fff;border-radius:.9rem;padding:1.75rem;box-shadow:0 4px 14px rgba(var(--primary-rgb),.07);border-top:4px solid var(--accent)}
+.why-card h3{color:var(--primary);margin-bottom:.5rem}
+.why-card p{color:#5b6b8c;font-size:.97rem}
+.stars{color:var(--link);font-size:1.6rem;letter-spacing:.15em}
+.review-agg{max-width:640px;margin:0 auto;background:#fff;border-radius:1rem;padding:2.5rem 2rem;text-align:center;box-shadow:0 6px 22px rgba(var(--primary-rgb),.1);border:1px solid #e3e9f4}
+.review-agg .big{font-size:2.6rem;font-weight:800;color:var(--primary)}
+.review-agg p{color:#5b6b8c;margin-top:.6rem}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.about-grid img{width:100%;border-radius:1rem;box-shadow:0 6px 22px rgba(var(--primary-rgb),.12)}
+.about-grid h2{color:var(--primary);font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:1rem}
+.about-grid p{margin-bottom:1rem;color:#41506e}
+.fact-list{list-style:none;margin-top:1.25rem}
+.fact-list li{padding:.55rem 0;border-bottom:1px solid #e8edf6;color:#41506e}
+.fact-list li strong{color:var(--primary)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+.contact-card{background:var(--light);border-radius:1rem;padding:2rem}
+.contact-card h3{color:var(--primary);margin-bottom:1rem}
+.contact-card p{margin-bottom:.9rem}
+.contact-card a{color:var(--link);font-weight:700}
+form.demo-form{background:#fff;border:1px solid #e3e9f4;border-radius:1rem;padding:2rem;box-shadow:0 6px 22px rgba(var(--primary-rgb),.08)}
+form.demo-form label{display:block;font-weight:600;color:var(--primary);margin:.9rem 0 .3rem;font-size:.93rem}
+form.demo-form input,form.demo-form textarea{width:100%;padding:.8rem;border:1px solid #c9d4e8;border-radius:.5rem;font-size:1rem;font-family:inherit}
+form.demo-form input:focus,form.demo-form textarea:focus{outline:2px solid var(--accent);border-color:var(--accent)}
+form.demo-form button{margin-top:1.25rem;width:100%}
+footer{background:var(--primary);color:#c7d2e8;padding:2.25rem 1.25rem;text-align:center;font-size:.92rem}
+footer p{margin:.3rem 0}
+footer a{color:#fff}
+@media(max-width:760px){.about-grid,.contact-grid{grid-template-columns:1fr}.site-nav{gap:.8rem}#demo-banner{font-size:11px}body{padding-top:42px}.site-header{top:42px}.hero{min-height:64vh}}
 </style>
 </head>
 <body>
-<div id="demo-banner" style="position:fixed;top:0;left:0;right:0;z-index:99999;background:#1a2744;color:#fff;text-align:center;padding:11px 14px;font-size:13px;font-weight:600">DEMO SITE &mdash; Concept built by Hayman Empire &middot; Not affiliated with this business</div>
-    <header class="bg">
-        <div class="navbar">
-            <div class="brand">
-                <h1>Seminole Plumbing Inc</h1>
-            </div>
-            <button class="toggle"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
-            <nav>
-                <ul>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section class="hero">
-        <div class="overlay"></div>
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop" alt="hero image">
-        <div class="container">
-            <h1>Expert Plumbing Services in Tallahassee</h1>
-            <button>Get a Free Estimate</button>
-            <button>Emergency Leak Repair</button>
-            <div class="trust-badges">
-                <img src="https://img.icons8.com/color/48/000000/trusted.png" alt="trusted">
-                <img src="https://img.icons8.com/office/48/000000/trust.png" alt="trust">
-                <img src="https://img.icons8.com/ios/48/000000/verified.png" alt="verified">
-                <img src="https://img.icons8.com/ios-filled/48/000000/verified-passport.png" alt="verified2">
-            </div>
-        </div>
-    </section>
-    <section class="services">
-        <div class="container">
-            <h2>Our Plumbing Services</h2>
-            <div class="service-cards">
-                <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="service 1">
-                    <h3>Emergency Leak Repair</h3>
-                    <p>Don't wait, call us now for emergency leak repair services</p>
-                </div>
-                <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="service 2">
-                    <h3>Drain Cleaning</h3>
-                    <p>Clear your drains with our expert cleaning services</p>
-                </div>
-                <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="service 3">
-                    <h3>Water Heater Install</h3>
-                    <p>Get reliable hot water with our expert water heater install services</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="why-choose-us">
-        <div class="container">
-            <h2>Why Choose Seminole Plumbing Inc</h2>
-            <div class="block">
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-            </div>
-            <div class="block">
-                <i class="fas fa-check-circle"></i>
-                <p>We're licensed and insured for your peace of mind</p>
-            </div>
-            <div class="block">
-                <i class="fas fa-cogs"></i>
-                <p>Our expert plumbers are dedicated to providing exceptional service</p>
-            </div>
-        </div>
-    </section>
-    <section class="gallery">
-        <div class="container">
-            <h2>Our Work</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=800&fit=crop" alt="gallery image 1">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=800&fit=crop" alt="gallery image 2">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=800&fit=crop" alt="gallery image 3">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="gallery image 4">
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="reviews">
-        <div class="container">
-            <h2>Customer Reviews</h2>
-            <div class="review">
-                <h3>Seminole Plumbing Inc</h3>
-                <p>Rated 4.8 out of 5 stars</p>
-                <p>"52" - Tallahassee</p>
-            </div>
-            <div class="review">
-                <h3>Seminole Plumbing Inc</h3>
-                <p>Rated 4.8 out of 5 stars</p>
-                <p>"52" - Tallahassee</p>
-            </div>
-            <div class="review">
-                <h3>Seminole Plumbing Inc</h3>
-                <p>Rated 4.8 out of 5 stars</p>
-                <p>"52" - Tallahassee</p>
-            </div>
-        </div>
-    </section>
-    <section class="about">
-        <div class="container">
-            <div class="image">
-                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="about image">
-            </div>
-            <div class="text">
-                <h2>About Us</h2>
-                <p>We're a team of expert plumbers dedicated to providing exceptional service to the Tallahassee community</p>
-            </div>
-            <div class="stats">
-                <div class="stat">
-                    <h3>Years of Experience</h3>
-                    <p>10+ years</p>
-                </div>
-                <div class="stat">
-                    <h3>Number of Clients Served</h3>
-                    <p>1000+</p>
-                </div>
-                <div class="stat">
-                    <h3>5-Star Reviews</h3>
-                    <p>90%</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <p>Get in touch with our team today to schedule a service</p>
-            <div class="contact-info">
-                <div class="info">
-                    <i class="fas fa-phone"></i>
-                    <p>Call (850) 555-0103</p>
-                </div>
-                <div class="info">
-                    <i class="fas fa-envelope"></i>
-                    <p>Email <a href="mailto:info@seminoleplumbing.com">info@seminoleplumbing.com</a></p>
-                </div>
-                <div class="info">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Visit us at <span>Tallahassee, FL 32303</span></p>
-                </div>
-            </div>
-            <form>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <textarea placeholder="Message"></textarea>
-                <input type="submit" value="Send">
-            </form>
-        </div>
-    </section>
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Seminole Plumbing Inc. All rights reserved.</p>
-            <p>Designed by [Your Name]</p>
-        </div>
-    </footer>
+<div id="demo-banner">DEMO SITE &mdash; Concept built by Hayman Empire &middot; Not affiliated with Seminole Plumbing Inc</div>
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand"><a href="#">Seminole Plumbing Inc</a></div>
+    <nav class="site-nav">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn-call" href="tel:+18504598212">Call (850) 459-8212</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="hero-bg" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&h=1080&fit=crop" alt="Plumbing work in Tallahassee">
+  <div class="overlay"></div>
+  <div class="inner">
+    <h1>Expert Plumbing Services in Tallahassee</h1>
+    <div class="ctas">
+      <a class="btn-call" href="tel:+18504598212">Call (850) 459-8212 Now</a>
+      <a class="btn-ghost" href="#contact">Get a Free Estimate</a>
+    </div>
+  </div>
+</section>
+
+<div class="trustbar">Seminole Plumbing Inc &mdash; serving Tallahassee, FL &mdash; 5975 Ansel Ferrel Rd, Tallahassee, FL 32309</div>
+
+<section class="block" id="services">
+  <div class="wrap">
+    <h2 class="sec-title">Our Plumbing Services</h2>
+    <p class="sec-sub">Straightforward pricing, clean work, and technicians who treat your home with respect.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=600&fit=crop" alt="Emergency Repairs">
+        <div class="pad"><h3>Emergency Repairs</h3><p>Burst pipes, major leaks, and urgent fixes — fast response when it matters most.</p></div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Drain Cleaning">
+        <div class="pad"><h3>Drain Cleaning</h3><p>Slow or clogged drains cleared safely and thoroughly, done right the first time.</p></div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=600&fit=crop" alt="Water Heaters">
+        <div class="pad"><h3>Water Heaters</h3><p>Repair and replacement of traditional and tankless water heaters.</p></div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop" alt="Leak Detection">
+        <div class="pad"><h3>Leak Detection</h3><p>Pinpoint hidden leaks before they turn into expensive water damage.</p></div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1594142266855-28e8a0f476ca?w=800&h=600&fit=crop" alt="Fixture Installation">
+        <div class="pad"><h3>Fixture Installation</h3><p>Faucets, toilets, sinks, and showers installed cleanly and correctly.</p></div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1573461160327-f84e9b648bd8?w=800&h=600&fit=crop" alt="Sewer &amp; Line Services">
+        <div class="pad"><h3>Sewer &amp; Line Services</h3><p>Sewer line inspection, repair, and replacement with minimal disruption.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block why" id="why">
+  <div class="wrap">
+    <h2 class="sec-title">Why Choose Seminole Plumbing Inc</h2>
+    <p class="sec-sub">A local Tallahassee shop with the reviews to back it up.</p>
+    <div class="why-grid">
+      <div class="why-card"><h3>Emergency Ready</h3><p>Burst pipe at 2am? Our 24/7 emergency line means a real local plumber picks up.</p></div>
+      <div class="why-card"><h3>Local &amp; Accountable</h3><p>Based at 5975 Ansel Ferrel Rd, Tallahassee, FL 32309 — when you call, you reach people in Tallahassee, not a call center.</p></div>
+      <div class="why-card"><h3>Straightforward Service</h3><p>Clear explanations, honest pricing, and no-pressure recommendations on every job.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="reviews">
+  <div class="wrap">
+    <h2 class="sec-title">Customer Reviews</h2>
+    <p class="sec-sub">Aggregate rating from Google.</p>
+    <div class="review-agg">
+      <div class="stars">★★★★★</div>
+      <div class="big"> / 5</div>
+      <p>Based on  Google reviews.<br>Individual review quotes are intentionally omitted in this demo concept.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block why" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=800&fit=crop" alt="Seminole Plumbing Inc technicians at work">
+      <div>
+        <h2>About Seminole Plumbing Inc</h2>
+        <p>Seminole Plumbing Inc is based at 5975 Ansel Ferrel Rd, Tallahassee, FL 32309, serving Tallahassee, FL and the surrounding area.</p>
+        <ul class="fact-list">
+          <li><strong>Business:</strong> Seminole Plumbing Inc</li>
+          <li><strong>Phone:</strong> <a href="tel:+18504598212">(850) 459-8212</a></li>
+          <li><strong>Address:</strong> 5975 Ansel Ferrel Rd, Tallahassee, FL 32309</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contact">
+  <div class="wrap">
+    <h2 class="sec-title">Get in Touch</h2>
+    <p class="sec-sub">Call now or send a message — we usually respond the same business day.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Contact Seminole Plumbing Inc</h3>
+        <p><strong>Phone:</strong> <a href="tel:+18504598212">(850) 459-8212</a></p>
+        <p><strong>Address:</strong> 5975 Ansel Ferrel Rd, Tallahassee, FL 32309</p>
+        <p><strong>Hours:</strong> Mon–Fri 8am–6pm · 24/7 emergency line</p>
+        <p style="margin-top:1.25rem"><a class="btn-call" href="tel:+18504598212">Call (850) 459-8212</a></p>
+      </div>
+      <form class="demo-form" action="https://formsubmit.co/lhayman1100@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New demo-site inquiry for Seminole Plumbing Inc">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <label for="f-name">Name</label>
+        <input id="f-name" type="text" name="name" placeholder="Your name" required>
+        <label for="f-email">Email</label>
+        <input id="f-email" type="email" name="email" placeholder="you@example.com" required>
+        <label for="f-phone">Phone</label>
+        <input id="f-phone" type="tel" name="phone" placeholder="Your phone number">
+        <label for="f-msg">How can we help?</label>
+        <textarea id="f-msg" name="message" rows="4" placeholder="Describe your project…" required></textarea>
+        <button class="btn-call" type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Seminole Plumbing Inc. All rights reserved.</p>
+  <p>5975 Ansel Ferrel Rd, Tallahassee, FL 32309 &middot; <a href="tel:+18504598212">(850) 459-8212</a></p>
+  <p style="margin-top:.6rem;font-size:.82rem;opacity:.75">Demo concept built by Hayman Empire. Not affiliated with Seminole Plumbing Inc.</p>
+</footer>
 </body>
 </html>
-
-```styles.css``` is where you'll write most of your CSS code. Here's a basic example to get you started:
-
-```css
-/* Global Styles */
-
-:root {
-    --primary: #1a2744;
-    --accent: #e8651a;
-    --bg: #fff;
-    --light: #f4f7fb;
-}
-
-body {
-    font-family: 'DM Sans', sans-serif;
-    background-color: var(--bg);
-    color: var(--primary);
-}
-
-/* Header Styles */
-
-navbar {
-    background-color: var(--primary);
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-right: 2rem;
-}
-
-.toggle {
-    background-color: var(--accent);
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-toggle svg {
-    fill: var(--light);
-}
-
-toggle svg:hover {
-    fill: var(--bg);
-}
-
-/* Hero Styles */
-
-.hero {
-    height: 100vh;
-    background-image: linear-gradient(to bottom, var(--primary), var(--light));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Services Styles */
-
-.services {
-    padding: 2rem;
-}
-
-.services .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.services .service-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.service-card {
-    margin: 2rem;
-    padding: 2rem;
-    border: 1px solid var(--light);
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.service-card img {
-    width: 100%;
-    height: 10rem;
-    object-fit: cover;
-    border-radius: 1rem;
-}
-
-/* Why Choose Us Styles */
-
-.why-choose-us {
-    background-color: var(--light);
-    padding: 2rem;
-}
-
-.block {
-    margin: 2rem;
-    padding: 2rem;
-    border: 1px solid var(--light);
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-}
-
-/* Gallery Styles */
-
-.gallery {
-    padding: 2rem;
-}
-
-.gallery .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
-}
-
-.gallery-item {
-    margin: 2rem;
-    padding: 2rem;
-    border: 1px solid var(--light);
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 10rem;
-    object-fit: cover;
-    border-radius: 1rem;
-}
-
-/* Reviews Styles */
-
-.reviews {
-    padding: 2rem;
-}
-
-.review {
-    margin: 2rem;
-    padding: 2rem;
-    border: 1px solid var(--light);
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.review h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.review p {
-    margin-bottom: 2rem;
-}
-
-/* About Styles */
-
-.about {
-    padding: 2rem;
-}
-
-.about .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.about .image {
-    margin: 2rem;
-    padding: 2rem;
-    border: 1px solid var(--light);
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.about .text {
-    margin: 2rem;
-    padding: 2rem;
-    border: 1px solid var(--light);
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Contact Styles */
-
-.contact {
-    padding: 2rem;
-}
-
-.contact .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.contact-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.contact-info .info {
-    margin: 2rem;
-    padding: 2rem;
-    border: 1px solid var(--light);
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-info .info i {
-    margin-right: 1rem;
-}
-
-.contact .form {
-    margin: 2rem;
-    padding: 2rem;
-    border: 1px solid var(--light);
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact .form input {
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 2rem;
-}
-
-.contact .form textarea {
-    width: 100%;
-    padding: 1rem;
-    margin-bottom: 2rem;
-}
-
-.contact .form input[type="submit"] {
-    background-color: var(--accent);
-    color: var(--light);
-    border: none;
-    padding: 1rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-/* Footer Styles */
-
-footer {
-    background-color: var(--primary);
-    padding: 2rem;
-}
-
-footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-footer p {
-    color: var(--light);
-}
-
-footer a {
-    color: var(--light);
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: var(--bg);
-}
